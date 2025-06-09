@@ -1,0 +1,86 @@
+window {
+    background-color: rgba(255, 255, 255, 0.8); /* 更浅的白色背景 */
+    color: #181825; /* 深色文字 */
+    border-radius: 12px;
+    border: 2px solid rgba(94, 129, 172, 0.3);
+}
+
+/* 搜索框 */
+entry {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #181825;
+    border: 2px solid rgba(94, 129, 172, 0.4);
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 14px;
+    margin: 8px;
+}
+
+entry:focus {
+    background-color: rgba(255, 255, 255, 1.0);
+    border-color: rgba(30, 102, 245, 0.7);
+    box-shadow: 0 0 8px rgba(30, 102, 245, 0.25);
+}
+
+button, image {
+    background: none;
+    border: none;
+    color: #181825;
+}
+
+button {
+    border-radius: 8px;
+    padding: 10px;
+    margin: 2px;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background-color: rgba(30, 102, 245, 0.15);
+}
+
+button:active {
+    background-color: rgba(30, 102, 245, 0.25);
+}
+
+/* 分类按钮 */
+#category-button {
+    margin: 4px 6px;
+    padding: 8px 12px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(94, 129, 172, 0.3);
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+#category-button:hover {
+    background-color: rgba(30, 102, 245, 0.2);
+    border-color: rgba(30, 102, 245, 0.5);
+}
+
+#pinned-box {
+    padding: 12px;
+    border-bottom: 2px solid rgba(92, 95, 119, 0.3);
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    margin: 8px;
+}
+
+#files-box {
+    padding: 12px;
+    border: 2px solid rgba(92, 95, 119, 0.3);
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.4);
+    margin: 8px;
+}
+
+/* 数学计算结果 */
+#math-label {
+    font-weight: bold;
+    font-size: 16px;
+    color: #1e66f5;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(30, 102, 245, 0.25);
+}

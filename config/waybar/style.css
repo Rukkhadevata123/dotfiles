@@ -1,0 +1,392 @@
+/* =============================================================================
+ *
+ * Hyprland Waybar Configuration - Optimized Style
+ *
+ * ============================================================================= */
+
+/* ----- 重置和基础样式 ----- */
+* {
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    font-family: "JetBrains Mono Nerd Font", "FiraCode Nerd Font", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* ----- 主窗口样式 ----- */
+window#waybar {
+    background: rgba(17, 17, 27, 0.5);
+    color: #cdd6f4;
+    border-radius: 8px;
+    margin: 4px;
+    border: 1px solid rgba(205, 214, 244, 0.08);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* ----- 工作区样式 ----- */
+#workspaces {
+    margin: 2px 4px;
+}
+
+#workspaces button {
+    padding: 4px 8px;
+    margin: 0 1px;
+    color: rgba(205, 214, 244, 0.4);
+    background: transparent;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    font-weight: 600;
+    font-size: 11px;
+    min-width: 24px;
+    transition: all 0.2s ease;
+}
+
+#workspaces button.active {
+    color: #1e1e2e;
+    background: linear-gradient(135deg, rgba(137, 180, 250, 0.9) 0%, rgba(116, 199, 236, 0.9) 100%);
+    border: 1px solid rgba(137, 180, 250, 0.3);
+    box-shadow: 0 2px 8px rgba(137, 180, 250, 0.4);
+}
+
+#workspaces button.urgent {
+    color: #f38ba8;
+    background: rgba(243, 139, 168, 0.12);
+    border: 1px solid rgba(243, 139, 168, 0.25);
+}
+
+#workspaces button:hover:not(.active) {
+    color: #cdd6f4;
+    background: rgba(205, 214, 244, 0.08);
+    border: 1px solid rgba(205, 214, 244, 0.15);
+}
+
+/* ----- 通用模块样式 ----- */
+#custom-menu,
+#custom-scratchpad,
+#custom-wf-recorder,
+#window,
+#custom-clipboard,
+#cpu,
+#memory,
+#temperature,
+#battery,
+#power-profiles-daemon,
+#network,
+#custom-playerctl,
+#idle_inhibitor,
+#pulseaudio,
+#backlight,
+#custom-notification,
+#clock,
+#custom-power,
+#custom-weather {
+    padding: 4px 8px;
+    margin: 2px 1px;
+    border-radius: 6px;
+    background: rgba(30, 30, 46, 0.4);
+    border: 1px solid rgba(205, 214, 244, 0.03);
+    font-size: 11px;
+    min-height: 20px;
+    transition: all 0.2s ease;
+}
+
+/* ----- 悬停效果 ----- */
+#custom-menu:hover,
+#cpu:hover,
+#memory:hover,
+#battery:hover,
+#power-profiles-daemon:hover,
+#network:hover,
+#pulseaudio:hover,
+#backlight:hover,
+#custom-notification:hover,
+#clock:hover,
+#custom-power:hover {
+    background: rgba(30, 30, 46, 0.6);
+    border: 1px solid rgba(205, 214, 244, 0.12);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ----- 特殊模块样式 ----- */
+#custom-menu {
+    color: #89b4fa;
+    font-size: 14px;
+    padding: 4px 10px;
+    background: rgba(137, 180, 250, 0.12);
+}
+
+#custom-scratchpad {
+    color: #f9e2af;
+    font-size: 12px;
+}
+
+#custom-scratchpad.one {
+    color: #a6e3a1;
+}
+
+#custom-scratchpad.many {
+    color: #fab387;
+}
+
+#window {
+    background: rgba(49, 50, 68, 0.3);
+    color: #a6adc8;
+    font-style: italic;
+    padding: 4px 12px;
+    font-size: 11px;
+}
+
+#clock {
+    color: #cdd6f4;
+    font-weight: 600;
+    background: rgba(205, 214, 244, 0.12);
+    border: 1px solid rgba(205, 214, 244, 0.08);
+    padding: 4px 10px;
+    font-size: 11px;
+    margin-left: 2px;
+}
+
+/* ----- 系统监控模块 ----- */
+#cpu {
+    color: #89b4fa;
+    font-size: 10px;
+}
+
+#cpu.warning {
+    color: #f9e2af;
+    background: rgba(249, 226, 175, 0.12);
+}
+
+#cpu.critical {
+    color: #f38ba8;
+    background: rgba(243, 139, 168, 0.12);
+}
+
+#memory {
+    color: #a6e3a1;
+    font-size: 10px;
+}
+
+#memory.warning {
+    color: #f9e2af;
+    background: rgba(249, 226, 175, 0.12);
+}
+
+#memory.critical {
+    color: #f38ba8;
+    background: rgba(243, 139, 168, 0.12);
+}
+
+#temperature {
+    color: #fab387;
+    font-size: 10px;
+}
+
+#temperature.critical {
+    color: #f38ba8;
+}
+
+/* ----- 电池样式 ----- */
+#battery {
+    color: #a6e3a1;
+    font-size: 10px;
+}
+
+#battery.charging {
+    color: #94e2d5;
+    background: rgba(148, 226, 213, 0.12);
+}
+
+#battery.warning {
+    color: #f9e2af;
+    background: rgba(249, 226, 175, 0.12);
+}
+
+#battery.critical:not(.charging) {
+    color: #f38ba8;
+    background: rgba(243, 139, 168, 0.12);
+}
+
+/* ----- 网络样式 ----- */
+#network {
+    color: #74c7ec;
+    font-size: 10px;
+}
+
+#network.disconnected {
+    color: #f38ba8;
+    background: rgba(243, 139, 168, 0.12);
+}
+
+#network.disabled {
+    color: #6c7086;
+}
+
+/* ----- 音频样式 ----- */
+#pulseaudio {
+    color: #eba0ac;
+    font-size: 10px;
+}
+
+#pulseaudio.muted {
+    color: #6c7086;
+    background: rgba(108, 112, 134, 0.12);
+}
+
+/* 添加 power-profiles-daemon 的特定样式 */
+#power-profiles-daemon {
+    color: #fab387;
+    font-size: 12px;
+}
+
+/* ----- 背光样式 ----- */
+#backlight {
+    color: #f9e2af;
+    font-size: 10px;
+}
+
+/* ----- 空闲抑制器样式 ----- */
+#idle_inhibitor {
+    color: #89dceb;
+    font-size: 12px;
+}
+
+#idle_inhibitor.activated {
+    color: #f9e2af;
+    background: rgba(249, 226, 175, 0.12);
+}
+
+/* ----- 自定义模块样式 ----- */
+#custom-playerctl {
+    color: #cba6f7;
+    font-size: 12px;
+}
+
+#custom-clipboard {
+    color: #fab387;
+    font-size: 12px;
+}
+
+#custom-wf-recorder {
+    color: #f38ba8;
+    background: rgba(243, 139, 168, 0.15);
+    border: 1px solid rgba(243, 139, 168, 0.25);
+    font-size: 12px;
+}
+
+#custom-weather {
+    color: #89dceb;
+    font-weight: 500;
+    font-size: 10px;
+}
+
+#custom-power {
+    color: #f38ba8;
+    font-size: 12px;
+    padding: 4px 10px;
+    background: rgba(243, 139, 168, 0.12);
+}
+
+#custom-power:hover {
+    background: rgba(243, 139, 168, 0.2);
+    border: 1px solid rgba(243, 139, 168, 0.25);
+}
+
+/* ----- 通知管理样式 ----- */
+#custom-notification {
+    color: #89dceb;
+    font-size: 14px;
+    padding: 4px 8px;
+    background: rgba(137, 220, 235, 0.12);
+    border: 1px solid rgba(137, 220, 235, 0.08);
+    margin-right: 4px;
+}
+
+#custom-notification:hover {
+    background: rgba(137, 220, 235, 0.2);
+    border: 1px solid rgba(137, 220, 235, 0.25);
+}
+
+#custom-notification.notification {
+    color: #f9e2af;
+    background: rgba(249, 226, 175, 0.15);
+    border: 1px solid rgba(249, 226, 175, 0.25);
+}
+
+#custom-notification.dnd-notification,
+#custom-notification.dnd-none {
+    color: #f38ba8;
+    background: rgba(243, 139, 168, 0.12);
+    border: 1px solid rgba(243, 139, 168, 0.15);
+}
+
+/* ----- 系统托盘改进样式 ----- */
+#tray {
+    background: rgba(49, 50, 68, 0.6);
+    border: 1px solid rgba(205, 214, 244, 0.15);
+    padding: 4px 8px;
+    margin: 2px 1px;
+    border-radius: 6px;
+    min-height: 20px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: none;
+    opacity: 0.9;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: rgba(243, 139, 168, 0.4);
+    border-radius: 3px;
+    padding: 2px;
+    margin: 1px;
+}
+
+#tray > .active {
+    background-color: rgba(137, 180, 250, 0.3);
+    border-radius: 3px;
+    padding: 2px;
+    margin: 1px;
+}
+
+#tray:hover {
+    background: rgba(49, 50, 68, 0.8);
+}
+
+/* Tray 图标间距和对比度增强 */
+#tray menu {
+    background: rgba(17, 17, 27, 0.95);
+    border: 1px solid rgba(205, 214, 244, 0.2);
+    border-radius: 8px;
+    color: #cdd6f4;
+    padding: 4px;
+}
+
+#tray menuitem {
+    background: transparent;
+    border-radius: 4px;
+    padding: 4px 8px;
+    color: #cdd6f4;
+}
+
+#tray menuitem:hover {
+    background: rgba(137, 180, 250, 0.2);
+}
+
+/* ----- 工具提示样式 ----- */
+tooltip {
+    background: rgba(17, 17, 27, 0.95);
+    border: 1px solid rgba(205, 214, 244, 0.15);
+    border-radius: 6px;
+    color: #cdd6f4;
+    font-size: 11px;
+    padding: 4px 8px;
+}
+
+tooltip label {
+    color: #cdd6f4;
+}
