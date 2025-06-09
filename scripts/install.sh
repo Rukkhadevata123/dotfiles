@@ -18,6 +18,7 @@ ln -sf "$DOTFILES_DIR/config/conky" ~/.config/
 ln -sf "$DOTFILES_DIR/config/gtk-3.0" ~/.config/
 ln -sf "$DOTFILES_DIR/config/gtk-4.0" ~/.config/
 ln -sf "$DOTFILES_DIR/config/hypr" ~/.config/
+ln -sf "$DOTFILES_DIR/config/hyprshell" ~/.config/
 ln -sf "$DOTFILES_DIR/config/kitty" ~/.config/
 ln -sf "$DOTFILES_DIR/config/Kvantum" ~/.config/
 ln -sf "$DOTFILES_DIR/config/nwg-dock-hyprland" ~/.config/
