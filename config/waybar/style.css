@@ -1,6 +1,6 @@
 /* =============================================================================
  *
- * Hyprland Waybar Configuration - Optimized Style
+ * Hyprland Waybar Configuration - Three-Section Separated Style
  *
  * ============================================================================= */
 
@@ -16,51 +16,86 @@
     font-weight: 500;
 }
 
-/* ----- 主窗口样式 ----- */
+/* ----- 主窗口样式 - 透明背景实现分离效果 ----- */
 window#waybar {
-    background: rgba(17, 17, 27, 0.5);
+    background: transparent;
     color: #cdd6f4;
-    border-radius: 8px;
-    margin: 4px;
-    border: 1px solid rgba(205, 214, 244, 0.08);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* ----- 左侧区域样式 ----- */
+.modules-left {
+    background: rgba(17, 17, 27, 0.9);
+    border-radius: 4px;
+    margin: 2px 0 2px 4px;
+    padding: 1px 3px;
+    border: 1px solid rgba(205, 214, 244, 0.12);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* ----- 中间区域样式 - 时钟独立 ----- */
+.modules-center {
+    background: rgba(17, 17, 27, 0.9);
+    border-radius: 4px;
+    margin: 2px 0;
+    padding: 2px 6px;
+    border: 1px solid rgba(205, 214, 244, 0.12);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* ----- 右侧区域样式 ----- */
+.modules-right {
+    background: rgba(17, 17, 27, 0.9);
+    border-radius: 4px;
+    margin: 2px 4px 2px 0;
+    padding: 1px 3px;
+    border: 1px solid rgba(205, 214, 244, 0.12);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 /* ----- 工作区样式 ----- */
 #workspaces {
-    margin: 2px 4px;
+    margin: 0px;
+    background: transparent;
 }
 
 #workspaces button {
-    padding: 4px 8px;
+    padding: 2px 5px;
     margin: 0 1px;
-    color: rgba(205, 214, 244, 0.4);
+    color: rgba(205, 214, 244, 0.6);
     background: transparent;
-    border-radius: 6px;
-    border: 1px solid transparent;
+    border-radius: 3px;
+    border: 1px solid rgba(205, 214, 244, 0.1);
     font-weight: 600;
-    font-size: 11px;
-    min-width: 24px;
+    font-size: 12px;
+    min-width: 20px;
+    min-height: 0;
     transition: all 0.2s ease;
 }
 
 #workspaces button.active {
     color: #1e1e2e;
     background: linear-gradient(135deg, rgba(137, 180, 250, 0.9) 0%, rgba(116, 199, 236, 0.9) 100%);
-    border: 1px solid rgba(137, 180, 250, 0.3);
-    box-shadow: 0 2px 8px rgba(137, 180, 250, 0.4);
+    border: 1px solid rgba(137, 180, 250, 0.4);
+    box-shadow: 0 1px 4px rgba(137, 180, 250, 0.4);
 }
 
 #workspaces button.urgent {
     color: #f38ba8;
-    background: rgba(243, 139, 168, 0.12);
-    border: 1px solid rgba(243, 139, 168, 0.25);
+    background: rgba(243, 139, 168, 0.2);
+    border: 1px solid rgba(243, 139, 168, 0.4);
+    animation: urgent-blink 1s ease-in-out infinite alternate;
+}
+
+@keyframes urgent-blink {
+    to {
+        background: rgba(243, 139, 168, 0.4);
+    }
 }
 
 #workspaces button:hover:not(.active) {
     color: #cdd6f4;
-    background: rgba(205, 214, 244, 0.08);
-    border: 1px solid rgba(205, 214, 244, 0.15);
+    background: rgba(205, 214, 244, 0.15);
+    border: 1px solid rgba(205, 214, 244, 0.2);
 }
 
 /* ----- 通用模块样式 ----- */
@@ -80,20 +115,38 @@ window#waybar {
 #pulseaudio,
 #backlight,
 #custom-notification,
-#clock,
-#custom-power,
-#custom-weather {
-    padding: 4px 8px;
-    margin: 2px 1px;
-    border-radius: 6px;
-    background: rgba(30, 30, 46, 0.4);
-    border: 1px solid rgba(205, 214, 244, 0.03);
-    font-size: 11px;
-    min-height: 20px;
+#custom-power {
+    padding: 2px 5px;
+    margin: 0px;
+    border-radius: 3px;
+    background: transparent;
+    border: 1px solid rgba(205, 214, 244, 0.08);
+    font-size: 12px;
+    min-height: 0;
     transition: all 0.2s ease;
 }
 
-/* ----- 悬停效果 ----- */
+/* ----- 时钟特殊样式 - 中心焦点 ----- */
+#clock {
+    color: #cdd6f4;
+    font-weight: 600;
+    font-size: 12px;
+    background: linear-gradient(135deg, rgba(137, 180, 250, 0.15) 0%, rgba(116, 199, 236, 0.15) 100%);
+    border: 1px solid rgba(137, 180, 250, 0.25);
+    padding: 3px 10px;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(137, 180, 250, 0.2);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    min-height: 0;
+}
+
+#clock:hover {
+    background: linear-gradient(135deg, rgba(137, 180, 250, 0.25) 0%, rgba(116, 199, 236, 0.25) 100%);
+    border: 1px solid rgba(137, 180, 250, 0.4);
+    box-shadow: 0 2px 6px rgba(137, 180, 250, 0.3);
+}
+
+/* ----- 悬停效果增强 ----- */
 #custom-menu:hover,
 #cpu:hover,
 #memory:hover,
@@ -103,290 +156,156 @@ window#waybar {
 #pulseaudio:hover,
 #backlight:hover,
 #custom-notification:hover,
-#clock:hover,
 #custom-power:hover {
-    background: rgba(30, 30, 46, 0.6);
-    border: 1px solid rgba(205, 214, 244, 0.12);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    background: rgba(30, 30, 46, 0.4);
+    border: 1px solid rgba(205, 214, 244, 0.15);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* ----- 特殊模块样式 ----- */
 #custom-menu {
     color: #89b4fa;
-    font-size: 14px;
-    padding: 4px 10px;
-    background: rgba(137, 180, 250, 0.12);
-}
-
-#custom-scratchpad {
-    color: #f9e2af;
     font-size: 12px;
+    padding: 2px 6px;
+    background: rgba(137, 180, 250, 0.1);
+    border: 1px solid rgba(137, 180, 250, 0.15);
 }
 
-#custom-scratchpad.one {
-    color: #a6e3a1;
-}
-
-#custom-scratchpad.many {
-    color: #fab387;
+#custom-menu:hover {
+    background: rgba(137, 180, 250, 0.2);
+    border: 1px solid rgba(137, 180, 250, 0.3);
 }
 
 #window {
     background: rgba(49, 50, 68, 0.3);
     color: #a6adc8;
     font-style: italic;
-    padding: 4px 12px;
-    font-size: 11px;
+    padding: 2px 6px;
+    font-size: 12px;
+    border: 1px solid rgba(49, 50, 68, 0.4);
 }
 
-#clock {
-    color: #cdd6f4;
-    font-weight: 600;
-    background: rgba(205, 214, 244, 0.12);
+/* ----- 分组样式增强 ----- */
+#group-connectivity,
+#group-hardware,
+#group-multimedia,
+#group-utilities {
+    background: rgba(49, 50, 68, 0.2);
+    border-radius: 3px;
+    padding: 0px;
+    margin: 0px;
     border: 1px solid rgba(205, 214, 244, 0.08);
-    padding: 4px 10px;
-    font-size: 11px;
-    margin-left: 2px;
 }
 
-/* ----- 系统监控模块 ----- */
+/* ----- 系统监控模块颜色优化 ----- */
 #cpu {
     color: #89b4fa;
-    font-size: 10px;
-}
-
-#cpu.warning {
-    color: #f9e2af;
-    background: rgba(249, 226, 175, 0.12);
-}
-
-#cpu.critical {
-    color: #f38ba8;
-    background: rgba(243, 139, 168, 0.12);
 }
 
 #memory {
     color: #a6e3a1;
-    font-size: 10px;
-}
-
-#memory.warning {
-    color: #f9e2af;
-    background: rgba(249, 226, 175, 0.12);
-}
-
-#memory.critical {
-    color: #f38ba8;
-    background: rgba(243, 139, 168, 0.12);
 }
 
 #temperature {
     color: #fab387;
-    font-size: 10px;
 }
 
-#temperature.critical {
-    color: #f38ba8;
-}
-
-/* ----- 电池样式 ----- */
 #battery {
     color: #a6e3a1;
-    font-size: 10px;
 }
 
 #battery.charging {
     color: #94e2d5;
-    background: rgba(148, 226, 213, 0.12);
+    background: rgba(148, 226, 213, 0.1);
 }
 
 #battery.warning {
     color: #f9e2af;
-    background: rgba(249, 226, 175, 0.12);
+    background: rgba(249, 226, 175, 0.1);
 }
 
 #battery.critical:not(.charging) {
     color: #f38ba8;
-    background: rgba(243, 139, 168, 0.12);
+    background: rgba(243, 139, 168, 0.1);
 }
 
 /* ----- 网络样式 ----- */
 #network {
     color: #74c7ec;
-    font-size: 10px;
 }
 
 #network.disconnected {
     color: #f38ba8;
-    background: rgba(243, 139, 168, 0.12);
-}
-
-#network.disabled {
-    color: #6c7086;
+    background: rgba(243, 139, 168, 0.1);
 }
 
 /* ----- 音频样式 ----- */
 #pulseaudio {
     color: #eba0ac;
-    font-size: 10px;
 }
 
 #pulseaudio.muted {
     color: #6c7086;
-    background: rgba(108, 112, 134, 0.12);
+    background: rgba(108, 112, 134, 0.1);
 }
 
-/* 添加 power-profiles-daemon 的特定样式 */
-#power-profiles-daemon {
-    color: #fab387;
-    font-size: 12px;
+/* ----- 系统托盘样式 ----- */
+#tray {
+    background: rgba(49, 50, 68, 0.3);
+    border: 1px solid rgba(205, 214, 244, 0.08);
+    padding: 2px 5px;
+    margin: 0px;
+    border-radius: 3px;
+    min-height: 0;
 }
 
-/* ----- 背光样式 ----- */
-#backlight {
-    color: #f9e2af;
-    font-size: 10px;
+#tray:hover {
+    background: rgba(49, 50, 68, 0.5);
 }
 
-/* ----- 空闲抑制器样式 ----- */
-#idle_inhibitor {
-    color: #89dceb;
-    font-size: 12px;
-}
-
-#idle_inhibitor.activated {
-    color: #f9e2af;
-    background: rgba(249, 226, 175, 0.12);
-}
-
-/* ----- 自定义模块样式 ----- */
-#custom-playerctl {
-    color: #cba6f7;
-    font-size: 12px;
-}
-
-#custom-clipboard {
-    color: #fab387;
-    font-size: 12px;
-}
-
-#custom-wf-recorder {
-    color: #f38ba8;
-    background: rgba(243, 139, 168, 0.15);
-    border: 1px solid rgba(243, 139, 168, 0.25);
-    font-size: 12px;
-}
-
-#custom-weather {
-    color: #89dceb;
-    font-weight: 500;
-    font-size: 10px;
-}
-
+/* ----- 电源按钮特殊样式 ----- */
 #custom-power {
     color: #f38ba8;
     font-size: 12px;
-    padding: 4px 10px;
-    background: rgba(243, 139, 168, 0.12);
+    padding: 2px 6px;
+    background: rgba(243, 139, 168, 0.1);
+    border: 1px solid rgba(243, 139, 168, 0.15);
 }
 
 #custom-power:hover {
     background: rgba(243, 139, 168, 0.2);
-    border: 1px solid rgba(243, 139, 168, 0.25);
+    border: 1px solid rgba(243, 139, 168, 0.3);
+    box-shadow: 0 1px 4px rgba(243, 139, 168, 0.2);
 }
 
-/* ----- 通知管理样式 ----- */
-#custom-notification {
-    color: #89dceb;
-    font-size: 14px;
-    padding: 4px 8px;
-    background: rgba(137, 220, 235, 0.12);
-    border: 1px solid rgba(137, 220, 235, 0.08);
-    margin-right: 4px;
-}
-
-#custom-notification:hover {
-    background: rgba(137, 220, 235, 0.2);
-    border: 1px solid rgba(137, 220, 235, 0.25);
-}
-
-#custom-notification.notification {
-    color: #f9e2af;
-    background: rgba(249, 226, 175, 0.15);
-    border: 1px solid rgba(249, 226, 175, 0.25);
-}
-
-#custom-notification.dnd-notification,
-#custom-notification.dnd-none {
+/* ----- 录制状态样式 ----- */
+#custom-wf-recorder.recording {
     color: #f38ba8;
-    background: rgba(243, 139, 168, 0.12);
-    border: 1px solid rgba(243, 139, 168, 0.15);
+    background: rgba(243, 139, 168, 0.2);
+    border: 1px solid rgba(243, 139, 168, 0.4);
+    animation: recording-pulse 2s ease-in-out infinite;
 }
 
-/* ----- 系统托盘改进样式 ----- */
-#tray {
-    background: rgba(49, 50, 68, 0.6);
-    border: 1px solid rgba(205, 214, 244, 0.15);
-    padding: 4px 8px;
-    margin: 2px 1px;
-    border-radius: 6px;
-    min-height: 20px;
-}
-
-#tray > .passive {
-    -gtk-icon-effect: none;
-    opacity: 0.9;
-}
-
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: rgba(243, 139, 168, 0.4);
-    border-radius: 3px;
-    padding: 2px;
-    margin: 1px;
-}
-
-#tray > .active {
-    background-color: rgba(137, 180, 250, 0.3);
-    border-radius: 3px;
-    padding: 2px;
-    margin: 1px;
-}
-
-#tray:hover {
-    background: rgba(49, 50, 68, 0.8);
-}
-
-/* Tray 图标间距和对比度增强 */
-#tray menu {
-    background: rgba(17, 17, 27, 0.95);
-    border: 1px solid rgba(205, 214, 244, 0.2);
-    border-radius: 8px;
-    color: #cdd6f4;
-    padding: 4px;
-}
-
-#tray menuitem {
-    background: transparent;
-    border-radius: 4px;
-    padding: 4px 8px;
-    color: #cdd6f4;
-}
-
-#tray menuitem:hover {
-    background: rgba(137, 180, 250, 0.2);
+@keyframes recording-pulse {
+    0% {
+        opacity: 1;
+    }
+    
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
 }
 
 /* ----- 工具提示样式 ----- */
 tooltip {
     background: rgba(17, 17, 27, 0.95);
-    border: 1px solid rgba(205, 214, 244, 0.15);
-    border-radius: 6px;
+    border: 1px solid rgba(205, 214, 244, 0.2);
+    border-radius: 3px;
     color: #cdd6f4;
-    font-size: 11px;
-    padding: 4px 8px;
-}
-
-tooltip label {
-    color: #cdd6f4;
+    font-size: 12px;
+    padding: 3px 6px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
