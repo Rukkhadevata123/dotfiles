@@ -16,22 +16,65 @@
         "custom/weather"
     ],
     "modules-right": [
-        "custom/clipboard",
-        "cpu",
-        "memory",
-        "temperature",
+        "group/tools",
+        "group/system",
         "battery",
         "power-profiles-daemon",
         "network",
-        "custom/playerctl",
-        "idle_inhibitor",
-        "pulseaudio",
-        "backlight",
+        "group/media",
         "tray",
         "custom/notification",
         "clock",
         "custom/power"
     ],
+
+    // -------------------------------------------------------------------------
+    // Groups
+    // -------------------------------------------------------------------------
+    
+    // 工具分组
+    "group/tools": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-tools",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/clipboard"
+        ]
+    },
+
+    // 系统监控分组
+    "group/system": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-system",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "cpu",
+            "memory",
+            "temperature"
+        ]
+    },
+
+    // 媒体控制分组
+    "group/media": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-media",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "pulseaudio",
+            "custom/playerctl",
+            "idle_inhibitor",
+            "backlight"
+        ]
+    },
 
     // -------------------------------------------------------------------------
     // Modules
@@ -43,7 +86,10 @@
     },
 
     "hyprland/workspaces": {
-        "disable-scroll": true,
+        "on-scroll-up": "hyprctl dispatch workspace r-1",
+        "on-scroll-down": "hyprctl dispatch workspace r+1",
+        "on-click": "activate",
+        "active-only": false,
         "all-outputs": true,
         "format": "{name}: {icon}",
         "format-icons": {
@@ -178,19 +224,28 @@
     },
 
     "custom/notification": {
+        "tooltip-format": "Left: Notifications\nRight: Do not disturb",
         "format": "{icon}",
         "format-icons": {
-            "notification": "<span foreground='red'></span>",  // 有通知时显示红点
-            "none": "",                                         // 无通知
-            "dnd-notification": "<span foreground='red'></span>",  // 勿扰模式 + 通知
-            "dnd-none": ""                                      // 勿扰模式
+        "notification":
+            "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
+        "none": "",
+        "dnd-notification":
+            "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
+        "dnd-none": "",
+        "inhibited-notification":
+            "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
+        "inhibited-none": "",
+        "dnd-inhibited-notification":
+            "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
+        "dnd-inhibited-none": ""
         },
         "return-type": "json",
         "exec-if": "which swaync-client",
         "exec": "swaync-client -swb",
         "on-click": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
-        "tooltip-format": "Left: Notifications\nRight: Do not disturb"
+        "escape": true
     },
 
     "tray": {
