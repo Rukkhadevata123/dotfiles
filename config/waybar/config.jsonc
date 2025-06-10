@@ -4,24 +4,22 @@
     // -------------------------------------------------------------------------
     "layer": "top",
     "position": "top",
-    "spacing": 4,
     "modules-left": [
         "custom/menu",
         "hyprland/workspaces",
-        "custom/scratchpad"
+        "custom/scratchpad",
+        "hyprland/window"
     ],
     "modules-center": [
-        "custom/wf-recorder",
-        "hyprland/window",
-        "custom/weather"
+        "clock"
     ],
     "modules-right": [
+        "custom/wf-recorder",
         "group/connectivity",
         "group/hardware", 
         "group/multimedia",
         "group/utilities",
         "tray",
-        "clock",
         "custom/power"
     ],
 
@@ -304,13 +302,5 @@
         "format": "{}",
         "exec": "if pgrep wf-recorder >/dev/null 2>&1; then echo '{\"class\": \"recording\", \"text\": \"󰑊\", \"tooltip\": \"Recording active - click to stop\"}'; else echo '{\"text\": \"\", \"tooltip\": \"No recording\"}'; fi",
         "on-click": "pkill wf-recorder && notify-send \"Recording stopped\""
-    },
-
-    "custom/weather": {
-        "format": "{}",
-        "interval": 3600,
-        "exec": "curl -s 'wttr.in/Xihu,Hangzhou?format=1' 2>/dev/null | head -1 || echo ' N/A'",  // 使用天气图标
-        "on-click": "xdg-open \"https://wttr.in/Xihu,Hangzhou\"",
-        "tooltip": true
     }
 }
