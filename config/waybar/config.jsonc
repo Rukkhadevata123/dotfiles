@@ -16,14 +16,11 @@
         "custom/weather"
     ],
     "modules-right": [
-        "group/tools",
-        "group/system",
-        "battery",
-        "power-profiles-daemon",
-        "network",
-        "group/media",
+        "group/connectivity",
+        "group/hardware", 
+        "group/multimedia",
+        "group/utilities",
         "tray",
-        "custom/notification",
         "clock",
         "custom/power"
     ],
@@ -32,47 +29,63 @@
     // Groups
     // -------------------------------------------------------------------------
     
-    // 工具分组
-    "group/tools": {
+    // 连接性分组 - 网络、通知等通信相关
+    "group/connectivity": {
         "orientation": "inherit",
         "drawer": {
             "transition-duration": 300,
-            "children-class": "not-tools",
+            "children-class": "not-connectivity",
             "transition-left-to-right": false
         },
         "modules": [
-            "custom/clipboard"
+            "custom/notification",
+            "network"
         ]
     },
 
-    // 系统监控分组
-    "group/system": {
+    // 硬件监控分组 - CPU、内存、温度、电池、电源配置文件
+    "group/hardware": {
         "orientation": "inherit",
         "drawer": {
             "transition-duration": 300,
-            "children-class": "not-system",
+            "children-class": "not-hardware",
             "transition-left-to-right": false
         },
         "modules": [
             "cpu",
             "memory",
-            "temperature"
+            "temperature",
+            "battery",
+            "power-profiles-daemon"
         ]
     },
 
-    // 媒体控制分组
-    "group/media": {
+    // 多媒体分组 - 音频、亮度、媒体控制
+    "group/multimedia": {
         "orientation": "inherit",
         "drawer": {
             "transition-duration": 300,
-            "children-class": "not-media",
+            "children-class": "not-multimedia",
             "transition-left-to-right": false
         },
         "modules": [
             "pulseaudio",
-            "custom/playerctl",
-            "idle_inhibitor",
-            "backlight"
+            "backlight",
+            "custom/playerctl"
+        ]
+    },
+
+    // 实用工具分组 - 剪贴板、空闲抑制器
+    "group/utilities": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-utilities",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/clipboard",
+            "idle_inhibitor"
         ]
     },
 
