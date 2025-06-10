@@ -14,7 +14,7 @@ sudo pacman -S gnome-browser-connector gnome-shell-extension-appindicator gnome-
 gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer', 'kms-modifiers', 'autoclose-xwayland', 'variable-refresh-rate', 'xwayland-native-scaling']"
 
 # Hyprland packages
-yay -S zenity ark rar hyprshell xdotool swaylock-effects sweet-cursors-hyprcursor-git nordzy-hyprcursors xcursor-pro-hyprcursor hyprcursor-dracula-kde-git swaybg btop wlogout hyprsunset hyprlock hyprpaper brightnessctl cliphist wl-clipboard grim slurp wl-clip-persist nautilus-admin-gtk4 nautilus-image-converter nautilus-open-any-terminal hyprpicker wf-recorder pavucontrol bluetui xwayland-satellite nwg-dock-hyprland nwg-drawer swaync blueman notification-daemon swaylock-effects --needed
+yay -S network-manager-applet zenity ark rar hyprshell xdotool swaylock-effects sweet-cursors-hyprcursor-git nordzy-hyprcursors xcursor-pro-hyprcursor hyprcursor-dracula-kde-git swaybg btop wlogout hyprsunset hyprlock hyprpaper brightnessctl cliphist wl-clipboard grim slurp wl-clip-persist nautilus-admin-gtk4 nautilus-image-converter nautilus-open-any-terminal hyprpicker wf-recorder pavucontrol bluetui xwayland-satellite nwg-dock-hyprland nwg-drawer swaync blueman notification-daemon swaylock-effects --needed
 
 # QT Integration
 sudo pacman -S kvantum xsettingsd
