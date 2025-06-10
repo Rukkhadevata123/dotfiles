@@ -1,6 +1,8 @@
 # 输入法
 export QT_IM_MODULE="fcitx"
+export QT_IM_MODULES="wayland;fcitx;ibus"
 export XMODIFIERS="@im=fcitx"
+export SDL_IM_MODULE=fcitx
 
 # XDG 规范
 export XDG_CURRENT_DESKTOP="Hyprland"
