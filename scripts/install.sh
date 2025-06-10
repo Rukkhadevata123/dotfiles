@@ -13,6 +13,7 @@ mkdir -p ~/.local/share/dbus-1/services
 
 # Link configuration files
 ln -sf "$DOTFILES_DIR/.gtkrc-2.0" ~/.gtkrc-2.0
+ln -sf "$DOTFILES_DIR/.gtkrc-2.0.mine" ~/.gtkrc-2.0.mine
 ln -sf "$DOTFILES_DIR/config/alacritty" ~/.config/
 ln -sf "$DOTFILES_DIR/config/conky" ~/.config/
 ln -sf "$DOTFILES_DIR/config/gtk-3.0" ~/.config/
