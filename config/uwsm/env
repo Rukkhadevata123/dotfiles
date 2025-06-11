@@ -29,6 +29,10 @@ export __GL_GSYNC_ALLOWED="1"
 export __GL_VRR_ALLOWED="0"
 export NVD_BACKEND="direct"
 
+export VKD3D_CONFIG="dxr11,dxr"
+export PROTON_ENABLE_NVAPI=1
+export PROTON_ENABLE_NGX_UPDATER=1
+
 # 主题
 export XCURSOR_SIZE="24"
 export XCURSOR_THEME="Adwaita"

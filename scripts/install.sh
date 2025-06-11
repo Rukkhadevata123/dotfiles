@@ -12,6 +12,7 @@ mkdir -p ~/.config
 mkdir -p ~/.local/share/dbus-1/services
 
 # Link configuration files
+ln -sf "$DOTFILES_DIR/.profile" ~/.profile
 ln -sf "$DOTFILES_DIR/.gtkrc-2.0" ~/.gtkrc-2.0
 ln -sf "$DOTFILES_DIR/.gtkrc-2.0.mine" ~/.gtkrc-2.0.mine
 ln -sf "$DOTFILES_DIR/config/alacritty" ~/.config/
@@ -27,6 +28,7 @@ ln -sf "$DOTFILES_DIR/config/nwg-drawer" ~/.config/
 ln -sf "$DOTFILES_DIR/config/nwg-look" ~/.config/
 ln -sf "$DOTFILES_DIR/config/swaync" ~/.config/
 ln -sf "$DOTFILES_DIR/config/uwsm" ~/.config/
+ln -sf "$DOTFILES_DIR/config/wob" ~/.config/
 ln -sf "$DOTFILES_DIR/config/waybar" ~/.config/
 ln -sf "$DOTFILES_DIR/config/wlogout" ~/.config/
 ln -sf "$DOTFILES_DIR/config/wofi" ~/.config/
