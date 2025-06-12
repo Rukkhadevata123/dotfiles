@@ -73,7 +73,7 @@
         ]
     },
 
-    // 实用工具分组 - 剪贴板、空闲抑制器
+    // 实用工具分组 - 剪贴板、空闲抑制器、壁纸管理
     "group/utilities": {
         "orientation": "inherit",
         "drawer": {
@@ -83,6 +83,7 @@
         },
         "modules": [
             "custom/clipboard",
+            "custom/wallpaper",
             "idle_inhibitor"
         ]
     },
@@ -112,6 +113,16 @@
             "urgent": "󰀨",
             "default": "󰧞"
         }
+    },
+
+    "custom/wallpaper": {
+        "format": "{}",
+        "interval": 5,
+        "return-type": "json",
+        "exec": "status=$(~/.config/hypr/scripts/swww_wallpaper.sh status); if [ \"$status\" = \"running\" ]; then echo '{\"text\": \"🎞️\", \"class\": \"slideshow-active\", \"tooltip\": \"壁纸幻灯片: 运行中\\nLeft: 随机切换\\nRight: 停止幻灯片\\nMiddle: 打开文件夹\"}'; else echo '{\"text\": \"🖼️\", \"class\": \"slideshow-inactive\", \"tooltip\": \"壁纸管理\\nLeft: 随机切换\\nRight: 启动幻灯片\\nMiddle: 打开文件夹\"}'; fi",
+        "on-click": "~/.config/hypr/scripts/swww_wallpaper.sh random",
+        "on-click-right": "~/.config/hypr/scripts/swww_wallpaper.sh slideshow-toggle",
+        "on-click-middle": "~/.config/hypr/scripts/swww_wallpaper.sh folder"
     },
 
     "custom/scratchpad": {
