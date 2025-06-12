@@ -21,9 +21,13 @@ sudo systemctl enable --now cups
 sudo pacman -S bluez bluez-utils
 sudo systemctl enable --now bluetooth.service
 
-# Virtualization
+# Qemu and Virt-Manager
 sudo pacman -S qemu-full libvirt virt-manager dnsmasq
 sudo systemctl enable --now libvirtd
+
+# VirtualBox
+yay -S virtualbox virtualbox-host-dkms virtualbox-guest-iso virtualbox-ext-oracle rdesktop
+sudo usermod -aG vboxusers $USER
 
 # Shell setup
 sudo pacman -S zsh-autocomplete zsh-autosuggestions zsh-completions zsh-doc zsh-history-substring-search zsh-lovers zsh-syntax-highlighting zsh-theme-powerlevel10k-git pkgfile eza tree
