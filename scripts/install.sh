@@ -34,6 +34,7 @@ ln -sf "$DOTFILES_DIR/config/wlogout" ~/.config/
 ln -sf "$DOTFILES_DIR/config/wofi" ~/.config/
 ln -sf "$DOTFILES_DIR/config/xsettingsd" ~/.config/
 ln -sf "$DOTFILES_DIR/config/zsh/.zshrc" ~/.zshrc
+ln -sf "$DOTFILES_DIR/config/zsh/.p10k.zsh" ~/.p10k.zsh
 ln -sf "$DOTFILES_DIR/config/electron-flags.conf" ~/.config/
 ln -sf "$DOTFILES_DIR/config/chrome-flags.conf" ~/.config/
 ln -sf "$DOTFILES_DIR/config/chromium-flags.conf" ~/.config/
