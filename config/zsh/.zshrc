@@ -36,11 +36,6 @@ setopt HIST_FIND_NO_DUPS
 setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_verify
-setopt AUTO_PUSHD PUSHD_SILENT PUSHD_TO_HOME PUSHD_IGNORE_DUPS PUSHD_MINUS
-
-# Directory stack
-DIRSTACKFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/dirs"
-DIRSTACKSIZE='20'
 
 # Key bindings (only non-defaults)
 bindkey '^[[A' history-substring-search-up
@@ -54,17 +49,9 @@ bindkey -M menuselect '\r' .accept-line
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu select
-zstyle ':completion:*' use-cache yes
-zstyle ':completion:*' cache-path ~/.cache/zsh
 
-# Perfomance
-zstyle ':autocomplete:*' timeout 0.3  # seconds (float)
-
-# Simplified syntax highlighting
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main)
-ZSH_HIGHLIGHT_STYLES[command]='fg=green'
-ZSH_HIGHLIGHT_STYLES[alias]='fg=green'
-ZSH_HIGHLIGHT_STYLES[path]='underline'
+autoload -Uz compinit
+compinit
 
 # Editor and enhanced aliases
 EDITOR=vim
@@ -89,38 +76,20 @@ alias grep='grep --color=auto'
 alias diff='diff --color=auto'
 alias ip='ip --color=auto'
 
-# Color man pages
-export LESS_TERMCAP_mb=$'\E[1;31m'
-export LESS_TERMCAP_md=$'\E[1;36m'
-export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[01;33m'
-export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[1;32m'
-export LESS_TERMCAP_ue=$'\E[0m'
-
-# Directory stack functions
+# Terminal title
 autoload -Uz add-zsh-hook
 
-if [[ -f "$DIRSTACKFILE" ]] && (( ${#dirstack} == 0 )); then
-    dirstack=("${(@f)"$(< "$DIRSTACKFILE")"}")
-    # Disabled auto-cd to prevent nautilus issue
-fi
-
-chpwd_dirstack() {
-    print -l -- "$PWD" "${(u)dirstack[@]}" > "$DIRSTACKFILE"
-}
-add-zsh-hook -Uz chpwd chpwd_dirstack
-
-# Terminal title (simplified)
-function set_title() {
-    print -Pn -- '\e]2;%n@%m %~\a'
+function xterm_title_precmd () {
+	print -Pn -- '\e]2;%n@%m %~\a'
+	[[ "$TERM" == 'screen'* ]] && print -Pn -- '\e_\005{2}%n\005{-}@\005{5}%m\005{-} \005{+b 4}%~\005{-}\e\\'
 }
 
-function set_title_preexec() {
-    print -Pn -- '\e]2;%n@%m %~ %# ' && print -n -- "${(q)1}\a"
+function xterm_title_preexec () {
+	print -Pn -- '\e]2;%n@%m %~ %# ' && print -n -- "${(q)1}\a"
+	[[ "$TERM" == 'screen'* ]] && { print -Pn -- '\e_\005{2}%n\005{-}@\005{5}%m\005{-} \005{+b 4}%~\005{-} %# ' && print -n -- "${(q)1}\e\\"; }
 }
 
 if [[ "$TERM" == (Eterm*|alacritty*|aterm*|foot*|gnome*|konsole*|kterm*|putty*|rxvt*|screen*|wezterm*|tmux*|xterm*) ]]; then
-    add-zsh-hook -Uz precmd set_title
-    add-zsh-hook -Uz preexec set_title_preexec
+	add-zsh-hook -Uz precmd xterm_title_precmd
+	add-zsh-hook -Uz preexec xterm_title_preexec
 fi
