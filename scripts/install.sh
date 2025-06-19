@@ -11,6 +11,9 @@ echo "Installing dotfiles from $DOTFILES_DIR"
 mkdir -p ~/.config
 mkdir -p ~/.local/share/dbus-1/services
 
+# Zsh configuration
+sudo pacman -S grml-zsh-config
+
 # Link configuration files
 ln -sf "$DOTFILES_DIR/.profile" ~/.profile
 ln -sf "$DOTFILES_DIR/.gtkrc-2.0" ~/.gtkrc-2.0
