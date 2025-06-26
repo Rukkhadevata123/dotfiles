@@ -119,7 +119,7 @@
         "format": "{}",
         "interval": 5,
         "return-type": "json",
-        "exec": "status=$(~/.config/hypr/scripts/swww_wallpaper.sh status); if [ \"$status\" = \"running\" ]; then echo '{\"text\": \"🎞️\", \"class\": \"slideshow-active\", \"tooltip\": \"壁纸幻灯片: 运行中\\nLeft: 随机切换\\nRight: 停止幻灯片\\nMiddle: 打开文件夹\"}'; else echo '{\"text\": \"🖼️\", \"class\": \"slideshow-inactive\", \"tooltip\": \"壁纸管理\\nLeft: 随机切换\\nRight: 启动幻灯片\\nMiddle: 打开文件夹\"}'; fi",
+        "exec": "status=$(~/.config/hypr/scripts/swww_wallpaper.sh status); if [ \"$status\" = \"running\" ]; then echo '{\"text\": \"🎞️\", \"class\": \"slideshow-active\", \"tooltip\": \"Wallpaper slideshow: Running\\nLeft: Random change\\nRight: Stop slideshow\\nMiddle: Open folder\"}'; else echo '{\"text\": \"🖼️\", \"class\": \"slideshow-inactive\", \"tooltip\": \"Wallpaper management\\nLeft: Random change\\nRight: Start slideshow\\nMiddle: Open folder\"}'; fi",
         "on-click": "~/.config/hypr/scripts/swww_wallpaper.sh random",
         "on-click-right": "~/.config/hypr/scripts/swww_wallpaper.sh slideshow-toggle",
         "on-click-middle": "~/.config/hypr/scripts/swww_wallpaper.sh folder"
@@ -305,7 +305,7 @@
         "on-click": "cliphist list | wofi --dmenu | cliphist decode | wl-copy",
         "on-click-right": "cliphist list | wofi --dmenu -p \"Delete\" | cliphist delete",
         "on-click-middle": "rm -f ~/.cache/cliphist/db && notify-send \"Clipboard cleared\"",
-        "exec": "echo '{\"tooltip\":\"󰨸 '$(cliphist list | wc -l)' items\\nLeft: select, Right: delete, Middle: clear\"}'",
+        "exec": "echo '{\"tooltip\":\"󰨸 '$(cliphist list | wc -l)' items\\nLeft: Select, Right: Delete, Middle: Clear\"}'",
         "tooltip": true
     },
 
@@ -314,6 +314,6 @@
         "return-type": "json",
         "format": "{}",
         "exec": "if pgrep wf-recorder >/dev/null 2>&1; then echo '{\"class\": \"recording\", \"text\": \"󰑊\", \"tooltip\": \"Recording active - click to stop\"}'; else echo '{\"text\": \"\", \"tooltip\": \"No recording\"}'; fi",
-        "on-click": "pkill wf-recorder && notify-send \"录屏已停止\""
+        "on-click": "pkill wf-recorder && notify-send \"Recording stopped\""
     }
 }
