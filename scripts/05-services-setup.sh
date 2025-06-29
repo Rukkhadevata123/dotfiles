@@ -14,7 +14,7 @@ sudo systemctl restart systemd-zram-setup@zram0.service
 sudo cp system/sysctl.d/99-vm-zram-parameters.conf /etc/sysctl.d/
 
 # Printing
-yay -S cups
+yay -S cups system-config-printer 
 sudo systemctl enable --now cups
 
 # Bluetooth
