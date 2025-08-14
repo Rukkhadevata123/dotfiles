@@ -1,0 +1,15 @@
+dev-util/vulkan-tools cube
+media-libs/libva glx
+net-wireless/wpa_supplicant dbus
+sys-kernel/installkernel grub dracut
+x11-drivers/nvidia-drivers kernel-open powerd
+x11-libs/libvdpau dri
+# required by sys-boot/os-prober-1.82::gentoo
+# required by os-prober (argument)
+>=sys-boot/grub-2.12-r7 mount
+# required by www-client/firefox-141.0.3::gentoo[system-libvpx]
+# required by firefox (argument)
+>=media-libs/libvpx-1.15.2 postproc
+# required by app-portage/pfl-3.5.3::gentoo[network-cron]
+# required by pfl (argument)
+>=sys-apps/util-linux-2.41.1-r1 caps
