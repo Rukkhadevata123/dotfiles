@@ -17,12 +17,14 @@ app-i18n/opencc
 app-misc/brightnessctl
 app-misc/fastfetch
 app-misc/nwg-look
+app-portage/eix
 app-portage/gentoolkit
 app-portage/pfl
 app-portage/portage-utils
 app-shells/bash-completion
 app-shells/fish
 dev-lang/rust-bin
+dev-libs/weston
 dev-util/pkgdev
 dev-util/vulkan-tools
 gnome-extra/nm-applet
@@ -35,6 +37,7 @@ media-sound/pavucontrol
 media-video/ffmpeg
 media-video/libva-utils
 media-video/mpv
+media-video/obs-studio
 media-video/vlc
 net-misc/chrony
 net-misc/networkmanager

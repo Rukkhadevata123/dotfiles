@@ -3,7 +3,8 @@ app-i18n/fcitx presage
 app-i18n/fcitx-chinese-addons cloudpinyin
 dev-util/vulkan-tools cube
 media-libs/libva glx
-media-video/obs-studio browser lua 
+media-video/obs-studio browser lua websocket vlc v4l truetype speex python  
+media-video/pipewire sound-server
 net-wireless/wpa_supplicant dbus
 sys-kernel/installkernel grub dracut
 x11-drivers/nvidia-drivers kernel-open powerd
