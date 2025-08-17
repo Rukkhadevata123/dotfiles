@@ -2,31 +2,12 @@
 */* VIDEO_CARDS: -* nvidia intel
 */* L10N: zh-CN en-US
 
-
-app-editors/vscode egl
 app-i18n/fcitx presage
 app-i18n/fcitx-chinese-addons cloudpinyin
-dev-util/vulkan-tools cube
-media-libs/libva glx
-media-video/obs-studio browser lua websocket vlc v4l truetype speex python  
+media-fonts/nerdfonts 0xproto adwaitamono cascadiacode cascadiamono codenewroman comicshannsmono firacode hack jetbrainsmono liberationmono monaspace noto sourcecodepro ubuntu ubuntumono ubuntusans
+media-video/obs-studio browser lua websocket vlc v4l truetype speex python
 media-video/pipewire sound-server
-net-wireless/wpa_supplicant dbus
+sys-apps/flatpak policykit
+sys-boot/grub mount
 sys-kernel/installkernel grub dracut
 x11-drivers/nvidia-drivers kernel-open powerd
-x11-libs/libvdpau dri
-xfce-base/xfce4-meta svg archive calendar cdr editor image media mpd pulseaudio remote-fs search upower
-
-
-# required by sys-boot/os-prober-1.82::gentoo
-# required by os-prober (argument)
->=sys-boot/grub-2.12-r7 mount
-# required by www-client/firefox-141.0.3::gentoo[system-libvpx]
-# required by firefox (argument)
->=media-libs/libvpx-1.15.2 postproc
-# required by app-portage/pfl-3.5.3::gentoo[network-cron]
-# required by pfl (argument)
->=sys-apps/util-linux-2.41.1-r1 caps
-# required by dev-python/mw2fcitx-0.24.0::gentoo-zh
-# required by app-dicts/fcitx-pinyin-moegirl-20250810::gentoo-zh
-# required by fcitx-pinyin-moegirl (argument)
->=app-i18n/opencc-1.1.9 python
