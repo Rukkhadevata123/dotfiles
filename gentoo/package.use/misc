@@ -7,6 +7,7 @@ app-i18n/fcitx-chinese-addons cloudpinyin
 media-fonts/nerdfonts 0xproto adwaitamono cascadiacode cascadiamono codenewroman comicshannsmono firacode hack jetbrainsmono liberationmono monaspace noto sourcecodepro ubuntu ubuntumono ubuntusans
 media-video/obs-studio browser lua websocket vlc v4l truetype speex python
 media-video/pipewire sound-server
+net-im/tencent-qq bwrap
 sys-apps/flatpak policykit
 sys-boot/grub mount
 sys-kernel/installkernel grub dracut
