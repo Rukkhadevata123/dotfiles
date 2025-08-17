@@ -1,0 +1,293 @@
+{
+    // -------------------------------------------------------------------------
+    // Global configuration
+    // -------------------------------------------------------------------------
+    "layer": "top",
+    "position": "top",
+    "modules-left": [
+        "custom/menu",
+        "hyprland/workspaces",
+        "custom/scratchpad",
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "custom/wf-recorder",
+        "group/connectivity",
+        "group/hardware", 
+        "group/multimedia",
+        "group/utilities",
+        "tray",
+        "custom/power"
+    ],
+
+    // -------------------------------------------------------------------------
+    // Groups
+    // -------------------------------------------------------------------------
+    
+    // 连接性分组 - 网络、通知等通信相关
+    "group/connectivity": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-connectivity",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "network"
+        ]
+    },
+
+    // 硬件监控分组 - CPU、内存、温度、电池、电源配置文件
+    "group/hardware": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-hardware",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "cpu",
+            "memory",
+            "temperature",
+            "battery",
+            "power-profiles-daemon"
+        ]
+    },
+
+    // 多媒体分组 - 音频、亮度、媒体控制
+    "group/multimedia": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-multimedia",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "pulseaudio",
+            "backlight",
+            "custom/playerctl"
+        ]
+    },
+
+    // 实用工具分组 - 剪贴板、空闲抑制器、壁纸管理
+    "group/utilities": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-utilities",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/clipboard",
+            "custom/wallpaper",
+            "idle_inhibitor"
+        ]
+    },
+
+    // -------------------------------------------------------------------------
+    // Modules
+    // -------------------------------------------------------------------------
+    "custom/menu": {
+        "format": "",  // Arch Linux 图标
+        "on-click": "wofi --show drun",
+        "tooltip": false
+    },
+
+    "hyprland/workspaces": {
+        "on-scroll-up": "hyprctl dispatch workspace r-1",
+        "on-scroll-down": "hyprctl dispatch workspace r+1",
+        "on-click": "activate",
+        "active-only": false,
+        "all-outputs": true,
+        "format": "{name}: {icon}",
+        "format-icons": {
+            "1": "󰲠",
+            "2": "󰲢", 
+            "3": "󰲤",
+            "4": "󰲦",
+            "5": "󰲨",
+            "urgent": "󰀨",
+            "default": "󰧞"
+        }
+    },
+
+    "custom/wallpaper": {
+        "format": "{}",
+        "interval": 5,
+        "return-type": "json",
+        "exec": "status=$(~/.config/hypr/scripts/swww_wallpaper.sh status); if [ \"$status\" = \"running\" ]; then echo '{\"text\": \"🎞️\", \"class\": \"slideshow-active\", \"tooltip\": \"Wallpaper slideshow: Running\\nLeft: Random change\\nRight: Stop slideshow\\nMiddle: Open folder\"}'; else echo '{\"text\": \"🖼️\", \"class\": \"slideshow-inactive\", \"tooltip\": \"Wallpaper management\\nLeft: Random change\\nRight: Start slideshow\\nMiddle: Open folder\"}'; fi",
+        "on-click": "~/.config/hypr/scripts/swww_wallpaper.sh random",
+        "on-click-right": "~/.config/hypr/scripts/swww_wallpaper.sh slideshow-toggle",
+        "on-click-middle": "~/.config/hypr/scripts/swww_wallpaper.sh folder"
+    },
+
+    "custom/scratchpad": {
+        "interval": 1,
+        "format": "{}",
+        "exec": "count=$(hyprctl clients -j | jq -r 'map(select(.workspace.name | startswith(\"special\"))) | length' 2>/dev/null || echo '0'); if [ \"$count\" -gt 0 ]; then if [ \"$count\" -eq 1 ]; then echo '󰖯'; else echo \"󰖲 $count\"; fi; else echo ''; fi",
+        "on-click": "hyprctl dispatch togglespecialworkspace magic",
+        "tooltip-format": "Scratchpad: {} windows"
+    },
+
+    "hyprland/window": {
+        "format": "󰖯 {}",
+        "max-length": 50,
+        "separate-outputs": true
+    },
+
+    "clock": {
+        "interval": 1,
+        "format": "󰥔 {:%e %b %Y %H:%M:%S}",
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>",
+        "on-click": "kitty calcurse"
+    },
+
+    "cpu": {
+        "interval": 2,
+        "format": "󰘚 {usage}%",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        },
+        "on-click": "kitty btop"
+    },
+
+    "memory": {
+        "interval": 2,
+        "format": "󰍛 {percentage}%",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        },
+        "on-click": "kitty btop",
+        "tooltip-format": "Memory: {used:0.1f}G/{total:0.1f}G"
+    },
+
+    "temperature": {
+        "critical-threshold": 80,
+        "interval": 2,
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": ["󱃃", "󰔐", "🌡️", "󰸁", "🔥"],
+        "tooltip-format": "Temperature: {temperatureC}°C"
+    },
+
+    "battery": {
+        "interval": 10,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format-charging": "󰂄 {capacity}%",
+        "format": "{icon} {capacity}%",
+        "format-icons": ["󱃍", "󰁺", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "tooltip-format": "{timeTo}, {power}W"
+    },
+
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",       // 默认（平衡模式）
+            "performance": "",  // 性能模式
+            "balanced": "",     // 平衡模式
+            "power-saver": ""   // 省电模式
+        }
+    },
+
+    "network": {
+        "interval": 5,
+        "format-wifi": "{icon} {signalStrength}%",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰖪",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "tooltip-format-wifi": "{essid}: {ipaddr}",
+        "tooltip-format-ethernet": "Ethernet: {ipaddr}",
+        "on-click": "kitty nmtui"
+    },
+
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "{icon} {volume}%{format_source}",
+        "format-muted": "󰖁{format_source}",
+        "format-source": " 󰍬",
+        "format-source-muted": " 󰍭",
+        "format-icons": {
+            "headphone": "󰋋",
+            "headset": "󰋎",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol",
+        "on-click-middle": "~/.config/hypr/scripts/volume.sh toggle",
+        "on-scroll-up": "~/.config/hypr/scripts/volume.sh up",
+        "on-scroll-down": "~/.config/hypr/scripts/volume.sh down",
+        "tooltip-format": "Volume: {volume}%\nLeft: Open mixer\nMiddle: Mute\nScroll: Adjust volume"
+    },
+
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "on-scroll-up": "~/.config/hypr/scripts/brightness.sh up",
+        "on-scroll-down": "~/.config/hypr/scripts/brightness.sh down",
+        "tooltip-format": "Brightness: {percent}%\nScroll: Adjust brightness"
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",  // 眼睛（表示活跃）
+            "deactivated": "" // 闭眼（表示空闲）
+        },
+        "tooltip-format-activated": "Idle inhibitor: ON",
+        "tooltip-format-deactivated": "Idle inhibitor: OFF"
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 6
+    },
+
+    "custom/power": {
+        "format": "⏻",  // 电源符号
+        "on-click": "wlogout",
+        "tooltip": false
+    },
+
+    "custom/playerctl": {
+        "interval": 2,
+        "return-type": "json",
+        "format": "{icon}",
+        "format-icons": {
+            "Playing": "󰏦",
+            "Paused": "󰐍"
+        },
+        "exec": "playerctl metadata --format '{\"alt\": \"{{status}}\", \"tooltip\": \"{{playerName}}: {{markup_escape(title)}} - {{markup_escape(artist)}}\\nLeft: Play/Pause, Right: Next, Middle: Previous\\nScroll: Volume\" }' 2>/dev/null || echo '{\"text\": \"󰎈\", \"tooltip\": \"No media playing\"}'",
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl next",
+        "on-click-middle": "playerctl previous", 
+        "on-scroll-up": "playerctl volume 0.05+ 2>/dev/null || wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+",
+        "on-scroll-down": "playerctl volume 0.05- 2>/dev/null || wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+    },
+
+    "custom/clipboard": {
+        "format": "󰨸",
+        "interval": 1,
+        "return-type": "json",
+        "on-click": "cliphist list | wofi --dmenu | cliphist decode | wl-copy",
+        "on-click-right": "cliphist list | wofi --dmenu -p \"Delete\" | cliphist delete",
+        "on-click-middle": "rm -f ~/.cache/cliphist/db && notify-send \"Clipboard cleared\"",
+        "exec": "echo '{\"tooltip\":\"󰨸 '$(cliphist list | wc -l)' items\\nLeft: Select, Right: Delete, Middle: Clear\"}'",
+        "tooltip": true
+    },
+
+    "custom/wf-recorder": {
+        "interval": 2,
+        "return-type": "json",
+        "format": "{}",
+        "exec": "if pgrep wf-recorder >/dev/null 2>&1; then echo '{\"class\": \"recording\", \"text\": \"󰑊\", \"tooltip\": \"Recording active - click to stop\"}'; else echo '{\"text\": \"\", \"tooltip\": \"No recording\"}'; fi",
+        "on-click": "pkill wf-recorder && notify-send \"Recording stopped\""
+    }
+}
