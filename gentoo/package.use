@@ -11,4 +11,5 @@ net-im/tencent-qq bwrap
 sys-apps/flatpak policykit
 sys-boot/grub mount
 sys-kernel/installkernel grub dracut
+# sys-libs/ncurses -gpm
 x11-drivers/nvidia-drivers kernel-open powerd
