@@ -29,6 +29,7 @@ app-shells/zsh
 app-shells/zsh-completions
 dev-util/pkgdev
 gnome-extra/nm-applet
+gnome-extra/zenity
 gui-apps/grim
 gui-apps/hyprpicker
 gui-apps/hyprsunset
@@ -97,6 +98,7 @@ x11-misc/gammastep
 x11-misc/vdpauinfo
 x11-terms/kitty
 x11-themes/fcitx-breeze
+x11-themes/kvantum
 x11-themes/papirus-icon-theme
 x11-themes/tela-icon-theme
 xfce-base/thunar
