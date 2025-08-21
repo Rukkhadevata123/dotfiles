@@ -18,6 +18,7 @@ app-misc/cliphist
 app-misc/fastfetch
 app-misc/nwg-look
 app-office/calcurse
+app-portage/cpuid2cpuflags
 app-portage/eix
 app-portage/gentoolkit
 app-portage/pfl
