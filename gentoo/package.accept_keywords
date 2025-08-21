@@ -5,7 +5,9 @@ app-misc/nwg-look ~amd64
 
 dev-libs/qr-code-generator ~amd64
 dev-cpp/sdbus-c++ ~amd64
+dev-python/steam ~amd64
 
+games-util/ProtonUp-Qt ~amd64
 gui-apps/hyprpicker ~amd64
 gui-apps/hyprsunset ~amd64
 gui-apps/swaylock-effects ~amd64
@@ -29,4 +31,7 @@ x11-themes/fcitx-breeze ~amd64
 x11-themes/kvantum ~amd64
 
 
-
+# steam
+*/*::steam-overlay
+games-util/game-device-udev-rules
+sys-libs/libudev-compat

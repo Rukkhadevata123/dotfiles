@@ -2,17 +2,21 @@
 */* VIDEO_CARDS: -* nvidia intel
 */* L10N: zh-CN en-US
 
-
 app-i18n/fcitx presage
-app-i18n/fcitx-chinese-addons
+app-emulation/qemu spice usbredir virgl virtfs 
 
 dev-lang/rust-bin clippy rust-analyzer rustfmt rust-src 
+dev-python/pyside uitools
 
 llvm-core/clang-common default-lld
 llvm-core/clang-runtime default-lld
 
 media-fonts/nerdfonts 0xproto adwaitamono cascadiacode cascadiamono codenewroman comicshannsmono firacode hack jetbrainsmono liberationmono monaspace noto sourcecodepro ubuntu ubuntumono ubuntusans
+media-libs/opus custom-modes
 media-video/pipewire sound-server
+
+net-libs/gnutls tools pkcs11
+net-misc/spice-gtk usbredir
 
 sys-apps/flatpak policykit
 sys-boot/grub mount
