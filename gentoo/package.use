@@ -2,7 +2,11 @@
 */* VIDEO_CARDS: -* nvidia intel
 */* L10N: zh-CN en-US
 
+
 app-i18n/fcitx presage
+app-i18n/fcitx-chinese-addons
+
+dev-lang/rust-bin clippy rust-analyzer rustfmt rust-src 
 
 llvm-core/clang-common default-lld
 llvm-core/clang-runtime default-lld

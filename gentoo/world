@@ -50,6 +50,7 @@ gui-apps/xwayland-satellite
 gui-libs/xdg-desktop-portal-hyprland
 gui-wm/hyprland
 gui-wm/sway
+llvm-runtimes/libcxx
 media-fonts/cascadia-code
 media-fonts/fira-code
 media-fonts/fira-mono
@@ -85,6 +86,7 @@ sys-fs/xfsprogs
 sys-kernel/gentoo-kernel-bin
 sys-kernel/installkernel
 sys-kernel/linux-firmware
+sys-libs/ncurses
 sys-power/power-profiles-daemon
 sys-process/btop
 sys-process/cronie
