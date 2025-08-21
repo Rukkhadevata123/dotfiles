@@ -23,6 +23,9 @@ media-fonts/nerdfonts ~amd64
 media-libs/nvidia-vaapi-driver ~amd64
 
 net-proxy/clash-verge-bin ~amd64
+net-proxy/mihomo ~amd64
+net-proxy/mihomo-party-bin ~amd64
+net-proxy/sing-box ~amd64
 
 sys-auth/hyprpolkitagent ~amd64
 
