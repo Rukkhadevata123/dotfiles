@@ -1,0 +1,32 @@
+app-i18n/fcitx-skin-material ~amd64
+app-misc/brightnessctl ~amd64
+app-misc/cliphist ~amd64
+app-misc/nwg-look ~amd64
+
+dev-libs/qr-code-generator ~amd64
+dev-cpp/sdbus-c++ ~amd64
+
+gui-apps/hyprpicker ~amd64
+gui-apps/hyprsunset ~amd64
+gui-apps/swaylock-effects ~amd64
+gui-apps/swww ~amd64
+gui-apps/wf-recorder ~amd64
+gui-apps/wl-clip-persist ~amd64
+gui-apps/wlogout ~amd64
+gui-apps/wob ~amd64
+gui-apps/xwayland-satellite ~amd64
+gui-libs/xdg-desktop-portal-hyprland ~amd64
+
+media-fonts/nerdfonts ~amd64
+media-libs/nvidia-vaapi-driver ~amd64
+
+net-proxy/clash-verge-bin ~amd64
+
+sys-auth/hyprpolkitagent ~amd64
+
+x11-apps/xcur2png ~amd64
+x11-themes/fcitx-breeze ~amd64
+x11-themes/kvantum ~amd64
+
+
+

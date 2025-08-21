@@ -58,14 +58,12 @@ media-fonts/nerdfonts
 media-fonts/noto-cjk
 media-fonts/noto-emoji
 media-gfx/flameshot
-media-gfx/loupe
 media-libs/nvidia-vaapi-driver
 media-sound/pavucontrol
 media-sound/playerctl
 media-video/ffmpeg
 media-video/libva-utils
 media-video/mpv
-media-video/obs-studio
 media-video/pipewire
 media-video/v4l2loopback
 media-video/vlc
@@ -85,6 +83,7 @@ sys-firmware/sof-firmware
 sys-fs/ntfs3g
 sys-fs/xfsprogs
 sys-kernel/gentoo-kernel-bin
+sys-kernel/installkernel
 sys-kernel/linux-firmware
 sys-power/power-profiles-daemon
 sys-process/btop
