@@ -26,3 +26,4 @@ sys-kernel/installkernel grub dracut
 sys-libs/zlib minizip
 
 x11-drivers/nvidia-drivers kernel-open powerd
+xfce-base/xfce4-meta archive calendar cdr editor image media remote-fs search

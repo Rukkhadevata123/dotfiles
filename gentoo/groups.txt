@@ -1,1 +1,1 @@
-wheel audio video users locate plugdev pipewire yoimiya
+wheel,audio,video,kvm,libvirt,users,locate,plugdev,pipewire
