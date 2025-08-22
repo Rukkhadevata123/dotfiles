@@ -16,11 +16,12 @@ media-libs/opus custom-modes
 media-video/pipewire sound-server
 
 net-libs/gnutls tools pkcs11
+net-libs/nodejs npm
 net-misc/spice-gtk usbredir
 
 sys-apps/flatpak policykit
 sys-boot/grub mount
 sys-kernel/installkernel grub dracut
-# sys-libs/ncurses -gpm
+sys-libs/zlib minizip
 
 x11-drivers/nvidia-drivers kernel-open powerd

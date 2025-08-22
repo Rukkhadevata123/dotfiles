@@ -80,6 +80,7 @@ media-video/mpv
 media-video/pipewire
 media-video/v4l2loopback
 media-video/vlc
+net-libs/nodejs
 net-misc/chrony
 net-misc/networkmanager
 net-misc/yt-dlp
