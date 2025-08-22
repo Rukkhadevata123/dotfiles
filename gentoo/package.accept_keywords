@@ -2,10 +2,13 @@ app-i18n/fcitx-skin-material ~amd64
 app-misc/brightnessctl ~amd64
 app-misc/cliphist ~amd64
 app-misc/nwg-look ~amd64
+app-office/wps-office ~amd64
 
 dev-libs/qr-code-generator ~amd64
 dev-cpp/sdbus-c++ ~amd64
 dev-python/steam ~amd64
+dev-util/clinfo ~amd64
+dev-util/nvidia-cuda-toolkit ~amd64
 
 games-util/ProtonUp-Qt ~amd64
 gui-apps/hyprpicker ~amd64
@@ -20,8 +23,12 @@ gui-apps/xwayland-satellite ~amd64
 gui-libs/xdg-desktop-portal-hyprland ~amd64
 
 media-fonts/nerdfonts ~amd64
+media-gfx/blender-bin ~amd64
+media-gfx/gimp ~amd64
 media-libs/nvidia-vaapi-driver ~amd64
+media-sound/qqmusic ~amd64
 
+net-im/wechat ~amd64
 net-proxy/clash-verge-bin ~amd64
 net-proxy/mihomo ~amd64
 net-proxy/mihomo-party-bin ~amd64

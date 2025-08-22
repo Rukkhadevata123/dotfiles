@@ -23,6 +23,7 @@ app-misc/cliphist
 app-misc/fastfetch
 app-misc/nwg-look
 app-office/calcurse
+app-office/wps-office
 app-portage/cpuid2cpuflags
 app-portage/eix
 app-portage/gentoolkit
@@ -35,6 +36,7 @@ app-shells/zsh
 app-shells/zsh-completions
 dev-java/openjdk-bin
 dev-lang/sassc
+dev-util/clinfo
 dev-util/pkgdev
 games-action/prismlauncher
 games-util/ProtonUp-Qt
@@ -69,17 +71,21 @@ media-fonts/jetbrains-mono
 media-fonts/nerdfonts
 media-fonts/noto-cjk
 media-fonts/noto-emoji
+media-gfx/blender-bin
 media-gfx/flameshot
+media-gfx/imagemagick
 media-libs/libva-intel-media-driver
 media-libs/nvidia-vaapi-driver
 media-sound/pavucontrol
 media-sound/playerctl
+media-sound/qqmusic
 media-video/ffmpeg
 media-video/libva-utils
 media-video/mpv
 media-video/pipewire
 media-video/v4l2loopback
 media-video/vlc
+net-im/wechat
 net-libs/nodejs
 net-misc/chrony
 net-misc/networkmanager

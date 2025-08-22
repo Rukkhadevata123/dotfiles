@@ -15,6 +15,7 @@ media-fonts/nerdfonts 0xproto adwaitamono cascadiacode cascadiamono codenewroman
 media-libs/opus custom-modes
 media-video/pipewire sound-server
 
+net-im/wechat fcitx
 net-libs/gnutls tools pkcs11
 net-libs/nodejs npm
 net-misc/spice-gtk usbredir
