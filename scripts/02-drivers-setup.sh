@@ -18,6 +18,13 @@ sudo systemctl enable nvidia-suspend.service
 sudo systemctl enable nvidia-hibernate.service
 sudo systemctl enable nvidia-resume.service
 
+# Early KMS
+
+echo "Add nvidia to the MODULES line, for example:"
+echo "MODULES=(i915 nvidia nvidia_modeset nvidia_uvm nvidia_drm)"
+
+sudo vim /etc/mkinitcpio.conf
+
 echo "=== Driver verification commands ==="
 echo "Run these to verify installation:"
 echo "lsmod | grep kvm"
