@@ -101,6 +101,7 @@ net-proxy/mihomo
 net-proxy/mihomo-party-bin
 net-proxy/sing-box
 net-wireless/wpa_supplicant
+sys-apps/bleachbit
 sys-apps/flatpak
 sys-apps/mlocate
 sys-apps/xdg-desktop-portal
@@ -124,7 +125,9 @@ www-client/firefox-bin
 www-client/google-chrome
 x11-apps/mesa-progs
 x11-drivers/nvidia-drivers
+x11-misc/alacarte
 x11-misc/gammastep
+x11-misc/mugshot
 x11-misc/redshift
 x11-misc/vdpauinfo
 x11-misc/xdg-user-dirs
