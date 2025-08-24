@@ -22,10 +22,10 @@ configs:
     "/home/yoimiya":
       row: 0
       col: 0
-    "BC6608886608459C":
-      row: 6
+    "A28C9FD48C9FA179":
+      row: 5
       col: 0
-      last_seen: 1755874383871733
+      last_seen: 1755874383869809
     "626B-4255":
       row: 3
       col: 0
@@ -34,10 +34,10 @@ configs:
       row: 7
       col: 0
       last_seen: 1755874383873407
-    "A28C9FD48C9FA179":
-      row: 5
+    "BC6608886608459C":
+      row: 6
       col: 0
-      last_seen: 1755874383869809
+      last_seen: 1755874383871733
     "/":
       row: 1
       col: 0

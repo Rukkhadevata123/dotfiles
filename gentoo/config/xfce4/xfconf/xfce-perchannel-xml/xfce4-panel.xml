@@ -18,6 +18,8 @@
         <value type="int" value="3"/>
         <value type="int" value="4"/>
         <value type="int" value="5"/>
+        <value type="int" value="22"/>
+        <value type="int" value="20"/>
         <value type="int" value="23"/>
         <value type="int" value="19"/>
         <value type="int" value="24"/>
@@ -26,6 +28,7 @@
         <value type="int" value="8"/>
         <value type="int" value="9"/>
         <value type="int" value="10"/>
+        <value type="int" value="21"/>
         <value type="int" value="26"/>
       </property>
     </property>
@@ -62,6 +65,9 @@
     <property name="plugin-6" type="string" value="systray">
       <property name="square-icons" type="bool" value="true"/>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="wi-fi network connection “tcl-431244” active: tcl-431244 (70%)"/>
+        <value type="string" value="wi-fi network connection “tcl-431244” active: tcl-431244 (68%)"/>
+        <value type="string" value="wi-fi network connection “tcl-431244” active: tcl-431244 (85%)"/>
         <value type="string" value="wi-fi network connection “tcl-431244” active: tcl-431244 (82%)"/>
         <value type="string" value="redshift-gtk"/>
         <value type="string" value="wi-fi network connection “tcl-431244” active: tcl-431244 (79%)"/>
@@ -83,7 +89,10 @@
     <property name="plugin-7" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
     </property>
-    <property name="plugin-8" type="string" value="clock"/>
+    <property name="plugin-8" type="string" value="clock">
+      <property name="timezone" type="string" value="Asia/Shanghai"/>
+      <property name="digital-time-format" type="string" value="%T"/>
+    </property>
     <property name="plugin-9" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
     </property>
@@ -118,12 +127,31 @@
     <property name="plugin-23" type="string" value="xfce4-mpc-plugin"/>
     <property name="plugin-24" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
+      <property name="known-players" type="string" value="firefox"/>
     </property>
     <property name="plugin-26" type="string" value="showdesktop"/>
     <property name="plugin-31" type="string" value="whiskermenu">
       <property name="recent" type="array">
+        <value type="string" value="code.desktop"/>
+        <value type="string" value="mihomo-party.desktop"/>
+        <value type="string" value="virt-manager.desktop"/>
+        <value type="string" value="blender-bin-4.4.3.desktop"/>
+        <value type="string" value="alacarte.desktop"/>
+        <value type="string" value="org.bleachbit.BleachBit.desktop"/>
+        <value type="string" value="wechat.desktop"/>
+        <value type="string" value="winetricks.desktop"/>
+        <value type="string" value="org.prismlauncher.PrismLauncher.desktop"/>
         <value type="string" value="qqmusic.desktop"/>
-        <value type="string" value="QQ.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-20" type="string" value="netload"/>
+    <property name="plugin-21" type="string" value="notification-plugin"/>
+    <property name="plugin-22" type="string" value="systemload">
+      <property name="network" type="empty">
+        <property name="enabled" type="bool" value="false"/>
+      </property>
+      <property name="uptime" type="empty">
+        <property name="enabled" type="bool" value="false"/>
       </property>
     </property>
   </property>

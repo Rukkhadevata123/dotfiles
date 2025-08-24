@@ -27,3 +27,7 @@ sys-libs/zlib minizip
 
 x11-drivers/nvidia-drivers kernel-open powerd
 xfce-base/xfce4-meta archive calendar cdr editor image media remote-fs search
+xfce-base/libxfce4ui vala
+xfce-base/libxfce4util vala
+xfce-base/xfce4-panel vala
+xfce-base/xfconf vala
