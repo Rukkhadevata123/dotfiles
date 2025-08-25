@@ -61,6 +61,7 @@ media-fonts/nerdfonts
 media-fonts/noto
 media-fonts/noto-cjk
 media-fonts/noto-emoji
+media-gfx/flameshot
 media-gfx/imagemagick
 media-libs/libva-intel-media-driver
 media-libs/nvidia-vaapi-driver
