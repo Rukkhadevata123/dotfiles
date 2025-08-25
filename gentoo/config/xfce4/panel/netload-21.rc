@@ -9,7 +9,7 @@ Network_Device=wlp0s20f3
 Max_In=4096
 Max_Out=4096
 Auto_Max=true
-Update_Interval=1000
+Update_Interval=250
 Values_As_Bits=false
 Digits=2
 
