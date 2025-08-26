@@ -1,20 +1,12 @@
-app-misc/brightnessctl ~amd64
-app-misc/cliphist ~amd64
 app-misc/nwg-look ~amd64
 
 games-util/game-device-udev-rules ~amd64
-gui-apps/wf-recorder ~amd64
-gui-apps/wl-clip-persist ~amd64
-gui-apps/wlogout ~amd64
-gui-apps/wob ~amd64
 gui-apps/xwayland-satellite ~amd64
-gui-wm/sway ~amd64
 
 media-fonts/nerdfonts ~amd64
 media-libs/nvidia-vaapi-driver ~amd64
 
 net-proxy/mihomo-party-bin ~amd64
 
-x11-apps/xcur2png ~amd64
 x11-themes/kvantum ~amd64
 
