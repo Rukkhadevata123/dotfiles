@@ -1,0 +1,5 @@
+LIBVA_DRIVER_NAME="nvidia"
+QT_IM_MODULE="fcitx"
+GTK_IM_MODULE="fcitx"
+XMODIFIERS="@im=fcitx"
+QT_STYLE_OVERRIDE="kvantum"

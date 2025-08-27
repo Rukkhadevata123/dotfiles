@@ -1,7 +1,6 @@
 app-misc/nwg-look ~amd64
 
 games-util/game-device-udev-rules ~amd64
-gui-apps/xwayland-satellite ~amd64
 
 media-fonts/nerdfonts ~amd64
 media-libs/nvidia-vaapi-driver ~amd64
