@@ -2,8 +2,10 @@
 */* VIDEO_CARDS: -* nvidia intel
 */* L10N: zh-CN en-US
 
-app-emulation/qemu spice usbredir virgl virtfs
+app-editors/vscode egl
+app-emulation/qemu spice usbredir virgl virtfs io-uring 
 
+dev-java/openjdk-bin source
 dev-lang/rust-bin clippy rust-analyzer rustfmt rust-src
 
 llvm-core/clang-common default-lld

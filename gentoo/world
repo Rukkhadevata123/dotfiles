@@ -5,8 +5,6 @@ app-arch/rar
 app-arch/unrar
 app-arch/unzip
 app-arch/zip
-app-crypt/seahorse
-app-editors/gnome-text-editor
 app-editors/nano
 app-editors/vim
 app-editors/vscode
@@ -33,13 +31,10 @@ dev-libs/weston
 dev-util/pkgdev
 games-action/prismlauncher
 games-util/game-device-udev-rules
-gnome-base/gdm
 gnome-base/gnome
-gnome-base/gnome-keyring
 gnome-extra/gnome-browser-connector
 gnome-extra/gnome-shell-extensions
 gnome-extra/gnome-tweaks
-gnome-extra/nm-applet
 gnome-extra/zenity
 gui-libs/display-manager-init
 gui-libs/xdg-desktop-portal-wlr
