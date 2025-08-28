@@ -28,6 +28,7 @@ app-shells/bash-completion
 app-shells/fish
 dev-java/openjdk-bin
 dev-libs/weston
+dev-util/nvidia-cuda-toolkit
 dev-util/pkgdev
 games-action/prismlauncher
 games-util/game-device-udev-rules

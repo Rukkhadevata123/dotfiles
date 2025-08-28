@@ -1,5 +1,7 @@
 app-misc/nwg-look ~amd64
 
+dev-util/nvidia-cuda-toolkit ~amd64
+
 games-util/game-device-udev-rules ~amd64
 
 media-fonts/nerdfonts ~amd64
