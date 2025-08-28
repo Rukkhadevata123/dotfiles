@@ -57,7 +57,7 @@ media-video/vlc
 net-misc/chrony
 net-misc/networkmanager
 net-misc/yt-dlp
-net-proxy/mihomo-party-bin
+net-proxy/mihomo-party-bin::local
 sys-apps/bleachbit
 sys-apps/flatpak
 sys-apps/mlocate

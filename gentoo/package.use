@@ -3,7 +3,7 @@
 */* L10N: zh-CN en-US
 
 app-editors/vscode egl
-app-emulation/qemu spice usbredir virgl virtfs io-uring 
+app-emulation/qemu spice usbredir virgl virtfs 
 
 dev-java/openjdk-bin source
 dev-lang/rust-bin clippy rust-analyzer rustfmt rust-src
