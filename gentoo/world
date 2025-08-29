@@ -55,10 +55,13 @@ media-video/libva-utils
 media-video/mpv
 media-video/pipewire
 media-video/vlc
+net-im/tencent-qq
+net-im/wechat
 net-misc/chrony
 net-misc/networkmanager
 net-misc/yt-dlp
 net-proxy/mihomo-party-bin::local
+sys-apps/arch-chroot
 sys-apps/bleachbit
 sys-apps/flatpak
 sys-apps/mlocate
