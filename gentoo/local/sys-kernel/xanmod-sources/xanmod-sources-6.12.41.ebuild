@@ -5,7 +5,7 @@ EAPI="8"
 ETYPE="sources"
 K_WANT_GENPATCHES="base extras"
 #Note: to bump xanmod, check K_GENPATCHES_VER in sys-kernel/gentoo-sources
-K_GENPATCHES_VER="5"
+K_GENPATCHES_VER="46"
 
 inherit check-reqs kernel-2
 detect_version
@@ -26,7 +26,7 @@ SRC_URI="
 S="${WORKDIR}/linux-${OKV}${XANMOD_VERSION}"
 
 LICENSE+=" CDDL"
-KEYWORDS="~amd64"
+KEYWORDS="amd64 ~amd64"
 
 pkg_pretend() {
 	CHECKREQS_DISK_BUILD="4G"
