@@ -19,6 +19,7 @@ app-i18n/fcitx-gtk
 app-i18n/fcitx-qt
 app-misc/fastfetch
 app-misc/nwg-look
+app-portage/command-not-found
 app-portage/cpuid2cpuflags
 app-portage/eix
 app-portage/gentoolkit
@@ -48,6 +49,7 @@ media-gfx/flameshot
 media-gfx/imagemagick
 media-libs/libva-intel-media-driver
 media-libs/nvidia-vaapi-driver
+media-plugins/gst-plugins-nvcodec
 media-sound/pavucontrol
 media-sound/playerctl
 media-video/ffmpeg
@@ -78,7 +80,6 @@ sys-fs/xfsprogs
 sys-kernel/gentoo-kernel-bin
 sys-kernel/installkernel
 sys-kernel/linux-firmware
-sys-kernel/xanmod-sources::local
 sys-power/power-profiles-daemon
 sys-process/btop
 sys-process/cronie
