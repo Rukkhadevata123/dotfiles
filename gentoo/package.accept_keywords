@@ -12,7 +12,5 @@ net-im/tencent-qq ~amd64
 net-im/wechat ~amd64
 net-proxy/mihomo-party-bin ~amd64
 
-sys-kernel/xanmod-sources ~amd64
-
 x11-themes/kvantum ~amd64
 
