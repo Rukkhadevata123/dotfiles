@@ -27,4 +27,6 @@ net-misc/spice-gtk usbredir
 sys-boot/grub mount
 sys-kernel/installkernel grub dracut
 
+dev-qt/qtwebengine bindist -vaapi
+
 x11-drivers/nvidia-drivers kernel-open powerd
