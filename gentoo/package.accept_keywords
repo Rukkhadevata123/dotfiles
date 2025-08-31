@@ -1,5 +1,3 @@
-app-misc/nwg-look ~amd64
-
 dev-util/nvidia-cuda-toolkit ~amd64
 
 games-util/game-device-udev-rules ~amd64
@@ -10,7 +8,7 @@ media-libs/openslide ~amd64
 
 net-im/tencent-qq ~amd64
 net-im/wechat ~amd64
-net-proxy/mihomo-party-bin ~amd64
+net-proxy/clash-verge-bin ~amd64
 
 x11-themes/kvantum ~amd64
 

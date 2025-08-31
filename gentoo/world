@@ -18,7 +18,6 @@ app-i18n/fcitx-configtool
 app-i18n/fcitx-gtk
 app-i18n/fcitx-qt
 app-misc/fastfetch
-app-misc/nwg-look
 app-portage/command-not-found
 app-portage/cpuid2cpuflags
 app-portage/eix
@@ -33,17 +32,14 @@ dev-util/nvidia-cuda-toolkit
 dev-util/pkgdev
 games-action/prismlauncher
 games-util/game-device-udev-rules
-gnome-base/gnome
-gnome-extra/gnome-browser-connector
-gnome-extra/gnome-shell-extensions
-gnome-extra/gnome-tweaks
 gnome-extra/zenity
 gui-libs/display-manager-init
 gui-libs/xdg-desktop-portal-wlr
+kde-apps/kde-apps-meta
+kde-plasma/plasma-meta
 llvm-runtimes/libcxx
 media-fonts/nerdfonts
 media-fonts/noto
-media-fonts/noto-cjk
 media-fonts/noto-emoji
 media-gfx/flameshot
 media-gfx/imagemagick
@@ -62,7 +58,7 @@ net-im/wechat
 net-misc/chrony
 net-misc/networkmanager
 net-misc/yt-dlp
-net-proxy/mihomo-party-bin::local
+net-proxy/clash-verge-bin
 sys-apps/arch-chroot
 sys-apps/bleachbit
 sys-apps/flatpak
