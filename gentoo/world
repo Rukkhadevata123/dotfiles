@@ -52,12 +52,13 @@ media-video/ffmpeg
 media-video/libva-utils
 media-video/mpv
 media-video/pipewire
-media-video/vlc
+media-video/smplayer
 net-im/tencent-qq
 net-im/wechat
 net-misc/chrony
 net-misc/networkmanager
 net-misc/yt-dlp
+net-proxy/clash-party-bin::local
 net-proxy/clash-verge-bin
 sys-apps/arch-chroot
 sys-apps/bleachbit
