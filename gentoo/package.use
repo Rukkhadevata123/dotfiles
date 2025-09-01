@@ -8,25 +8,26 @@ app-emulation/qemu io-uring spice usbredir virgl virtfs
 dev-java/openjdk-bin source
 dev-lang/rust-bin clippy rust-analyzer rustfmt rust-src
 
-kde-plasma/plasma-meta flatpak rdp 
+kde-plasma/plasma-meta flatpak rdp
 
 llvm-core/clang-common default-lld
 llvm-core/clang-runtime default-lld
 
 media-fonts/nerdfonts 0xproto adwaitamono cascadiacode cascadiamono codenewroman comicshannsmono firacode hack jetbrainsmono liberationmono monaspace noto sourcecodepro ubuntu ubuntumono ubuntusans
-media-fonts/noto cjk
+media-libs/freetype harfbuzz
 media-plugins/gst-plugins-meta theora v4l
 media-video/pipewire extra sound-server
 
 net-im/wechat fcitx
 net-libs/gnutls tools pkcs11
-net-libs/webkit-gtk keyring
 net-misc/freerdp server
 net-misc/spice-gtk usbredir
 
+sys-apps/util-linux caps
 sys-boot/grub mount
 sys-kernel/installkernel grub dracut
 
+dev-qt/qtpositioning geoclue
 dev-qt/qtwebengine bindist -vaapi
 
 x11-drivers/nvidia-drivers kernel-open powerd
