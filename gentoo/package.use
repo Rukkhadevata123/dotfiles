@@ -1,6 +1,6 @@
 */* CPU_FLAGS_X86: aes avx avx2 avx_vnni bmi1 bmi2 f16c fma3 mmx mmxext pclmul popcnt rdrand sha sse sse2 sse3 sse4_1 sse4_2 ssse3 vpclmulqdq
 */* VIDEO_CARDS: -* nvidia intel
-*/* L10N: zh-CN en-US
+*/* L10N: zh-CN en-US zh en
 
 app-editors/vscode egl
 app-emulation/qemu io-uring spice usbredir virgl virtfs
@@ -20,6 +20,7 @@ media-video/pipewire extra sound-server
 
 net-im/wechat fcitx
 net-libs/gnutls tools pkcs11
+net-libs/nodejs npm
 net-misc/freerdp server
 net-misc/spice-gtk usbredir
 
