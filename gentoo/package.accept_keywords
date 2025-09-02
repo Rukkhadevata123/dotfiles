@@ -10,5 +10,6 @@ net-im/tencent-qq ~amd64
 net-im/wechat ~amd64
 net-proxy/clash-party-bin ~amd64
 
+x11-themes/bibata-cursor ~amd64
 x11-themes/kvantum ~amd64
 
