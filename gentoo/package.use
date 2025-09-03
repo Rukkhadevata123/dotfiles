@@ -11,7 +11,7 @@ dev-lang/rust-bin clippy rust-analyzer rustfmt rust-src
 kde-plasma/plasma-meta flatpak rdp
 
 llvm-core/clang-common default-lld
-llvm-core/clang-runtime default-lld
+llvm-runtimes/clang-runtime default-lld
 
 media-fonts/nerdfonts 0xproto adwaitamono cascadiacode cascadiamono codenewroman comicshannsmono firacode hack jetbrainsmono liberationmono monaspace noto sourcecodepro ubuntu ubuntumono ubuntusans
 media-libs/freetype harfbuzz
