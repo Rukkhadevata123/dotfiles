@@ -27,6 +27,7 @@ app-portage/pfl
 app-portage/portage-utils
 app-shells/bash-completion
 app-shells/fish
+app-shells/starship
 app-text/texlive
 dev-java/openjdk-bin
 dev-lang/rust-bin
@@ -43,7 +44,9 @@ media-fonts/nerdfonts
 media-fonts/noto
 media-fonts/noto-cjk
 media-fonts/noto-emoji
+media-gfx/blender-bin
 media-gfx/flameshot
+media-gfx/gimp
 media-gfx/imagemagick
 media-libs/libva-intel-media-driver
 media-libs/nvidia-vaapi-driver
@@ -74,6 +77,7 @@ sys-fs/xfsprogs
 sys-kernel/gentoo-kernel-bin
 sys-kernel/installkernel
 sys-kernel/linux-firmware
+sys-kernel/xanmod-kernel::parona-overlay
 sys-process/btop
 sys-process/cronie
 sys-process/nvtop

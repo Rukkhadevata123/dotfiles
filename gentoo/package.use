@@ -17,7 +17,9 @@ llvm-core/clang-common default-lld
 llvm-runtimes/clang-runtime default-lld
 
 media-fonts/nerdfonts 0xproto adwaitamono cascadiacode cascadiamono codenewroman comicshannsmono firacode hack jetbrainsmono liberationmono monaspace noto sourcecodepro ubuntu ubuntumono ubuntusans
+media-libs/babl introspection
 media-libs/freetype harfbuzz
+media-libs/gegl introspection
 media-plugins/gst-plugins-meta theora v4l
 media-video/pipewire extra sound-server
 
