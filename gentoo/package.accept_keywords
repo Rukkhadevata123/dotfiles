@@ -5,6 +5,7 @@ games-util/game-device-udev-rules ~amd64
 media-fonts/nerdfonts ~amd64
 media-libs/nvidia-vaapi-driver ~amd64
 media-libs/openslide ~amd64
+media-sound/qqmusic ~amd64
 
 net-im/tencent-qq ~amd64
 net-im/wechat ~amd64

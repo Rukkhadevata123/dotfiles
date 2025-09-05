@@ -2,6 +2,9 @@
 */* VIDEO_CARDS: -* nvidia intel
 */* L10N: zh-CN en-US zh en
 
+
+app-text/texlive cjk extra graphics science xetex 
+app-text/texlive-core cjk xetex
 app-editors/vscode egl
 app-emulation/qemu io-uring spice usbredir virgl virtfs
 

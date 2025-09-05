@@ -27,6 +27,7 @@ app-portage/pfl
 app-portage/portage-utils
 app-shells/bash-completion
 app-shells/fish
+app-text/texlive
 dev-java/openjdk-bin
 dev-lang/rust-bin
 dev-libs/weston
@@ -47,6 +48,7 @@ media-gfx/imagemagick
 media-libs/libva-intel-media-driver
 media-libs/nvidia-vaapi-driver
 media-plugins/gst-plugins-nvcodec
+media-sound/qqmusic
 media-video/libva-utils
 media-video/mpv
 media-video/smplayer
@@ -78,6 +80,7 @@ sys-process/nvtop
 www-client/firefox-bin
 www-client/google-chrome
 x11-apps/mesa-progs
+x11-apps/xwininfo
 x11-misc/vdpauinfo
 x11-terms/kitty
 x11-themes/bibata-cursor
