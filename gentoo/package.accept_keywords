@@ -1,5 +1,7 @@
+app-emulation/wine-staging ~amd64
 app-office/wps-office ~amd64
 
+dev-cpp/tinygltf ~amd64
 dev-util/nvidia-cuda-toolkit ~amd64
 
 games-util/game-device-udev-rules ~amd64
@@ -11,6 +13,7 @@ media-libs/babl ~amd64
 media-libs/gegl ~amd64
 media-libs/nvidia-vaapi-driver ~amd64
 media-libs/openslide ~amd64
+media-libs/vpl-gpu-rt ~amd64
 media-sound/qqmusic ~amd64
 
 net-im/tencent-qq ~amd64

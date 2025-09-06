@@ -11,6 +11,8 @@ app-editors/vscode
 app-emulation/libvirt
 app-emulation/qemu
 app-emulation/virt-manager
+app-emulation/wine-staging
+app-emulation/winetricks
 app-eselect/eselect-repository
 app-i18n/fcitx
 app-i18n/fcitx-chinese-addons
@@ -18,6 +20,7 @@ app-i18n/fcitx-configtool
 app-i18n/fcitx-gtk
 app-i18n/fcitx-qt
 app-misc/fastfetch
+app-misc/tmux
 app-office/libreoffice-bin
 app-office/wps-office
 app-portage/command-not-found
@@ -30,11 +33,16 @@ app-shells/bash-completion
 app-shells/fish
 app-shells/starship
 app-text/texlive
+dev-cpp/nlohmann_json
+dev-cpp/tinygltf
 dev-java/openjdk-bin
+dev-lang/python:3.12
 dev-lang/rust-bin
+dev-libs/stb
 dev-libs/weston
 dev-util/nvidia-cuda-toolkit
 dev-util/pkgdev
+dev-util/vulkan-tools
 games-action/prismlauncher
 games-util/game-device-udev-rules
 gnome-extra/zenity
@@ -49,8 +57,13 @@ media-gfx/blender-bin
 media-gfx/flameshot
 media-gfx/gimp
 media-gfx/imagemagick
+media-libs/glfw
+media-libs/glm
 media-libs/libva-intel-media-driver
+media-libs/libvpl
 media-libs/nvidia-vaapi-driver
+media-libs/vpl-gpu-rt
+media-libs/vulkan-layers
 media-plugins/gst-plugins-nvcodec
 media-sound/qqmusic
 media-video/libva-utils

@@ -3,13 +3,16 @@
 */* L10N: zh-CN en-US zh en
 
 
+app-editors/vscode egl
+app-emulation/wine-gecko abi_x86_32
+app-emulation/wine-staging wow64
 app-text/texlive cjk extra graphics science xetex 
 app-text/texlive-core cjk xetex
-app-editors/vscode egl
 app-emulation/qemu io-uring spice usbredir virgl virtfs
 
 dev-java/openjdk-bin source
 dev-lang/rust-bin clippy rust-analyzer rustfmt rust-src
+dev-util/mingw64-toolchain abi_x86_32
 
 kde-plasma/plasma-meta flatpak rdp
 
