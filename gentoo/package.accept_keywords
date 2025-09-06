@@ -1,3 +1,5 @@
+app-office/wps-office ~amd64
+
 dev-util/nvidia-cuda-toolkit ~amd64
 
 games-util/game-device-udev-rules ~amd64
@@ -14,8 +16,6 @@ media-sound/qqmusic ~amd64
 net-im/tencent-qq ~amd64
 net-im/wechat ~amd64
 net-proxy/clash-party-bin ~amd64
-
-sys-kernel/xanmod-kernel ~amd64
 
 x11-themes/bibata-cursor ~amd64
 x11-themes/kvantum ~amd64

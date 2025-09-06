@@ -19,6 +19,7 @@ app-i18n/fcitx-gtk
 app-i18n/fcitx-qt
 app-misc/fastfetch
 app-office/libreoffice-bin
+app-office/wps-office
 app-portage/command-not-found
 app-portage/cpuid2cpuflags
 app-portage/eix
@@ -77,7 +78,6 @@ sys-fs/xfsprogs
 sys-kernel/gentoo-kernel-bin
 sys-kernel/installkernel
 sys-kernel/linux-firmware
-sys-kernel/xanmod-kernel::parona-overlay
 sys-process/btop
 sys-process/cronie
 sys-process/nvtop
