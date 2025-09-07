@@ -10,9 +10,11 @@ media-fonts/nerdfonts ~amd64
 media-gfx/blender-bin ~amd64
 media-gfx/gimp ~amd64
 media-libs/babl ~amd64
+media-libs/dxc-bin ~amd64
 media-libs/gegl ~amd64
 media-libs/nvidia-vaapi-driver ~amd64
 media-libs/openslide ~amd64
+media-libs/shader-slang-bin ~amd64
 media-libs/vpl-gpu-rt ~amd64
 media-sound/qqmusic ~amd64
 
