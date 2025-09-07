@@ -20,9 +20,11 @@ app-i18n/fcitx-configtool
 app-i18n/fcitx-gtk
 app-i18n/fcitx-qt
 app-misc/fastfetch
+app-misc/jq
 app-misc/tmux
 app-office/libreoffice-bin
 app-office/wps-office
+app-office/wps-office::local
 app-portage/command-not-found
 app-portage/cpuid2cpuflags
 app-portage/eix
@@ -41,6 +43,7 @@ dev-lang/python:3.12
 dev-lang/rust-bin
 dev-libs/stb
 dev-libs/weston
+dev-python/nvchecker
 dev-util/nvidia-cuda-toolkit
 dev-util/pkgdev
 dev-util/vulkan-tools
