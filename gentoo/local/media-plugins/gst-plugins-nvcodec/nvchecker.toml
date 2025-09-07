@@ -1,0 +1,4 @@
+[gst-plugins-meta]
+source = "regex"
+url = "https://gitweb.gentoo.org/repo/gentoo.git/tree/media-plugins/gst-plugins-meta"
+regex = 'gst-plugins-meta-(\d+\.\d+\.\d+)\.ebuild'

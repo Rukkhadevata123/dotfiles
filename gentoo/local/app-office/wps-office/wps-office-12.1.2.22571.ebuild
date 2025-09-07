@@ -86,4 +86,19 @@ src_install() {
 	doins -r "${S}"/opt/kingsoft/wps-office/{office6,templates}
 
 	fperms 0755 /opt/kingsoft/wps-office/office6/{wps,wpp,et,wpspdf,wpsoffice,promecefpluginhost,transerr,ksolaunch,wpscloudsvr}
+
+	# env
+    local wps_bins="wps wpp et wpspdf wpsoffice"
+    for bin in ${wps_bins}; do
+        cat > "${T}/${bin}" <<EOF
+#!/bin/sh
+export LANG=zh_CN.UTF-8
+export QT_IM_MODULE=fcitx
+exec /opt/kingsoft/wps-office/office6/${bin} "\$@"
+EOF
+        exeinto /usr/bin
+        doexe "${T}/${bin}"
+    done
+
 }
+

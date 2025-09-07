@@ -1,0 +1,4 @@
+[wps-office]
+source = "regex"
+url = "https://linux.wps.cn/"
+regex = '(\d+\.\d+\.\d+\.\d+)'
