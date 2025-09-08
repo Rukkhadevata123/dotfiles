@@ -44,7 +44,6 @@ dev-lang/rust-bin
 dev-libs/stb
 dev-libs/weston
 dev-python/nvchecker
-dev-util/jetbrains-toolbox::local
 dev-util/nvidia-cuda-toolkit
 dev-util/pkgdev
 dev-util/vulkan-tools

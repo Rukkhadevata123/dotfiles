@@ -3,7 +3,6 @@ app-office/wps-office ~amd64
 
 dev-cpp/tinygltf ~amd64
 dev-python/nvchecker ~amd64
-dev-util/jetbrains-toolbox ~amd64
 dev-util/nvidia-cuda-toolkit ~amd64
 
 games-util/game-device-udev-rules ~amd64
