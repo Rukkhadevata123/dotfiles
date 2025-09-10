@@ -4,14 +4,19 @@
 
 
 app-editors/vscode egl
+
+# wine
 app-emulation/wine-gecko abi_x86_32
 app-emulation/wine-staging wow64
+
 app-text/texlive cjk extra graphics science xetex 
 app-text/texlive-core cjk xetex
 app-emulation/qemu io-uring spice usbredir virgl virtfs
 
 dev-java/openjdk-bin source
 dev-lang/rust-bin clippy rust-analyzer rustfmt rust-src
+
+# wine
 dev-util/mingw64-toolchain abi_x86_32
 
 kde-plasma/plasma-meta flatpak rdp
@@ -20,22 +25,41 @@ llvm-core/clang-common default-lld
 llvm-runtimes/clang-runtime default-lld
 
 media-fonts/nerdfonts 0xproto adwaitamono cascadiacode cascadiamono codenewroman comicshannsmono firacode hack jetbrainsmono liberationmono monaspace noto sourcecodepro ubuntu ubuntumono ubuntusans
+
+# gimp
 media-libs/babl introspection
+
+# kde
 media-libs/freetype harfbuzz
+
+#gimp
 media-libs/gegl introspection
+
+# kde
 media-plugins/gst-plugins-meta theora v4l
+
 media-video/pipewire extra sound-server
 
 net-im/wechat fcitx
+
+# qemu
 net-libs/gnutls tools pkcs11
+
 net-libs/nodejs npm
+
+# kde
 net-misc/freerdp server
+
+#qemu
 net-misc/spice-gtk usbredir
 
 sys-apps/util-linux caps
+
+# os-prober
 sys-boot/grub mount
 sys-kernel/installkernel grub dracut
 
+# kde
 dev-qt/qtpositioning geoclue
 dev-qt/qtwebengine bindist -vaapi
 

@@ -22,8 +22,6 @@ app-i18n/fcitx-qt
 app-misc/fastfetch
 app-misc/jq
 app-misc/tmux
-app-office/libreoffice-bin
-app-office/wps-office
 app-office/wps-office::local
 app-portage/command-not-found
 app-portage/cpuid2cpuflags
@@ -36,12 +34,9 @@ app-shells/fish
 app-shells/starship
 app-text/texlive
 app-text/tree
-dev-cpp/nlohmann_json
-dev-cpp/tinygltf
 dev-java/openjdk-bin
 dev-lang/python:3.12
 dev-lang/rust-bin
-dev-libs/stb
 dev-libs/weston
 dev-python/nvchecker
 dev-util/nvidia-cuda-toolkit
@@ -63,8 +58,6 @@ media-gfx/flameshot
 media-gfx/gimp
 media-gfx/imagemagick
 media-libs/dxc-bin::local
-media-libs/glfw
-media-libs/glm
 media-libs/libva-intel-media-driver
 media-libs/libvpl
 media-libs/nvidia-vaapi-driver
@@ -81,6 +74,7 @@ net-im/wechat
 net-misc/chrony
 net-misc/networkmanager
 net-misc/yt-dlp
+net-p2p/qbittorrent
 net-proxy/clash-party-bin::local
 sys-apps/arch-chroot
 sys-apps/bleachbit
@@ -96,6 +90,7 @@ sys-fs/genfstab
 sys-fs/ntfs3g
 sys-fs/xfsprogs
 sys-kernel/gentoo-kernel-bin
+sys-kernel/gentoo-sources
 sys-kernel/installkernel
 sys-kernel/linux-firmware
 sys-process/btop

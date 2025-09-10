@@ -1,7 +1,6 @@
 app-emulation/wine-staging ~amd64
 app-office/wps-office ~amd64
 
-dev-cpp/tinygltf ~amd64
 dev-python/nvchecker ~amd64
 dev-util/nvidia-cuda-toolkit ~amd64
 
@@ -11,11 +10,20 @@ media-fonts/lxgw-wenkai ~amd64
 media-fonts/nerdfonts ~amd64
 media-gfx/blender-bin ~amd64
 media-gfx/gimp ~amd64
+
+# gimp
 media-libs/babl ~amd64
+
 media-libs/dxc-bin ~amd64
+
+# gimp
 media-libs/gegl ~amd64
+
 media-libs/nvidia-vaapi-driver ~amd64
+
+# tencent-qq
 media-libs/openslide ~amd64
+
 media-libs/shader-slang-bin ~amd64
 media-libs/vpl-gpu-rt ~amd64
 media-sound/qqmusic ~amd64
@@ -23,6 +31,8 @@ media-sound/qqmusic ~amd64
 net-im/tencent-qq ~amd64
 net-im/wechat ~amd64
 net-proxy/clash-party-bin ~amd64
+
+sys-kernel/xanmod-sources ~amd64
 
 x11-themes/bibata-cursor ~amd64
 x11-themes/kvantum ~amd64
