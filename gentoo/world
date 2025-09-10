@@ -9,6 +9,7 @@ app-editors/nano
 app-editors/vim
 app-editors/vscode
 app-emulation/libvirt
+app-emulation/looking-glass
 app-emulation/qemu
 app-emulation/virt-manager
 app-emulation/wine-staging
@@ -58,6 +59,7 @@ media-gfx/flameshot
 media-gfx/gimp
 media-gfx/imagemagick
 media-libs/dxc-bin::local
+media-libs/glfw
 media-libs/libva-intel-media-driver
 media-libs/libvpl
 media-libs/nvidia-vaapi-driver
@@ -89,6 +91,7 @@ sys-fs/dosfstools
 sys-fs/genfstab
 sys-fs/ntfs3g
 sys-fs/xfsprogs
+sys-kernel/dkms
 sys-kernel/gentoo-kernel-bin
 sys-kernel/gentoo-sources
 sys-kernel/installkernel
