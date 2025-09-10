@@ -93,6 +93,7 @@ sys-kernel/gentoo-kernel-bin
 sys-kernel/gentoo-sources
 sys-kernel/installkernel
 sys-kernel/linux-firmware
+sys-kernel/xanmod-sources::local
 sys-process/btop
 sys-process/cronie
 sys-process/nvtop
