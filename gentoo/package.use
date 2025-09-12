@@ -32,8 +32,11 @@ media-libs/babl introspection
 # kde
 media-libs/freetype harfbuzz
 
-#gimp
+# gimp
 media-libs/gegl introspection
+
+# moonlight
+media-libs/libsdl2 kms
 
 # kde
 media-plugins/gst-plugins-meta theora v4l
