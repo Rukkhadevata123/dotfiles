@@ -74,6 +74,7 @@ media-video/smplayer
 net-im/tencent-qq
 net-im/wechat
 net-misc/chrony
+net-misc/moonlight
 net-misc/networkmanager
 net-misc/yt-dlp
 net-p2p/qbittorrent

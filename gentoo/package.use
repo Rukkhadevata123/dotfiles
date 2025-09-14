@@ -53,7 +53,7 @@ net-libs/nodejs npm
 # kde
 net-misc/freerdp server
 
-#qemu
+# qemu
 net-misc/spice-gtk usbredir
 
 sys-apps/util-linux caps
