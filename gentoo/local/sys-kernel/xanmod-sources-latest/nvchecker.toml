@@ -1,0 +1,3 @@
+[xanmod-sources-latest]
+source = "cmd"
+cmd = '''eix gentoo-kernel-bin | grep '\^tu' | tail -n1 | grep -oE '([0-9]+\.[0-9]+\.[0-9]+)' | head -n1'''
