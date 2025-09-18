@@ -8,6 +8,8 @@ app-arch/zip
 app-containers/docker
 app-containers/docker-cli
 app-containers/docker-compose
+app-containers/podman
+app-containers/podman-compose
 app-editors/nano
 app-editors/vim
 app-editors/vscode
@@ -100,7 +102,8 @@ sys-kernel/gentoo-kernel-bin
 sys-kernel/gentoo-sources
 sys-kernel/installkernel
 sys-kernel/linux-firmware
-sys-kernel/xanmod-sources::local
+sys-kernel/xanmod-sources-latest
+sys-kernel/xanmod-sources-lts
 sys-process/btop
 sys-process/cronie
 sys-process/nvtop
