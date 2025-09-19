@@ -19,7 +19,7 @@ dev-lang/rust-bin clippy rust-analyzer rustfmt rust-src
 # wine
 dev-util/mingw64-toolchain abi_x86_32
 
-kde-plasma/plasma-meta flatpak rdp
+kde-plasma/plasma-meta flatpak
 
 llvm-core/clang-common default-lld
 llvm-runtimes/clang-runtime default-lld
@@ -38,9 +38,6 @@ media-libs/gegl introspection
 # moonlight
 media-libs/libsdl2 kms
 
-# kde
-media-plugins/gst-plugins-meta theora v4l
-
 media-video/pipewire extra sound-server
 
 net-im/wechat fcitx
@@ -49,9 +46,6 @@ net-im/wechat fcitx
 net-libs/gnutls tools pkcs11
 
 net-libs/nodejs npm
-
-# kde
-net-misc/freerdp server
 
 # qemu
 net-misc/spice-gtk usbredir
@@ -64,6 +58,5 @@ sys-kernel/installkernel grub dracut
 
 # kde
 dev-qt/qtpositioning geoclue
-dev-qt/qtwebengine bindist -vaapi
 
 x11-drivers/nvidia-drivers kernel-open powerd
