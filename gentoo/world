@@ -8,8 +8,7 @@ app-arch/zip
 app-containers/docker
 app-containers/docker-cli
 app-containers/docker-compose
-app-containers/podman
-app-containers/podman-compose
+app-containers/lazydocker
 app-editors/nano
 app-editors/vim
 app-editors/vscode

@@ -1,0 +1,4 @@
+[lazydocker]
+source = "git"
+git = "https://github.com/jesseduffield/lazydocker.git"
+prefix = "v"
