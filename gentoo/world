@@ -66,10 +66,8 @@ media-gfx/imagemagick
 media-libs/dxc-bin::local
 media-libs/glfw
 media-libs/libva-intel-media-driver
-media-libs/libvpl
 media-libs/nvidia-vaapi-driver
 media-libs/shader-slang-bin::local
-media-libs/vpl-gpu-rt
 media-libs/vulkan-layers
 media-plugins/gst-plugins-nvcodec
 media-sound/qqmusic
