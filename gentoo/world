@@ -95,12 +95,9 @@ sys-fs/genfstab
 sys-fs/ntfs3g
 sys-fs/xfsprogs
 sys-kernel/dkms
-sys-kernel/gentoo-kernel-bin
-sys-kernel/gentoo-sources
 sys-kernel/installkernel
 sys-kernel/linux-firmware
 sys-kernel/xanmod-sources-latest
-sys-kernel/xanmod-sources-lts
 sys-process/btop
 sys-process/cronie
 sys-process/nvtop
