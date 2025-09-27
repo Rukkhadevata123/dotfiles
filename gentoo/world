@@ -69,7 +69,6 @@ media-libs/nvidia-vaapi-driver
 media-libs/shader-slang-bin::local
 media-libs/vulkan-layers
 media-plugins/gst-plugins-nvcodec
-media-sound/qqmusic
 media-video/libva-utils
 media-video/mpv
 media-video/smplayer

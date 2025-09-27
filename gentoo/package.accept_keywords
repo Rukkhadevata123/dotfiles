@@ -27,7 +27,6 @@ media-libs/nvidia-vaapi-driver ~amd64
 media-libs/openslide ~amd64
 
 media-libs/shader-slang-bin ~amd64
-media-sound/qqmusic ~amd64
 
 net-im/tencent-qq ~amd64
 net-im/wechat ~amd64
