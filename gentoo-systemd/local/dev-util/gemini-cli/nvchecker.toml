@@ -1,0 +1,4 @@
+[gemini-cli]
+source = "regex"
+url = "https://registry.npmjs.org/@google/gemini-cli"
+regex = '"latest":"([\d.]+)"'

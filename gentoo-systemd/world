@@ -27,6 +27,7 @@ dev-java/openjdk-bin
 dev-lang/python:3.12
 dev-lang/rust-bin
 dev-python/nvchecker
+dev-util/gemini-cli
 dev-util/pkgdev
 dev-vcs/git
 kde-apps/kde-apps-meta
