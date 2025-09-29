@@ -1,0 +1,5 @@
+[dxc-bin]
+source = "github"
+github = "microsoft/DirectXShaderCompiler"
+use_latest_release = true
+prefix = "v"
