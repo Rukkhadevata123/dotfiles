@@ -6,6 +6,8 @@ app-emulation/qemu spice usbredir virgl virtfs
 
 dev-lang/rust-bin clippy rust-analyzer rustfmt rust-src
 
+media-fonts/nerd-fonts 0xproto adwaitamono cascadiacode cascadiamono codenewroman comicshannsmono firacode hack jetbrainsmono liberationmono monaspace noto sourcecodepro ubuntu ubuntumono ubuntusans
+
 media-video/pipewire extra sound-server
 
 net-libs/nodejs npm

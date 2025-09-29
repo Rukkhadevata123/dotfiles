@@ -27,9 +27,11 @@ dev-java/openjdk-bin
 dev-lang/python:3.12
 dev-lang/rust-bin
 dev-python/nvchecker
+dev-util/pkgdev
 dev-vcs/git
 kde-apps/kde-apps-meta
 kde-plasma/plasma-meta
+media-fonts/nerd-fonts
 media-fonts/noto-cjk
 media-fonts/noto-emoji
 media-libs/libva-intel-media-driver
@@ -38,9 +40,11 @@ media-video/mpv
 media-video/smplayer
 net-misc/chrony
 net-misc/networkmanager
+net-misc/yt-dlp
 net-proxy/clash-verge-bin
 sys-apps/arch-chroot
 sys-apps/mlocate
+sys-block/io-scheduler-udev-rules
 sys-boot/os-prober
 sys-firmware/intel-microcode
 sys-firmware/sof-firmware
