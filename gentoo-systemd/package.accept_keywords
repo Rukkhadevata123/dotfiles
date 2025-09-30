@@ -1,6 +1,11 @@
+app-emulation/looking-glass
+
 dev-python/nvchecker
 dev-util/gemini-cli
 
 media-fonts/nerd-fonts
 
 net-proxy/clash-verge-bin
+
+sys-kernel/gentoo-sources
+sys-kernel/kvmfr
