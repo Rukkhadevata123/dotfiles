@@ -3,6 +3,7 @@
 */* L10N: zh-CN en-US zh en
 
 app-emulation/qemu spice usbredir virgl virtfs
+app-text/texlive extra
 
 dev-lang/rust-bin clippy rust-analyzer rustfmt rust-src
 
@@ -21,6 +22,8 @@ media-libs/freetype harfbuzz
 dev-qt/qtpositioning geoclue
 dev-qt/qtwebengine bindist -vaapi
 
+# pfl
+sys-apps/util-linux caps
 
 x11-drivers/nvidia-drivers kernel-open powerd
 

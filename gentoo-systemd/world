@@ -18,10 +18,12 @@ app-portage/command-not-found
 app-portage/cpuid2cpuflags
 app-portage/eix
 app-portage/gentoolkit
+app-portage/pfl
 app-portage/portage-utils
 app-shells/bash-completion
 app-shells/fish
 app-shells/starship
+app-text/texlive
 app-text/tree
 dev-java/openjdk-bin
 dev-lang/python:3.12
