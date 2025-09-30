@@ -47,6 +47,7 @@ net-misc/networkmanager
 net-misc/yt-dlp
 net-proxy/clash-verge-bin
 sys-apps/arch-chroot
+sys-apps/kmscon
 sys-apps/mlocate
 sys-block/io-scheduler-udev-rules
 sys-boot/os-prober

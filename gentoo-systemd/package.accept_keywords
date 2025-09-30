@@ -7,5 +7,9 @@ media-fonts/nerd-fonts
 
 net-proxy/clash-verge-bin
 
+# kmscon
+dev-libs/libtsm
+sys-apps/kmscon
+
 sys-kernel/gentoo-sources
 sys-kernel/kvmfr
