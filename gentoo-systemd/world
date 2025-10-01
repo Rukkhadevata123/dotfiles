@@ -42,6 +42,8 @@ media-libs/libva-intel-media-driver
 media-video/libva-utils
 media-video/mpv
 media-video/smplayer
+net-im/tencent-qq
+net-im/wechat
 net-misc/chrony
 net-misc/networkmanager
 net-misc/yt-dlp

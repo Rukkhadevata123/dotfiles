@@ -5,6 +5,11 @@ dev-util/gemini-cli
 
 media-fonts/nerd-fonts
 
+# im
+net-im/wechat
+net-im/tencent-qq
+media-libs/openslide
+
 net-proxy/clash-verge-bin
 
 # kmscon
