@@ -11,6 +11,8 @@ media-fonts/nerd-fonts 0xproto adwaitamono cascadiacode cascadiamono codenewroma
 
 media-video/pipewire extra sound-server
 
+net-im/wechat fcitx
+
 net-libs/nodejs npm
 
 # os-prober
