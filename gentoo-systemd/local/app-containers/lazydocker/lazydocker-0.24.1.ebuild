@@ -18,10 +18,10 @@ DEPEND="dev-lang/go"
 QA_PREBUILT="/usr/bin/lazydocker"
 
 src_compile() {
-    export CGO_CPPFLAGS="${CPPFLAGS}"
-    export CGO_CFLAGS="${CFLAGS}"
-    export CGO_CXXFLAGS="${CXXFLAGS}"
-    export GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw"
+    local CGO_CPPFLAGS="${CPPFLAGS}"
+    local CGO_CFLAGS="${CFLAGS}"
+    local CGO_CXXFLAGS="${CXXFLAGS}"
+    local GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw"
 
     ego build -mod=vendor -ldflags="-extldflags \"${LDFLAGS}\" -s -w -X main.version=${PV}" -o lazydocker main.go
 }
