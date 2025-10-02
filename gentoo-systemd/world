@@ -51,6 +51,7 @@ net-im/wechat
 net-misc/chrony
 net-misc/networkmanager
 net-misc/yt-dlp
+net-proxy/clash-party-bin
 net-proxy/clash-verge-bin
 sys-apps/arch-chroot
 sys-apps/kmscon

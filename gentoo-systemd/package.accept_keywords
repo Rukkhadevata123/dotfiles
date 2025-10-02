@@ -11,6 +11,7 @@ net-im/wechat
 net-im/tencent-qq
 media-libs/openslide
 
+net-proxy/clash-party-bin
 net-proxy/clash-verge-bin
 
 # kmscon
