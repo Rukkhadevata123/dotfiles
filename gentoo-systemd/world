@@ -60,6 +60,7 @@ sys-block/io-scheduler-udev-rules
 sys-boot/os-prober
 sys-firmware/intel-microcode
 sys-firmware/sof-firmware
+sys-fs/btrfs-progs
 sys-fs/dosfstools
 sys-fs/genfstab
 sys-fs/ntfs3g
