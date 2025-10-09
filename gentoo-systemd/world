@@ -34,6 +34,7 @@ dev-java/openjdk-bin
 dev-lang/python:3.12
 dev-lang/rust-bin
 dev-python/nvchecker
+dev-util/debootstrap
 dev-util/gemini-cli
 dev-util/pkgdev
 dev-vcs/git
@@ -54,6 +55,7 @@ net-misc/yt-dlp
 net-proxy/clash-party-bin
 net-proxy/clash-verge-bin
 sys-apps/arch-chroot
+sys-apps/flatpak
 sys-apps/kmscon
 sys-apps/mlocate
 sys-block/io-scheduler-udev-rules
