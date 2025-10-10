@@ -2,6 +2,9 @@
 */* VIDEO_CARDS: -* nvidia intel
 */* L10N: zh-CN en-US zh en
 
+# */* PYTHON_TARGETS: python3_14
+# */* PYTHON_SINGLE_TARGET: -* python3_14
+
 app-emulation/qemu spice usbredir virgl virtfs
 app-text/texlive extra
 
