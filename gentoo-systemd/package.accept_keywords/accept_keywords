@@ -11,6 +11,8 @@ net-im/wechat
 net-im/tencent-qq
 media-libs/openslide
 
+media-libs/nvidia-vaapi-driver
+
 net-proxy/clash-party-bin
 net-proxy/clash-verge-bin
 

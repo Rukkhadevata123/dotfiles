@@ -44,6 +44,7 @@ media-fonts/nerd-fonts
 media-fonts/noto-cjk
 media-fonts/noto-emoji
 media-libs/libva-intel-media-driver
+media-libs/nvidia-vaapi-driver
 media-video/libva-utils
 media-video/mpv
 media-video/smplayer
