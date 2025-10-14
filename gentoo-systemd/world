@@ -39,10 +39,7 @@ dev-util/gemini-cli
 dev-util/pkgdev
 dev-vcs/git
 kde-apps/kde-apps-meta
-kde-apps/kdecore-meta
 kde-plasma/plasma-meta
-llvm-core/clang-common
-llvm-runtimes/clang-runtime
 media-fonts/nerd-fonts
 media-fonts/noto-cjk
 media-fonts/noto-emoji
@@ -57,6 +54,7 @@ net-misc/chrony
 net-misc/networkmanager
 net-misc/yt-dlp
 net-proxy/clash-party-bin
+net-proxy/clash-verge-bin
 sys-apps/arch-chroot
 sys-apps/flatpak
 sys-apps/kmscon

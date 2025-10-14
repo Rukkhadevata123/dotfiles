@@ -10,11 +10,6 @@ app-text/texlive extra
 
 dev-lang/rust-bin clippy rust-analyzer rustfmt rust-src
 
-# clang
-llvm-core/clang-common default-lld
-llvm-runtimes/clang-runtime sanitize default-lld
-llvm-runtimes/compiler-rt-sanitizers profile orc
-
 media-fonts/nerd-fonts 0xproto adwaitamono cascadiacode cascadiamono codenewroman comicshannsmono firacode hack jetbrainsmono liberationmono monaspace noto sourcecodepro ubuntu ubuntumono ubuntusans
 
 media-video/pipewire extra sound-server
@@ -31,11 +26,9 @@ sys-kernel/installkernel grub dracut
 media-libs/freetype harfbuzz
 dev-qt/qtpositioning geoclue
 dev-qt/qtwebengine bindist -vaapi
-kde-apps/kdecore-meta -webengine
 
 # pfl
 sys-apps/util-linux caps
 
 x11-drivers/nvidia-drivers kernel-open powerd
 
-# upgrade
