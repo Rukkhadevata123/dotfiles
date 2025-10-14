@@ -1,0 +1,39 @@
+*/* CPU_FLAGS_X86: aes avx avx2 avx_vnni bmi1 bmi2 f16c fma3 mmx mmxext pclmul popcnt rdrand sha sse sse2 sse3 sse4_1 sse4_2 ssse3 vpclmulqdq
+*/* VIDEO_CARDS: -* nvidia intel
+*/* L10N: zh-CN en-US zh en
+
+# */* PYTHON_TARGETS: python3_14
+# */* PYTHON_SINGLE_TARGET: -* python3_14
+
+# btop need libmd?
+# egl-wayland2
+
+# qemu
+app-emulation/qemu spice usbredir virgl virtfs
+net-misc/spice-gtk usbredir
+net-libs/gnutls pkcs11 tools
+
+dev-lang/rust-bin clippy rust-analyzer rustfmt rust-src
+
+# clang
+llvm-core/clang-common default-lld
+llvm-core/clang-linker-config default-lld
+llvm-runtimes/clang-runtime sanitize default-lld
+llvm-runtimes/compiler-rt-sanitizers profile orc
+
+media-fonts/nerd-fonts adwaitamono cascadiacode cascadiamono codenewroman comicshannsmono firacode firamono hack jetbrainsmono liberationmono monaspace ubuntu ubuntumono ubuntusans
+
+media-video/pipewire extra sound-server
+
+# os-prober
+sys-boot/grub mount
+sys-kernel/installkernel grub dracut
+
+x11-drivers/nvidia-drivers kernel-open powerd
+
+# ?
+media-libs/freetype harfbuzz
+
+# gnome
+net-misc/freerdp server
+
