@@ -28,6 +28,10 @@ dev-libs/weston
 dev-python/nvchecker
 dev-util/pkgdev
 dev-vcs/git
+gnome-base/dconf-editor
+gnome-base/gnome-light
+gnome-extra/gnome-browser-connector
+gnome-extra/gnome-tweaks
 llvm-core/lld
 media-fonts/nerd-fonts
 media-fonts/noto-cjk
@@ -57,6 +61,7 @@ sys-kernel/gentoo-kernel-bin
 sys-kernel/gentoo-sources
 sys-kernel/installkernel
 sys-kernel/linux-firmware
+sys-power/power-profiles-daemon
 sys-power/upower
 sys-process/nvtop
 www-client/firefox-bin
@@ -66,5 +71,6 @@ x11-apps/xwininfo
 x11-drivers/nvidia-drivers
 x11-misc/vdpauinfo
 x11-terms/kitty
+x11-terms/ptyxis
 x11-themes/papirus-icon-theme
 x11-themes/tela-icon-theme
