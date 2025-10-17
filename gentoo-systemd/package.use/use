@@ -5,30 +5,24 @@
 # */* PYTHON_TARGETS: python3_14
 # */* PYTHON_SINGLE_TARGET: -* python3_14
 
+# qemu
 app-emulation/qemu spice usbredir virgl virtfs
-app-text/texlive extra
+net-libs/gnutls tools pkcs11
+net-misc/spice-gtk usbredir
 
-dev-lang/rust-bin clippy rust-analyzer rustfmt rust-src
-
-media-fonts/nerd-fonts 0xproto adwaitamono cascadiacode cascadiamono codenewroman comicshannsmono firacode hack jetbrainsmono liberationmono monaspace noto sourcecodepro ubuntu ubuntumono ubuntusans
-
-media-video/pipewire extra sound-server
+media-fonts/nerd-fonts adwaitamono cascadiacode cascadiamono codenewroman comicshannsmono firacode hack jetbrainsmono liberationmono ubuntu ubuntumono ubuntusans
 
 net-im/wechat fcitx
 
-net-libs/nodejs npm
+dev-lang/rust-bin clippy rust-analyzer rustfmt rust-src
 
-# os-prober
-sys-boot/grub mount
-sys-kernel/installkernel grub dracut
+# systemd-boot
+sys-apps/systemd boot
+sys-kernel/installkernel systemd-boot dracut uki
 
-# kde
-media-libs/freetype harfbuzz
-dev-qt/qtpositioning geoclue
-dev-qt/qtwebengine bindist -vaapi
+# pipewire
+media-video/pipewire extra sound-server
 
-# pfl
-sys-apps/util-linux caps
+dev-libs/weston xwayland
 
 x11-drivers/nvidia-drivers kernel-open powerd
-
