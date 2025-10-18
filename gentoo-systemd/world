@@ -1,5 +1,6 @@
 app-admin/eclean-kernel
 app-admin/sudo
+app-arch/file-roller
 app-arch/unzip
 app-arch/zip
 app-editors/gnome-text-editor
@@ -14,6 +15,7 @@ app-i18n/fcitx-gtk
 app-misc/fastfetch
 app-misc/jq
 app-misc/tmux
+app-office/wps-office::local
 app-portage/command-not-found
 app-portage/cpuid2cpuflags
 app-portage/eix
@@ -23,6 +25,7 @@ app-portage/portage-utils
 app-shells/bash-completion
 app-shells/fish
 app-shells/starship
+app-text/papers
 app-text/texlive
 app-text/tree
 dev-java/openjdk-bin
@@ -36,12 +39,15 @@ games-util/game-device-udev-rules
 gnome-base/dconf-editor
 gnome-base/gnome-light
 gnome-extra/gnome-browser-connector
+gnome-extra/gnome-characters
 gnome-extra/gnome-tweaks
 llvm-core/lld
 media-fonts/nerd-fonts
 media-fonts/noto-cjk
 media-fonts/noto-emoji
 media-gfx/flameshot
+media-gfx/gimp
+media-gfx/loupe
 media-libs/libva-intel-media-driver
 media-libs/nvidia-vaapi-driver
 media-video/libva-utils
@@ -49,12 +55,14 @@ media-video/mpv
 media-video/obs-studio
 media-video/pipewire
 media-video/smplayer
+net-fs/sshfs
 net-im/tencent-qq
 net-im/wechat
 net-misc/chrony
 net-misc/networkmanager
 net-proxy/clash-party-bin
 sys-apps/arch-chroot
+sys-apps/baobab
 sys-apps/flatpak
 sys-apps/kmscon
 sys-apps/lm-sensors
@@ -83,3 +91,4 @@ x11-terms/kitty
 x11-terms/ptyxis
 x11-themes/papirus-icon-theme
 x11-themes/tela-icon-theme
+x11-themes/yaru

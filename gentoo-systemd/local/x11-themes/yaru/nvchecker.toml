@@ -1,0 +1,4 @@
+[yaru]
+source = "git"
+git = "https://github.com/ubuntu/yaru.git"
+prefix = "v"
