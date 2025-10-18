@@ -6,7 +6,10 @@ DESCRIPTION="Yaru GNOME theme for Ubuntu (all components included)"
 HOMEPAGE="https://github.com/ubuntu/yaru"
 SRC_URI="https://github.com/ubuntu/yaru/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
+S="${WORKDIR}/yaru-${PV}"
+
 LICENSE="GPL-3 CC-BY-SA-4.0"
+
 SLOT="0"
 KEYWORDS="~amd64"
 
@@ -23,9 +26,8 @@ DEPEND="
 	${RDEPEND}
 	dev-build/meson
 	dev-lang/sassc
+	media-gfx/inkscape
 "
-
-S="${WORKDIR}/yaru-${PV}"
 
 src_configure() {
 	meson_src_configure
@@ -36,11 +38,11 @@ src_install() {
 }
 
 pkg_postinst() {
-	gnome2_icon_cache_update
-	gnome2_schemas_update
+    xdg_icon_cache_update
+    gnome2_schemas_update
 }
 
 pkg_postrm() {
-	gnome2_icon_cache_update
-	gnome2_schemas_update
+    xdg_icon_cache_update
+    gnome2_schemas_update
 }
