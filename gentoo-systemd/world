@@ -23,12 +23,16 @@ app-portage/portage-utils
 app-shells/bash-completion
 app-shells/fish
 app-shells/starship
+app-text/texlive
 app-text/tree
 dev-java/openjdk-bin
 dev-libs/weston
 dev-python/nvchecker
+dev-tex/latexmk
+dev-util/nvidia-cuda-toolkit
 dev-util/pkgdev
 dev-vcs/git
+games-util/game-device-udev-rules
 gnome-base/dconf-editor
 gnome-base/gnome-light
 gnome-extra/gnome-browser-connector
@@ -53,6 +57,7 @@ net-proxy/clash-party-bin
 sys-apps/arch-chroot
 sys-apps/flatpak
 sys-apps/kmscon
+sys-apps/lm-sensors
 sys-apps/mlocate
 sys-block/io-scheduler-udev-rules
 sys-boot/efibootmgr
