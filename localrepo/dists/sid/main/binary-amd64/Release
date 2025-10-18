@@ -1,0 +1,6 @@
+Archive: sid
+Component: main
+Origin: Local Repository
+Label: Local Debian Repository
+Architecture: amd64
+Description: My custom Debian repository

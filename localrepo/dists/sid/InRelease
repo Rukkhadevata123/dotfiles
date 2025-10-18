@@ -1,0 +1,45 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: Local Repository
+Label: Local Debian Repository
+Suite: sid
+Codename: sid
+Date: Wed, 15 Oct 2025 09:23:18 UTC
+Architectures: amd64
+Components: main
+Description: My custom Debian repository
+MD5Sum:
+ 5a38cef514fd3c6e561dde0aa6062cb8 590 main/binary-amd64/Packages
+ 6236e48296b8eb0f19bfbc33e4b186b2 409 main/binary-amd64/Packages.gz
+ f76c61d6fd8c66355fefeaa0b278ea03 146 main/binary-amd64/Release
+ a2720d7226d94fd5d1f9a6c1feb6f2ff 907 main/source/Sources
+ 952b07dd23615c92822205892b8a9efa 494 main/source/Sources.gz
+ f1914cfc4ed59a7a30560aaaa386ed60 147 main/source/Release
+ e8095086d5b006825e12f17363c73455 309 main/Contents-amd64
+ 164d6638340833b5bd3fe97e3ee2f6bc 114 main/Contents-amd64.gz
+SHA1:
+ f725717094ce2ad5a3a5cbfac27caa302f11e2a6 590 main/binary-amd64/Packages
+ 7d8d30c11c0a09870be3c77edea4f6c44fe95406 409 main/binary-amd64/Packages.gz
+ e70c1732c48dd6ae8718b94b33dd345885d72175 146 main/binary-amd64/Release
+ e7bd3b620796449e65e8d7000a77d02323b04fe6 907 main/source/Sources
+ 06ec020c81cb0604d5eef6b18bca27f42f9e078e 494 main/source/Sources.gz
+ 60e4963b304e43598bf0cabd53ab3de165f1af3e 147 main/source/Release
+ 48fae3048100c5d0d8df85792f8016ae5232faa4 309 main/Contents-amd64
+ 3a2292dce3a6465eb12a172780f433921fcea9fc 114 main/Contents-amd64.gz
+SHA256:
+ 4a21c54ae71b04fc479acabbfeb90568404e513f5b55a0c0ed7b551a40bfb97e 590 main/binary-amd64/Packages
+ abafa771a251f69bde9b9de978f5f9b9a21e37e87045cb029a1751524a69fcdf 409 main/binary-amd64/Packages.gz
+ 6a296328870130b67b487ae76e2ba4956bdf6fd40d1f9048b37282520faa46b9 146 main/binary-amd64/Release
+ fff70a9299781180041c2dc8863013ed5d2b4a39f4bebed14016d00b5eb6aaeb 907 main/source/Sources
+ 9710bf8494fbe2d38b93fc9a745a4ec7f77d0c271cb3bd1f9159ff23e1c8cb34 494 main/source/Sources.gz
+ 07a16f65fe95913b8903bbd66051fb6eba71c7c565f4089fbbd99c327061d933 147 main/source/Release
+ 407b37efc8f1b3b052341e31d7bd387fc3f2100eae789b756c1ff5c012b01808 309 main/Contents-amd64
+ 979dcb8acb8b1d55e35e609632db05e4410bc5a2854b22a7d3d1c433f7d9bf80 114 main/Contents-amd64.gz
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYKAB0WIQQy2C1pxPpzkXtRlA2yls8Ak2clIgUCaO9oCQAKCRCyls8Ak2cl
+IvWEAP9OcoPHwEczsfbmM4x9cMEZmWJ6FX0vvs+Wk+x2rk1KIgEAvcGKPfWboCCc
+vR5n9fK6Fuctg9k5dpmUgFNgOLGBxQA=
+=QZ+u
+-----END PGP SIGNATURE-----

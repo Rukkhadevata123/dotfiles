@@ -1,0 +1,17 @@
+Package: kvmfr-kernel-dkms
+Version: 0.0.12
+Architecture: amd64
+Maintainer: Rukkhadevata123 <rukkhadevata@foxmail.com>
+Installed-Size: 31
+Depends: dkms (>= 2.1.0.0)
+Provides: kvmfr-kernel
+Priority: optional
+Section: kernel
+Filename: pool/main/k/kvmfr-kernel-dkms/kvmfr-kernel-dkms_0.0.12_amd64.deb
+Size: 6660
+SHA256: 316e8e9d33abe2f62a18d0eeb38423d81198ba8ccc5de7dcdfcb0df2df15c923
+SHA1: b32c01f1b9d391b4b2336886fbbb81affa98d437
+MD5sum: 37fb76256feeb3e9105ca027fe071758
+Description: LookingGlass KVMFR kernel module (DKMS)
+ Kernel module for LookingGlass, a KVM Frame Relay implementation.
+

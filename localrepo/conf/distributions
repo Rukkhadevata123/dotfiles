@@ -1,0 +1,9 @@
+Codename: sid
+Suite: sid
+Architectures: source amd64 
+Components: main
+Contents:
+SignWith: 32D82D69C4FA73917B51940DB296CF0093672522
+Origin: Local Repository
+Label: Local Debian Repository
+Description: My custom Debian repository

@@ -23,6 +23,9 @@ sys-kernel/installkernel systemd-boot dracut uki
 # pipewire
 media-video/pipewire extra sound-server
 
+# obs
+media-video/ffmpeg opus
+
 dev-libs/weston xwayland
 
 x11-drivers/nvidia-drivers kernel-open powerd

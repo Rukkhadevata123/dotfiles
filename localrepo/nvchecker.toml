@@ -1,0 +1,4 @@
+[kvmfr-kernel-dkms]
+source = "regex"
+url = "https://raw.githubusercontent.com/gnif/LookingGlass/master/module/dkms.conf"
+regex = 'PACKAGE_VERSION="(\d+\.\d+\.\d+)"'
