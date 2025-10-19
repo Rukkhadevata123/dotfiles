@@ -16,12 +16,18 @@ net-im/wechat fcitx
 
 dev-lang/rust-bin clippy rust-analyzer rustfmt rust-src
 
+# yaru
+dev-python/pillow webp
+
 # systemd-boot
 sys-apps/systemd boot
 sys-kernel/installkernel systemd-boot dracut uki
 
 # pipewire
 media-video/pipewire extra sound-server
+
+# gnome screencast
+media-plugins/gst-plugins-meta vpx
 
 # obs
 media-video/ffmpeg opus
