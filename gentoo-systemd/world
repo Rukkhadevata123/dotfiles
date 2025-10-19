@@ -1,5 +1,6 @@
 app-admin/eclean-kernel
 app-admin/sudo
+app-admin/sudo-rs
 app-arch/file-roller
 app-arch/unzip
 app-arch/zip
@@ -70,6 +71,7 @@ sys-apps/flatpak
 sys-apps/kmscon
 sys-apps/lm-sensors
 sys-apps/mlocate
+sys-apps/uutils-coreutils
 sys-block/io-scheduler-udev-rules
 sys-boot/efibootmgr
 sys-firmware/intel-microcode

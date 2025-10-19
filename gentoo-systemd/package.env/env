@@ -1,3 +1,5 @@
 dev-util/cargo-c llvm-lto.conf
 app-shells/fish llvm-lto.conf
 
+app-admin/sudo-rs llvm-lto.conf
+sys-apps/uutils-coreutils llvm-lto.conf
