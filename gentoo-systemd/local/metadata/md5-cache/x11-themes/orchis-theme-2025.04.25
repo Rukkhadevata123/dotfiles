@@ -1,0 +1,9 @@
+DEFINED_PHASES=install
+DESCRIPTION=Orchis GTK theme (All variants included)
+EAPI=8
+HOMEPAGE=https://github.com/vinceliuice/Orchis-theme
+KEYWORDS=~amd64
+LICENSE=GPL-3
+SLOT=0
+SRC_URI=https://github.com/vinceliuice/Orchis-theme/raw/master/release/Orchis.tar.xz https://github.com/vinceliuice/Orchis-theme/raw/master/release/Orchis-Green.tar.xz https://github.com/vinceliuice/Orchis-theme/raw/master/release/Orchis-Grey.tar.xz https://github.com/vinceliuice/Orchis-theme/raw/master/release/Orchis-Orange.tar.xz https://github.com/vinceliuice/Orchis-theme/raw/master/release/Orchis-Pink.tar.xz https://github.com/vinceliuice/Orchis-theme/raw/master/release/Orchis-Purple.tar.xz https://github.com/vinceliuice/Orchis-theme/raw/master/release/Orchis-Red.tar.xz https://github.com/vinceliuice/Orchis-theme/raw/master/release/Orchis-Teal.tar.xz https://github.com/vinceliuice/Orchis-theme/raw/master/release/Orchis-Yellow.tar.xz
+_md5_=4bd48c73dbc377f6884c1277e0899e69
