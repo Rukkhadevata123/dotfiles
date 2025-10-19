@@ -30,12 +30,14 @@ app-text/papers
 app-text/texlive
 app-text/tree
 dev-java/openjdk-bin
+dev-java/openjdk-bin:21
 dev-libs/weston
 dev-python/nvchecker
 dev-tex/latexmk
 dev-util/nvidia-cuda-toolkit
 dev-util/pkgdev
 dev-vcs/git
+games-action/prismlauncher
 games-util/game-device-udev-rules
 gnome-base/dconf-editor
 gnome-base/gnome-light
