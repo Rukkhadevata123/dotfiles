@@ -50,6 +50,7 @@ gnome-extra/gnome-software
 gnome-extra/gnome-tweaks
 gui-libs/egl-wayland2
 llvm-core/lld
+llvm-runtimes/libcxx
 media-fonts/nerd-fonts
 media-fonts/noto-cjk
 media-fonts/noto-emoji
@@ -70,7 +71,7 @@ net-im/wechat
 net-misc/chrony
 net-misc/gnome-remote-desktop
 net-misc/networkmanager
-net-proxy/clash-party-bin
+net-proxy/flclash-bin
 sys-apps/arch-chroot
 sys-apps/baobab
 sys-apps/flatpak
