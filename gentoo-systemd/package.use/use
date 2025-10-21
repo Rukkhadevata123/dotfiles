@@ -10,9 +10,13 @@ app-emulation/qemu spice usbredir virgl virtfs
 net-libs/gnutls tools pkcs11
 net-misc/spice-gtk usbredir
 
+app-text/texlive extra
+
 media-fonts/nerd-fonts adwaitamono cascadiacode cascadiamono codenewroman comicshannsmono firacode hack jetbrainsmono liberationmono ubuntu ubuntumono ubuntusans
 
 net-im/wechat fcitx
+
+gnome-extra/gnome-software flatpak
 
 dev-lang/rust-bin clippy rust-analyzer rustfmt rust-src
 
