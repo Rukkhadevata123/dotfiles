@@ -16,6 +16,7 @@ app-i18n/fcitx-gtk
 app-misc/fastfetch
 app-misc/jq
 app-misc/mc
+app-misc/resolve-march-native
 app-misc/tmux
 app-office/wps-office::local
 app-portage/command-not-found
