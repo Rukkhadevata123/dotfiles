@@ -46,6 +46,7 @@ gnome-base/dconf-editor
 gnome-base/gnome-light
 gnome-extra/gnome-browser-connector
 gnome-extra/gnome-characters
+gnome-extra/gnome-power-manager
 gnome-extra/gnome-software
 gnome-extra/gnome-tweaks
 gui-libs/egl-wayland2
@@ -90,6 +91,7 @@ sys-kernel/gentoo-kernel-bin
 sys-kernel/gentoo-sources
 sys-kernel/installkernel
 sys-kernel/linux-firmware
+sys-power/acpi
 sys-power/power-profiles-daemon
 sys-power/upower
 sys-process/nvtop
