@@ -4,6 +4,7 @@ app-admin/sudo-rs
 app-arch/file-roller
 app-arch/unzip
 app-arch/zip
+app-crypt/seahorse
 app-editors/gnome-text-editor
 app-editors/nano
 app-editors/vim
@@ -39,6 +40,7 @@ dev-python/nvchecker
 dev-tex/latexmk
 dev-util/nvidia-cuda-toolkit
 dev-util/pkgdev
+dev-util/vulkan-tools
 dev-vcs/git
 games-action/prismlauncher
 games-util/game-device-udev-rules
@@ -70,7 +72,6 @@ net-fs/sshfs
 net-im/tencent-qq
 net-im/wechat
 net-misc/chrony
-net-misc/gnome-remote-desktop
 net-misc/networkmanager
 net-proxy/flclash-bin
 sys-apps/arch-chroot
