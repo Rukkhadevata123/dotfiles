@@ -1,0 +1,5 @@
+Types: deb deb-src
+URIs: https://liquorix.net/debian/
+Suites: sid
+Components: main
+Signed-By: /etc/apt/keyrings/liquorix-keyring.gpg

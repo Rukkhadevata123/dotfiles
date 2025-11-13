@@ -1,0 +1,5 @@
+Types: deb deb-src
+URIs: http://deb.xanmod.org/
+Suites: sid 
+Components: main
+Signed-By: /etc/apt/keyrings/xanmod-archive-keyring.gpg
