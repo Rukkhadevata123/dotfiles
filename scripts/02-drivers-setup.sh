@@ -23,6 +23,15 @@ sudo systemctl enable nvidia-resume.service
 echo "Add nvidia to the MODULES line, for example:"
 echo "MODULES=(i915 nvidia nvidia_modeset nvidia_uvm nvidia_drm)"
 
+# Intel Xe Experimental Driver Setup
+echo "First run lspci -nnd ::03xx"
+echo "Edit kernel parameters:"
+echo 'GRUB_CMDLINE_LINUX_DEFAULT="quiet nvidia-drm.modeset=1 nvidia-drm.fbdev=1 zswap.enabled=1 zswap.compressor=zstd i915.force_probe=!a7a0 xe.force_probe=a7a0"'
+
+# Disable Intel V-Sync
+echo "See .drirc"
+
+
 sudo vim /etc/mkinitcpio.conf
 
 echo "=== Driver verification commands ==="
