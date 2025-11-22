@@ -1,4 +1,4 @@
-Types: deb deb-src
+Types: deb 
 URIs: http://deb.xanmod.org/
 Suites: sid 
 Components: main
