@@ -4,8 +4,3 @@ Suites: sid
 Components: main contrib non-free non-free-firmware
 Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
 
-Types: deb deb-src
-URIs: https://www.deb-multimedia.org
-Suites: sid
-Components: main non-free
-Signed-By: /usr/share/keyrings/deb-multimedia-keyring.pgp

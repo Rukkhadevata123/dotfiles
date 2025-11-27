@@ -1,0 +1,5 @@
+Types: deb deb-src
+URIs: https://www.deb-multimedia.org
+Suites: sid
+Components: main non-free
+Signed-By: /usr/share/keyrings/deb-multimedia-keyring.pgp
