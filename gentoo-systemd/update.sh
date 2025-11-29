@@ -1,0 +1,1 @@
+sudo eix-sync && sudo emerge -auvDN @world && sudo emerge -ac  && sudo eclean-dist && sudo eclean-pkg && /var/db/repos/local/check_nv.sh && flatpak update && flatpak uninstall --unused
