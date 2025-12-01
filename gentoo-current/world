@@ -25,7 +25,7 @@ media-fonts/lxgw-neo-xihei
 media-fonts/lxgw-neo-zhisong
 media-fonts/lxgw-wenkai
 media-fonts/nerd-fonts
-media-fonts/noto-cjk
+media-fonts/source-han-sans
 media-libs/libva-intel-media-driver
 media-libs/nvidia-vaapi-driver
 media-libs/vkmark
@@ -45,6 +45,7 @@ sys-fs/xfsprogs
 sys-kernel/gentoo-kernel-bin
 sys-kernel/installkernel
 sys-kernel/linux-firmware
+sys-kernel/modprobed-db
 sys-kernel/xanmod-sources
 sys-process/nvtop
 www-client/firefox-bin

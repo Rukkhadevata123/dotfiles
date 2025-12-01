@@ -18,6 +18,7 @@ media-video/ffmpeg opus
 # binary
 net-libs/webkit-gtk keyring
 
+kde-apps/kde-apps-meta -education -games -multimedia
 kde-plasma/plasma-meta discover flatpak
 
 # pfl
