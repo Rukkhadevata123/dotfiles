@@ -27,4 +27,6 @@ sys-apps/util-linux caps
 sys-boot/grub mount
 sys-kernel/installkernel dracut grub
 
+sys-kernel/gentoo-sources symlink
+
 x11-drivers/nvidia-drivers kernel-open persistenced powerd

@@ -14,6 +14,7 @@ app-portage/eix
 app-portage/gentoolkit
 app-portage/pfl
 app-shells/bash-completion
+app-shells/starship
 app-text/tree
 dev-python/nvchecker
 dev-util/pkgdev
@@ -35,6 +36,7 @@ media-video/obs-studio
 net-misc/chrony
 net-misc/networkmanager
 net-proxy/clash-verge-bin
+sys-apps/kmscon
 sys-apps/mlocate
 sys-apps/xdg-desktop-portal
 sys-block/io-scheduler-udev-rules
@@ -43,10 +45,10 @@ sys-firmware/intel-microcode
 sys-firmware/sof-firmware
 sys-fs/xfsprogs
 sys-kernel/gentoo-kernel-bin
+sys-kernel/gentoo-sources
 sys-kernel/installkernel
 sys-kernel/linux-firmware
 sys-kernel/modprobed-db
-sys-kernel/xanmod-sources
 sys-process/nvtop
 www-client/firefox-bin
 www-client/google-chrome

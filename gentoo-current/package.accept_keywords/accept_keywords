@@ -1,3 +1,6 @@
+
+# kmscon
+dev-libs/libtsm
 dev-python/nvchecker
 
 media-fonts/lxgw-neo-xihei
@@ -12,7 +15,8 @@ media-video/obs-studio
 
 net-proxy/clash-verge-bin
 
-sys-kernel/xanmod-sources
+sys-apps/kmscon 
+
 sys-kernel/gentoo-kernel-bin
 sys-kernel/gentoo-sources
 
