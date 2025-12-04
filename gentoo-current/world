@@ -55,6 +55,7 @@ www-client/google-chrome
 x11-apps/mesa-progs
 x11-apps/xwininfo
 x11-drivers/nvidia-drivers
+x11-themes/bibata-xcursors
 x11-themes/kvantum
 x11-themes/papirus-icon-theme
 x11-themes/tela-icon-theme

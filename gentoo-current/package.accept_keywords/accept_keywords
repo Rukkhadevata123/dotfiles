@@ -22,5 +22,6 @@ sys-kernel/gentoo-sources
 
 virtual/dist-kernel
 
+x11-themes/bibata-xcursors
 x11-themes/kvantum
 x11-themes/tela-icon-theme
