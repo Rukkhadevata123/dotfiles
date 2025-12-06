@@ -1,5 +1,6 @@
 Types: deb deb-src
-URIs: https://mirrors.zju.edu.cn/debian/
+#URIs: https://mirrors.zju.edu.cn/debian/
+URIs: https://deb.debian.org/debian/
 Suites: sid
 Components: main contrib non-free non-free-firmware
 Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
