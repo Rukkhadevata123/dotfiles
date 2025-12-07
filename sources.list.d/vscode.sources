@@ -1,7 +1,7 @@
 ### THIS FILE IS AUTOMATICALLY CONFIGURED ###
 # You may comment out this entry, but any other modifications may be lost.
 Types: deb
-URIs: https://packages.microsoft.com/repos/code
+URIs: http://packages.microsoft.com/repos/code
 Suites: stable
 Components: main
 Architectures: amd64
