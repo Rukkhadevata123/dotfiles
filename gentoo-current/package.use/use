@@ -18,6 +18,9 @@ media-video/ffmpeg opus
 # binary
 net-libs/webkit-gtk keyring
 
+# swtpm
+net-libs/gnutls pkcs11 tools
+
 kde-apps/kde-apps-meta -education -games -multimedia
 kde-plasma/plasma-meta discover flatpak
 
