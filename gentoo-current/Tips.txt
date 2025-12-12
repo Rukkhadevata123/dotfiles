@@ -1,0 +1,2 @@
+1. rootdelay=15 for USB device
+2. sudo eselect fontconfig disable 65-nonlatin.conf 
