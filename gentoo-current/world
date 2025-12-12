@@ -17,11 +17,13 @@ app-shells/bash-completion
 app-shells/starship
 app-text/tree
 dev-python/nvchecker
+dev-util/ccache
 dev-util/pkgdev
 dev-util/vulkan-tools
 dev-vcs/git
 kde-apps/kde-apps-meta
 kde-plasma/plasma-meta
+llvm-core/lld
 media-fonts/lxgw-neo-xihei
 media-fonts/lxgw-neo-zhisong
 media-fonts/lxgw-wenkai

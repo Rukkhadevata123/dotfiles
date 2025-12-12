@@ -3,6 +3,9 @@
 dev-libs/libtsm
 dev-python/nvchecker
 
+# nvidia
+gui-libs/egl-wayland2
+
 media-fonts/lxgw-neo-xihei
 media-fonts/lxgw-neo-zhisong
 media-fonts/lxgw-wenkai
@@ -26,3 +29,4 @@ x11-themes/bibata-xcursors
 x11-themes/kvantum
 x11-themes/tela-icon-theme
 
+x11-drivers/nvidia-drivers **

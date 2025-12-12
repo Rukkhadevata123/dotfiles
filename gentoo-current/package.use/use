@@ -30,6 +30,6 @@ sys-apps/util-linux caps
 sys-apps/systemd boot
 sys-kernel/installkernel dracut systemd-boot uki 
 
-sys-kernel/gentoo-sources symlink
+sys-kernel/gentoo-sources symlink experimental
 
 x11-drivers/nvidia-drivers kernel-open persistenced powerd
