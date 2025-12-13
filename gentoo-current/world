@@ -55,7 +55,6 @@ sys-kernel/modprobed-db
 sys-process/btop
 sys-process/nvtop
 www-client/firefox-bin
-www-client/google-chrome
 x11-apps/mesa-progs
 x11-apps/xwininfo
 x11-drivers/nvidia-drivers
