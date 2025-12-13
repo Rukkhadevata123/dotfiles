@@ -2,3 +2,4 @@
 2. sudo eselect fontconfig disable 65-nonlatin.conf 
 3. KBUILD_BUILD_TIMESTAMP='' make LLVM=1 CC="ccache clang"
 4. modprobed-db
+5. cp /var/lib/portage/world . && cp -r /etc/portage/package.use . && cp -r /etc/portage/package.accept_keywords . && cp /etc/portage/make.conf .
