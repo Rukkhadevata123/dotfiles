@@ -9,6 +9,7 @@ gui-libs/egl-wayland2
 media-fonts/lxgw-neo-xihei
 media-fonts/lxgw-neo-zhisong
 media-fonts/lxgw-wenkai
+media-fonts/misans
 media-fonts/nerd-fonts
 
 media-libs/nvidia-vaapi-driver
