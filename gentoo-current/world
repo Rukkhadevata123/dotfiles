@@ -33,6 +33,7 @@ media-fonts/source-han-sans
 media-libs/libva-intel-media-driver
 media-libs/nvidia-vaapi-driver
 media-libs/vkmark
+media-video/ffmpeg
 media-video/libva-utils
 media-video/mpv
 media-video/obs-studio

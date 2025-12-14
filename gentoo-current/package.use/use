@@ -14,8 +14,8 @@ dev-qt/qtpositioning geoclue
 media-fonts/nerd-fonts cascadiacode cascadiamono codenewroman comicshannsmono dejavusansmono jetbrainsmono ubuntu ubuntumono ubuntusans
 media-video/pipewire extra sound-server
 
-# obs
-media-video/ffmpeg opus
+# obs and spectacle
+media-video/ffmpeg opus vpx
 
 # binary
 net-libs/webkit-gtk keyring
