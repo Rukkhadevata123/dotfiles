@@ -31,3 +31,26 @@ x11-themes/kvantum
 x11-themes/tela-icon-theme
 
 x11-drivers/nvidia-drivers **
+
+# bump kde
+app-admin/kio-admin
+app-cdr/dolphin-plugins-mountiso
+app-cdr/isoimagewriter
+app-crypt/keysmith
+app-misc/francis
+dev-libs/kweathercore
+media-gfx/kio-ps-thumbnailer
+media-gfx/kgraphviewer
+media-gfx/qrca
+net-im/tokodon
+net-irc/konversation
+net-libs/libktorrent
+net-misc/kio-zeroconf
+net-news/alligator
+net-p2p/ktorrent
+sys-block/partitionmanager
+sys-libs/kpmcore
+kde-apps/*
+kde-frameworks/*
+kde-misc/*
+kde-plasma/*

@@ -22,6 +22,7 @@ net-libs/webkit-gtk keyring
 net-libs/gnutls pkcs11 tools
 
 kde-apps/kde-apps-meta -education -games -multimedia
+kde-plasma/discover flatpak
 kde-plasma/plasma-meta discover flatpak
 
 # pfl
