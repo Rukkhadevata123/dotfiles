@@ -2,6 +2,8 @@
 */* VIDEO_CARDS: -* nvidia intel
 */* L10N: zh-CN en-US zh en
 
+# dev-util/mesa_clc LLVM_SLOT: -* 21
+
 # qemu
 app-emulation/qemu spice usbredir virgl virtfs
 dev-libs/libxml2 python
