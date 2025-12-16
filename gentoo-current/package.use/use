@@ -2,6 +2,11 @@
 */* VIDEO_CARDS: -* nvidia intel
 */* L10N: zh-CN en-US zh en
 
+*/* -webengine
+*/* cuda nvenc
+*/* ffmpeg vaapi
+*/* dist-kernel
+
 # dev-util/mesa_clc LLVM_SLOT: -* 21
 
 # qemu
