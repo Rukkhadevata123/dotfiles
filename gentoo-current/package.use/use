@@ -21,6 +21,7 @@ media-video/pipewire extra sound-server
 
 # obs and spectacle
 media-video/ffmpeg opus vpx
+media-video/obs-studio v4l
 
 # binary
 net-libs/webkit-gtk keyring
