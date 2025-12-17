@@ -1,0 +1,1 @@
+useradd -m -G wheel,audio,video,kvm,libvirt,users,locate,plugdev,pipewire,docker -s /bin/bash yoimiya

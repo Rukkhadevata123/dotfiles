@@ -35,8 +35,8 @@ kde-plasma/plasma-meta discover flatpak
 # pfl
 sys-apps/util-linux caps
 
-sys-apps/systemd boot
-sys-kernel/installkernel dracut refind uki 
+sys-boot/grub mount
+sys-kernel/installkernel dracut grub 
 
 sys-kernel/gentoo-sources symlink experimental
 
