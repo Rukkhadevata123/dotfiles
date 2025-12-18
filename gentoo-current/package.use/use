@@ -2,12 +2,14 @@
 */* VIDEO_CARDS: -* nvidia intel
 */* L10N: zh-CN en-US zh en
 
+*/* -qt5
 */* -webengine
 */* cuda nvenc
-*/* ffmpeg vaapi
 */* dist-kernel
+*/* ffmpeg vaapi
+*/* lto pgo
 
-# dev-util/mesa_clc LLVM_SLOT: -* 21
+dev-util/mesa_clc LLVM_SLOT: -* 21
 
 # qemu
 app-emulation/qemu spice usbredir virgl virtfs
@@ -16,15 +18,13 @@ dev-libs/libxml2 python
 # kweather
 dev-qt/qtpositioning geoclue
 
+media-libs/opencv -cuda
 media-fonts/nerd-fonts cascadiacode cascadiamono codenewroman comicshannsmono dejavusansmono jetbrainsmono ubuntu ubuntumono ubuntusans
 media-video/pipewire extra sound-server
 
 # obs and spectacle
 media-video/ffmpeg opus vpx
 media-video/obs-studio v4l
-
-# binary
-net-libs/webkit-gtk keyring
 
 # swtpm
 net-libs/gnutls pkcs11 tools
