@@ -18,6 +18,7 @@ dev-libs/libxml2 python
 # kweather
 dev-qt/qtpositioning geoclue
 
+media-libs/mesa -llvm
 media-libs/opencv -cuda
 media-fonts/nerd-fonts cascadiacode cascadiamono codenewroman comicshannsmono dejavusansmono jetbrainsmono ubuntu ubuntumono ubuntusans
 media-video/pipewire extra sound-server

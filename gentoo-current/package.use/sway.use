@@ -1,0 +1,4 @@
+gnome-extra/nm-applet appindicator
+gui-apps/waybar backlight experimental mpd mpris network tray wifi
+gui-apps/xwayland-satellite LLVM_SLOT: -* 21
+gui-wm/sway tray

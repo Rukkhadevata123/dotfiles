@@ -1,6 +1,8 @@
 app-admin/eclean-kernel
 app-admin/sudo
+app-admin/sudo-rs
 app-arch/zip
+app-editors/gnome-text-editor
 app-editors/nano
 app-editors/vim
 app-editors/vscode
@@ -10,6 +12,7 @@ app-i18n/fcitx-configtool
 app-i18n/fcitx-rime
 app-misc/fastfetch
 app-misc/resolve-march-native
+app-misc/tmux
 app-portage/command-not-found
 app-portage/eix
 app-portage/gentoolkit
@@ -34,6 +37,7 @@ media-fonts/source-han-sans
 media-libs/libva-intel-media-driver
 media-libs/nvidia-vaapi-driver
 media-libs/vkmark
+media-video/celluloid
 media-video/ffmpeg
 media-video/libva-utils
 media-video/mpv
