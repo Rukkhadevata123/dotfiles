@@ -9,6 +9,7 @@ app-i18n/fcitx
 app-i18n/fcitx-configtool
 app-i18n/fcitx-rime
 app-misc/fastfetch
+app-misc/resolve-march-native
 app-portage/command-not-found
 app-portage/eix
 app-portage/gentoolkit
