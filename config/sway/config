@@ -12,6 +12,7 @@ exec fcitx5 -d
 exec FlClash
 exec gammastep -O 4500K
 exec mako
+exec nm-applet
 exec xwayland-satellite
 exec QT_STYLE_OVERRIDE="" /usr/libexec/polkit-kde-authentication-agent-1
 exec --no-startup-id dbus-update-activation-environment --all
