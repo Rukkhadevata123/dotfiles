@@ -1,3 +1,20 @@
+exec systemctl --user set-environment QT_STYLE_OVERRIDE=kvantum
+
+# systemd
+exec systemctl --user set-environment XDG_CURRENT_DESKTOP=sway
+exec systemctl --user import-environment DISPLAY \
+                                         SWAYSOCK \
+                                         WAYLAND_DISPLAY \
+                                         XDG_CURRENT_DESKTOP
+
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY \
+                                                  SWAYSOCK \
+                                                  XDG_CURRENT_DESKTOP=sway \
+                                                  WAYLAND_DISPLAY
+
+
+
 default_border none
 default_floating_border none
 
@@ -15,8 +32,6 @@ exec mako
 exec nm-applet
 exec xwayland-satellite
 exec QT_STYLE_OVERRIDE="" /usr/libexec/polkit-kde-authentication-agent-1
-exec --no-startup-id dbus-update-activation-environment --all
-
 exec wl-paste --type text --watch cliphist store
 exec wl-paste --type image --watch cliphist store
 
@@ -138,10 +153,10 @@ input type:touchpad {
     bindsym $mod+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
+    bindsym $mod+space floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    bindsym $mod+Shift+space focus mode_toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
