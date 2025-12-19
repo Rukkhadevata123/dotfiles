@@ -1,0 +1,9 @@
+[General]
+LastUsedVersion=210800
+
+[MainWindow]
+MenuBar=Disabled
+
+[Recent Files]
+File1[$e]=/mnt/debian/home/yoimiya/Videos/output_frame.png
+Name1[$e]=output_frame.png

@@ -1,0 +1,264 @@
+{
+    // -------------------------------------------------------------------------
+    // Global configuration
+    // -------------------------------------------------------------------------
+    "layer": "top",
+    "position": "top",
+    "height": 24,
+    "modules-left": [
+        "custom/menu",
+        "sway/workspaces",
+        "sway/mode",
+        "sway/scratchpad",
+        "sway/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "group/connectivity",
+        "group/hardware", 
+        "group/multimedia",
+        "group/utilities",
+        "tray",
+        "custom/power"
+    ],
+
+    // -------------------------------------------------------------------------
+    // Groups
+    // -------------------------------------------------------------------------
+    
+    "group/connectivity": {
+        "orientation": "inherit",
+        "modules": [
+            "network"
+        ]
+    },
+
+    "group/hardware": {
+        "orientation": "inherit",
+        "modules": [
+            "cpu",
+            "memory",
+            "temperature",
+            "battery",
+            "power-profiles-daemon"
+        ]
+    },
+
+    "group/multimedia": {
+        "orientation": "inherit",
+        "modules": [
+            "pulseaudio",
+            "backlight",
+            "custom/playerctl"
+        ]
+    },
+
+    "group/utilities": {
+        "orientation": "inherit",
+        "modules": [
+            "custom/clipboard",
+            "idle_inhibitor"
+        ]
+    },
+
+    // -------------------------------------------------------------------------
+    // Modules
+    // -------------------------------------------------------------------------
+    
+    "custom/menu": {
+        "format": "",
+        "on-click": "wofi --show drun",
+        "tooltip": false
+    },
+
+    // Sway Workspaces
+    "sway/workspaces": {
+        "all-outputs": true,
+        "format": "{name}:{icon}",
+        "format-icons": {
+            "1": "󰲠",
+            "2": "󰲢", 
+            "3": "󰲤",
+            "4": "󰲦",
+            "5": "󰲨",
+            "6": "󰲪",
+            "7": "󰲬",
+            "8": "󰲮",
+            "9": "󰲰",
+            "10": "󰿬",
+            "urgent": "󰀨",
+            "focused": "󰮯",
+            "default": "󰧞"
+        },
+        "disable-scroll": false
+    },
+
+    // Sway Mode (Resize, etc.)
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>",
+        "tooltip": false
+    },
+
+    // Sway Scratchpad (Native)
+    "sway/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": ["", "󰖯"],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}",
+        "on-click": "swaymsg 'scratchpad show'"
+    },
+
+    // Sway Window
+    "sway/window": {
+        "format": "{title}",
+        "max-length": 50,
+        "icon": true,
+        "icon-size": 16
+    },
+
+    "clock": {
+        "interval": 1,
+        "format": "󰥔 {:%H:%M:%S}",
+        "format-alt": "󰃭 {:%Y-%m-%d}",
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>",
+        "on-click-right": "kitty calcurse"
+    },
+
+    "cpu": {
+        "interval": 2,
+        "format": "󰘚 {usage}%",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        },
+        "on-click": "kitty btop"
+    },
+
+    "memory": {
+        "interval": 2,
+        "format": "󰍛 {percentage}%",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        },
+        "on-click": "kitty btop",
+        "tooltip-format": "Memory: {used:0.1f}G/{total:0.1f}G"
+    },
+
+    "temperature": {
+        "critical-threshold": 80,
+        "interval": 2,
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": ["󱃃", "󰔐", "🌡️", "󰸁", "🔥"],
+        "tooltip-format": "Temperature: {temperatureC}°C"
+    },
+
+    "battery": {
+        "interval": 10,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format-charging": "󰂄 {capacity}%",
+        "format": "{icon} {capacity}%",
+        "format-icons": ["󱃍", "󰁺", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "tooltip-format": "{timeTo}, {power}W"
+    },
+
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
+    },
+
+    "network": {
+        "interval": 5,
+        "format-wifi": "{icon} {signalStrength}%",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰖪",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "tooltip-format-wifi": "{essid}: {ipaddr}",
+        "tooltip-format-ethernet": "Ethernet: {ipaddr}",
+        "on-click": "nm-connection-editor"
+    },
+
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "{icon} {volume}%{format_source}",
+        "format-muted": "󰖁{format_source}",
+        "format-source": " 󰍬",
+        "format-source-muted": " 󰍭",
+        "format-icons": {
+            "headphone": "󰋋",
+            "headset": "󰋎",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol",
+        "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-scroll-up": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+    },
+
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "on-scroll-up": "brightnessctl set 5%+",
+        "on-scroll-down": "brightnessctl set 5%-",
+        "tooltip-format": "Brightness: {percent}%"
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        },
+        "tooltip-format-activated": "Idle inhibitor: ON",
+        "tooltip-format-deactivated": "Idle inhibitor: OFF"
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 6
+    },
+
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "wlogout",
+        "tooltip": false
+    },
+
+    "custom/playerctl": {
+        "interval": 2,
+        "return-type": "json",
+        "format": "{icon}",
+        "format-icons": {
+            "Playing": "󰏦",
+            "Paused": "󰐍"
+        },
+        "exec": "playerctl metadata --format '{\"alt\": \"{{status}}\", \"tooltip\": \"{{playerName}}: {{markup_escape(title)}} - {{markup_escape(artist)}}\\nLeft: Play/Pause, Right: Next, Middle: Previous\" }' 2>/dev/null || echo '{\"text\": \"󰎈\", \"tooltip\": \"No media playing\"}'",
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl next",
+        "on-click-middle": "playerctl previous"
+    },
+
+    "custom/clipboard": {
+        "format": "󰨸",
+        "interval": 1,
+        "return-type": "json",
+        "on-click": "cliphist list | wofi --dmenu | cliphist decode | wl-copy",
+        "on-click-right": "cliphist list | wofi --dmenu -p \"Delete\" | cliphist delete",
+        "on-click-middle": "rm -f ~/.cache/cliphist/db && notify-send \"Clipboard cleared\"",
+        "exec": "echo '{\"tooltip\":\"󰨸 '$(cliphist list | wc -l)' items\\nLeft: Select, Right: Delete, Middle: Clear\"}'",
+        "tooltip": true
+    }
+}

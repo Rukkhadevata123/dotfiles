@@ -1,0 +1,4400 @@
+################################################################################
+# MAN PAGE: waybar-backlight(5)
+################################################################################
+
+waybar-backlight(5)			     File Formats Manual			 waybar-backlight(5)
+
+NAME
+       waybar - backlight module
+
+DESCRIPTION
+       The backlight module displays the current backlight level.
+
+CONFIGURATION
+       interval:
+       typeof: integer
+       default: 2
+       The interval in which information gets polled.
+
+       format:
+       typeof: string
+       default: {percent}%
+       The format, how information should be displayed. On {} data gets inserted.
+
+       max-length:
+       typeof: integer
+       The maximum length in characters the module should display.
+
+       min-length:
+       typeof: integer
+       The minimum length in characters the module should accept.
+
+       align:
+       typeof: float
+       The  alignment of the label within the module, where 0 is left-aligned and 1 is right-aligned. If the
+       module is rotated, it will follow the flow of the text.
+
+       justify:
+       typeof: string
+       The alignment of the text within the module’s label, allowing options ’left’, ’right’, or ’center’ to
+       define the positioning.
+
+       rotate:
+       typeof: integer
+       Positive value to rotate the text label (in 90 degree increments).
+
+       states:
+       typeof: object
+       A number of backlight states which get activated on certain brightness levels. See waybar-states(5).
+
+       on-click:
+       typeof: string
+       Command to execute when the module is clicked.
+
+       on-click-middle:
+       typeof: string
+       Command to execute when middle-clicked on the module using mouse scroll wheel.
+
+       on-click-right:
+       typeof: string
+       Command to execute when the module is right-clicked.
+
+       on-update:
+       typeof: string
+       Command to execute when the module is updated.
+
+       on-scroll-up:
+       typeof: string
+       Command to execute when performing a scroll up on the module. This replaces the default behaviour  of
+       brightness control.
+
+       on-scroll-down:
+       typeof: string
+	   Command  to execute when performing a scroll down on the module. This replaces the default behav‐
+	   iour of brightness control.
+
+       smooth-scrolling-threshold:
+       typeof: double
+	   Threshold to be used when scrolling.
+
+       reverse-scrolling:
+       typeof: bool
+       Option to reverse the scroll direction.
+
+       scroll-step:
+       typeof: float
+       default: 1.0
+       The speed at which to change the brightness when scrolling.
+
+       min-brightness:
+       typeof: double
+       default: 0.0
+       The minimum brightness of the backlight.
+
+       menu:
+       typeof: string
+       Action that popups the menu.
+
+       menu-file:
+       typeof: string
+       Location of the menu descriptor file. There need to be an element of type
+	   GtkMenu with id menu
+
+       menu-actions:
+       typeof: array
+       The actions corresponding to the buttons of the menu.
+
+       expand:
+       typeof: bool
+       default: false
+       Enables this module to consume all left over space dynamically.
+
+EXAMPLE:
+	   "backlight": {
+		"device": "intel_backlight",
+		"format": "{percent}% {icon}",
+		"format-icons": ["", ""]
+	   }
+
+STYLE
+       •   #backlight
+
+						 2025-12-19				 waybar-backlight(5)
+
+
+
+################################################################################
+# MAN PAGE: waybar-battery(5)
+################################################################################
+
+waybar-battery(5)			     File Formats Manual			   waybar-battery(5)
+
+NAME
+       waybar - battery module
+
+DESCRIPTION
+       The battery module displays the current capacity and state (eg. charging) of your battery.
+
+CONFIGURATION
+       bat:
+       typeof: string
+       The battery to monitor, as in /sys/class/power_supply/ instead of auto detect.
+
+       adapter:
+       typeof: string
+       The adapter to monitor, as in /sys/class/power_supply/ instead of auto detect.
+
+       full-at:
+       typeof: integer
+       Define the max percentage of the battery, for when you’ve set the battery to stop charging at a lower
+       level  to  save	it.  For  example, if you’ve set the battery to stop at 80% that will become the new
+       100%.
+
+       design-capacity:
+       typeof: bool
+       default: false
+       Option to use the battery design capacity instead of its current maximal capacity.
+
+       interval:
+       typeof: integer
+       default: 60
+       The interval in which the information gets polled.
+
+       states:
+       typeof: object
+       A number of battery states which get activated on certain capacity levels. See waybar-states(5).
+
+       format:
+       typeof: string
+       default: {capacity}%
+       The format, how information should be displayed.
+
+       format-time:
+       typeof: string
+       default: {H} h {M} min
+       The format, how the time should be displayed.
+
+       format-icons:
+       typeof: array/object
+       Based on the current capacity, the corresponding icon gets selected.
+       The order is low to high. Or by the state if it is an object.
+
+       max-length:
+       typeof: integer
+       The maximum length in character the module should display.
+
+       min-length:
+       typeof: integer
+       The minimum length in characters the module should accept.
+
+       align:
+       typeof: float
+       The alignment of the label within the module, where 0 is left-aligned and 1 is right-aligned. If	 the
+       module is rotated, it will follow the flow of the text.
+
+       justify:
+       typeof: string
+       The alignment of the text within the module’s label, allowing options ’left’, ’right’, or ’center’ to
+       define the positioning.
+
+       rotate:
+       typeof: integer
+       Positive value to rotate the text label (in 90 degree increments).
+
+       on-click:
+       typeof: string
+       Command to execute when clicked on the module.
+
+       on-click-middle:
+       typeof: string
+       Command to execute when middle-clicked on the module using mousewheel.
+
+       on-click-right:
+       typeof: string
+       Command to execute when you right-click on the module.
+
+       on-update:
+       typeof: string
+       Command to execute when the module is updated.
+
+       on-scroll-up:
+       typeof: string
+       Command to execute when scrolling up on the module.
+
+       on-scroll-down:
+       typeof: string
+       Command to execute when scrolling down on the module.
+
+       smooth-scrolling-threshold:
+       typeof: double
+       Threshold to be used when scrolling.
+
+       tooltip:
+       typeof: bool
+       default: true
+       Option to disable tooltip on hover.
+
+       bat-compatibility:
+       typeof: bool
+       default: false
+       Option to enable battery compatibility if not detected.
+
+       menu:
+       typeof: string
+       Action that popups the menu.
+
+       menu-file:
+       typeof: string
+       Location of the menu descriptor file. There need to be an element of type
+	   GtkMenu with id menu.
+
+       menu-actions:
+       typeof: array
+       The actions corresponding to the buttons of the menu.
+
+       expand:
+       typeof: bool
+       default: false
+       Enables this module to consume all left over space dynamically.
+
+       events:
+       typeof: object
+       Specifies commands to be executed on specific battery states. See EVENTS section below.
+
+FORMAT REPLACEMENTS
+       {capacity}: Capacity in percentage
+
+       {power}: Power in watts
+
+       {icon}: Icon, as defined in format-icons.
+
+       {time}:	Estimate  of time until full or empty. Note that this is based on the power draw at the last
+       refresh time, not an average.
+
+       {cycles}: Amount of charge cycles the highest-capacity battery has seen. (Linux only)
+
+       {health}: The percentage of the highest-capacity battery’s original maximum charge it can still hold.
+
+TIME FORMAT
+       The battery module allows you to define how time should be formatted via format-time.
+
+       The three arguments are: {H}: Hours {M}: Minutes {m}: Zero-padded minutes
+
+CUSTOM FORMATS
+       The battery module allows one to define custom formats based on up to two factors.  The	best-fitting
+       format will be selected.
+
+       format-<state>: With states, a custom format can be set depending on the capacity of your battery.
+
+       format-<status>:	 With  the  status,  a	custom	format	can  be	 set  depending	 on  the  status  in
+       /sys/class/power_supply/<bat>/status (in lowercase).
+
+       format-<status>-<state>: You can also set a custom format depending on both values.
+
+STATES
+       •   Every entry (state) consists of a <name> (typeof: string) and a <value> (typeof: integer).
+       •   The state can be addressed as a CSS class in the style.css. The name of  the	 CSS  class  is	 the
+	   <name>  of  the state.   Each class gets activated when the current capacity is equal to or below
+	   the configured <value>.
+       •   Also each state can have its own format. Those can be configured via	 format-<name>.	 Or  if	 you
+	   want	 to  differentiate a bit more even as format-<status>-<state>. For more information see cus‐
+	   tom-formats.
+
+EVENTS
+       Every entry in the events object consists of a <event-name> (typeof: string) and a <command> (typeof:
+       string).
+       <event-name> can be in one of the following formats:
+
+       •   on-<status>-<state>
+       •   on-<status>-<capacity>
+
+       Where:
+
+       •   <status> is either charging or discharging,
+       •   <state> is the name of one of the states specified in the states object,
+       •   <capacity> is a battery level value (between 0-100).
+
+EXAMPLES
+	   "battery": {
+		"bat": "BAT2",
+		"interval": 60,
+		"states": {
+		     "warning": 30,
+		     "critical": 15
+		},
+		"events": {
+		     "on-discharging-warning": "notify-send -u normal ’Low Battery’",
+		     "on-discharging-critical": "notify-send -u critical ’Very Low Battery’",
+		     "on-charging-100": "notify-send -u normal ’Battery Full!’"
+		},
+		"format": "{capacity}% {icon}",
+		"format-icons": ["", "", "", "", ""],
+		"max-length": 25
+	   }
+
+STYLE
+       •   #battery
+       •   #battery.<status>
+	   •   <status> is the value of /sys/class/power_supply/<bat>/status in lowercase.
+       •   #battery.<state>
+	   •   <state> can be defined in the config. For more information see states.
+       •   #battery.<status>.<state>
+	   •   Combination of both <status> and <state>.
+
+       The following classes are applied to the entire Waybar rather than just the battery widget:
+
+       •   window#waybar.battery-<state>
+	   •   <state> can be defined in the config, as previously mentioned.
+
+						 2025-12-19				   waybar-battery(5)
+
+
+
+################################################################################
+# MAN PAGE: waybar-bluetooth(5)
+################################################################################
+
+waybar-bluetooth(5)			     File Formats Manual			 waybar-bluetooth(5)
+
+NAME
+       waybar - bluetooth module
+
+DESCRIPTION
+       The bluetooth module displays information about a bluetooth controller and its connections.
+
+CONFIGURATION
+       Addressed by bluetooth
+
+       controller:
+       typeof: string
+       Use the controller with the defined alias. Otherwise, a random controller is used. Recommended to de‐
+       fine when there is more than 1 controller available to the system.
+
+       format-device-preference:
+       typeof: array
+       A  ranking  of bluetooth devices, addressed by their alias. The order is from first displayed to last
+       displayed.
+       If this config option is not defined or none of the devices in the list are connected, it  will	fall
+       back to showing the last connected device.
+
+       format:
+       typeof: string
+       default:  {status}
+       The format, how information should be displayed. This format is used when other formats aren’t speci‐
+       fied.
+
+       format-disabled:
+       typeof: string
+       This format is used when the displayed controller is disabled.
+
+       format-off:
+       typeof: string
+       This format is used when the displayed controller is turned off.
+
+       format-on:
+       typeof: string
+       This format is used when the displayed controller is turned on with no devices connected.
+
+       format-connected:
+       typeof: string
+       This format is used when the displayed controller is connected to at least 1 device.
+
+       format-no-controller:
+       typeof: string
+       This format is used when no bluetooth controller can be found
+
+       format-icons:
+       typeof: array/object
+       Based  on  the  current battery percentage (see section EXPERIMENTAL BATTERY PERCENTAGE FEATURE), the
+       corresponding icon gets selected.
+       The order is low to high. Will only show the current battery percentage icon in the  *-connected-bat‐
+       tery config options.
+       Or by the state if it is an object. It will fall back to the enabled state if its derivatives are not
+       defined (on, off, connected).
+
+       rotate:
+       typeof: integer
+       Positive value to rotate the text label (in 90 degree increments).
+
+       max-length:
+       typeof: integer
+       The maximum length in character the module should display.
+
+       min-length:
+       typeof: integer
+       The minimum length in characters the module should accept.
+
+       align:
+       typeof: float
+       The  alignment of the label within the module, where 0 is left-aligned and 1 is right-aligned. If the
+       module is rotated, it will follow the flow of the text.
+
+       justify:
+       typeof: string
+       The alignment of the text within the module’s label, allowing options ’left’, ’right’, or ’center’ to
+       define the positioning.
+
+       on-click:
+       typeof: string
+       Command to execute when clicked on the module.
+
+       on-click-middle:
+       typeof: string
+       Command to execute when middle-clicked on the module using mousewheel.
+
+       on-click-right:
+       typeof: string
+       Command to execute when you right-click on the module.
+
+       on-scroll-up:
+       typeof: string
+       Command to execute when scrolling up on the module.
+
+       on-scroll-down:
+       typeof: string
+       Command to execute when scrolling down on the module.
+
+       smooth-scrolling-threshold:
+       typeof: double
+       Threshold to be used when scrolling.
+
+       tooltip:
+       typeof: bool
+       default: true
+       Option to disable tooltip on hover.
+
+       tooltip-format:
+       typeof: string
+       The format, how information should be displayed in the tooltip. This format is used when	 other	for‐
+       mats aren’t specified.
+
+       tooltip-format-disabled:
+       typeof: string
+       This format is used when the displayed controller is disabled.
+
+       tooltip-format-off:
+       typeof: string
+       This format is used when the displayed controller is turned off.
+
+       tooltip-format-on:
+       typeof: string
+       This format is used when the displayed controller is turned on with no devices connected.
+
+       tooltip-format-connected:
+       typeof: string
+       This format is used when the displayed controller is connected to at least 1 device.
+
+       tooltip-format-no-controller:
+       typeof: string
+       This format is used when no bluetooth controller can be found
+
+       tooltip-format-enumerate-connected:
+       typeof: string
+       This format is used to define how each connected device should be displayed within the device_enumer‐
+       ate format replacement in the tooltip menu.
+
+       menu:
+       typeof: string
+       Action that popups the menu.
+
+       menu-file:
+       typeof: string
+       Location of the menu descriptor file. There need to be an element of type
+	   GtkMenu with id menu
+
+       menu-actions:
+       typeof: array
+       The actions corresponding to the buttons of the menu.
+
+       expand:
+       typeof: bool
+       default: false
+       Enables this module to consume all left over space dynamically.
+
+FORMAT REPLACEMENTS
+       {status}: Status of the bluetooth device.
+
+       {icon}: Icon, as defined in format-icons.
+
+       {num_connections}: Number of connections the displayed controller has.
+
+       {controller_address}: Address of the displayed controller.
+
+       {controller_address_type}: Address type of the displayed controller.
+
+       {controller_alias}: Alias of the displayed controller.
+
+       {device_address}: Address of the displayed device.
+
+       {device_address_type}: Address type of the displayed device.
+
+       {device_alias}: Alias of the displayed device.
+
+       {device_enumerate}:  Show a list of all connected devices, each on a separate line. Define the format
+       of each device with the tooltip-format-enumerate-connected
+       and/or tooltip-format-enumerate-connected-battery config options. Can only be used in the tooltip-re‐
+       lated format options.
+
+EXPERIMENTAL BATTERY PERCENTAGE FEATURE
+       At the time of writing, the experimental features of BlueZ need to be turned on, for the battery per‐
+       centage options listed below to work.
+
+   FORMAT REPLACEMENT
+       {device_battery_percentage}: Battery percentage of the displayed device if available. Use only in the
+       config options defined below.
+
+   CONFIGURATION
+       format-connected-battery:
+       typeof: string
+       This format is used when the displayed device provides its battery percentage.
+
+       tooltip-format-connected-battery:
+       typeof: string
+       This format is used when the displayed device provides its battery percentage.
+
+       tooltip-format-enumerate-connected-battery:
+       typeof: string
+       This format is used to define how each connected device with a battery should be displayed within the
+       device_enumerate format replacement option.
+       When this config option is not defined, it will fall back on  the  tooltip-format-enumerate-connected
+       config option.
+
+EXAMPLES
+	   "bluetooth": {
+		// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+		"format": " {status}",
+		"format-disabled": "", // an empty format will hide the module
+		"format-connected": " {num_connections} connected",
+		"tooltip-format": "{controller_alias}\t{controller_address}",
+		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+	   }
+
+	   "bluetooth": {
+		"format": " {status}",
+		"format-connected": " {device_alias}",
+		"format-connected-battery": " {device_alias} {device_battery_percentage}%",
+		// "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+		"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+		"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+	   }
+
+STYLE
+       •   #bluetooth
+       •   #bluetooth.disabled
+       •   #bluetooth.off
+       •   #bluetooth.on
+       •   #bluetooth.connected
+       •   #bluetooth.discoverable
+       •   #bluetooth.discovering
+       •   #bluetooth.pairable
+
+						 2025-12-19				 waybar-bluetooth(5)
+
+
+
+################################################################################
+# MAN PAGE: waybar-cava(5)
+################################################################################
+
+
+
+
+################################################################################
+# MAN PAGE: waybar-clock(5)
+################################################################################
+
+waybar-clock(5)					 User Manual				     waybar-clock(5)
+
+NAME
+       waybar - clock module
+
+DESCRIPTION
+       clock module displays current date and time
+
+FILES
+       $XDG_CONFIG_HOME/waybar/config
+       Per user configuration file
+
+CONFIGURATION
+       1. Addressed by clock
+       ┌───────────────────┬─────────────────┬────────────────┬─────────────────────────────────────────────────┐
+       │      Option	   │	 Typeof	     │	  Default     │			  Description			│
+       ├───────────────────┼─────────────────┼────────────────┼─────────────────────────────────────────────────┤
+       │ interval	   │ integer	     │ 60	      │ The  interval in which				│
+       │		   │		     │		      │ the  information  gets				│
+       │		   │		     │		      │ polled						│
+       ├───────────────────┼─────────────────┼────────────────┼─────────────────────────────────────────────────┤
+       │ format		   │ string	     │ {:%H:%M}	      │ The  format,  how  the				│
+       │		   │		     │		      │ date and  time	should				│
+       │		   │		     │		      │ be displayed. See for‐				│
+       │		   │		     │		      │ mat options below				│
+       ├───────────────────┼─────────────────┼────────────────┼─────────────────────────────────────────────────┤
+       │ timezone	   │ string	     │		      │ The  timezone  to dis‐				│
+       │		   │		     │		      │ play the time in, e.g.				│
+       │		   │		     │		      │ America/New_York.   ""				│
+       │		   │		     │		      │ represents   the  sys‐				│
+       │		   │		     │		      │ tem’s local  timezone.				│
+       │		   │		     │		      │ See  Wikipedia’s unof‐				│
+       │		   │		     │		      │ ficial list  of	 time‐				│
+       │		   │		     │		      │ zones						│
+       │		   │		     │		      │ <https://en.wikipedia.org/wiki/List_of_tz_data‐ │
+       │		   │		     │		      │ base_time_zones>				│
+       ├───────────────────┼─────────────────┼────────────────┼─────────────────────────────────────────────────┤
+       │ timezones	   │ list of strings │		      │ A list of timezones (as in timezone) to use for │
+       │		   │		     │		      │ time  display,	changed using the scroll wheel. │
+       │		   │		     │		      │ Do not specify timezone option	when  timezones │
+       │		   │		     │		      │ is  specified. "" represents the system’s local │
+       │		   │		     │		      │ timezone					│
+       ├───────────────────┼─────────────────┼────────────────┼─────────────────────────────────────────────────┤
+       │ locale		   │ string	     │		      │ A locale to be used to display	the  time.  In‐ │
+       │		   │		     │		      │ tended to render times in custom timezones with │
+       │		   │		     │		      │ the proper language and format			│
+       ├───────────────────┼─────────────────┼────────────────┼─────────────────────────────────────────────────┤
+       │ max-length	   │ integer	     │		      │ The  maximum  length  in  character  the module │
+       │		   │		     │		      │ should display					│
+       ├───────────────────┼─────────────────┼────────────────┼─────────────────────────────────────────────────┤
+       │ rotate		   │ integer	     │		      │ Positive value to rotate the text label (in  90 │
+       │		   │		     │		      │ degree increments)				│
+       ├───────────────────┼─────────────────┼────────────────┼─────────────────────────────────────────────────┤
+       │ on-click	   │ string	     │		      │ Command to execute when clicked on the module	│
+       ├───────────────────┼─────────────────┼────────────────┼─────────────────────────────────────────────────┤
+       │ on-click-middle   │ string	     │		      │ Command	 to  execute when you middle clicked on │
+       │		   │		     │		      │ the module using mousewheel			│
+       ├───────────────────┼─────────────────┼────────────────┼─────────────────────────────────────────────────┤
+       │ on-click-right	   │ string	     │		      │ Command to execute when you right-click on  the │
+       │		   │		     │		      │ module						│
+       ├───────────────────┼─────────────────┼────────────────┼─────────────────────────────────────────────────┤
+       │ on-scroll-up	   │ string	     │		      │ Command	 to  execute  when  scrolling up on the │
+       │		   │		     │		      │ module						│
+       ├───────────────────┼─────────────────┼────────────────┼─────────────────────────────────────────────────┤
+       │ on-scroll-down	   │ string	     │		      │ Command to execute when scrolling down	on  the │
+       │		   │		     │		      │ module						│
+       ├───────────────────┼─────────────────┼────────────────┼─────────────────────────────────────────────────┤
+       │ smooth-scrolling- │ double	     │		      │ Threshold to be used when scrolling		│
+       │ threshold	   │		     │		      │							│
+       ├───────────────────┼─────────────────┼────────────────┼─────────────────────────────────────────────────┤
+       │ tooltip	   │ bool	     │ true	      │ Option to enable tooltip on hover		│
+       ├───────────────────┼─────────────────┼────────────────┼─────────────────────────────────────────────────┤
+       │ tooltip-format	   │ string	     │ same as format │ Tooltip on hover				│
+       ├───────────────────┼─────────────────┼────────────────┼─────────────────────────────────────────────────┤
+       │ menu		   │ string	     │		      │ Action that popups the menu.			│
+       ├───────────────────┼─────────────────┼────────────────┼─────────────────────────────────────────────────┤
+       │ menu-file	   │ string	     │		      │ Location  of  the  menu	 descriptor file. There │
+       │		   │		     │		      │ need to be an element of type GtkMenu  with  id │
+       │		   │		     │		      │ menu						│
+       ├───────────────────┼─────────────────┼────────────────┼─────────────────────────────────────────────────┤
+       │ menu-actions	   │ array	     │		      │ The actions corresponding to the buttons of the │
+       │		   │		     │		      │ menu.						│
+       ├───────────────────┼─────────────────┼────────────────┼─────────────────────────────────────────────────┤
+       │ expand:	   │ bool	     │ false	      │ Enables	 this  module  to consume all left over │
+       │		   │		     │		      │ space dynamically.				│
+       └───────────────────┴─────────────────┴────────────────┴─────────────────────────────────────────────────┘
+
+       View  all   valid   format   options   in   strftime(3)	 or   have   a	 look	https://en.cpprefer‐
+       ence.com/w/cpp/chrono/duration/formatter
+
+       2. Addressed by clock: calendar
+       ┌──────────────┬─────────┬─────────┬────────────────────────┐
+       │    Option    │ Typeof	│ Default │	 Description	   │
+       ├──────────────┼─────────┼─────────┼────────────────────────┤
+       │ mode	      │ string	│ month	  │ Calendar   view  mode. │
+       │	      │		│	  │ Possible	   values: │
+       │	      │		│	  │ year|month		   │
+       ├──────────────┼─────────┼─────────┼────────────────────────┤
+       │ mode-mon-col │ integer │ 3	  │ Relevant	       for │
+       │	      │		│	  │ mode=year.	Count	of │
+       │	      │		│	  │ months per row	   │
+       ├──────────────┼─────────┼─────────┼────────────────────────┤
+       │ weeks-pos    │ string	│	  │ The	  position   where │
+       │	      │		│	  │ week numbers should be │
+       │	      │		│	  │ displayed.	  Disabled │
+       │	      │		│	  │ when  is empty. Possi‐ │
+       │	      │		│	  │ ble values: left|right │
+       ├──────────────┼─────────┼─────────┼────────────────────────┤
+       │ on-scroll    │ integer │ 1	  │ Value    to	    scroll │
+       │	      │		│	  │ months/years      for‐ │
+       │	      │		│	  │ ward/backward. Can	be │
+       │	      │		│	  │ negative.  Is  config‐ │
+       │	      │		│	  │ ured  under	 on-scroll │
+       │	      │		│	  │ option		   │
+       └──────────────┴─────────┴─────────┴────────────────────────┘
+
+       3. Addressed by clock: calendar: format
+       ┌──────────┬────────┬──────────────────┬────────────────────────┐
+       │  Option  │ Typeof │	 Default      │	     Description       │
+       ├──────────┼────────┼──────────────────┼────────────────────────┤
+       │ months	  │ string │		      │ Format	is  applied to │
+       │	  │	   │		      │ months header(January, │
+       │	  │	   │		      │ February,...etc.)      │
+       ├──────────┼────────┼──────────────────┼────────────────────────┤
+       │ days	  │ string │		      │ Format is  applied  to │
+       │	  │	   │		      │ days		       │
+       ├──────────┼────────┼──────────────────┼────────────────────────┤
+       │ weeks	  │ string │ {:%U}	      │ Format	is  applied to │
+       │	  │	   │		      │ week   numbers.	  When │
+       │	  │	   │		      │ weekday	 format is not │
+       │	  │	   │		      │ provided then is  used │
+       │	  │	   │		      │ default	       format: │
+       │	  │	   │		      │ ’{:%W}’	  when	  week │
+       │	  │	   │		      │ starts	 with  Monday, │
+       │	  │	   │		      │ ’{:%U}’ otherwise      │
+       ├──────────┼────────┼──────────────────┼────────────────────────┤
+       │ weekdays │ string │		      │ Format is  applied  to │
+       │	  │	   │		      │ weeks		       │
+       │	  │	   │		      │ header(Su,Mo,...etc.)  │
+       ├──────────┼────────┼──────────────────┼────────────────────────┤
+       │ today	  │ string │ <b><u>{}</u></b> │ Format	is  applied to │
+       │	  │	   │		      │ Today		       │
+       └──────────┴────────┴──────────────────┴────────────────────────┘
+
+   Actions
+       ┌────────────┬──────────────────────────────────────┐
+       │   String   │		     Action		   │
+       ├────────────┼──────────────────────────────────────┤
+       │ mode	    │ Switch   calendar	   mode	   between │
+       │	    │ year/month			   │
+       ├────────────┼──────────────────────────────────────┤
+       │ tz_up	    │ Switch  to  the  next  provided time │
+       │	    │ zone				   │
+       ├────────────┼──────────────────────────────────────┤
+       │ tz_down    │ Switch to	 the  previously  provided │
+       │	    │ time zone				   │
+       ├────────────┼──────────────────────────────────────┤
+       │ shift_up   │ Switch	to   the   next	  calendar │
+       │	    │ month/year			   │
+       ├────────────┼──────────────────────────────────────┤
+       │ shift_down │ Switch  to  the  previous	  calendar │
+       │	    │ month/year			   │
+       └────────────┴──────────────────────────────────────┘
+
+FORMAT REPLACEMENTS
+       •   {calendar}: Current month calendar
+       •   {tz_list}: List of time in the rest timezones, if more than one timezone is set in the config
+       •   {ordinal_date}: The current day in (English) ordinal form, e.g. 21st
+
+EXAMPLES
+       1. General
+
+	   "clock": {
+		"interval": 60,
+		"format": "{:%H:%M}",
+		"max-length": 25
+	   }
+
+       2. Calendar
+
+	   "clock": {
+		"format": "{:%H:%M}  ",
+		"format-alt": "{:%A, %B %d, %Y (%R)}  ",
+		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+		"calendar": {
+		     "mode"	     : "year",
+		     "mode-mon-col"  : 3,
+		     "weeks-pos"     : "right",
+		     "on-scroll"     : 1,
+		     "on-click-right": "mode",
+		     "format": {
+			  "months":	"<span color=’#ffead3’><b>{}</b></span>",
+			  "days":	"<span color=’#ecc6d9’><b>{}</b></span>",
+			  "weeks":	"<span color=’#99ffdd’><b>W{}</b></span>",
+			  "weekdays":	"<span color=’#ffcc66’><b>{}</b></span>",
+			  "today":	"<span color=’#ff6699’><b><u>{}</u></b></span>"
+		     }
+		},
+		"actions": {
+		     "on-click-right": "mode",
+		     "on-click-forward": "tz_up",
+		     "on-click-backward": "tz_down",
+		     "on-scroll-up": "shift_up",
+		     "on-scroll-down": "shift_down"
+		}
+	   },
+
+       3. Full date on hover
+
+	   "clock": {
+		"interval": 60,
+		"tooltip": true,
+		"format": "{:%H.%M}",
+		"tooltip-format": "{:%Y-%m-%d}",
+	   }
+
+STYLE
+       •   #clock
+
+Troubleshooting
+       If clock module is disabled at startup with locale::facet::_S_create_c_locale
+       name not valid error message try one of the following:
+
+       •   check if LC_TIME is set properly (glibc)
+       •   set locale to C in the config file (musl)
+
+       The  locale  option must be set for {calendar} to use the correct start-of-week, regardless of system
+       locale.
+
+   Calendar in Chinese. Alignment
+       In order to have aligned Chinese calendar there are some useful recommendations:
+
+       1.  Use "WenQuanYi Zen Hei Mono" which is provided in most Linux distributions
+       2.  Try different font sizes and find best for you. size = 9pt should be fine
+       3.  In case when "WenQuanYi Zen Hei Mono" font is used disable monospace font pango tag
+
+       Example of working config
+
+	   "clock": {
+		"format": "{:%H:%M}  ",
+		"format-alt": "{:%A, %B %d, %Y (%R)}  ",
+		"tooltip-format": "n<span size=’9pt’ font=’WenQuanYi Zen Hei Mono’>{calendar}</span>",
+		"calendar": {
+		     "mode"	     : "year",
+		     "mode-mon-col"  : 3,
+		     "weeks-pos"     : "right",
+		     "on-scroll"     : 1,
+		     "on-click-right": "mode",
+		     "format": {
+			  "months":	"<span color=’#ffead3’><b>{}</b></span>",
+			  "days":	"<span color=’#ecc6d9’><b>{}</b></span>",
+			  "weeks":	"<span color=’#99ffdd’><b>W{}</b></span>",
+			  "weekdays":	"<span color=’#ffcc66’><b>{}</b></span>",
+			  "today":	"<span color=’#ff6699’><b><u>{}</u></b></span>"
+		     }
+		},
+		"actions": {
+		     "on-click-right": "mode",
+		     "on-click-forward": "tz_up",
+		     "on-click-backward": "tz_down",
+		     "on-scroll-up": "shift_up",
+		     "on-scroll-down": "shift_down"
+		}
+	   },
+
+AUTHOR
+       Alexis Rouillard <contact@arouillard.fr>
+
+waybar-clock					 2025-12-19				     waybar-clock(5)
+
+
+
+################################################################################
+# MAN PAGE: waybar-cpu(5)
+################################################################################
+
+waybar-cpu(5)				     File Formats Manual			       waybar-cpu(5)
+
+NAME
+       waybar - cpu module
+
+DESCRIPTION
+       The cpu module displays the current CPU utilization.
+
+CONFIGURATION
+       interval:
+       typeof: integer
+       default: 10
+       The interval in which the information gets polled.
+
+       format:
+       typeof: string
+       default: {usage}%
+       The format, how information should be displayed. On {} data gets inserted.
+
+       format-icons:
+       typeof: array/object
+       Based on the current usage, the corresponding icon gets selected.
+       The order is low to high. Or by the state if it is an object.
+
+       max-length:
+       typeof: integer
+       The maximum length in character the module should display.
+
+       min-length:
+       typeof: integer
+       The minimum length in characters the module should accept.
+
+       align:
+       typeof: float
+       The  alignment of the label within the module, where 0 is left-aligned and 1 is right-aligned. If the
+       module is rotated, it will follow the flow of the text.
+
+       justify:
+       typeof: string
+       The alignment of the text within the module’s label, allowing options ’left’, ’right’, or ’center’ to
+       define the positioning.
+
+       rotate:
+       typeof: integer
+       Positive value to rotate the text label (in 90 degree increments).
+
+       states:
+       typeof: object
+       A number of CPU usage states which get activated on certain usage levels. See waybar-states(5).
+
+       on-click:
+       typeof: string
+       Command to execute when clicked on the module.
+
+       on-click-middle:
+       typeof: string
+       Command to execute when middle-clicked on the module using mousewheel.
+
+       on-click-right:
+       typeof: string
+       Command to execute when you right-click on the module.
+
+       on-update:
+       typeof: string
+       Command to execute when the module is updated.
+
+       on-scroll-up:
+       typeof: string
+       Command to execute when scrolling up on the module.
+
+       on-scroll-down:
+       typeof: string
+       Command to execute when scrolling down on the module.
+
+       smooth-scrolling-threshold:
+       typeof: double
+       Threshold to be used when scrolling.
+
+       tooltip:
+       typeof: bool
+       default: true
+       Option to disable tooltip on hover.
+
+       expand:
+       typeof: bool
+       default: false
+       Enables this module to consume all left over space dynamically.
+
+FORMAT REPLACEMENTS
+       {load}: Current CPU load.
+
+       {usage}: Current overall CPU usage.
+
+       {usage{n}}: Current CPU core n usage. Cores are numbered from zero, so first core  will	be  {usage0}
+       and 4th will be {usage3}.
+
+       {avg_frequency}: Current CPU average frequency (based on all cores) in GHz.
+
+       {max_frequency}: Current CPU max frequency (based on the core with the highest frequency) in GHz.
+
+       {min_frequency}: Current CPU min frequency (based on the core with the lowest frequency) in GHz.
+
+       {icon}: Icon for overall CPU usage.
+
+       {icon{n}}: Icon for CPU core n usage. Use like {icon0}.
+
+EXAMPLES
+       Basic configuration:
+
+	   "cpu": {
+		"interval": 10,
+		"format": "{}% ",
+		"max-length": 10
+	   }
+
+       CPU usage per core rendered as icons:
+
+	   "cpu": {
+		"interval": 1,
+		"format": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% ",
+		"format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+	   },
+
+STYLE
+       •   #cpu
+
+						 2025-12-19				       waybar-cpu(5)
+
+
+
+################################################################################
+# MAN PAGE: waybar-custom(5)
+################################################################################
+
+waybar-custom(5)			     File Formats Manual			    waybar-custom(5)
+
+NAME
+       waybar - custom module
+
+DESCRIPTION
+       The  custom  module  displays  either  the output of a script or static text. To display static text,
+       specify only the format field.
+
+CONFIGURATION
+       Addressed by custom/<name>
+
+       exec:
+       typeof: string
+       The path to the script, which should be executed.
+
+       exec-if:
+       typeof: string
+       The path to a script, which determines if the script in exec should be executed.
+       exec will be executed if the exit code of exec-if equals 0.
+
+       hide-empty-text:
+       typeof: bool
+       Disables the module when output is empty, but format might contain additional static content.
+
+       exec-on-event:
+       typeof: bool
+       default: true
+       If an event command is set (e.g. on-click or on-scroll-up) then re-execute the script after executing
+       the event command.
+
+       return-type:
+       typeof: string
+       See return-type
+
+       interval:
+       typeof: integer
+       The interval (in seconds) in which the information gets polled.
+       Use once if you want to execute the module only on startup.
+       You can update it manually with a signal. If no interval or signal is defined, it is assumed that the
+       out script loops itself.
+       If a signal is defined then the script will run once on startup and will only update with a signal.
+
+       restart-interval:
+       typeof: integer
+       The restart interval (in seconds).
+       Can’t be used with the interval option, so only with continuous scripts.
+       Once the script exits, it’ll be re-executed after the restart-interval.
+
+       signal:
+       typeof: integer
+       The signal number used to update the module.
+       The number is valid between 1 and N, where SIGRTMIN+N = SIGRTMAX.
+       If no interval is defined then a signal will be the only way to update the module.
+
+       format:
+       typeof: string
+       default: {text}
+       The format, how information should be displayed. On {text} data gets inserted.
+
+       format-icons:
+       typeof: array
+       Based on the set percentage, the corresponding icon gets selected. The order is low to high.
+
+       rotate:
+       typeof: integer
+       Positive value to rotate the text label (in 90 degree increments).
+
+       max-length:
+       typeof: integer
+       The maximum length in character the module should display.
+
+       min-length:
+       typeof: integer
+       The minimum length in characters the module should accept.
+
+       align:
+       typeof: float
+       The alignment of the label within the module, where 0 is left-aligned and 1 is right-aligned. If	 the
+       module is rotated, it will follow the flow of the text.
+
+       justify:
+       typeof: string
+       The alignment of the text within the module’s label, allowing options ’left’, ’right’, or ’center’ to
+       define the positioning.
+
+       on-click:
+       typeof: string
+       Command to execute when clicked on the module.
+
+       on-click-middle:
+       typeof: string
+       Command to execute when middle-clicked on the module using mousewheel.
+
+       on-click-right:
+       typeof: string
+       Command to execute when you right-click on the module.
+
+       on-update:
+       typeof: string
+       Command to execute when the module is updated.
+
+       on-scroll-up:
+       typeof: string
+       Command to execute when scrolling up on the module.
+
+       on-scroll-down:
+       typeof: string
+       Command to execute when scrolling down on the module.
+
+       smooth-scrolling-threshold:
+       typeof: double
+       Threshold to be used when scrolling.
+
+       tooltip:
+       typeof: bool
+       default: true
+       Option to disable tooltip on hover.
+
+       tooltip-format:
+       typeof: string
+       The tooltip format. If specified, overrides any tooltip output from the script in exec.
+       Uses the same format replacements as format.
+
+       escape:
+       typeof: bool
+       default: false
+       Option to enable escaping of script output.
+
+       menu:
+       typeof: string
+       Action that popups the menu.
+
+       menu-file:
+       typeof: string
+       Location of the menu descriptor file. There need to be an element of type
+	   GtkMenu with id menu
+
+       menu-actions:
+       typeof: array
+       The actions corresponding to the buttons of the menu.
+
+       expand:
+       typeof: bool
+       default: false
+       Enables this module to consume all left over space dynamically.
+
+RETURN-TYPE
+       When  return-type  is set to json, Waybar expects the exec-script  to output its data in JSON format.
+       This should look like this:
+
+	   {"text": "$text", "tooltip": "$tooltip", "class": "$class", "percentage": $percentage }
+
+       The class parameter also accepts an array of strings.
+
+       If nothing or an invalid option is specified, Waybar expects i3blocks style output. Values  are	new‐
+       line separated. This should look like this:
+
+	   $text\n$tooltip\n$class*
+
+       class is a CSS class, to apply different styles in style.css
+
+FORMAT REPLACEMENTS
+       {text}: Output of the script.
+
+       {percentage} Percentage which can be set via a json return type.
+
+       {icon}: An icon from ’format-icons’ according to percentage.
+
+EXAMPLES
+   Spotify:
+	   "custom/spotify": {
+		"format": " {text}",
+		"max-length": 40,
+		"interval": 30, // Remove this if your script is endless and write in loop
+		"exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null", // Script in resources folder
+		"exec-if": "pgrep spotify",
+		"return-type": "json"
+	   }
+
+   mpd:
+	   "custom/mpd": {
+		"format": "♪ {text}",
+		//"max-length": 15,
+		"interval": 10,
+		"exec": "mpc current",
+		"exec-if": "pgrep mpd",
+		"on-click": "mpc toggle",
+		"on-click-right": "sonata"
+	   }
+
+   cmus:
+	   "custom/cmus": {
+		"format": "♪ {text}",
+		//"max-length": 15,
+		"interval": 10,
+		"exec": "cmus-remote -C "format_print ’%a - %t’"", // artist - title
+		"exec-if": "pgrep cmus",
+		"on-click": "cmus-remote -u",			     //toggle pause
+		"escape": true					     //handle markup entities
+	   }
+
+   Pacman
+	   "custom/pacman": {
+		"format": "{text}  ",
+		"interval": "once",
+		"exec": "pacman_packages",
+		"on-click": "update-system",
+		"signal": 8
+	   }
+
+   Alternate Pacman
+	   "custom/pacman": {
+		"format": "{text}  ",
+		"interval": 3600,		      // every hour
+		"exec": "checkupdates | wc -l",	      // # of updates
+		"exec-if": "exit 0",		      // always run; consider advanced run conditions
+		"on-click": "termite -e ’sudo pacman -Syu’; pkill -SIGRTMIN+8 waybar", // update system
+		"signal": 8
+	   }
+
+       You can use the signal and update the number of available packages with pkill -RTMIN+8 waybar.
+
+STYLE
+       •   #custom-<name>
+       •   #custom-<name>.<class>
+       •   <class> can be set by the script. For more information see return-type
+
+						 2025-12-19				    waybar-custom(5)
+
+
+
+################################################################################
+# MAN PAGE: waybar-disk(5)
+################################################################################
+
+waybar-disk(5)				     File Formats Manual			      waybar-disk(5)
+
+NAME
+       waybar - disk module
+
+DESCRIPTION
+       The disk module displays the current disk space used.
+
+CONFIGURATION
+       Addressed by disk
+
+       path:
+       typeof: string
+       default: "/"
+       Any path residing in the filesystem or mountpoint for which the information should be displayed.
+
+       interval:
+       typeof: integer
+       default: 30
+       The interval in which the information gets polled.
+
+       format:
+       typeof: string
+       default: "{percentage_used}%"
+       The format, how information should be displayed.
+
+       rotate:
+       typeof: integer
+       Positive value to rotate the text label (in 90 degree increments).
+
+       states:
+       typeof: object
+       A  number  of  disk  utilization states that get activated on certain percentage thresholds (percent‐
+       age_used). See waybar-states(5).
+
+       max-length:
+       typeof: integer
+       The maximum length in character the module should display.
+
+       min-length:
+       typeof: integer
+       The minimum length in characters the module should accept.
+
+       align:
+       typeof: float
+       The alignment of the label within the module, where 0 is left-aligned and 1 is right-aligned. If	 the
+       module is rotated, it will follow the flow of the text.
+
+       justify:
+       typeof: string
+       The alignment of the text within the module’s label, allowing options ’left’, ’right’, or ’center’ to
+       define the positioning.
+
+       on-click:
+       typeof: string
+       Command to execute when clicked on the module.
+
+       on-click-middle:
+       typeof: string
+       Command to execute when middle-clicked on the module using mousewheel.
+
+       on-click-right:
+       typeof: string
+       Command to execute when you right-click on the module.
+
+       on-update:
+       typeof: string
+       Command to execute when the module is updated.
+
+       on-scroll-up:
+       typeof: string
+       Command to execute when scrolling up on the module.
+
+       on-scroll-down:
+       typeof: string
+       Command to execute when scrolling down on the module.
+
+       smooth-scrolling-threshold:
+       typeof: double
+       Threshold to be used when scrolling.
+
+       tooltip:
+       typeof: bool
+       default: true
+       Option to disable tooltip on hover.
+
+       tooltip-format:
+       typeof: string
+       default: "{used} out of {total} used ({percentage_used}%)"
+       The format of the information displayed in the tooltip.
+
+       unit:
+       typeof: string
+       Use with specific_free, specific_used, and specific_total to force calculation to always be in a cer‐
+       tain unit. Accepts kB, kiB, MB, Mib, GB, GiB, TB, TiB.
+
+       menu:
+       typeof: string
+       Action that popups the menu.
+
+       menu-file:
+       typeof: string
+       Location of the menu descriptor file. There need to be an element of type
+	   GtkMenu with id menu
+
+       menu-actions:
+       typeof: array
+       The actions corresponding to the buttons of the menu.
+
+       expand:
+       typeof: bool
+       default: false
+       Enables this module to consume all left over space dynamically.
+
+FORMAT REPLACEMENTS
+       {percentage_used}: Percentage of disk in use.
+
+       {percentage_free}: Percentage of free disk space
+
+       {total}:	 Total	amount	of  space  on the disk, partition, or mountpoint. Automatically selects unit
+       based on size remaining.
+
+       {used}: Amount of used disk space. Automatically selects unit based on size remaining.
+
+       {free}: Amount of available disk space for normal users. Automatically selects unit based on size re‐
+       maining.
+
+       {path}: The path specified in the configuration.
+
+       {specific_total}: Total amount of space on the disk, partition, or mountpoint in a specific unit. De‐
+       faults to bytes.
+
+       {specific_used}: Amount of used disk space in a specific unit. Defaults to bytes.
+
+       {specific_free}: Amount of available disk space for normal users in  a  specific	 unit.	Defaults  to
+       bytes.
+
+EXAMPLES
+	   "disk": {
+		"interval": 30,
+		"format": "{percentage_free}% free on {path}",
+	   }
+
+	   "disk": {
+		"interval": 30,
+		"format": "{specific_free:0.2f} GB out of {specific_total:0.2f} GB available. Alternatively {free} out of {total} available",
+		"unit": "GB"
+		// 1434.25 GB out of 2000.00 GB available. Alternatively 1.4TiB out of 1.9TiB available.
+	   }
+
+STYLE
+       •   #disk
+
+						 2025-12-19				      waybar-disk(5)
+
+
+
+################################################################################
+# MAN PAGE: waybar-gamemode(5)
+################################################################################
+
+waybar-gamemode(5)			     File Formats Manual			  waybar-gamemode(5)
+
+NAME
+       waybar - gamemode module
+
+DESCRIPTION
+       The gamemode module displays if any game or application is running with
+       Feral Gamemode optimizations.
+
+CONFIGURATION
+       format:
+       typeof: string
+       default: {glyph}
+       The text format.
+
+       format-alt:
+       typeof: string
+       default: {glyph} {count}
+       The text format when toggled.
+
+       tooltip:
+       typeof: bool
+       default: true
+       Option to disable tooltip on hover.
+
+       tooltip-format:
+       typeof: string
+       default: Games running: {glyph}
+       The text format of the tooltip.
+
+       hide-not-running:
+       typeof: bool
+       default: true
+       Defines if the module should be hidden if no games are running.
+
+       use-icon:
+       typeof: bool
+       default: true
+       Defines if the module should display a GTK icon instead of the specified glyph
+
+       glyph:
+       typeof: string
+       default: 
+       The string icon to display. Only visible if use-icon is set to false.
+
+       icon-name:
+       typeof: string
+       default: input-gaming-symbolic
+       The GTK icon to display. Only visible if use-icon is set to true.
+
+       icon-size:
+       typeof: unsigned integer
+       default: 20
+       Defines the size of the icons.
+
+       icon-spacing:
+       typeof: unsigned integer
+       default: 4
+       Defines the spacing between the icon and the text.
+
+       expand:
+       typeof: bool
+       default: false
+       Enables this module to consume all left over space dynamically.
+
+FORMAT REPLACEMENTS
+       {glyph}: The string icon glyph to use instead.
+
+       {count}: The number of games running with gamemode optimizations.
+
+TOOLTIP FORMAT REPLACEMENTS
+       {count}: The number of games running with gamemode optimizations.
+
+EXAMPLES
+	   "gamemode": {
+		"format": "{glyph}",
+		"format-alt": "{glyph} {count}",
+		"glyph": "",
+		"hide-not-running": true,
+		"use-icon": true,
+		"icon-name": "input-gaming-symbolic",
+		"icon-spacing": 4,
+		"icon-size": 20,
+		"tooltip": true,
+		"tooltip-format": "Games running: {count}"
+	   }
+
+STYLE
+       •   #gamemode
+       •   #gamemode.running
+
+						 2025-12-19				  waybar-gamemode(5)
+
+
+
+################################################################################
+# MAN PAGE: waybar-idle-inhibitor(5)
+################################################################################
+
+waybar-idle-inhibitor(5)		     File Formats Manual		    waybar-idle-inhibitor(5)
+
+NAME
+       waybar - idle_inhibitor module
+
+DESCRIPTION
+       The idle_inhibitor module can inhibit the idle behavior such as screen blanking, locking, and screen‐
+       saver, also known as "presentation mode".
+
+CONFIGURATION
+       format:
+       typeof: string
+       The format, how the state should be displayed.
+
+       format-icons:
+       typeof: array
+       Based on the current state, the corresponding icon gets selected.
+
+       rotate:
+       typeof: integer
+       Positive value to rotate the text label (in 90 degree increments).
+
+       max-length:
+       typeof: integer
+       The maximum length in character the module should display.
+
+       min-length:
+       typeof: integer
+       The minimum length in characters the module should accept.
+
+       align:
+       typeof: float
+       The  alignment of the label within the module, where 0 is left-aligned and 1 is right-aligned. If the
+       module is rotated, it will follow the flow of the text.
+
+       justify:
+       typeof: string
+       The alignment of the text within the module’s label, allowing options ’left’, ’right’, or ’center’ to
+       define the positioning.
+
+       on-click:
+       typeof: string
+       Command to execute when clicked on the module. A click also toggles the state
+
+       on-click-middle:
+       typeof: string
+       Command to execute when middle-clicked on the module using mousewheel.
+
+       on-click-right:
+       typeof: string
+       Command to execute when you right-click on the module.
+
+       on-update:
+       typeof: string
+       Command to execute when the module is updated.
+
+       on-scroll-up:
+       typeof: string
+       Command to execute when scrolling up on the module.
+
+       on-scroll-down:
+       typeof: string
+       Command to execute when scrolling down on the module.
+
+       smooth-scrolling-threshold:
+       typeof: double
+       Threshold to be used when scrolling.
+
+       start-activated:
+       typeof: bool
+       default: false
+       Whether the inhibit should be activated when starting waybar.
+
+       timeout:
+       typeof: double
+       The number of minutes the inhibition should last.
+
+       tooltip:
+       typeof: bool
+       default: true
+       Option to disable tooltip on hover.
+
+       tooltip-format-activated:
+       typeof: string
+       This format is used when the inhibit is activated.
+
+       tooltip-format-deactivated:
+       typeof: string
+       This format is used when the inhibit is deactivated.
+
+       menu:
+       typeof: string
+       Action that popups the menu. Cannot be "on-click".
+
+       menu-file:
+       typeof: string
+       Location of the menu descriptor file. There need to be an element of type
+	   GtkMenu with id menu
+
+       menu-actions:
+       typeof: array
+       The actions corresponding to the buttons of the menu.
+
+       expand:
+       typeof: bool
+       default: false
+       Enables this module to consume all left over space dynamically.
+
+FORMAT REPLACEMENTS
+       {status}: status (activated or deactivated)
+
+       {icon}: Icon, as defined in format-icons
+
+EXAMPLES
+	   "idle_inhibitor": {
+		"format": "{icon}",
+		"format-icons": {
+		     "activated": "",
+		     "deactivated": ""
+		},
+		"timeout": 30.5
+	   }
+
+STYLE
+       •   #idle_inhibitor
+       •   #idle_inhibitor.activated
+       •   #idle_inhibitor.deactivated
+
+						 2025-12-19			    waybar-idle-inhibitor(5)
+
+
+
+################################################################################
+# MAN PAGE: waybar-image(5)
+################################################################################
+
+waybar-image(5)				     File Formats Manual			     waybar-image(5)
+
+NAME
+       waybar - image module
+
+DESCRIPTION
+       The image module displays an image from a path.
+
+CONFIGURATION
+       path:
+       typeof: string
+       The path to the image.
+
+       exec:
+       typeof: string
+       The path to the script, which should return image path file.
+       It will only execute if the path is not set
+
+       size:
+       typeof: integer
+       The width/height to render the image.
+
+       interval:
+       typeof: integer
+       The interval (in seconds) to re-render the image.
+       This is useful if the contents of path changes.
+       If no interval is defined, the image will only be rendered once.
+
+       signal:
+       typeof: integer
+       The signal number used to update the module.
+       This can be used instead of interval if the file changes irregularly.
+       The number is valid between 1 and N, where SIGRTMIN+N = SIGRTMAX.
+
+       on-click:
+       typeof: string
+       Command to execute when clicked on the module.
+
+       on-click-middle:
+       typeof: string
+       Command to execute when middle-clicked on the module using mousewheel.
+
+       on-update:
+       typeof: string
+       Command to execute when the module is updated.
+
+       on-scroll-up:
+       typeof: string
+       Command to execute when scrolling up on the module.
+
+       on-scroll-down:
+       typeof: string
+       Command to execute when scrolling down on the module.
+
+       smooth-scrolling-threshold:
+       typeof: double
+       Threshold to be used when scrolling.
+
+       tooltip:
+       typeof: bool
+       default: true
+       Option to enable tooltip on hover.
+
+       expand:
+       typeof: bool
+       default: false
+       Enables this module to consume all left over space dynamically.
+
+SCRIPT OUTPUT
+       Similar to the custom module, output values of the script are newline separated. The following is the
+       output format:
+
+	   $path\n$tooltip
+
+EXAMPLES
+	   "image#album-art": {
+		"path": "/tmp/mpd_art",
+		"size": 32,
+		"interval": 5,
+		"on-click": "mpc toggle"
+	   }
+
+STYLE
+       •   #image
+       •   #image.empty
+
+						 2025-12-19				     waybar-image(5)
+
+
+
+################################################################################
+# MAN PAGE: waybar-inhibitor(5)
+################################################################################
+
+waybar-inhibitor(5)			     File Formats Manual			 waybar-inhibitor(5)
+
+NAME
+       waybar - inhibitor module
+
+DESCRIPTION
+       The  inhibitor  module  allows  one  to	take an inhibitor lock that logind provides. See systemd-in‐
+       hibit(1) for more information.
+
+CONFIGURATION
+       what:
+       typeof: string or array
+       The inhibitor lock or locks that should be taken when active. The available inhibitor locks are idle,
+       shutdown, sleep, handle-power-key, handle-suspend-key, handle-hibernate-key and handle-lid-switch.
+
+       format:
+       typeof: string
+       The format, how the state should be displayed.
+
+       format-icons:
+       typeof: array
+       Based on the current state, the corresponding icon gets selected.
+
+       rotate:
+       typeof: integer
+       Positive value to rotate the text label (in 90 degree increments).
+
+       max-length:
+       typeof: integer
+       The maximum length in character the module should display.
+
+       min-length:
+       typeof: integer
+       The minimum length in characters the module should accept.
+
+       align:
+       typeof: float
+       The alignment of the label within the module, where 0 is left-aligned and 1 is right-aligned. If	 the
+       module is rotated, it will follow the flow of the text.
+
+       justify:
+       typeof: string
+       The alignment of the text within the module’s label, allowing options ’left’, ’right’, or ’center’ to
+       define the positioning.
+
+       on-click:
+       typeof: string
+       Command to execute when clicked on the module. A click also toggles the state
+
+       on-click-middle:
+       typeof: string
+       Command to execute when middle-clicked on the module using mousewheel.
+
+       on-click-right:
+       typeof: string
+       Command to execute when you right-click on the module.
+
+       on-update:
+       typeof: string
+       Command to execute when the module is updated.
+
+       on-scroll-up:
+       typeof: string
+       Command to execute when scrolling up on the module.
+
+       on-scroll-down:
+       typeof: string
+       Command to execute when scrolling down on the module.
+
+       smooth-scrolling-threshold:
+       typeof: double
+       Threshold to be used when scrolling.
+
+       tooltip:
+       typeof: bool
+       default: true
+       Option to disable tooltip on hover.
+
+       menu:
+       typeof: string
+       Action that popups the menu. Cannot be "on-click".
+
+       menu-file:
+       typeof: string
+       Location of the menu descriptor file. There need to be an element of type
+	   GtkMenu with id menu
+
+       menu-actions:
+       typeof: array
+       The actions corresponding to the buttons of the menu.
+
+       expand:
+       typeof: bool
+       default: false
+       Enables this module to consume all left over space dynamically.
+
+FORMAT REPLACEMENTS
+       {status}: status (activated or deactivated)
+
+       {icon}: Icon, as defined in format-icons
+
+EXAMPLES
+	   "inhibitor": {
+		"what": "handle-lid-switch",
+		"format": "{icon}",
+		"format-icons": {
+		     "activated": "",
+		     "deactivated": ""
+		}
+	   }
+
+						 2025-12-19				 waybar-inhibitor(5)
+
+
+
+################################################################################
+# MAN PAGE: waybar-jack(5)
+################################################################################
+
+
+
+
+################################################################################
+# MAN PAGE: waybar-keyboard-state(5)
+################################################################################
+
+
+
+
+################################################################################
+# MAN PAGE: waybar-memory(5)
+################################################################################
+
+waybar-memory(5)			     File Formats Manual			    waybar-memory(5)
+
+NAME
+       waybar - memory module
+
+DESCRIPTION
+       The memory module displays the current memory utilization.
+
+CONFIGURATION
+       Addressed by memory
+
+       interval:
+       typeof: integer
+       default: 30
+       The interval in which the information gets polled.
+
+       format:
+       typeof: string
+       default: {percentage}%
+       The format, how information should be displayed.
+
+       format-icons:
+       typeof: array/object
+       Based on the current percentage, the corresponding icon gets selected.
+       The order is low to high. Or by the state if it is an object.
+
+       rotate:
+       typeof: integer
+       Positive value to rotate the text label (in 90 degree increments).
+
+       states:
+       typeof: object
+       A  number of memory utilization states which get activated on certain percentage thresholds. See way‐
+       bar-states(5).
+
+       max-length:
+       typeof: integer
+       The maximum length in character the module should display.
+
+       min-length:
+       typeof: integer
+       The minimum length in characters the module should accept.
+
+       align:
+       typeof: float
+       The alignment of the label within the module, where 0 is left-aligned and 1 is right-aligned. If	 the
+       module is rotated, it will follow the flow of the text.
+
+       justify:
+       typeof: string
+       The alignment of the text within the module’s label, allowing options ’left’, ’right’, or ’center’ to
+       define the positioning.
+
+       on-click:
+       typeof: string
+       Command to execute when clicked on the module.
+
+       on-click-middle:
+       typeof: string
+       Command to execute when middle-clicked on the module using mousewheel.
+
+       on-click-right:
+       typeof: string
+       Command to execute when you right-click on the module.
+
+       on-update:
+       typeof: string
+       Command to execute when the module is updated.
+
+       on-scroll-up:
+       typeof: string
+       Command to execute when scrolling up on the module.
+
+       on-scroll-down:
+       typeof: string
+       Command to execute when scrolling down on the module.
+
+       smooth-scrolling-threshold:
+       typeof: double
+       Threshold to be used when scrolling.
+
+       tooltip:
+       typeof: bool
+       default: true
+       Option to disable tooltip on hover.
+
+       menu:
+       typeof: string
+       Action that popups the menu.
+
+       menu-file:
+       typeof: string
+       Location of the menu descriptor file. There need to be an element of type
+	   GtkMenu with id menu
+
+       menu-actions:
+       typeof: array
+       The actions corresponding to the buttons of the menu.
+
+       expand:
+       typeof: bool
+       default: false
+       Enables this module to consume all left over space dynamically.
+
+FORMAT REPLACEMENTS
+       {percentage}: Percentage of memory in use.
+
+       {swapPercentage}: Percentage of swap in use.
+
+       {total}: Amount of total memory available in GiB.
+
+       {swapTotal}: Amount of total swap available in GiB.
+
+       {used}: Amount of used memory in GiB.
+
+       {swapUsed}: Amount of used swap in GiB.
+
+       {avail}: Amount of available memory in GiB.
+
+       {swapAvail}: Amount of available swap in GiB.
+
+       {swapState}: Signals if swap is activated or not
+
+EXAMPLES
+	   "memory": {
+		"interval": 30,
+		"format": "{}% ",
+		"max-length": 10
+	   }
+
+   FORMATTED MEMORY VALUES
+	   "memory": {
+		"interval": 30,
+		"format": "{used:0.1f}G/{total:0.1f}G "
+	   }
+
+STYLE
+       •   #memory
+
+						 2025-12-19				    waybar-memory(5)
+
+
+
+################################################################################
+# MAN PAGE: waybar-mpd(5)
+################################################################################
+
+waybar-mpd(5)				     File Formats Manual			       waybar-mpd(5)
+
+NAME
+       waybar - mpd module
+
+DESCRIPTION
+       The mpd module displays information about a running "Music Player Daemon" instance.
+
+CONFIGURATION
+       Addressed by mpd
+
+       server:
+       typeof: string
+       The network address or Unix socket path of the MPD server. If empty, connect to the default host.
+
+       port:
+       typeof: integer
+       The port MPD listens to. If empty, use the default port.
+
+       password:
+       typeof: string
+       The password required to connect to the MPD server. If empty, no password is sent to MPD.
+
+       interval:
+       typeof: integer
+       default: 5
+       The interval in which the connection to the MPD server is retried
+
+       timeout:
+       typeof: integer
+       default: 30
+       The timeout for the connection. Change this if your MPD server has a low ‘connection_timeout‘ setting
+
+       unknown-tag:
+       typeof: string
+       default: "N/A"
+       The text to display when a tag is not present in the current song, but used in ‘format‘
+
+       format:
+       typeof: string
+       default: "{album} - {artist} - {title}"
+       Information displayed when a song is playing.
+
+       format-stopped:
+       typeof: string
+       default: "stopped"
+       Information displayed when the player is stopped.
+
+       format-paused:
+       typeof: string
+       This format is used when a song is paused.
+
+       format-disconnected:
+       typeof: string
+       default: "disconnected"
+       Information displayed when the MPD server can’t be reached.
+
+       tooltip:
+       typeof: bool
+       default: true
+       Option to disable tooltip on hover.
+
+       tooltip-format:
+       typeof: string
+       default: "MPD (connected)"
+       Tooltip information displayed when connected to MPD.
+
+       tooltip-format-disconnected:
+       typeof: string
+       default: "MPD (disconnected)"
+       Tooltip information displayed when the MPD server can’t be reached.
+
+       artist-len:
+       typeof: integer
+       Maximum length of the Artist tag.
+
+       album-len:
+       typeof: integer
+       Maximum length of the Album tag.
+
+       album-artist-len:
+       typeof: integer
+       Maximum length of the Album Artist tag.
+
+       title-len:
+       typeof: integer
+       Maximum length of the Title tag.
+
+       rotate:
+       typeof: integer
+       Positive value to rotate the text label (in 90 degree increments).
+
+       max-length:
+       typeof: integer
+       The maximum length in character the module should display.
+
+       min-length:
+       typeof: integer
+       The minimum length in characters the module should accept.
+
+       align:
+       typeof: float
+       The  alignment of the label within the module, where 0 is left-aligned and 1 is right-aligned. If the
+       module is rotated, it will follow the flow of the text.
+
+       justify:
+       typeof: string
+       The alignment of the text within the module’s label, allowing options ’left’, ’right’, or ’center’ to
+       define the positioning.
+
+       on-click:
+       typeof: string
+       Command to execute when clicked on the module.
+
+       on-click-middle:
+       typeof: string
+       Command to execute when middle-clicked on the module using mousewheel.
+
+       on-click-right:
+       typeof: string
+       Command to execute when you right-click on the module.
+
+       on-update:
+       typeof: string
+       Command to execute when the module is updated.
+
+       on-scroll-up:
+       typeof: string
+       Command to execute when scrolling up on the module.
+
+       on-scroll-down:
+       typeof: string
+       Command to execute when scrolling down on the module.
+
+       smooth-scrolling-threshold:
+       typeof: double
+       Threshold to be used when scrolling.
+
+       state-icons:
+       typeof: object
+       default: {}
+       Icon to show depending on the play/pause state of the player ({ "playing": "...", "paused": "..." })
+
+       consume-icons:
+       typeof: object
+       default: {}
+       Icon to show depending on the "consume" option ({ "on": "...", "off": "..." })
+
+       random-icons:
+       typeof: object
+       default: {}
+       Icon to show depending on the "random" option ({ "on": "...", "off": "..." })
+
+       repeat-icons:
+       typeof: object
+       default: {}
+       Icon to show depending on the "repeat" option ({ "on": "...", "off": "..." })
+
+       single-icons:
+       typeof: object
+       default: {}
+       Icon to show depending on the "single" option ({ "on": "...", "off": "..." })
+
+       menu:
+       typeof: string
+       Action that popups the menu.
+
+       menu-file:
+       typeof: string
+       Location of the menu descriptor file. There need to be an element of type
+	   GtkMenu with id menu
+
+       menu-actions:
+       typeof: array
+       The actions corresponding to the buttons of the menu.
+
+       expand:
+       typeof: bool
+       default: false
+       Enables this module to consume all left over space dynamically.
+
+FORMAT REPLACEMENTS
+   WHEN PLAYING/PAUSED
+       {artist}: The artist of the current song
+
+       {albumArtist}: The artist of the current album
+
+       {album}: The album of the current song
+
+       {title}: The title of the current song
+
+       {date}: The date of the current song
+
+       {volume}: The current volume in percent
+
+       {elapsedTime}: The current position of the current song. To format as a date/time (see  example	con‐
+       figuration)
+
+       {totalTime}: The length of the current song. To format as a date/time (see example configuration)
+
+       {songPosition}: The position of the current song.
+
+       {queueLength}: The length of the current queue.
+
+       {uri}: The URI of the song relative to the MPD music directory.
+
+       {filename} The last part of the URI.
+
+       {stateIcon}:  The  icon	corresponding to the playing or paused status of the player (see state-icons
+       option)
+
+       {consumeIcon}: The icon corresponding the "consume" option (see consume-icons option)
+
+       {randomIcon}: The icon corresponding the "random" option (see random-icons option)
+
+       {repeatIcon}: The icon corresponding the "repeat" option (see repeat-icons option)
+
+       {singleIcon}: The icon corresponding the "single" option (see single-icons option)
+
+   WHEN STOPPED
+       {consumeIcon}: The icon corresponding the "consume" option (see consume-icons option)
+
+       {randomIcon}: The icon corresponding the "random" option (see random-icons option)
+
+       {repeatIcon}: The icon corresponding the "repeat" option (see repeat-icons option)
+
+       {singleIcon}: The icon corresponding the "single" option (see single-icons option)
+
+   WHEN DISCONNECTED
+       Currently, no format replacements when disconnected.
+
+EXAMPLES
+	   "mpd": {
+		"format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
+		"format-disconnected": "Disconnected ",
+		"format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+		"interval": 2,
+		"consume-icons": {
+		     "on": " " // Icon shows only when "consume" is on
+		},
+		"random-icons": {
+		     "off": "<span color="#f53c3c"></span> ", // Icon grayed out when "random" is off
+		     "on": " "
+		},
+		"repeat-icons": {
+		     "on": " "
+		},
+		"single-icons": {
+		     "on": "1 "
+		},
+		"state-icons": {
+		     "paused": "",
+		     "playing": ""
+		},
+		"tooltip-format": "MPD (connected)",
+		"tooltip-format-disconnected": "MPD (disconnected)"
+	   }
+
+STYLE
+       •   #mpd
+       •   #mpd.disconnected
+       •   #mpd.stopped
+       •   #mpd.playing
+       •   #mpd.paused
+
+						 2025-12-19				       waybar-mpd(5)
+
+
+
+################################################################################
+# MAN PAGE: waybar-mpris(5)
+################################################################################
+
+waybar-mpris(5)				     File Formats Manual			     waybar-mpris(5)
+
+NAME
+       waybar - MPRIS module
+
+DESCRIPTION
+       The mpris module displays currently playing media via libplayerctl.
+
+CONFIGURATION
+       player:
+       typeof: string
+       default: playerctld
+       Name  of	 the  MPRIS player to attach to. Using the default value always follows the currently active
+       player.
+
+       ignored-players:
+       typeof: []string
+       Ignore updates of the listed players, when using playerctld.
+
+       interval:
+       typeof: integer
+       default: 0
+       Refresh MPRIS information on a timer.
+
+       format:
+       typeof: string
+       default: {player} ({status}) {dynamic}
+       The text format.
+
+       format-[status]:
+       typeof: string
+       The status-specific text format.
+
+       tooltip:
+       typeof: bool
+       default: true
+       Option to disable tooltip on hover.
+
+       tooltip-format:
+       typeof: string
+       default: {player} ({status}) {dynamic}
+       The tooltip text format.
+
+       tooltip-format-[status]:
+       typeof: string
+       The status-specific tooltip format.
+
+       artist-len:
+       typeof: integer
+       Maximum length of the Artist tag (Wide/Fullwidth Unicode characters count as two).  Set	to  zero  to
+       hide the artist in ‘{dynamic}‘ tag.
+
+       album-len:
+       typeof: integer
+       Maximum length of the Album tag (Wide/Fullwidth Unicode characters count as two). Set to zero to hide
+       the album in ‘{dynamic}‘ tag.
+
+       title-len:
+       typeof: integer
+       Maximum length of the Title tag (Wide/Fullwidth Unicode characters count as two). Set to zero to hide
+       the title in ‘{dynamic}‘ tag.
+
+       dynamic-len:
+       typeof: integer
+       Maximum length of the Dynamic tag (Wide/Fullwidth Unicode characters
+       count as two). The dynamic tag will not truncate any tags beyond their
+       set length limits, instead, it will attempt to fit as much of the
+       available tags as possible. It is recommended you set title-len to
+       something less than or equal to this value, so the title will always be
+       displayed.
+
+       dynamic-order:
+       typeof: []string
+       default: ["title", "artist", "album", "position", "length"]
+       Order of the tags shown by Dynamic tag. The position and length tags
+       will always be combined in the format [{position}/{length}]. The order
+       of these tags in relation to other tags will be determined based on the
+       declaration of the first among the two tags. Absence in this list means
+       force exclusion.
+
+       dynamic-importance-order:
+       typeof: []string
+       default: ["title", "artist", "album", "position", "length"]
+       Priority of the tags when truncating the Dynamic tag. The final ones
+       will be the first to be truncated. Absence in this list means force
+       inclusion.
+
+       dynamic-separator:
+       typeof: string
+       default: " - "
+       These characters will be used to separate two different tags, except
+       when one of these tags is position and length.
+
+       truncate-hours:
+       typeof: bool
+       default: true
+       Whether to hide hours when media duration is less than an hour long.
+
+       enable-tooltip-len-limits:
+       typeof: bool
+       default: false
+       Option  to  enable  the	length	limits	for the tooltip as well. By default, the tooltip ignores all
+       length limits.
+
+       ellipsis:
+       typeof: string
+       default: "…"
+       This character will be used when any of the tags exceed their maximum length. If you  don’t  want  to
+       use an ellipsis, set this to empty string.
+
+       rotate:
+       typeof: integer
+       Positive value to rotate the text label (in 90 degree increments).
+
+       max-length:
+       typeof: integer
+       The maximum length in character the module should display.
+
+       min-length:
+       typeof: integer
+       The minimum length in characters the module should accept.
+
+       align:
+       typeof: float
+       The  alignment of the label within the module, where 0 is left-aligned and 1 is right-aligned. If the
+       module is rotated, it will follow the flow of the text.
+
+       justify:
+       typeof: string
+       The alignment of the text within the module’s label, allowing options ’left’, ’right’, or ’center’ to
+       define the positioning.
+
+       on-click:
+       typeof: string
+       default: play-pause
+       Overwrite default action toggles.
+
+       on-click-middle:
+       typeof: string
+       default: previous track
+       Overwrite default action toggles.
+
+       on-click-right:
+       typeof: string
+       default: next track
+       Overwrite default action toggles.
+
+       player-icons:
+       typeof: map[string]string
+       Allows setting {player_icon} based on player-name property.
+
+       status-icons:
+       typeof: map[string]string
+       Allows setting {status_icon} based on player status (playing, paused, stopped).
+
+       expand:
+       typeof: bool
+       default: false
+       Enables this module to consume all left over space dynamically.
+
+FORMAT REPLACEMENTS
+       {player}: The name of the current media player
+
+       {status}: The current status (playing, paused, stopped)
+
+       {artist}: The artist of the current track
+
+       {album}: The album title of the current track
+
+       {title}: The title of the current track
+
+       {length}: Length of the track, formatted as HH:MM:SS
+
+       {dynamic}: Use {artist}, {album}, {title} and {length}, automatically omit
+       empty values
+
+       {player_icon}: Chooses an icon from player-icons based on {player}
+
+       {status_icon}: Chooses an icon from status-icons based on {status}
+
+EXAMPLES
+	   "mpris": {
+		"format": "{player_icon} {dynamic}",
+		"format-paused": "{status_icon} <i>{dynamic}</i>",
+		"player-icons": {
+		     "default": "▶",
+		     "mpv": "🎵"
+		},
+		"status-icons": {
+		     "paused": "⏸"
+		},
+		// "ignored-players": ["firefox"]
+	   }
+
+STYLE
+       •   #mpris
+       •   #mpris.${status}
+       •   #mpris.${player}
+
+						 2025-12-19				     waybar-mpris(5)
+
+
+
+################################################################################
+# MAN PAGE: waybar-network(5)
+################################################################################
+
+waybar-network(5)			     File Formats Manual			   waybar-network(5)
+
+NAME
+       waybar - network module
+
+DESCRIPTION
+       The network module displays information about the current network connections.
+
+CONFIGURATION
+       Addressed by network
+
+       interface:
+       typeof: string
+       Use the defined interface instead of auto-detection. Accepts wildcard.
+
+       rfkill:
+       typeof: bool
+       default: true
+       If enabled, the disabled format will be used when rfkill is blocking wlan interfaces.
+
+       interval:
+       typeof: integer
+       default: 60
+       The interval in which the network information gets polled (e.g. signal strength).
+
+       family:
+       typeof: string
+       default: ipv4
+       The  address  family  that  is used for the format replacement {ipaddr} and to determine if a network
+       connection is present. Set it to ipv4_6 to display both.
+
+       format:
+       typeof: string
+       default: {ifname}
+       The format, how information should be displayed. This format is used when other formats aren’t speci‐
+       fied.
+
+       format-ethernet:
+       typeof: string
+       This format is used when an ethernet interface is displayed.
+
+       format-wifi:
+       typeof: string
+       This format is used when a wireless interface is displayed.
+
+       format-linked:
+       typeof: string
+       This format is used when a linked interface with no IP address is displayed.
+
+       format-disconnected:
+       typeof: string
+       This format is used when the displayed interface is disconnected.
+
+       format-disabled:
+       typeof: string
+       This format is used when rfkill is blocking wlan interfaces.
+
+       format-icons:
+       typeof: array/object
+       Based on the current signal strength, the corresponding icon gets selected.
+       The order is low to high. Or by the state if it is an object.
+
+       rotate:
+       typeof: integer
+       Positive value to rotate the text label (in 90 degree increments).
+
+       max-length:
+       typeof: integer
+       The maximum length in character the module should display.
+
+       min-length:
+       typeof: integer
+       The minimum length in characters the module should accept.
+
+       align:
+       typeof: float
+       The alignment of the label within the module, where 0 is left-aligned and 1 is right-aligned. If	 the
+       module is rotated, it will follow the flow of the text.
+
+       justify:
+       typeof: string
+       The alignment of the text within the module’s label, allowing options ’left’, ’right’, or ’center’ to
+       define the positioning.
+
+       on-click:
+       typeof: string
+       Command to execute when clicked on the module.
+
+       on-click-middle:
+       typeof: string
+       Command to execute when middle-clicked on the module using mousewheel.
+
+       on-click-right:
+       typeof: string
+       Command to execute when you right-click on the module.
+
+       on-update:
+       typeof: string
+       Command to execute when the module is updated.
+
+       on-scroll-up:
+       typeof: string
+       Command to execute when scrolling up on the module.
+
+       on-scroll-down:
+       typeof: string
+       Command to execute when scrolling down on the module.
+
+       smooth-scrolling-threshold:
+       typeof: double
+       Threshold to be used when scrolling.
+
+       tooltip:
+       typeof: bool
+       default: true
+       Option to disable tooltip on hover.
+
+       tooltip-format:
+       typeof: string
+       The  format,  how information should be displayed in the tooltip. This format is used when other for‐
+       mats aren’t specified.
+
+       tooltip-format-ethernet:
+       typeof: string
+       This format is used when an ethernet interface is displayed.
+
+       tooltip-format-wifi:
+       typeof: string
+       This format is used when a wireless interface is displayed.
+
+       tooltip-format-disconnected:
+       typeof: string
+       This format is used when the displayed interface is disconnected.
+
+       tooltip-format-disabled:
+       typeof: string
+       This format is used when rfkill is blocking wlan interfaces.
+
+       menu:
+       typeof: string
+       Action that popups the menu.
+
+       menu-file:
+       typeof: string
+       Location of the menu descriptor file. There need to be an element of type
+	   GtkMenu with id menu
+
+       menu-actions:
+       typeof: array
+       The actions corresponding to the buttons of the menu.
+
+       expand:
+       typeof: bool
+       default: false
+       Enables this module to consume all left over space dynamically.
+
+FORMAT REPLACEMENTS
+       {ifname}: Name of the network interface.
+
+       {ipaddr}: The first IP of the interface.
+
+       {gwaddr}: The default gateway for the interface
+
+       {netmask}: The subnetmask corresponding to the IP(V4).
+
+       {netmask6}: The subnetmask corresponding to the IP(V6).
+
+       {cidr}: The subnetmask corresponding to the IP(V4) in CIDR notation.
+
+       {cidr6}: The subnetmask corresponding to the IP(V6) in CIDR notation.
+
+       {essid}: Name (SSID) of the wireless network.
+
+       {bssid}: MAC address (BSSID) of the wireless access point.
+
+       {signalStrength}: Signal strength of the wireless network.
+
+       {signaldBm}: Signal strength of the wireless network in dBm.
+
+       {frequency}: Frequency of the wireless network in GHz.
+
+       {bandwidthUpBits}: Instant up speed in bits/seconds.
+
+       {bandwidthDownBits}: Instant down speed in bits/seconds.
+
+       {bandwidthTotalBits}: Instant total speed in bits/seconds.
+
+       {bandwidthUpOctets}: Instant up speed in octets/seconds.
+
+       {bandwidthDownOctets}: Instant down speed in octets/seconds.
+
+       {bandwidthTotalOctets}: Instant total speed in octets/seconds.
+
+       {bandwidthUpBytes}: Instant up speed in bytes/seconds.
+
+       {bandwidthDownBytes}: Instant down speed in bytes/seconds.
+
+       {bandwidthTotalBytes}: Instant total speed in bytes/seconds.
+
+       {icon}: Icon, as defined in format-icons.
+
+EXAMPLES
+	   "network": {
+		"interface": "wlp2s0",
+		"format": "{ifname}",
+		"format-wifi": "{essid} ({signalStrength}%) ",
+		"format-ethernet": "{ifname} ",
+		"format-disconnected": "", //An empty format will hide the module.
+		"format-disconnected": "",
+		"tooltip-format": "{ifname}",
+		"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+		"tooltip-format-ethernet": "{ifname} ",
+		"tooltip-format-disconnected": "Disconnected",
+		"max-length": 50
+	   }
+
+STYLE
+       •   #network
+       •   #network.disconnected
+       •   #network.disabled
+       •   #network.linked
+       •   #network.ethernet
+       •   #network.wifi
+
+						 2025-12-19				   waybar-network(5)
+
+
+
+################################################################################
+# MAN PAGE: waybar-pulseaudio(5)
+################################################################################
+
+waybar-pulseaudio(5)			     File Formats Manual			waybar-pulseaudio(5)
+
+NAME
+       waybar - pulseaudio module
+
+DESCRIPTION
+       The pulseaudio module displays the current volume reported by PulseAudio.
+
+       Additionally, you can control the volume by scrolling up or down while the cursor is over the module.
+
+CONFIGURATION
+       format:
+       typeof: string
+       default: {volume}%
+       The format, how information should be displayed. This format is used when other formats aren’t speci‐
+       fied.
+
+       format-bluetooth:
+       typeof: string
+       This format is used when using bluetooth speakers.
+
+       format-muted:
+       typeof: string
+       This format is used when the sound is muted.
+
+       format-source:
+       typeof: string
+       default: {volume}%
+       This format used for the source.
+
+       format-source-muted:
+       typeof: string
+       This format is used when the source is muted.
+
+       format-icons:
+       typeof: array
+       Based  on the current port name and volume, the corresponding icon gets selected. The order is low to
+       high. See Icons.
+
+       rotate:
+       typeof: integer
+       Positive value to rotate the text label (in 90 degree increments).
+
+       states:
+       typeof: object
+       A number of volume states which get activated on certain volume levels. See waybar-states(5).
+
+       max-length:
+       typeof: integer
+       The maximum length in character the module should display.
+
+       min-length:
+       typeof: integer
+       The minimum length in characters the module should accept.
+
+       align:
+       typeof: float
+       The alignment of the label within the module, where 0 is left-aligned and 1 is right-aligned. If	 the
+       module is rotated, it will follow the flow of the text.
+
+       justify:
+       typeof: string
+       The alignment of the text within the module’s label, allowing options ’left’, ’right’, or ’center’ to
+       define the positioning.
+
+       scroll-step:
+       typeof: float
+       default: 1.0
+       The speed at which to change the volume when scrolling.
+
+       on-click:
+       typeof: string
+       Command to execute when clicked on the module.
+
+       on-click-middle:
+       typeof: string
+       Command to execute when middle-clicked on the module using mousewheel.
+
+       on-click-right:
+       typeof: string
+       Command to execute when you right-click on the module.
+
+       on-update:
+       typeof: string
+       Command to execute when the module is updated.
+
+       on-scroll-up:
+       typeof: string
+       Command	to  execute  when  scrolling up on the module. This replaces the default behaviour of volume
+       control.
+
+       on-scroll-down:
+       typeof: string
+       Command to execute when scrolling down on the module. This replaces the default behaviour  of  volume
+       control.
+
+       smooth-scrolling-threshold:
+       typeof: double
+       Threshold to be used when scrolling.
+
+       reverse-scrolling:
+       typeof: bool
+       Option to reverse the scroll direction.
+
+       tooltip:
+       typeof: bool
+       default: true
+       Option to disable tooltip on hover.
+
+       max-volume:
+       typeof: integer
+       default: 100
+       The maximum volume that can be set, in percentage.
+
+       ignored-sinks:
+       typeof: array
+       Sinks  in this list will not be shown as active sink by Waybar. Entries should be the sink’s descrip‐
+       tion field.
+
+       menu:
+       typeof: string
+       Action that popups the menu.
+
+       menu-file:
+       typeof: string
+       Location of the menu descriptor file. There need to be an element of type
+	   GtkMenu with id menu
+
+       menu-actions:
+       typeof: array
+       The actions corresponding to the buttons of the menu.
+
+       expand:
+       typeof: bool
+       default: false
+       Enables this module to consume all left over space dynamically.
+
+FORMAT REPLACEMENTS
+       {desc}: Pulseaudio port’s description, for bluetooth it’ll be the device name.
+
+       {volume}: Volume in percentage.
+
+       {icon}: Icon, as defined in format-icons.
+
+       {format_source}: Source format, format-source, format-source-muted.
+
+ICONS:
+       The following strings for format-icons are supported.
+
+       •   the device name
+
+       If they are found in the current PulseAudio port name, the corresponding icons will be selected.
+
+       •   default (Shown, when no other port is found)
+       •   headphone
+       •   speaker
+       •   hdmi
+       •   headset
+       •   hands-free
+       •   portable
+       •   car
+       •   hifi
+       •   phone
+
+       Additionally, suffixing a device name or port with -muted will cause the icon to be selected when the
+       corresponding audio device is muted. This applies to default as well.
+
+EXAMPLES
+	   "pulseaudio": {
+		"format": "{volume}% {icon}",
+		"format-bluetooth": "{volume}% {icon}",
+		"format-muted": "",
+		"format-icons": {
+		     "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
+		     "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
+		     "headphones": "",
+		     "handsfree": "",
+		     "headset": "",
+		     "phone": "",
+		     "phone-muted": "",
+		     "portable": "",
+		     "car": "",
+		     "default": ["", ""]
+		},
+		"scroll-step": 1,
+		"on-click": "pavucontrol"
+	   }
+
+STYLE
+       •   #pulseaudio
+       •   #pulseaudio.bluetooth
+       •   #pulseaudio.muted
+
+						 2025-12-19				waybar-pulseaudio(5)
+
+
+
+################################################################################
+# MAN PAGE: waybar-sndio(5)
+################################################################################
+
+
+
+
+################################################################################
+# MAN PAGE: waybar-states(5)
+################################################################################
+
+waybar-states(5)			     File Formats Manual			    waybar-states(5)
+
+NAME
+       waybar - states property
+
+OVERVIEW
+       Some  modules support ’states’ which allows percentage values to be used as styling triggers to apply
+       a class when the value matches the declared state value.
+
+STATES
+       Every entry (state) consists of a <name> (typeof: string) and a <value> (typeof: integer).
+
+       •   The state can be addressed as a CSS class in the style.css. The name of  the	 CSS  class  is	 the
+	   <name>  of  the  state. Each class gets activated when the current value is equal to or less than
+	   the configured <value> for the battery module, or equal to or greater than the configured <value>
+	   for all other modules.
+
+       •   Also, each state can have its own format. Those can be configured via format-<name>,	 or  if	 you
+	   want to differentiate a bit more, as format-<status>-<state>.
+
+EXAMPLE
+	   "battery": {
+		"bat": "BAT2",
+		"interval": 60,
+		"states": {
+		     "warning": 30,
+		     "critical": 15
+		},
+		"format": "{capacity}% {icon}",
+		"format-icons": ["", "", "", "", ""],
+		"max-length": 25
+	   }
+
+STYLING STATES
+       •   #battery.<state> - <state> can be defined in the config.
+
+EXAMPLE:
+       •   #battery.warning: { background: orange; }
+       •   #battery.critical: { background: red; }
+
+						 2025-12-19				    waybar-states(5)
+
+
+
+################################################################################
+# MAN PAGE: waybar-sway-language(5)
+################################################################################
+
+waybar-sway-language(5)			     File Formats Manual		     waybar-sway-language(5)
+
+NAME
+       waybar - sway language module
+
+DESCRIPTION
+       The language module displays the current keyboard layout in Sway
+
+CONFIGURATION
+       Addressed by sway/language
+
+       format:
+       typeof: string
+       default: {}
+       The format, how layout should be displayed.
+
+       hide-single-layout:
+       typeof: bool
+       default: false
+       Defines visibility of the module if a single layout is configured
+
+       tooltip-format:
+       typeof: string
+       default: {}
+       The format, how layout should be displayed in tooltip.
+
+       tooltip:
+       typeof: bool
+       default: true
+       Option to disable tooltip on hover.
+
+       menu:
+       typeof: string
+       Action that popups the menu.
+
+       menu-file:
+       typeof: string
+       Location of the menu descriptor file. There need to be an element of type
+	   GtkMenu with id menu
+
+       menu-actions:
+       typeof: array
+       The actions corresponding to the buttons of the menu.
+
+       expand:
+       typeof: bool
+       default: false
+       Enables this module to consume all left over space dynamically.
+
+FORMAT REPLACEMENTS
+       {short}: Short name of layout (e.g. "us"). Equals to {}.
+
+       {shortDescription}: Short description of layout (e.g. "en").
+
+       {long}: Long name of layout (e.g. "English (Dvorak)").
+
+       {variant}: Variant of layout (e.g. "dvorak").
+
+       {flag}: Country flag of layout.
+
+EXAMPLES
+	   "sway/language": {
+		"format": "{}",
+	   },
+
+	   "sway/language": {
+		"format": "{short} {variant}",
+	   }
+
+STYLE
+       •   #language
+
+						 2025-12-19			     waybar-sway-language(5)
+
+
+
+################################################################################
+# MAN PAGE: waybar-sway-mode(5)
+################################################################################
+
+waybar-sway-mode(5)			     File Formats Manual			 waybar-sway-mode(5)
+
+NAME
+       waybar - sway mode module
+
+DESCRIPTION
+       The mode module displays the current binding mode of Sway
+
+CONFIGURATION
+       Addressed by sway/mode
+
+       format:
+       typeof: string
+       default: {}
+       The format, how information should be displayed. On {} data gets inserted.
+
+       rotate:
+       typeof: integer
+       Positive value to rotate the text label (in 90 degree increments).
+
+       max-length:
+       typeof: integer
+       The maximum length in character the module should display.
+
+       min-length:
+       typeof: integer
+       The minimum length in characters the module should accept.
+
+       align:
+       typeof: float
+       The  alignment of the label within the module, where 0 is left-aligned and 1 is right-aligned. If the
+       module is rotated, it will follow the flow of the text.
+
+       justify:
+       typeof: string
+       The alignment of the text within the module’s label, allowing options ’left’, ’right’, or ’center’ to
+       define the positioning.
+
+       on-click:
+       typeof: string
+       Command to execute when clicked on the module.
+
+       on-click-middle:
+       typeof: string
+       Command to execute when middle-clicked on the module using mousewheel.
+
+       on-click-right:
+       typeof: string
+       Command to execute when you right-click on the module.
+
+       on-update:
+       typeof: string
+       Command to execute when the module is updated.
+
+       on-scroll-up:
+       typeof: string
+       Command to execute when scrolling up on the module.
+
+       on-scroll-down:
+       typeof: string
+       Command to execute when scrolling down on the module.
+
+       smooth-scrolling-threshold:
+       typeof: double
+       Threshold to be used when scrolling.
+
+       tooltip:
+       typeof: bool
+       default: true
+       Option to disable tooltip on hover.
+
+       menu:
+       typeof: string
+       Action that popups the menu.
+
+       menu-file:
+       typeof: string
+       Location of the menu descriptor file. There need to be an element of type
+	   GtkMenu with id menu
+
+       menu-actions:
+       typeof: array
+       The actions corresponding to the buttons of the menu.
+
+       expand:
+       typeof: bool
+       default: false
+       Enables this module to consume all left over space dynamically.
+
+EXAMPLES
+	   "sway/mode": {
+		"format": " {}",
+		"max-length": 50
+	   }
+
+STYLE
+       •   #mode
+
+						 2025-12-19				 waybar-sway-mode(5)
+
+
+
+################################################################################
+# MAN PAGE: waybar-sway-scratchpad(5)
+################################################################################
+
+waybar-sway-scratchpad(5)		     File Formats Manual		   waybar-sway-scratchpad(5)
+
+NAME
+       waybar - sway scratchpad module
+
+DESCRIPTION
+       The scratchpad module displays the scratchpad status in Sway
+
+CONFIGURATION
+       Addressed by sway/scratchpad
+
+       format:
+       typeof: string
+       default: {icon} {count}
+       The format, how information should be displayed.
+
+       show-empty:
+       typeof: bool
+       default: false
+       Option to show module when scratchpad is empty.
+
+       format-icons:
+       typeof: array/object
+       Based on the current scratchpad window counts, the corresponding icon gets selected.
+
+       tooltip:
+       typeof: bool
+       default: true
+       Option to disable tooltip on hover.
+
+       tooltip-format:
+       typeof: string
+       default: {app}: {title}
+       The format, how information in the tooltip should be displayed.
+
+       menu:
+       typeof: string
+       Action that popups the menu.
+
+       menu-file:
+       typeof: string
+       Location of the menu descriptor file. There need to be an element of type
+	   GtkMenu with id menu
+
+       menu-actions:
+       typeof: array
+       The actions corresponding to the buttons of the menu.
+
+       expand:
+       typeof: bool
+       default: false
+       Enables this module to consume all left over space dynamically.
+
+FORMAT REPLACEMENTS
+       {icon}: Icon, as defined in format-icons.
+
+       {count}: Number of windows in the scratchpad.
+
+       {app}: Name of the application in the scratchpad.
+
+       {title}: Title of the application in the scratchpad.
+
+EXAMPLES
+	   "sway/scratchpad": {
+		"format": "{icon} {count}",
+		"show-empty": false,
+		"format-icons": ["", ""],
+		"tooltip": true,
+		"tooltip-format": "{app}: {title}"
+	   }
+
+STYLE
+       •   #scratchpad
+       •   #scratchpad.empty
+
+						 2025-12-19			   waybar-sway-scratchpad(5)
+
+
+
+################################################################################
+# MAN PAGE: waybar-sway-window(5)
+################################################################################
+
+waybar-sway-window(5)			     File Formats Manual		       waybar-sway-window(5)
+
+NAME
+       waybar - sway window module
+
+DESCRIPTION
+       The window module displays the title of the currently focused window in Sway
+
+CONFIGURATION
+       Addressed by sway/window
+
+       format:
+       typeof: string
+       default: {title}
+       The format, how information should be displayed.
+
+       rotate:
+       typeof: integer
+       Positive value to rotate the text label (in 90 degree increments).
+
+       max-length:
+       typeof: integer
+       The maximum length in character the module should display.
+
+       min-length:
+       typeof: integer
+       The minimum length in characters the module should accept.
+
+       align:
+       typeof: float
+       The  alignment of the label within the module, where 0 is left-aligned and 1 is right-aligned. If the
+       module is rotated, it will follow the flow of the text.
+
+       justify:
+       typeof: string
+       The alignment of the text within the module’s label, allowing options ’left’, ’right’, or ’center’ to
+       define the positioning.
+
+       on-click:
+       typeof: string
+       Command to execute when clicked on the module.
+
+       on-click-middle:
+       typeof: string
+       Command to execute when middle-clicked on the module using mousewheel.
+
+       on-click-right:
+       typeof: string
+       Command to execute when you right-click on the module.
+
+       on-update:
+       typeof: string
+       Command to execute when the module is updated.
+
+       on-scroll-up:
+       typeof: string
+       Command to execute when scrolling up on the module.
+
+       on-scroll-down:
+       typeof: string
+       Command to execute when scrolling down on the module.
+
+       smooth-scrolling-threshold:
+       typeof: double
+       Threshold to be used when scrolling.
+
+       tooltip:
+       typeof: bool
+       default: true
+       Option to disable tooltip on hover.
+
+       all-outputs:
+       typeof: bool
+       default: false
+       Option to show the focused window along with its workspace styles on all outputs.
+
+       offscreen-css:
+       typeof: bool
+       default: false
+       Only effective when all-outputs is true. Adds style according to present windows on unfocused outputs
+       instead of showing the focused window and style.
+
+       offscreen-css-text:
+       typeof: string
+       Only effective when both all-outputs and offscreen-style are true. On screens currently not  focused,
+       show the given text along with that workspace styles.
+
+       show-focused-workspace-name:
+       typeof: bool
+       default: false
+       If the workspace itself is focused and the workspace contains nodes or floating_nodes, show the work‐
+       space  name.  If not set, text remains empty but styles according to nodes in the workspace are still
+       applied.
+
+       show-hidden-marks:
+       typeof: bool
+       default: false
+       For the {marks} format replacement, include hidden marks that start with an underscore.
+
+       rewrite:
+       typeof: object
+       Rules to rewrite the module format output. See rewrite rules.
+
+       icon:
+       typeof: bool
+       default: false
+       Option to hide the application icon.
+
+       icon-size:
+       typeof: integer
+       default: 24
+       Option to change the size of the application icon.
+
+       expand:
+       typeof: bool
+       default: false
+       Enables this module to consume all left over space dynamically.
+
+FORMAT REPLACEMENTS
+       {title}: The title of the focused window.
+
+       {app_id}: The app_id of the focused window.
+
+       {shell}: The shell of the focused window. It’s ’xwayland’ when the window is  running  through  xway‐
+       land, otherwise, it’s ’xdg-shell’.
+
+       {marks}: Marks of the window.
+
+REWRITE RULES
+       rewrite	is  an object where keys are regular expressions and values are rewrite rules if the expres‐
+       sion matches. Rules may contain references to captures of the expression.
+
+       Regular expression and replacement follow ECMA-script rules.
+
+       If no expression matches, the format output is left unchanged.
+
+       Invalid expressions (e.g., mismatched parentheses) are skipped.
+
+EXAMPLES
+	   "sway/window": {
+		"format": "{}",
+		"max-length": 50,
+		"rewrite": {
+		     "(.*) - Mozilla Firefox": "🌎 $1",
+		     "(.*) - zsh": "> [$1]"
+		}
+	   }
+
+STYLE
+       •   #window
+
+       The following classes are applied to the entire Waybar rather than just the window widget:
+
+       •   window#waybar.empty When no windows are in the workspace, or screen is not focused and offscreen-
+	   css option is not set
+       •   window#waybar.solo When one tiled window is in the workspace
+       •   window#waybar.floating When there are only floating windows in the workspace
+       •   window#waybar.stacked When there is more than one window in the workspace and the workspace	lay‐
+	   out is stacked
+       •   window#waybar.tabbed When there is more than one window in the workspace and the workspace layout
+	   is tabbed
+       •   window#waybar.tiled	When there is more than one window in the workspace and the workspace layout
+	   is splith or splitv
+       •   window#waybar.<app_id> Where app_id is the app_id or instance name like (chromium)  of  the	only
+	   window in the workspace
+
+						 2025-12-19			       waybar-sway-window(5)
+
+
+
+################################################################################
+# MAN PAGE: waybar-sway-workspaces(5)
+################################################################################
+
+waybar-sway-workspaces(5)		     File Formats Manual		   waybar-sway-workspaces(5)
+
+NAME
+       waybar - sway workspaces module
+
+DESCRIPTION
+       The workspaces module displays the currently used workspaces in Sway.
+
+CONFIGURATION
+       Addressed by sway/workspaces
+
+       all-outputs:
+       typeof: bool
+       default: false
+       If  set	to  false, workspaces will only be shown on the output they are on. If set to true all work‐
+       spaces will be shown on every output.
+
+       format:
+       typeof: string
+       default: {value}
+       The format, how information should be displayed.
+
+       format-icons:
+       typeof: array
+       Based on the workspace name and state, the corresponding icon gets selected. See icons.
+
+       disable-scroll:
+       typeof: bool
+       default: false
+       If set to false, you can scroll to cycle through workspaces. If set to true this	 behaviour  is	dis‐
+       abled.
+
+       reverse-scroll:
+       typeof: bool
+       default: false
+       If set to false, scrolling up will switch to the previous workspace and scrolling down will switch to
+       the next workspace. If set to true, the behavior will be reversed.
+
+       disable-click:
+       typeof: bool
+       default: false
+       If set to false, you can click to change workspace. If set to true this behaviour is disabled.
+
+       smooth-scrolling-threshold:
+       typeof: double
+       Threshold to be used when scrolling.
+
+       disable-scroll-wraparound:
+       typeof: bool
+       default: false
+       If  set	to  false, scrolling on the workspace indicator will wrap around to the first workspace when
+       reading the end, and vice versa. If set to true this behavior is disabled.
+
+       enable-bar-scroll:
+       typeof: bool
+       default: false
+       If set to false, you can’t scroll to cycle throughout workspaces from the entire bar. If set to	true
+       this behaviour is enabled.
+
+       disable-markup:
+       typeof: bool
+       default: false
+       If set to true, button label will escape pango markup.
+
+       current-only:
+       typeof: bool
+       default: false
+       If set to true. Only focused workspaces will be shown.
+
+       persistent-workspaces:
+       typeof: json (see below)
+       default: empty
+       Lists workspaces that should always be shown, even when non-existent
+
+       on-update:
+       typeof: string
+       Command to execute when the module is updated.
+
+       disable-auto-back-and-forth:
+       typeof: bool
+       Whether to disable workspace_auto_back_and_forth when clicking on workspaces. If this is set to true,
+       clicking	 on  a workspace you are already on won’t do anything, even if workspace_auto_back_and_forth
+       is enabled in the Sway configuration.
+
+       alphabetical_sort:
+       typeof: bool
+       Whether to sort workspaces alphabetically. Please note this can make  "swaymsg  workspace  prev/next"
+       move to workspaces inconsistent with the ordering shown in Waybar.
+
+       warp-on-scroll:
+       typeof: bool
+       default: true
+       If  set	to false, you can scroll to cycle through workspaces without mouse warping being enabled. If
+       set to true this behaviour is disabled.
+
+       window-rewrite:
+       typeof: object
+       Regex rules to map window class to an icon or preferred method of representation	 for  a	 workspace’s
+       window.
+	   Keys	 are  the  rules,  while  the  values  are  the methods of representation. Rules may specify
+	   ‘class<...>‘, ‘title<...>‘, or both in order to fine-tune the matching. You may assign  an  empty
+	   value  to a rule to have it ignored from generating any representation in workspaces. For Wayland
+	   windows ‘class‘ is matched against the ‘app_id‘, and for X11 windows against	 the  ‘class‘  prop‐
+	   erty.
+
+       window-rewrite-default:
+	   typeof: string
+	   default: "?"
+	   The	default	 method	 of  representation  for a workspace’s window. This will be used for windows
+	   whose classes do not match any of the rules in window-rewrite.
+
+       format-window-separator:
+       typeof: string
+       default: " "
+       The separator to be used between windows in a workspace.
+
+       expand:
+       typeof: bool
+       default: false
+       Enables this module to consume all left over space dynamically.
+
+FORMAT REPLACEMENTS
+       {value}: Name of the workspace, as defined by sway.
+
+       {name}: Number stripped from workspace value.
+
+       {icon}: Icon, as defined in format-icons.
+
+       {index}: Index of the workspace.
+
+       {output}: Output where the workspace is located.
+
+       {windows}: Result from window-rewrite
+
+ICONS
+       Additional to workspace name matching, the following format-icons can be set.
+
+       •   default: Will be shown, when no string matches are found.
+       •   urgent: Will be shown, when workspace is flagged as urgent
+       •   focused: Will be shown, when workspace is focused
+       •   persistent: Will be shown, when workspace is persistent.
+       •   high-priority-named: Icons by names will be shown always for	 those	workspaces,  independent  by
+	   state.
+
+PERSISTENT WORKSPACES
+       Each  entry  of	persistent_workspace  names a workspace that should always be shown. Associated with
+       that value is a list of outputs indicating where the workspace should be shown, an empty list  denot‐
+       ing all outputs.
+
+	   "sway/workspaces": {
+		"persistent-workspaces": {
+		     "3": [], // Always show a workspace with name ’3’, on all outputs if it does not exist
+		     "4": ["eDP-1"], // Always show a workspace with name ’4’, on output ’eDP-1’ if it does not exist
+		     "5": ["eDP-1", "DP-2"] // Always show a workspace with name ’5’, on outputs ’eDP-1’ and ’DP-2’ if it does not exist
+		}
+	   }
+
+       n.b.: the list of outputs can be obtained from command line using swaymsg -t get_outputs
+
+EXAMPLES
+	   "sway/workspaces": {
+		"disable-scroll": true,
+		"all-outputs": true,
+		"format": "{name}: {icon}",
+		"format-icons": {
+		     "1": "",
+		     "2": "",
+		     "3": "",
+		     "4": "",
+		     "5": "",
+		     "high-priority-named": [ "1", "2" ],
+		     "urgent": "",
+		     "focused": "",
+		     "default": ""
+		}
+	   }
+
+	   "sway/workspaces": {
+	     "format": "<span size=’larger’>{name}</span> {windows}",
+	     "format-window-separator": " | ",
+	     "window-rewrite-default": "{name}",
+	     "window-format": "<span color=’#e0e0e0’>{name}</span>",
+	     "window-rewrite": {
+	       "class<firefox>": "",
+	       "class<kitty>": "k",
+		"title<.* - (.*) - VSCodium>": "codium $1"  // captures part of the window title and formats it into output
+	     }
+	   }
+
+Style
+       •   #workspaces button
+       •   #workspaces button.visible
+       •   #workspaces button.focused
+       •   #workspaces button.urgent
+       •   #workspaces button.persistent
+       •   #workspaces button.empty
+       •   #workspaces button.current_output
+       •   #workspaces button#sway-workspace-${name}
+
+						 2025-12-19			   waybar-sway-workspaces(5)
+
+
+
+################################################################################
+# MAN PAGE: waybar-temperature(5)
+################################################################################
+
+waybar-temperature(5)			     File Formats Manual		       waybar-temperature(5)
+
+NAME
+       waybar - temperature module
+
+DESCRIPTION
+       The temperature module displays the current temperature from a thermal zone.
+
+CONFIGURATION
+       Addressed by temperature
+
+       thermal-zone:
+       typeof: integer
+       The thermal zone, as in /sys/class/thermal/.
+
+       hwmon-path:
+       typeof: string
+       The   temperature   path	  to   use,  e.g.  /sys/class/hwmon/hwmon2/temp1_input	instead	 of  one  in
+       /sys/class/thermal/.
+	   This can also be an array of strings. In this case, waybar will check each item in the array	 and
+	   use	the first valid one. This is suitable if you want to share the same configuration file among
+	   different machines with different hardware configurations.
+
+       hwmon-path-abs:
+       typeof: string
+       The path of the hwmon-directory of the device, e.g. /sys/devices/pci0000:00/0000:00:18.3/hwmon. (Note
+       that the subdirectory hwmon/hwmon#, where # is a number is not part of the path!) Has to be used	 to‐
+       gether with input-filename.
+	   This can also be an array of strings, for which, it just works like hwmon-path.
+
+       input-filename:
+       typeof: string
+       The temperature filename of your hwmon-path-abs, e.g. temp1_input
+
+       warning-threshold:
+       typeof: integer
+       The threshold before it is considered warning (Celsius).
+
+       critical-threshold:
+       typeof: integer
+       The threshold before it is considered critical (Celsius).
+
+       interval:
+       typeof: integer
+       default: 10
+       The interval in which the information gets polled.
+
+       format-warning:
+       typeof: string
+       The format to use when temperature is considered warning
+
+       format-critical:
+       typeof: string
+       The format to use when temperature is considered critical
+
+       format:
+       typeof: string
+       default: {temperatureC}°C
+       The format (Celsius/Fahrenheit/Kelvin) in which the temperature should be displayed.
+
+       format-icons:
+       typeof: array
+       Based  on  the  current	temperature (Celsius) and critical-threshold if available, the corresponding
+       icon gets selected. The order is low to high.
+
+       tooltip-format:
+       typeof: string
+       default: {temperatureC}°C
+       The format for the tooltip
+
+       rotate:
+       typeof: integer
+       Positive value to rotate the text label (in 90 degree increments).
+
+       max-length:
+       typeof: integer
+       The maximum length in characters the module should display.
+
+       min-length:
+       typeof: integer
+       The minimum length in characters the module should accept.
+
+       align:
+       typeof: float
+       The alignment of the label within the module, where 0 is left-aligned and 1 is right-aligned. If	 the
+       module is rotated, it will follow the flow of the text.
+
+       justify:
+       typeof: string
+       The alignment of the text within the module’s label, allowing options ’left’, ’right’, or ’center’ to
+       define the positioning.
+
+       on-click:
+       typeof: string
+       Command to execute when you click on the module.
+
+       on-click-middle:
+       typeof: string
+       Command to execute when middle-clicked on the module using mousewheel.
+
+       on-click-right:
+       typeof: string
+       Command to execute when you right-click on the module.
+
+       on-update:
+       typeof: string
+       Command to execute when the module is updated.
+
+       on-scroll-up:
+       typeof: string
+       Command to execute when scrolling up on the module.
+
+       on-scroll-down:
+       typeof: string
+       Command to execute when scrolling down on the module.
+
+       smooth-scrolling-threshold:
+       typeof: double
+       Threshold to be used when scrolling.
+
+       tooltip:
+       typeof: bool
+       default: true
+       Option to disable tooltip on hover.
+
+       menu:
+       typeof: string
+       Action that popups the menu.
+
+       menu-file:
+       typeof: string
+       Location of the menu descriptor file. There need to be an element of type
+	   GtkMenu with id menu
+
+       menu-actions:
+       typeof: array
+       The actions corresponding to the buttons of the menu.
+
+       expand:
+       typeof: bool
+       default: false
+       Enables this module to consume all left over space dynamically.
+
+FORMAT REPLACEMENTS
+       {temperatureC}: Temperature in Celsius.
+
+       {temperatureF}: Temperature in Fahrenheit.
+
+       {temperatureK}: Temperature in Kelvin.
+
+EXAMPLES
+	    "temperature": {
+		// "thermal-zone": 2,
+		// "hwmon-path": ["/sys/class/hwmon/hwmon2/temp1_input", "/sys/class/thermal/thermal_zone0/temp"],
+		// "critical-threshold": 80,
+		// "format-critical": "{temperatureC}°C ",
+		"format": "{temperatureC}°C "
+	   }
+
+STYLE
+       •   #temperature
+       •   #temperature.critical
+
+						 2025-12-19			       waybar-temperature(5)
+
+
+
+################################################################################
+# MAN PAGE: waybar-tray(5)
+################################################################################
+
+waybar-tray(5)				     File Formats Manual			      waybar-tray(5)
+
+NAME
+       waybar - tray module
+
+DESCRIPTION
+       WARNING tray is still in beta. There may be bugs. Breaking changes may occur.
+
+CONFIGURATION
+       Addressed by tray
+
+       icon-size:
+       typeof: integer
+       Defines the size of the tray icons.
+
+       show-passive-items:
+       typeof: bool
+       default: false
+       Defines visibility of the tray icons with Passive status.
+
+       smooth-scrolling-threshold:
+       typeof: double
+       Threshold to be used when scrolling.
+
+       spacing:
+       typeof: integer
+       Defines the spacing between the tray icons.
+
+       reverse-direction:
+       typeof: bool
+       Defines if new app icons should be added in a reverse order
+
+       on-update:
+       typeof: string
+       Command to execute when the module is updated.
+
+       expand:
+       typeof: bool
+       default: false
+       Enables this module to consume all left over space dynamically.
+
+EXAMPLES
+	   "tray": {
+		"icon-size": 21,
+		"spacing": 10,
+	     "icons": {
+	       "blueman": "bluetooth",
+	       "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+	     }
+	   }
+
+STYLE
+       •   #tray
+       •   #tray > .passive
+       •   #tray > .active
+       •   #tray > .needs-attention
+
+						 2025-12-19				      waybar-tray(5)
+
+
+
+################################################################################
+# MAN PAGE: waybar-upower(5)
+################################################################################
+
+waybar-upower(5)			     File Formats Manual			    waybar-upower(5)
+
+NAME
+       waybar - upower module
+
+DESCRIPTION
+       The  upower module displays the main battery capacity with all other upower compatible devices in the
+       tooltip.
+
+CONFIGURATION
+       native-path:
+       typeof: string
+       default:
+       The battery to monitor. Refer to the  https://upower.freedesktop.org/docs/UpDevice.html#UpDevice--na‐
+       tive-path
+       Can be obtained using ‘upower --dump‘
+
+       model:
+       typeof: string
+       default:
+       The battery to monitor, based on the model. (this option is ignored if native-path is given).
+       Can be obtained using ‘upower --dump‘
+
+       icon-size:
+       typeof: integer
+       default: 20
+       Defines the size of the icons.
+
+       format:
+       typeof: string
+       default: {percentage}
+       The text format.
+
+       format-alt:
+       typeof: string
+       default: {percentage} {time}
+       The text format when toggled.
+
+       hide-if-empty:
+       typeof: bool
+       default: true
+       Defines visibility of the module if no devices can be found.
+
+       tooltip:
+       typeof: bool
+       default: true
+       Option to disable tooltip on hover.
+
+       tooltip-spacing:
+       typeof: integer
+       default: 4
+       Defines the spacing between the tooltip device name and device battery
+       status.
+
+       tooltip-padding:
+       typeof: integer
+       default: 4
+       Defines the spacing between the tooltip window edge and the tooltip content.
+
+       on-click:
+       typeof: string
+       Command to execute when clicked on the module.
+
+       show-icon:
+       typeof: bool
+       default: true
+       Option to disable battery icon.
+
+       menu:
+       typeof: string
+       Action that popups the menu.
+
+       menu-file:
+       typeof: string
+       Location of the menu descriptor file. There need to be an element of type
+	   GtkMenu with id menu
+
+       menu-actions:
+       typeof: array
+       The actions corresponding to the buttons of the menu.
+
+FORMAT REPLACEMENTS
+       {percentage}: The battery capacity in percentage
+
+       {time}: An estimated time either until empty or until fully charged
+       depending on the charging state.
+
+EXAMPLES
+	   "upower": {
+		"icon-size": 20,
+		"hide-if-empty": true,
+		"tooltip": true,
+		"tooltip-spacing": 20
+	   }
+
+	   "upower": {
+		"native-path": "/org/bluez/hci0/dev_D4_AE_41_38_D0_EF",
+		"icon-size": 20,
+		"hide-if-empty": true,
+		"tooltip": true,
+		"tooltip-spacing": 20
+	   }
+
+	   "upower": {
+		"native-path": "battery_sony_controller_battery_d0o27o88o32ofcoee",
+		"icon-size": 20,
+		"hide-if-empty": true,
+		"tooltip": true,
+		"tooltip-spacing": 20
+	   }
+	   "upower": {
+		"show-icon": false,
+		"hide-if-empty": true,
+		"tooltip": true,
+		"tooltip-spacing": 20
+	   }
+
+STYLE
+       •   #upower
+       •   #upower.charging
+       •   #upower.discharging
+       •   #upower.full
+       •   #upower.empty
+       •   #upower.unknown-status
+
+						 2025-12-19				    waybar-upower(5)
+
+
+
+################################################################################
+# MAN PAGE: waybar-wireplumber(5)
+################################################################################
+
+waybar-wireplumber(5)			     File Formats Manual		       waybar-wireplumber(5)
+
+NAME
+       waybar - WirePlumber module
+
+DESCRIPTION
+       The wireplumber module displays the current volume reported by WirePlumber.
+
+CONFIGURATION
+       format:
+       typeof: string
+       default: {volume}%
+       The format, how information should be displayed. This format is used when other formats aren’t speci‐
+       fied.
+
+       format-muted:
+       typeof: string
+       This format is used when the sound is muted.
+
+       node-type:
+       typeof: string
+       default: Audio/Sink
+       The WirePlumber node type to attach to. Use Audio/Source to manage microphones etc.
+
+       tooltip:
+       typeof: bool
+       default: true
+       Option to disable tooltip on hover.
+
+       tooltip-format:
+       typeof: string
+       default: {node_name}
+       The format of information displayed in the tooltip.
+
+       rotate:
+       typeof: integer
+       Positive value to rotate the text label (in 90 degree increments).
+
+       states:
+       typeof: object
+       A number of volume states which get activated on certain volume levels. See waybar-states(5).
+
+       max-length:
+       typeof: integer
+       The maximum length in character the module should display.
+
+       min-length:
+       typeof: integer
+       The minimum length in characters the module should accept.
+
+       align:
+       typeof: float
+       The  alignment of the label within the module, where 0 is left-aligned and 1 is right-aligned. If the
+       module is rotated, it will follow the flow of the text.
+
+       justify:
+       typeof: string
+       The alignment of the text within the module’s label, allowing options ’left’, ’right’, or ’center’ to
+       define the positioning.
+
+       scroll-step:
+       typeof: float
+       default: 1.0
+       The speed at which to change the volume when scrolling.
+
+       on-click:
+       typeof: string
+       Command to execute when clicked on the module.
+
+       on-click-middle:
+       typeof: string
+       Command to execute when middle-clicked on the module using mousewheel.
+
+       on-click-right:
+       typeof: string
+       Command to execute when you right-click on the module.
+
+       on-update:
+       typeof: string
+       Command to execute when the module is updated.
+
+       on-scroll-up:
+       typeof: string
+       Command to execute when scrolling up on the module. This replaces the  default  behaviour  of  volume
+       control.
+
+       on-scroll-down:
+       typeof: string
+       Command	to  execute when scrolling down on the module. This replaces the default behaviour of volume
+       control.
+
+       max-volume:
+       typeof: float
+       default: 100
+       The maximum volume that can be set, in percentage.
+
+       menu:
+       typeof: string
+       Action that popups the menu.
+
+       menu-file:
+       typeof: string
+       Location of the menu descriptor file. There need to be an element of type
+	   GtkMenu with id menu
+
+       menu-actions:
+       typeof: array
+       The actions corresponding to the buttons of the menu.
+
+FORMAT REPLACEMENTS
+       {volume}: Volume in percentage.
+
+       {node_name}: The node’s nickname as reported by WirePlumber (node.nick property)
+
+EXAMPLES
+   Basic:
+	   "wireplumber": {
+		"format": "{volume}%",
+		"format-muted": "",
+		"on-click": "helvum"
+	   }
+
+   Separate Sink and Source Widgets
+	   "wireplumber#sink": {
+	       "format": "{volume}% {icon}",
+	       "format-muted": "",
+	       "format-icons": ["", "", ""],
+	       "on-click": "helvum",
+	       "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+	       "scroll-step": 5
+	   },
+	   "wireplumber#source": {
+	       "node-type": "Audio/Source",
+	       "format": "{volume}% ",
+	       "format-muted": "",
+	       "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+	       "scroll-step": 5
+	   }
+
+STYLE
+       •   #wireplumber
+       •   #wireplumber.muted
+
+						 2025-12-19			       waybar-wireplumber(5)
+
+
+
+################################################################################
+# MAN PAGE: waybar-wlr-taskbar(5)
+################################################################################
+
+waybar-wlr-taskbar(5)			     File Formats Manual		       waybar-wlr-taskbar(5)
+
+NAME
+       waybar - wlr taskbar module
+
+DESCRIPTION
+       The  taskbar  module displays the currently open applications. This module requires a compositor that
+       implements the foreign-toplevel-manager interface.
+
+CONFIGURATION
+       Addressed by wlr/taskbar
+
+       all-outputs:
+       typeof: bool
+       default: false
+       If set to false applications on the waybar’s current output will be shown.  Otherwise,  all  applica‐
+       tions are shown.
+
+       format:
+       typeof: string
+       default: {icon}
+       The format, how information should be displayed.
+
+       icon-theme:
+       typeof: array|string
+       The  names  of  the  icon-themes that should be used to find an icon. The list will be traversed from
+       left to right. If omitted, the system default will be used.
+
+       icon-size:
+       typeof: integer
+       default: 16
+       The size of the icon.
+
+       markup:
+       typeof: bool
+       default: false
+       If set to true, pango markup will be accepted in format and tooltip-format.
+
+       tooltip:
+       typeof: bool
+       default: true
+       If set to false no tooltip will be shown.
+
+       tooltip-format:
+       typeof: string
+       default: {title}
+       The format, how information in the tooltip should be displayed.
+
+       active-first:
+       typeof: bool
+       default: false
+       If set to true, always reorder the tasks in the taskbar so that the currently active  one  is  first.
+       Otherwise don’t reorder.
+
+       sort-by-app-id:
+       typeof: bool
+       default: false
+       If set to true, group tasks by their app_id. Cannot be used with ’active-first’.
+
+       on-click:
+       typeof: string
+       The action which should be triggered when clicking on the application button with the left mouse but‐
+       ton.
+
+       on-click-middle:
+       typeof: string
+       The  action  which  should be triggered when clicking on the application button with the middle mouse
+       button.
+
+       on-click-right:
+       typeof: string
+       The action which should be triggered when clicking on the application button  with  the	right  mouse
+       button.
+
+       on-update:
+       typeof: string
+       Command to execute when the module is updated.
+
+       ignore-list:
+       typeof: array
+       List of app_id/titles to be invisible.
+
+       app_ids-mapping:
+       typeof: object
+       Dictionary of app_id to be replaced with
+
+       rewrite:
+       typeof: object
+       Rules to rewrite the module format output. See rewrite rules.
+
+FORMAT REPLACEMENTS
+       {icon}: The icon of the application.
+
+       {name}:	The  application  name	as in desktop file if appropriate desktop files are found, otherwise
+       same as {app_id}
+
+       {title}: The title of the application.
+
+       {app_id}: The app_id (== application name) of the application.
+
+       {state}: The state (minimized, maximized, active, fullscreen) of the application.
+
+       {short_state}: The state (minimize == m, maximized == M, active == A, fullscreen == F) represented as
+       one character of the application.
+
+CLICK ACTIONS
+       activate: Bring the application into foreground.
+
+       minimize: Toggle application’s minimized state.
+
+       minimize-raise: Bring the application into foreground or toggle its minimized state.
+
+       maximize: Toggle application’s maximized state.
+
+       fullscreen: Toggle application’s fullscreen state.
+
+       close: Close the application.
+
+REWRITE RULES
+       rewrite is an object where keys are regular expressions and values are rewrite rules if	the  expres‐
+       sion matches. Rules may contain references to captures of the expression.
+
+       Regular expression and replacement follow ECMA-script rules.
+
+       If no expression matches, the format output is left unchanged.
+
+       Invalid expressions (e.g., mismatched parentheses) are skipped.
+
+EXAMPLES
+	   "wlr/taskbar": {
+		"format": "{icon}",
+		"icon-size": 14,
+		"icon-theme": "Numix-Circle",
+		"tooltip-format": "{title}",
+		"on-click": "activate",
+		"on-click-middle": "close",
+		"ignore-list": [
+		    "Alacritty"
+		],
+		"app_ids-mapping": {
+		     "firefoxdeveloperedition": "firefox-developer-edition"
+		},
+		"rewrite": {
+		     "Firefox Web Browser": "Firefox",
+		     "Foot Server": "Terminal"
+		}
+	   }
+
+Style
+       •   #taskbar
+       •   #taskbar button
+       •   #taskbar button.maximized
+       •   #taskbar button.minimized
+       •   #taskbar button.active
+       •   #taskbar button.fullscreen
+
+						 2025-12-19			       waybar-wlr-taskbar(5)
+
+
+
+################################################################################
+# MAN PAGE: waybar-wlr-workspaces(5)
+################################################################################
+
+
+
+
+################################################################################
+# MAN PAGE: waybar-styles(5)
+################################################################################
+
+waybar-styles(5)			     File Formats Manual			    waybar-styles(5)
+
+NAME
+       waybar-styles - using stylesheets for waybar
+
+DESCRIPTION
+       Waybar uses Cascading Style Sheets (CSS) to configure its appearance.
+
+       It uses the first file found in this search order:
+
+       •   $XDG_CONFIG_HOME/waybar/style.css
+       •   ~/.config/waybar/style.css
+       •   ~/waybar/style.css
+       •   /etc/xdg/waybar/style.css
+       •   /etc/xdg/waybar/style.css
+
+EXAMPLE
+       An  example user-controlled stylesheet that just changes the color of the clock to be green on black,
+       while keeping the rest of the system config the same would be:
+
+	   @import url("file:///etc/xdg/waybar/style.css")
+
+	   #clock {
+	     background: #000000;
+	     color: #00ff00;
+	   }
+
+   Hover-effect
+       You can apply special styling to any module for when the cursor hovers it.
+
+	   #clock:hover {
+	     background-color: #ffffff;
+	   }
+
+   Setting cursor style
+       Most, if not all, module types support setting the ‘cursor‘ option. This is configured in your  ‘con‐
+       fig.jsonc‘.  If	set  to ‘false‘, when hovering the module a "pointer"(as commonly known from web CSS
+       styling ‘cursor: pointer‘) style cursor will not be shown. Default behavior is to indicate an  inter‐
+       action event is available.
+
+       There are more cursor types to choose from by setting the ‘cursor‘ option to a number, see Gdk3 offi‐
+       cial  docs  for	all  possible cursor types: https://docs.gtk.org/gdk3/enum.CursorType.html. However,
+       note that not all cursor options listed may be available on your system. If you attempt to use a cur‐
+       sor which is not available, the application will crash.
+
+       Example of disabling pointer(‘Gdk::Hand2‘) cursor type on a custom module:
+
+	   "custom/my-custom-module": {
+	       ...
+	       "cursor": false,
+	   }
+
+       Example of  setting  cursor  type  to  ‘Gdk::Boat‘(according  to	 https://docs.gtk.org/gdk3/enum.Cur‐
+       sorType.html#boat):
+
+	   "custom/my-custom-module": {
+	       ...
+	       "cursor": 8,
+	   }
+
+SEE ALSO
+       •   waybar(5)
+
+						 2025-12-19				    waybar-styles(5)
+
+
+

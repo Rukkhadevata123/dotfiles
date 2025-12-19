@@ -1,0 +1,6 @@
+#! /bin/bash
+
+export QT_QPA_PLATFORMTHEME=qt6ct
+export XMODIFIERS=@im=fcitx
+
+dbus-run-session sway --unsupported-gpu

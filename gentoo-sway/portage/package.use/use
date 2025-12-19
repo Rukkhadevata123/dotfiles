@@ -1,0 +1,44 @@
+*/* CPU_FLAGS_X86: aes avx avx2 avx_vnni bmi1 bmi2 f16c fma3 mmx mmxext pclmul popcnt rdrand sha sse sse2 sse3 sse4_1 sse4_2 ssse3 vpclmulqdq
+*/* VIDEO_CARDS: -* nvidia intel
+*/* L10N: zh-CN en-US zh en
+
+*/* -qt5
+*/* -webengine
+*/* cuda nvenc
+*/* dist-kernel
+*/* ffmpeg vaapi pipewire pulseaudio
+*/* lto pgo
+*/* networkmanager
+*/* gnome-keyring
+
+# qemu
+app-emulation/qemu spice usbredir virgl virtfs
+
+dev-util/mesa_clc LLVM_SLOT: -* 21
+
+gnome-extra/nm-applet appindicator
+gui-apps/waybar backlight experimental mpd mpris network tray wifi
+gui-apps/xwayland-satellite LLVM_SLOT: -* 21
+gui-wm/swayfx tray
+
+media-libs/mesa LLVM_SLOT: -* 21
+media-fonts/nerd-fonts cascadiacode cascadiamono codenewroman comicshannsmono dejavusansmono jetbrainsmono ubuntu ubuntumono ubuntusans
+
+# obs and spectacle
+media-video/ffmpeg opus vpx
+media-video/obs-studio v4l
+
+media-video/pipewire extra sound-server
+
+# swtpm
+net-libs/gnutls pkcs11 tools
+
+# pfl
+sys-apps/util-linux caps
+
+sys-boot/grub mount
+sys-kernel/installkernel dracut grub 
+
+sys-kernel/gentoo-sources symlink experimental
+
+x11-drivers/nvidia-drivers kernel-open persistenced powerd
