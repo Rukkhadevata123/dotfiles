@@ -60,6 +60,7 @@ media-fonts/source-han-sans
 media-gfx/flameshot
 media-libs/libva-intel-media-driver
 media-libs/nvidia-vaapi-driver
+media-libs/vkmark
 media-sound/pavucontrol
 media-video/celluloid
 media-video/ffmpeg
@@ -72,6 +73,7 @@ net-proxy/flclash-bin
 net-wireless/blueman
 sys-apps/flatpak
 sys-apps/kmscon
+sys-apps/lm-sensors
 sys-apps/mlocate
 sys-apps/tuned
 sys-apps/xdg-desktop-portal

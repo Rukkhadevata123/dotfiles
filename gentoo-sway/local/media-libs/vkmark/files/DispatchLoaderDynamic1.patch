@@ -1,0 +1,44 @@
+--- a/src/vulkan_state.cpp
++++ b/src/vulkan_state.cpp
+@@ -41,28 +41,6 @@
+     return VK_FALSE;
+ }
+ 
+-class DebugUtilsDispatcher
+-{
+-public:
+-    DebugUtilsDispatcher(vk::Instance& instance) :
+-        vkCreateDebugUtilsMessengerEXT(
+-            PFN_vkCreateDebugUtilsMessengerEXT(
+-                vkGetInstanceProcAddr(instance, "vkCreateDebugUtilsMessengerEXT"))),
+-        vkDestroyDebugUtilsMessengerEXT(
+-            PFN_vkDestroyDebugUtilsMessengerEXT(
+-                vkGetInstanceProcAddr(instance, "vkDestroyDebugUtilsMessengerEXT")))
+-    {
+-    }
+-
+-    size_t getVkHeaderVersion() const
+-    {
+-        return VK_HEADER_VERSION;
+-    }
+-
+-    PFN_vkCreateDebugUtilsMessengerEXT vkCreateDebugUtilsMessengerEXT;
+-    PFN_vkDestroyDebugUtilsMessengerEXT vkDestroyDebugUtilsMessengerEXT;
+-};
+-
+ }
+ 
+ VulkanState::VulkanState(VulkanWSI& vulkan_wsi, ChoosePhysicalDeviceStrategy const& pd_strategy, bool debug)
+@@ -200,8 +178,10 @@
+             .setMessageType(vk::DebugUtilsMessageTypeFlagBitsEXT::eGeneral |
+                             vk::DebugUtilsMessageTypeFlagBitsEXT::eValidation |
+                             vk::DebugUtilsMessageTypeFlagBitsEXT::ePerformance)
+-            .setPfnUserCallback(debug_callback);
+-        auto const dud = DebugUtilsDispatcher{vk_instance};
++            .setPfnUserCallback(vk::PFN_DebugUtilsMessengerCallbackEXT(debug_callback));
++
++        auto const dud = vk::detail::DispatchLoaderDynamic{ instance(), vkGetInstanceProcAddr };
++
+ 
+         debug_messenger = ManagedResource<vk::DebugUtilsMessengerEXT>{
+             instance().createDebugUtilsMessengerEXT(debug_create_info, nullptr, dud),

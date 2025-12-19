@@ -37,6 +37,11 @@ RDEPEND="
 	wayland? ( dev-libs/wayland )
 "
 
+PATCHES=(
+    "${FILESDIR}/DispatchLoaderDynamic1.patch"
+    "${FILESDIR}/DispatchLoaderDynamic2.patch"
+)
+
 src_configure() {
     local emesonargs=(
         $(meson_use wayland)

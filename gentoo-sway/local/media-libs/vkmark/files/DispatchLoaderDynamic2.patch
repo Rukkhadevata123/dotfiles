@@ -1,0 +1,41 @@
+--- a/src/ws/kms_window_system.cpp
++++ b/src/ws/kms_window_system.cpp
+@@ -38,6 +38,7 @@
+ #include <poll.h>
+ #include <sys/ioctl.h>
+ #include <csignal>
++#include <vulkan/vulkan.hpp>
+ 
+ namespace
+ {
+@@ -398,29 +399,11 @@
+     return supported_mods;
+ }
+ 
+-class GetFormatProperties2Dispatcher
+-{
+-public:
+-    GetFormatProperties2Dispatcher(vk::Instance const& instance) :
+-        vkGetPhysicalDeviceFormatProperties2KHR(
+-            PFN_vkGetPhysicalDeviceFormatProperties2KHR(
+-                vkGetInstanceProcAddr(instance, "vkGetPhysicalDeviceFormatProperties2KHR")))
+-    {
+-    }
+-
+-    size_t getVkHeaderVersion() const
+-    {
+-        return VK_HEADER_VERSION;
+-    }
+-
+-    PFN_vkGetPhysicalDeviceFormatProperties2KHR vkGetPhysicalDeviceFormatProperties2KHR;
+-};
+-
+ std::vector<uint64_t> vk_get_supported_mods_for_format(VulkanState& vulkan,
+                                                        vk::Format format)
+ {
+     std::vector<uint64_t> mods;
+-    auto const dispatch = GetFormatProperties2Dispatcher{vulkan.instance()};
++    auto const dispatch = vk::detail::DispatchLoaderDynamic{ vulkan.instance(), vkGetInstanceProcAddr };
+     vk::DrmFormatModifierPropertiesEXT mod_props[256];
+ 
+     auto mod_props_list = vk::DrmFormatModifierPropertiesListEXT{};
