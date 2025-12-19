@@ -16,7 +16,6 @@ gui-apps/wlogout
 gui-apps/wob
 gui-apps/wofi
 gui-apps/xwayland-satellite
-# gui-apps/swaync
 gui-libs/xdg-desktop-portal-wlr
 gui-wm/sway
 kde-apps/ark
