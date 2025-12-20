@@ -1,90 +1,14 @@
-# systemd
+# ==============================================================================
+# Systemd & Environment
+# ==============================================================================
 exec systemctl --user set-environment XDG_CURRENT_DESKTOP=sway
-exec systemctl --user import-environment DISPLAY \
-                                         SWAYSOCK \
-                                         WAYLAND_DISPLAY \
-                                         XDG_CURRENT_DESKTOP
-
+exec systemctl --user import-environment DISPLAY SWAYSOCK WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 exec hash dbus-update-activation-environment 2>/dev/null && \
-     dbus-update-activation-environment --systemd DISPLAY \
-                                                  SWAYSOCK \
-                                                  XDG_CURRENT_DESKTOP=sway \
-                                                  WAYLAND_DISPLAY
-
+     dbus-update-activation-environment --systemd DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway WAYLAND_DISPLAY
 
 # ==============================================================================
-# Eye Candy (SwayFX & Visuals)
+# Variables
 # ==============================================================================
-
-# 窗口间距 (Gaps)
-gaps inner 1
-gaps outer 1
-
-# 圆角 (Corner Radius)
-corner_radius 10
-smart_corner_radius enable
-
-# 阴影 (Shadows)
-shadows enable
-shadow_blur_radius 15
-shadow_color #0000007F
-
-# 模糊 (Blur)
-blur enable
-blur_passes 2
-blur_radius 5
-blur_xray disable
-
-# 非活动窗口变暗 (Dim Inactive)
-default_dim_inactive 0.1
-
-# 窗口边框颜色 (Catppuccin Mocha Theme)
-# class                 border  backgr. text    indicator child_border
-client.focused          #cba6f7 #1e1e2e #cdd6f4 #cba6f7   #cba6f7
-client.focused_inactive #6c7086 #1e1e2e #cdd6f4 #6c7086   #6c7086
-client.unfocused        #313244 #1e1e2e #a6adc8 #313244   #313244
-client.urgent           #f38ba8 #1e1e2e #1e1e2e #f38ba8   #f38ba8
-
-default_border none
-default_floating_border none
-
-for_window [class=".*"] floating enable
-
-output * scale 1.5
-output * allow_tearing yes
-output * max_render_time off
-
-exec export XDG_MENU_PREFIX=plasma- && kbuildsycoca6
-
-exec fcitx5 -d
-exec FlClash
-
-exec gammastep -O 4500K
-
-exec mako
-
-exec swayidle -w \
-    timeout 900 'swaylock -f --ignore-empty-password --show-failed-attempts --color 1e1e1e' \
-    before-sleep 'swaylock -f --ignore-empty-password --show-failed-attempts --color 1e1e1e'
-
-
-exec nm-applet
-exec blueman-applet
-
-exec xwayland-satellite
-
-exec wl-paste --type text --watch cliphist store
-exec wl-paste --type image --watch cliphist store
-
-exec /usr/libexec/polkit-gnome-authentication-agent-1
-exec gnome-keyring-daemon --start --components=secrets
-exec export $(gnome-keyring-daemon)
-
-exec_always pkill kded6
-
-seat seat0 xcursor_theme Bibata-Modern-Ice 24
-
-
 set $mod Mod4
 set $left h
 set $down j
@@ -92,11 +16,30 @@ set $up k
 set $right l
 
 set $term kitty
-
 set $menu wofi --show drun
 
+# Screenshot & Recording variables
+set $ps1 Print
+set $ps2 Control+Print
+set $ps3 Alt+Print
+set $ps4 Alt+Control+Print
+set $psf $(xdg-user-dir PICTURES)/ps_$(date +"%Y%m%d%H%M%S").png
+
+set $rec1 $mod+F9
+set $rec2 $mod+Shift+F9
+set $rec3 $mod+Control+F9
+set $recf $(xdg-user-dir VIDEOS)/recording_$(date +'%Y%m%d_%H%M%S').mp4
+
+# ==============================================================================
+# Output & Input Configuration
+# ==============================================================================
+# Display
+output * scale 1.5
+output * allow_tearing yes
+output * max_render_time off
 output * bg /home/yoimiya/.config/sway/wallpapers/Lemon.png fill
 
+# Input (Touchpad)
 input type:touchpad {
     dwt enabled
     tap enabled
@@ -104,190 +47,219 @@ input type:touchpad {
     middle_emulation enabled
 }
 
-### Key bindings
-#
-# Basics:
-#
-    # Start a terminal
-    bindsym $mod+Return exec $term
+# Cursor
+seat seat0 xcursor_theme Bibata-Modern-Ice 24
 
-    # Kill focused window
-    bindsym $mod+Shift+q kill
+# ==============================================================================
+# Visuals (SwayFX & Eye Candy)
+# ==============================================================================
+# Gaps
+gaps inner 1
+gaps outer 1
+smart_gaps on
+smart_borders on
 
-    # Start your launcher
-    bindsym $mod+d exec $menu
+# Borders & Corners
+default_border none
+default_floating_border none
+corner_radius 10
+smart_corner_radius enable
 
-    # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
-    # Despite the name, also works for non-floating windows.
-    # Change normal to inverse to use left mouse button for resizing and right
-    # mouse button for dragging.
-    floating_modifier $mod normal
+# Shadows
+shadows enable
+shadow_blur_radius 15
+shadow_color #0000007F
 
-    # Reload the configuration file
-    bindsym $mod+Shift+c reload
+# Blur
+blur enable
+blur_passes 2
+blur_radius 5
+blur_xray disable
 
-    # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
-#
-# Moving around:
-#
-    # Move your focus around
-    bindsym $mod+$left focus left
-    bindsym $mod+$down focus down
-    bindsym $mod+$up focus up
-    bindsym $mod+$right focus right
-    # Or use $mod+[up|down|left|right]
-    bindsym $mod+Left focus left
-    bindsym $mod+Down focus down
-    bindsym $mod+Up focus up
-    bindsym $mod+Right focus right
+# Dimming
+default_dim_inactive 0.1
 
-    # Move the focused window with the same, but add Shift
-    bindsym $mod+Shift+$left move left
-    bindsym $mod+Shift+$down move down
-    bindsym $mod+Shift+$up move up
-    bindsym $mod+Shift+$right move right
-    # Ditto, with arrow keys
-    bindsym $mod+Shift+Left move left
-    bindsym $mod+Shift+Down move down
-    bindsym $mod+Shift+Up move up
-    bindsym $mod+Shift+Right move right
-#
-# Workspaces:
-#
-    # Switch to workspace
-    bindsym $mod+1 workspace number 1
-    bindsym $mod+2 workspace number 2
-    bindsym $mod+3 workspace number 3
-    bindsym $mod+4 workspace number 4
-    bindsym $mod+5 workspace number 5
-    bindsym $mod+6 workspace number 6
-    bindsym $mod+7 workspace number 7
-    bindsym $mod+8 workspace number 8
-    bindsym $mod+9 workspace number 9
-    bindsym $mod+0 workspace number 10
-    # Move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace number 1
-    bindsym $mod+Shift+2 move container to workspace number 2
-    bindsym $mod+Shift+3 move container to workspace number 3
-    bindsym $mod+Shift+4 move container to workspace number 4
-    bindsym $mod+Shift+5 move container to workspace number 5
-    bindsym $mod+Shift+6 move container to workspace number 6
-    bindsym $mod+Shift+7 move container to workspace number 7
-    bindsym $mod+Shift+8 move container to workspace number 8
-    bindsym $mod+Shift+9 move container to workspace number 9
-    bindsym $mod+Shift+0 move container to workspace number 10
-    # Note: workspaces can have any name you want, not just numbers.
-    # We just use 1-10 as the default.
-#
-# Layout stuff:
-#
-    # You can "split" the current object of your focus with
-    # $mod+b or $mod+v, for horizontal and vertical splits
-    # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
+# Colors (Catppuccin Mocha)
+# class                 border  backgr. text    indicator child_border
+client.focused          #cba6f7 #1e1e2e #cdd6f4 #cba6f7   #cba6f7
+client.focused_inactive #6c7086 #1e1e2e #cdd6f4 #6c7086   #6c7086
+client.unfocused        #313244 #1e1e2e #a6adc8 #313244   #313244
+client.urgent           #f38ba8 #1e1e2e #1e1e2e #f38ba8   #f38ba8
 
-    # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+# Layer Effects
+layer_effects "waybar" {
+    blur enable
+    blur_xray enable
+    blur_ignore_transparent enable
+    shadows disable
+}
 
-    # Make the current focus fullscreen
-    bindsym $mod+f fullscreen
+layer_effects "wofi" {
+    blur enable
+    blur_passes 2
+    blur_radius 5
+    corner_radius 10
+}
 
-    # Toggle the current focus between tiling and floating mode
-    bindsym $mod+space floating toggle
+# ==============================================================================
+# Autostart
+# ==============================================================================
+exec export XDG_MENU_PREFIX=plasma- && kbuildsycoca6
+exec fcitx5 -d
+exec FlClash
+exec gammastep -O 4500K
+exec mako
 
-    # Swap focus between the tiling area and the floating area
-    bindsym $mod+Shift+space focus mode_toggle
+# Idle management (Lock after 15m, Lock before sleep)
+exec swayidle -w \
+    timeout 900 'swaylock -f --ignore-empty-password --show-failed-attempts --color 1e1e1e' \
+    before-sleep 'swaylock -f --ignore-empty-password --show-failed-attempts --color 1e1e1e'
 
-    # Move focus to the parent container
-    bindsym $mod+a focus parent
-#
-# Scratchpad:
-#
-    # Sway has a "scratchpad", which is a bag of holding for windows.
-    # You can send windows there and get them back later.
+exec nm-applet
+exec blueman-applet
+exec xwayland-satellite
 
-    # Move the currently focused window to the scratchpad
-    bindsym $mod+Shift+minus move scratchpad
+# Clipboard
+exec wl-paste --type text --watch cliphist store
+exec wl-paste --type image --watch cliphist store
 
-    # Show the next scratchpad window or hide the focused scratchpad window.
-    # If there are multiple scratchpad windows, this command cycles through them.
-    bindsym $mod+minus scratchpad show
-#
-# Resizing containers:
-#
+# Auth & Keyring
+exec /usr/libexec/polkit-gnome-authentication-agent-1
+exec gnome-keyring-daemon --start --components=secrets
+exec export $(gnome-keyring-daemon)
+
+exec_always pkill kded6
+
+# ==============================================================================
+# Key Bindings
+# ==============================================================================
+# --- Basics ---
+bindsym $mod+Return exec $term
+bindsym $mod+Shift+q kill
+bindsym $mod+d exec $menu
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+# --- Moving Focus ---
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+bindsym $mod+a focus parent
+
+# --- Moving Windows ---
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# --- Workspaces ---
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+# --- Layouts ---
+bindsym $mod+b splith
+bindsym $mod+v splitv
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+f fullscreen
+bindsym $mod+space floating toggle
+bindsym $mod+Shift+space focus mode_toggle
+floating_modifier $mod normal
+
+# --- Scratchpad ---
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+# --- Resize Mode ---
 mode "resize" {
-    # left will shrink the containers width
-    # right will grow the containers width
-    # up will shrink the containers height
-    # down will grow the containers height
     bindsym $left resize shrink width 10px
     bindsym $down resize grow height 10px
     bindsym $up resize shrink height 10px
     bindsym $right resize grow width 10px
-
-    # Ditto, with arrow keys
     bindsym Left resize shrink width 10px
     bindsym Down resize grow height 10px
     bindsym Up resize shrink height 10px
     bindsym Right resize grow width 10px
-
-    # Return to default mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
-#
-# Utilities:
-#
-    # Special keys to adjust volume via PipeWire (wpctl)
-    bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_SINK@ toggle
-    # tip: you might consider adding `--limit 1.0` to avoid going over 100% volume
-    bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_SINK@ 5%+
-    bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_SINK@ 5%-
-    bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_SOURCE@ toggle
-    # Special keys to adjust brightness via brightnessctl
-    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
-    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 
-    # Swaylock
-    bindsym $mod+alt+l exec swaylock --ignore-empty-password --show-failed-attempts --color 1e1e1e
+# --- Gestures (Touchpad) ---
+bindgesture swipe:right workspace prev
+bindgesture swipe:left workspace next
+bindgesture swipe:up fullscreen enable
+bindgesture swipe:down fullscreen disable
 
-    # Clipboard manager (wl-clipboard)
-    bindsym $mod+p exec cliphist list | wofi -S dmenu | cliphist decode | wl-copy
+# --- Utilities ---
+# Audio
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_SINK@ 5%+
+bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_SINK@ 5%-
+bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_SOURCE@ toggle
 
-    # Screenshot (grim)
-    set $ps1 Print
-    set $ps2 Control+Print
-    set $ps3 Alt+Print
-    set $ps4 Alt+Control+Print
-    set $psf $(xdg-user-dir PICTURES)/ps_$(date +"%Y%m%d%H%M%S").png
-    
-    bindsym $ps1 exec grim - | wl-copy
-    bindsym $ps2 exec grim -g "$(slurp)" - | wl-copy
-    bindsym $ps3 exec grim $psf
-    bindsym $ps4 exec grim -g "$(slurp)" $psf
-    bindsym $mod+shift+Print exec flameshot gui
+# Brightness
+bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 
-    # Screen record (wf-recorder)
-    set $rec1 $mod+F9
-    set $rec2 $mod+Shift+F9
-    set $rec3 $mod+Control+F9
-    set $recf $(xdg-user-dir VIDEOS)/recording_$(date +'%Y%m%d_%H%M%S').mp4
-    bindsym $rec1 exec notify-send "Start recording to $recf" && pkill wf-recorder || wf-recorder -f $recf
-    bindsym $rec2 exec notify-send "Start region recording to $recf" && pkill wf-recorder ||  wf-recorder -g "$(slurp)" -f $recf
-    bindsym $rec3 exec pkill wf-recorder && notify-send "Stop recording"
+# Lock Screen
+bindsym $mod+alt+l exec swaylock --ignore-empty-password --show-failed-attempts --color 1e1e1e
 
+# Clipboard
+bindsym $mod+q exec cliphist list | wofi -S dmenu | cliphist decode | wl-copy
+
+# Screenshot
+bindsym $ps1 exec grim - | wl-copy
+bindsym $ps2 exec grim -g "$(slurp)" - | wl-copy
+bindsym $ps3 exec grim $psf
+bindsym $ps4 exec grim -g "$(slurp)" $psf
+bindsym $mod+shift+Print exec flameshot gui
+
+# Screen Recording
+bindsym $rec1 exec notify-send "Start recording to $recf" && pkill wf-recorder || wf-recorder -f $recf
+bindsym $rec2 exec notify-send "Start region recording to $recf" && pkill wf-recorder ||  wf-recorder -g "$(slurp)" -f $recf
+bindsym $rec3 exec pkill wf-recorder && notify-send "Stop recording"
+
+# ==============================================================================
+# Window Rules
+# ==============================================================================
+for_window [class=".*"] floating enable
+
+# ==============================================================================
+# Status Bar
+# ==============================================================================
 bar {
-        # Execute Waybar; Waybar restarts when Sway reloads.
-        status_command waybar -c ~/.config/waybar/config.jsonc
-
-        # Hide Sway's builtin status bar.
-        mode invisible
+    status_command waybar -c ~/.config/waybar/config.jsonc
+    mode invisible
 }
 
 include /etc/sway/config.d/*
