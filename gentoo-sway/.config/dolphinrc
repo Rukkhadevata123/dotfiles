@@ -1,3 +1,9 @@
+[Icons]
+Theme=Tela-manjaro
+
+[ContextMenu]
+ShowCopyMoveMenu=true
+
 [General]
 RememberOpenedTabs=false
 Version=202
@@ -11,4 +17,4 @@ Places Icons Static Size=22
 MenuBar=Disabled
 
 [PreviewSettings]
-Plugins=gsthumbnail,directorythumbnail,ebookthumbnail,opendocumentthumbnail,kraorathumbnail,comicbookthumbnail,windowsimagethumbnail,windowsexethumbnail,cursorthumbnail,djvuthumbnail,svgthumbnail,jpegthumbnail,imagethumbnail,gdk-pixbuf-thumbnailer,librsvg,jxl
+Plugins=comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,directorythumbnail,imagethumbnail,jpegthumbnail,jxl,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,opendocumentthumbnail,gdk-pixbuf-thumbnailer,gsthumbnail,librsvg,svgthumbnail
