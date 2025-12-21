@@ -139,7 +139,7 @@ window#waybar {
 /* =============================================================================
  * 右侧模块
  * ========================================================================== */
-#network, #cpu, #memory, #temperature, #battery, #pulseaudio, #backlight, #custom-playerctl, #custom-clipboard, #idle_inhibitor, #tray {
+#network, #cpu, #memory, #temperature, #battery, #pulseaudio, #backlight, #custom-clipboard, #idle_inhibitor, #tray {
     padding: 0 6px;
     color: @text;
 }

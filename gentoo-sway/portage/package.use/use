@@ -17,7 +17,7 @@ app-emulation/qemu spice usbredir virgl virtfs
 dev-util/mesa_clc LLVM_SLOT: -* 21
 
 gnome-extra/nm-applet appindicator
-gui-apps/waybar backlight experimental mpd mpris network tray wifi
+gui-apps/waybar backlight experimental network tray wifi
 gui-apps/xwayland-satellite LLVM_SLOT: -* 21
 gui-wm/swayfx tray
 

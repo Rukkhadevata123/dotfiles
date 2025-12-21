@@ -13,7 +13,6 @@ app-i18n/fcitx-rime
 app-misc/brightnessctl
 app-misc/cliphist
 app-misc/fastfetch
-app-misc/nwg-look
 app-misc/resolve-march-native
 app-misc/tmux
 app-office/calcurse
@@ -29,6 +28,7 @@ dev-util/ccache
 dev-util/pkgdev
 dev-util/vulkan-tools
 dev-vcs/git
+games-util/game-device-udev-rules
 gnome-base/gnome-keyring
 gnome-extra/nm-applet
 gnome-extra/polkit-gnome
