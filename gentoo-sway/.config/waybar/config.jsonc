@@ -153,7 +153,8 @@
         "interval": 2,
         "format": "{icon} {temperatureC}°C",
         "format-icons": ["󱃃", "󰔐", "🌡️", "󰸁", "🔥"],
-        "tooltip-format": "Temperature: {temperatureC}°C"
+        "tooltip-format": "Temperature: {temperatureC}°C",
+        "on-click": "kitty watch -n1 sensors"
     },
 
     "battery": {
@@ -165,7 +166,8 @@
         "format-charging": "󰂄 {capacity}%",
         "format": "{icon} {capacity}%",
         "format-icons": ["󱃍", "󰁺", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-        "tooltip-format": "{timeTo}, {power}W"
+        "tooltip-format": "{timeTo}, {power}W",
+        "on-click": "kitty watch -n1 upower -i $(upower -e | grep BAT)"
     },
 
     "power-profiles-daemon": {
