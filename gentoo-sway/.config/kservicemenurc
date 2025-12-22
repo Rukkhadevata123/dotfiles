@@ -1,0 +1,8 @@
+[Show]
+compressfileitemaction=true
+extractfileitemaction=true
+hidefileitemaction=false
+movetonewfolderitemaction=true
+runInKonsole=true
+setfoldericonitemaction=true
+slideshowfileitemaction=true
