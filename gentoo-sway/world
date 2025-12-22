@@ -53,6 +53,7 @@ kde-apps/dolphin
 kde-apps/gwenview
 kde-apps/kate
 kde-apps/konsole
+kde-apps/okular
 llvm-core/lld
 media-fonts/misans
 media-fonts/nerd-fonts
