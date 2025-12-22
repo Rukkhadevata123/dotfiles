@@ -17,6 +17,8 @@ set $right l
 
 set $term kitty
 set $menu wofi --show drun
+set $browser firefox-bin
+set $file_manager dolphin
 
 # Screenshot & Recording variables
 set $ps1 Print
@@ -132,6 +134,8 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec $menu
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+e exec $file_manager
+bindsym $mod+b exec $browser
 
 # --- Moving Focus ---
 bindsym $mod+$left focus left
@@ -178,11 +182,11 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 # --- Layouts ---
-bindsym $mod+b splith
-bindsym $mod+v splitv
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+q splith
+bindsym $mod+w splitv
+bindsym $mod+Shift+s layout stacking
+bindsym $mod+t layout tabbed
+bindsym $mod+s layout toggle split
 bindsym $mod+f fullscreen
 bindsym $mod+space floating toggle
 bindsym $mod+Shift+space focus mode_toggle
@@ -228,14 +232,14 @@ bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 bindsym $mod+alt+l exec swaylock --ignore-empty-password --show-failed-attempts --color 1e1e1e
 
 # Clipboard
-bindsym $mod+q exec cliphist list | wofi -S dmenu | cliphist decode | wl-copy
+bindsym $mod+v exec cliphist list | wofi -S dmenu | cliphist decode | wl-copy
 
 # Screenshot
 bindsym $ps1 exec grim - | wl-copy
 bindsym $ps2 exec grim -g "$(slurp)" - | wl-copy
 bindsym $ps3 exec grim $psf
 bindsym $ps4 exec grim -g "$(slurp)" $psf
-bindsym $mod+shift+Print exec flameshot gui
+bindsym $mod+Shift+Print exec flameshot gui
 
 # Screen Recording
 bindsym $rec1 exec notify-send "Start recording to $recf" && pkill wf-recorder || wf-recorder -f $recf
