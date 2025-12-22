@@ -94,13 +94,6 @@ layer_effects "waybar" {
     shadows disable
 }
 
-layer_effects "wofi" {
-    blur enable
-    blur_passes 2
-    blur_radius 5
-    corner_radius 10
-}
-
 # ==============================================================================
 # Autostart
 # ==============================================================================
