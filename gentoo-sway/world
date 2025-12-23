@@ -4,6 +4,7 @@ app-admin/sudo-rs
 app-arch/zip
 app-crypt/seahorse
 app-editors/nano
+app-editors/neovim
 app-editors/vim
 app-editors/vscode
 app-emulation/virt-manager
@@ -77,6 +78,7 @@ sys-apps/flatpak
 sys-apps/kmscon
 sys-apps/lm-sensors
 sys-apps/mlocate
+sys-apps/ripgrep
 sys-apps/tuned
 sys-apps/uutils-coreutils
 sys-apps/xdg-desktop-portal
