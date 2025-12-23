@@ -18,3 +18,9 @@ fi
 # Put your fun stuff here.
 eval "$(starship init bash)"
 alias sudo="sudo-rs "
+
+for cmd in $(uu-coreutils --list | grep -E '^[a-z]+$'); do
+    alias $cmd="env LC_ALL=C.UTF-8 uu-$cmd"
+done
+
+alias ls='env LC_ALL=C.UTF-8 uu-ls --color=auto'
