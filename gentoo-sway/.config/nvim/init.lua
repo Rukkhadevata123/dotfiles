@@ -126,6 +126,58 @@ require("lazy").setup({
       opts = {},
     },
 
+    -- completion
+    {
+      "hrsh7th/nvim-cmp",
+      event = { "InsertEnter", "CmdlineEnter" },
+      dependencies = {
+        "hrsh7th/cmp-buffer",  -- word source for buffer
+        "hrsh7th/cmp-path",    -- path sources
+        "hrsh7th/cmp-cmdline", -- cmdline source
+      },
+      config = function()
+        local cmp = require("cmp")
+
+        cmp.setup({
+          -- Keymaps
+          mapping = cmp.mapping.preset.insert({
+            ["<C-k>"] = cmp.mapping.select_prev_item(),        -- previous suggestions
+            ["<C-j>"] = cmp.mapping.select_next_item(),        -- next suggestions
+            ["<C-b>"] = cmp.mapping.scroll_docs(-4),           -- scroll up docs
+            ["<C-f>"] = cmp.mapping.scroll_docs(4),            -- scroll down docs
+            ["<C-Space>"] = cmp.mapping.complete(),            -- manually trigger completion
+            ["<C-e>"] = cmp.mapping.abort(),                   -- close completion window
+            ["<CR>"] = cmp.mapping.confirm({ select = true }), -- confirm selection
+          }),
+          -- Sources for insert mode
+          sources = cmp.config.sources({
+            { name = "path" },   -- path source first
+          }, {
+            { name = "buffer" }, -- then buffer source
+          }),
+        })
+
+        -- Search mode configuration (using buffer content)
+        cmp.setup.cmdline({ "/", "?" }, {
+          mapping = cmp.mapping.preset.cmdline(),
+          sources = {
+            { name = "buffer" }
+          }
+        })
+
+        -- Command line mode configuration (using path and cmdline)
+        cmp.setup.cmdline(":", {
+          mapping = cmp.mapping.preset.cmdline(),
+          sources = cmp.config.sources({
+            { name = "path" }
+          }, {
+            { name = "cmdline" }
+          }),
+          matching = { disallow_symbol_nonprefix_matching = false }
+        })
+      end,
+    },
+
     -- indent
     {
       "lukas-reineke/indent-blankline.nvim",
