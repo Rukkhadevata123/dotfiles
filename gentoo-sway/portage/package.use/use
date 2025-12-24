@@ -8,8 +8,6 @@
 */* dist-kernel
 */* ffmpeg vaapi pipewire pulseaudio
 */* lto pgo
-*/* networkmanager
-*/* gnome-keyring
 
 # qemu
 app-emulation/qemu spice usbredir virgl virtfs
@@ -37,9 +35,11 @@ net-libs/gnutls pkcs11 tools
 # pfl
 sys-apps/util-linux caps
 
+sys-auth/pambase gnome-keyring
+
 sys-boot/grub mount
 sys-kernel/installkernel dracut grub 
 
 sys-kernel/gentoo-sources symlink experimental
 
-x11-drivers/nvidia-drivers kernel-open persistenced powerd
+x11-drivers/nvidia-drivers persistenced powerd
