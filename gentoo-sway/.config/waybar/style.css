@@ -139,7 +139,12 @@ window#waybar {
 /* =============================================================================
  * 右侧模块
  * ========================================================================== */
-#network, #cpu, #memory, #temperature, #battery, #pulseaudio, #backlight, #custom-clipboard, #idle_inhibitor, #tray {
+
+#connectivity, #hardware, #multimedia, #utilities {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+#network, #cpu, #memory, #temperature, #battery, #power-profiles-daemon, #pulseaudio, #backlight, #custom-clipboard, #idle_inhibitor, #tray {
     padding: 0 6px;
     color: @text;
 }
@@ -155,11 +160,18 @@ window#waybar {
 #battery.warning { color: @yellow; }
 #battery.critical { color: @red; }
 
+#power-profiles-daemon { color: @sky; }
+
 #pulseaudio { color: @blue; }
 #pulseaudio.muted { color: @overlay0; }
 
 #backlight { color: @yellow; }
 #idle_inhibitor { color: @mauve; }
+
+#network:hover, #cpu:hover, #memory:hover, #temperature:hover, #battery:hover, #power-profiles-daemon:hover, #pulseaudio:hover, #backlight:hover, #custom-clipboard:hover, #idle_inhibitor:hover, #tray:hover {
+    background-color: @surface0;
+    border-radius: 4px;
+}
 
 /* 托盘图标 */
 #tray > .passive {
