@@ -9,7 +9,7 @@ DESCRIPTION="WPS Office is an office productivity suite, Here is the Chinese ver
 HOMEPAGE="https://www.wps.cn/product/wpslinux/"
 
 SRC_URI="
-	amd64?	( https://dogfood.gnupg.uk/wps302/${PV}/amd64 -> ${PN}_${PV}_amd64.deb )
+	amd64?	( https://pubwps-wps365-obs.wpscdn.cn/download/Linux/23578/wps-office_${PV}.AK.preread.sw_542884_amd64.deb -> ${PN}_${PV}_amd64.deb )
 "
 
 S="${WORKDIR}"
@@ -21,46 +21,19 @@ IUSE="systemd"
 
 RESTRICT="strip mirror bindist" # mirror as explained at bug #547372
 
-# Deps got from this (listed in order):
-# rpm -qpR wps-office-10.1.0.5707-1.a21.x86_64.rpm
-# ldd /opt/kingsoft/wps-office/office6/wps
-# ldd /opt/kingsoft/wps-office/office6/wpp
+# dpkg --info wps-office_12.1.2.22571_amd64.deb
 RDEPEND="
-	app-arch/bzip2:0
-	app-arch/lz4
-	app-arch/xz-utils
-	dev-libs/expat
-	dev-libs/glib:2
-	dev-libs/libbsd
-	dev-libs/libffi
-	dev-libs/libgcrypt:0
-	dev-libs/libgpg-error
-	dev-libs/libpcre:3
-	media-libs/flac
-	media-libs/fontconfig:1.0
-	media-libs/freetype:2
-	media-libs/libogg
-	media-libs/libsndfile
-	media-libs/libvorbis
-	media-libs/libpulse
-	net-libs/libasyncns
+	app-arch/bzip2
+	dev-libs/glib
+	media-libs/fontconfig
+	media-libs/freetype
+	media-libs/glu
 	net-print/cups
-	sys-apps/attr
-	sys-apps/dbus
-	sys-apps/util-linux
-	sys-libs/libcap
-	sys-libs/zlib:0
-	virtual/glu
-	x11-libs/gtk+:3
-	x11-libs/libICE
+	sys-libs/glibc
 	x11-libs/libSM
-	x11-libs/libX11
-	x11-libs/libXau
 	x11-libs/libxcb
-	x11-libs/libXdmcp
 	x11-libs/libXext
 	x11-libs/libXrender
-	x11-libs/libXtst
 	loong? (
 		virtual/loong-ow-compat
 	)
@@ -83,22 +56,10 @@ src_install() {
 	insinto /opt/kingsoft/wps-office
 	use systemd || { rm "${S}"/opt/kingsoft/wps-office/office6/libdbus-1.so* || die ; }
 	rm "${S}"/opt/kingsoft/wps-office/office6/libstdc++.so* || die
+	# QA Notice: Symbolic link /opt/kingsoft/wps-office/office6/libbz2.so
+	# points to /opt/kingsoft/wps-office/office6/libbz2.so.1.0.4 which does not exist.
+	rm "${S}"/opt/kingsoft/wps-office/office6/libbz2.so || die
 	doins -r "${S}"/opt/kingsoft/wps-office/{office6,templates}
 
 	fperms 0755 /opt/kingsoft/wps-office/office6/{wps,wpp,et,wpspdf,wpsoffice,promecefpluginhost,transerr,ksolaunch,wpscloudsvr}
-
-	# env
-    local wps_bins="wps wpp et wpspdf wpsoffice"
-    for bin in ${wps_bins}; do
-        cat > "${T}/${bin}" <<EOF
-#!/bin/sh
-export LANG=zh_CN.UTF-8
-export QT_IM_MODULE=fcitx
-exec /opt/kingsoft/wps-office/office6/${bin} "\$@"
-EOF
-        exeinto /usr/bin
-        doexe "${T}/${bin}"
-    done
-
 }
-
