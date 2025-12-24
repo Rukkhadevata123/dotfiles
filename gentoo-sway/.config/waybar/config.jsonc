@@ -152,7 +152,9 @@
         "interval": 2,
         "format": "{icon} {temperatureC}°C",
         "format-icons": ["󱃃", "󰔐", "🌡️", "󰸁", "🔥"],
-        "tooltip-format": "Temperature: {temperatureC}°C",
+        "tooltip-format": "CPU Temperature: {temperatureC}°C",
+        "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon",
+        "input-filename": "temp1_input",
         "on-click": "kitty watch -n1 sensors"
     },
 
