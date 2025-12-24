@@ -50,7 +50,9 @@ opt.relativenumber = true            -- Relative line numbers
 opt.splitright = true                -- Split windows to the right
 opt.splitbelow = true                -- Split windows below
 opt.cursorline = true                -- Highlight current line
-opt.wrap = false                     -- Disable line wrapping
+opt.linebreak = true                 -- Break lines at word boundaries
+opt.textwidth = 0                    -- Disable hard newlines
+opt.wrap = true                      -- Enable line wrapping
 opt.termguicolors = true             -- True color support
 opt.signcolumn = "yes"               -- Always show sign column
 
