@@ -64,37 +64,37 @@ smart_borders on
 # Borders & Corners
 default_border none
 default_floating_border none
-corner_radius 10
-smart_corner_radius enable
+# corner_radius 10
+# smart_corner_radius enable
 
 # Shadows
-shadows enable
-shadow_blur_radius 15
-shadow_color #0000007F
+# shadows enable
+# shadow_blur_radius 15
+# shadow_color #0000007F
 
 # Blur
-blur enable
-blur_passes 2
-blur_radius 5
-blur_xray disable
+# blur enable
+# blur_passes 2
+# blur_radius 5
+# blur_xray disable
 
 # Dimming
-default_dim_inactive 0.1
+# default_dim_inactive 0.1
 
 # Colors (Catppuccin Mocha)
 # class                 border  backgr. text    indicator child_border
-client.focused          #cba6f7 #1e1e2e #cdd6f4 #cba6f7   #cba6f7
-client.focused_inactive #6c7086 #1e1e2e #cdd6f4 #6c7086   #6c7086
-client.unfocused        #313244 #1e1e2e #a6adc8 #313244   #313244
-client.urgent           #f38ba8 #1e1e2e #1e1e2e #f38ba8   #f38ba8
+# client.focused          #cba6f7 #1e1e2e #cdd6f4 #cba6f7   #cba6f7
+# client.focused_inactive #6c7086 #1e1e2e #cdd6f4 #6c7086   #6c7086
+# client.unfocused        #313244 #1e1e2e #a6adc8 #313244   #313244
+# client.urgent           #f38ba8 #1e1e2e #1e1e2e #f38ba8   #f38ba8
 
 # Layer Effects
-layer_effects "waybar" {
-    blur enable
-    blur_xray enable
-    blur_ignore_transparent enable
-    shadows disable
-}
+# layer_effects "waybar" {
+#     blur enable
+#     blur_xray enable
+#     blur_ignore_transparent enable
+#     shadows disable
+# }
 
 # ==============================================================================
 # Autostart
