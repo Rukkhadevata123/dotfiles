@@ -10,7 +10,7 @@
 */* lto pgo
 
 # qemu
-app-emulation/qemu spice usbredir virgl virtfs
+app-emulation/qemu io-uring spice usbredir virgl virtfs
 
 dev-lang/rust-bin clippy rust-analyzer rustfmt rust-src
 dev-util/mesa_clc LLVM_SLOT: -* 21
@@ -23,8 +23,8 @@ gui-wm/sway tray
 media-libs/mesa LLVM_SLOT: -* 21
 media-fonts/nerd-fonts cascadiacode cascadiamono codenewroman comicshannsmono dejavusansmono jetbrainsmono ubuntu ubuntumono ubuntusans
 
-# obs and spectacle
-media-video/ffmpeg opus vpx
+# obs 
+media-video/ffmpeg opus 
 media-video/obs-studio v4l
 
 media-video/pipewire extra sound-server
