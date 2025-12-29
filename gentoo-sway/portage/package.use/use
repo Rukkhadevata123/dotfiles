@@ -8,6 +8,7 @@
 */* dist-kernel
 */* ffmpeg vaapi pipewire pulseaudio
 */* lto pgo
+*/* default-lld
 
 # qemu
 app-emulation/qemu io-uring spice usbredir virgl virtfs
