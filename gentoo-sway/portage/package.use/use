@@ -14,14 +14,12 @@
 app-emulation/qemu io-uring spice usbredir virgl virtfs
 
 dev-lang/rust-bin clippy rust-analyzer rustfmt rust-src
-dev-util/mesa_clc LLVM_SLOT: -* 21
 
 gnome-extra/nm-applet appindicator
 gui-apps/waybar backlight experimental network tray wifi
 gui-apps/xwayland-satellite LLVM_SLOT: -* 21
 gui-wm/sway tray
 
-media-libs/mesa LLVM_SLOT: -* 21
 media-fonts/nerd-fonts cascadiacode cascadiamono codenewroman comicshannsmono dejavusansmono jetbrainsmono ubuntu ubuntumono ubuntusans
 
 # obs 
