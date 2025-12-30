@@ -26,7 +26,6 @@ app-portage/eix
 app-portage/gentoolkit
 app-portage/pfl
 app-shells/bash-completion
-app-shells/fish
 app-shells/starship
 app-text/tree
 dev-python/nvchecker
@@ -82,6 +81,7 @@ sys-apps/kmscon
 sys-apps/lm-sensors
 sys-apps/mlocate
 sys-apps/ripgrep
+sys-apps/smartmontools
 sys-apps/tuned
 sys-apps/uutils-coreutils
 sys-apps/xdg-desktop-portal
