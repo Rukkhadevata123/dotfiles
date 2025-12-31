@@ -55,6 +55,7 @@ gui-wm/gamescope
 gui-wm/sway
 kde-apps/ark
 kde-apps/dolphin
+kde-apps/filelight
 kde-apps/gwenview
 kde-apps/kate
 kde-apps/konsole

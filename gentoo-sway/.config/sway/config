@@ -15,7 +15,7 @@ set $down j
 set $up k
 set $right l
 
-set $term kitty
+set $term konsole 
 set $menu wofi --show drun
 set $browser firefox-bin
 set $file_manager dolphin
