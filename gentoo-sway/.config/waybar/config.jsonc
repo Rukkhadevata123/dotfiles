@@ -137,7 +137,9 @@
             "warning": 70,
             "critical": 90
         },
-        "on-click": "kitty btop"
+        "on-click": "kitty btop",
+        "on-scroll-up": "echo",
+        "on-scroll-down": "echo"
     },
 
     "memory": {
@@ -148,7 +150,9 @@
             "critical": 90
         },
         "on-click": "kitty htop",
-        "tooltip-format": "Memory: {used:0.1f}G/{total:0.1f}G"
+        "tooltip-format": "Memory: {used:0.1f}G/{total:0.1f}G",
+        "on-scroll-up": "echo",
+        "on-scroll-down": "echo"
     },
 
     "temperature": {
@@ -159,7 +163,9 @@
         "tooltip-format": "CPU Temperature: {temperatureC}°C",
         "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon",
         "input-filename": "temp1_input",
-        "on-click": "kitty watch -n1 sensors"
+        "on-click": "kitty watch -n1 sensors",
+        "on-scroll-up": "echo",
+        "on-scroll-down": "echo"
     },
 
     "battery": {
@@ -172,7 +178,9 @@
         "format": "{icon} {capacity}%",
         "format-icons": ["󱃍", "󰁺", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
         "tooltip-format": "{timeTo}, {power}W",
-        "on-click": "kitty watch -n1 upower -i $(upower -e | grep BAT)"
+        "on-click": "kitty watch -n1 upower -i $(upower -e | grep BAT)",
+        "on-scroll-up": "echo",
+        "on-scroll-down": "echo"
     },
 
     "power-profiles-daemon": {
@@ -184,7 +192,9 @@
             "performance": "",
             "balanced": "",
             "power-saver": ""
-        }
+        },
+        "on-scroll-up": "echo",
+        "on-scroll-down": "echo"
     },
 
     "network": {
@@ -195,7 +205,9 @@
         "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
         "tooltip-format-wifi": "{essid}: {ipaddr}",
         "tooltip-format-ethernet": "Ethernet: {ipaddr}",
-        "on-click": "nm-connection-editor"
+        "on-click": "nm-connection-editor",
+        "on-scroll-up": "echo",
+        "on-scroll-down": "echo"
     },
 
     "pulseaudio": {
@@ -230,7 +242,9 @@
             "deactivated": ""
         },
         "tooltip-format-activated": "Idle inhibitor: ON",
-        "tooltip-format-deactivated": "Idle inhibitor: OFF"
+        "tooltip-format-deactivated": "Idle inhibitor: OFF",
+        "on-scroll-up": "echo",
+        "on-scroll-down": "echo"
     },
 
     "tray": {
@@ -252,6 +266,8 @@
         "on-click-right": "cliphist list | wofi --dmenu -p \"Delete\" | cliphist delete",
         "on-click-middle": "rm -f ~/.cache/cliphist/db && notify-send \"Clipboard cleared\"",
         "exec": "echo '{\"tooltip\":\"󰨸 '$(cliphist list | wc -l)' items\\nLeft: Select, Right: Delete, Middle: Clear\"}'",
-        "tooltip": true
+        "tooltip": true,
+        "on-scroll-up": "echo",
+        "on-scroll-down": "echo"
     }
 }
