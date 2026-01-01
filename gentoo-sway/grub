@@ -18,7 +18,8 @@ GRUB_DISTRIBUTOR="Gentoo"
 #GRUB_TIMEOUT_STYLE=menu
 
 # Append parameters to the linux kernel command line
-GRUB_CMDLINE_LINUX="zswap.enabled=1 zswap.compressor=lz4 mem_sleep_default=s2idle nowatchdog hibernate.compressor=lz4 resume=UUID=8acbc651-0236-444f-8b73-ebdcb1a50b85 resume_offset=1948691"
+GRUB_CMDLINE_LINUX="zswap.enabled=1 zswap.compressor=lz4 mem_sleep_default=s2idle nowatchdog hibernate.compressor=lz4 resume=UUID=e41870ae-a9db-4854-b27a-9475ad6aa7b1 resume_offset=8812930"
+GRUB_DISABLE_OS_PROBER=false
 #
 # Examples:
 #
@@ -74,4 +75,3 @@ GRUB_DISABLE_LINUX_PARTUUID=false
 # This is useful, for example, to allow users who can't see the screen
 # to know when they can make a choice on the menu.
 #GRUB_INIT_TUNE="60 800 1"
-GRUB_DISABLE_OS_PROBER=false
