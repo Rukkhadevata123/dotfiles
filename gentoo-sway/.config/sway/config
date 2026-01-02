@@ -70,7 +70,7 @@ default_floating_border none
 # ==============================================================================
 exec export XDG_MENU_PREFIX=plasma- && kbuildsycoca6
 exec fcitx5 -d
-exec FlClash
+exec /opt/clash-party/mihomo-party --ozone-platform-hint=auto
 exec gammastep -O 4500K
 exec mako
 

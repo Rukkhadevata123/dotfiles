@@ -33,6 +33,7 @@ dev-util/ccache
 dev-util/pkgdev
 dev-util/vulkan-tools
 dev-vcs/git
+games-board/gnome-mines
 games-util/game-device-udev-rules
 gnome-base/gnome-keyring
 gnome-extra/nm-applet
@@ -75,7 +76,7 @@ media-video/mpv
 media-video/obs-studio
 net-misc/chrony
 net-misc/networkmanager
-net-proxy/flclash-bin
+net-proxy/clash-party-bin
 net-wireless/blueman
 sys-apps/flatpak
 sys-apps/kmscon
