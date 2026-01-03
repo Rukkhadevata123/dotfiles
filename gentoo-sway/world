@@ -2,9 +2,11 @@ app-admin/eclean-kernel
 app-admin/sudo
 app-admin/sudo-rs
 app-arch/7zip
+app-arch/file-roller
 app-arch/zip
 app-benchmarks/vkmark
 app-crypt/seahorse
+app-editors/gnome-text-editor
 app-editors/nano
 app-editors/neovim
 app-editors/vim
@@ -36,6 +38,7 @@ dev-vcs/git
 games-board/gnome-mines
 games-util/game-device-udev-rules
 gnome-base/gnome-keyring
+gnome-base/nautilus
 gnome-extra/nm-applet
 gnome-extra/polkit-gnome
 gui-apps/grim
@@ -54,18 +57,12 @@ gui-apps/xwayland-satellite
 gui-libs/xdg-desktop-portal-wlr
 gui-wm/gamescope
 gui-wm/sway
-kde-apps/ark
-kde-apps/dolphin
-kde-apps/filelight
-kde-apps/gwenview
-kde-apps/kate
-kde-apps/konsole
-kde-apps/okular
 media-fonts/misans
 media-fonts/nerd-fonts
 media-fonts/noto-emoji
 media-fonts/source-han-sans
 media-gfx/flameshot
+media-gfx/loupe
 media-libs/libva-intel-media-driver
 media-libs/nvidia-vaapi-driver
 media-sound/pavucontrol
@@ -78,6 +75,7 @@ net-misc/chrony
 net-misc/networkmanager
 net-proxy/clash-party-bin
 net-wireless/blueman
+sys-apps/baobab
 sys-apps/flatpak
 sys-apps/kmscon
 sys-apps/lm-sensors
@@ -110,6 +108,7 @@ x11-drivers/nvidia-drivers
 x11-misc/gammastep
 x11-misc/xdg-user-dirs
 x11-terms/kitty
+x11-terms/ptyxis
 x11-themes/bibata-xcursors
 x11-themes/kvantum
 x11-themes/tela-icon-theme

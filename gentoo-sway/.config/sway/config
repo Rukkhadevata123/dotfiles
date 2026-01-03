@@ -15,10 +15,10 @@ set $down j
 set $up k
 set $right l
 
-set $term konsole 
+set $term ptyxis 
 set $menu wofi --show drun
 set $browser firefox-bin
-set $file_manager dolphin
+set $file_manager nautilus 
 
 # Screenshot & Recording variables
 set $ps1 Print

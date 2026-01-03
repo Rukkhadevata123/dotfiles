@@ -15,6 +15,7 @@ app-emulation/qemu io-uring spice usbredir virgl virtfs
 
 dev-lang/rust-bin clippy rust-analyzer rustfmt rust-src
 
+gnome-base/nautilus -previewer
 gnome-extra/nm-applet appindicator
 gui-apps/waybar backlight experimental network tray wifi
 gui-apps/xwayland-satellite LLVM_SLOT: -* 21
