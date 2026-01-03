@@ -37,6 +37,7 @@ dev-util/vulkan-tools
 dev-vcs/git
 games-board/gnome-mines
 games-util/game-device-udev-rules
+gnome-base/dconf-editor
 gnome-base/gnome-keyring
 gnome-base/nautilus
 gnome-extra/nm-applet
