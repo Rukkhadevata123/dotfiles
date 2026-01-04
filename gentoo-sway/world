@@ -21,7 +21,6 @@ app-misc/fastfetch
 app-misc/nwg-look
 app-misc/resolve-march-native
 app-misc/tmux
-app-office/calcurse
 app-portage/command-not-found
 app-portage/cpuid2cpuflags
 app-portage/eix
@@ -31,6 +30,7 @@ app-shells/bash-completion
 app-shells/starship
 app-text/tree
 dev-python/nvchecker
+dev-qt/qtmultimedia
 dev-util/ccache
 dev-util/pkgdev
 dev-util/vulkan-tools
@@ -40,20 +40,15 @@ games-util/game-device-udev-rules
 gnome-base/dconf-editor
 gnome-base/gnome-keyring
 gnome-base/nautilus
+gnome-extra/evolution-data-server
 gnome-extra/nm-applet
 gnome-extra/polkit-gnome
 gui-apps/grim
-gui-apps/mako
+gui-apps/noctalia-shell
 gui-apps/qt6ct
-gui-apps/slurp
-gui-apps/swaybg
 gui-apps/swayidle
-gui-apps/swaylock
-gui-apps/waybar
-gui-apps/wf-recorder
 gui-apps/wl-clipboard
-gui-apps/wlogout
-gui-apps/wofi
+gui-apps/wlsunset
 gui-apps/xwayland-satellite
 gui-libs/xdg-desktop-portal-wlr
 gui-wm/gamescope
@@ -66,6 +61,7 @@ media-gfx/flameshot
 media-gfx/loupe
 media-libs/libva-intel-media-driver
 media-libs/nvidia-vaapi-driver
+media-sound/cava
 media-sound/pavucontrol
 media-video/celluloid
 media-video/ffmpeg
@@ -78,6 +74,7 @@ net-proxy/clash-party-bin
 net-wireless/blueman
 sys-apps/baobab
 sys-apps/flatpak
+sys-apps/inxi
 sys-apps/kmscon
 sys-apps/lm-sensors
 sys-apps/mlocate
@@ -106,7 +103,7 @@ www-client/firefox-bin
 x11-apps/mesa-progs
 x11-apps/xwininfo
 x11-drivers/nvidia-drivers
-x11-misc/gammastep
+x11-misc/matugen
 x11-misc/xdg-user-dirs
 x11-terms/kitty
 x11-terms/ptyxis

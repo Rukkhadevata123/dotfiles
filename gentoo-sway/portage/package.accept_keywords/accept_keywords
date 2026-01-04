@@ -1,3 +1,4 @@
 app-text/scdoc **
+gui-libs/xdg-desktop-portal-wlr **
 gui-libs/wlroots **
 gui-wm/sway **
