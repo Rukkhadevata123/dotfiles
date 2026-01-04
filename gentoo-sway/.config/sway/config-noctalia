@@ -184,6 +184,7 @@ bindsym $mod+alt+l exec qs -c noctalia-shell ipc call lockScreen lock
 
 # Clipboard
 bindsym $mod+v exec qs -c noctalia-shell ipc call launcher clipboard
+bindsym $mod+Shift+v exec rm -f ~/.cache/cliphist/db && notify-send 'Cleared clipboard history'
 
 # Emoji Picker
 bindsym $mod+period exec qs -c noctalia-shell ipc call launcher emoji
