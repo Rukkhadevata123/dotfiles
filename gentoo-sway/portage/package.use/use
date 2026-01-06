@@ -15,21 +15,18 @@ app-emulation/qemu io-uring spice usbredir virgl virtfs
 
 # appindicator
 dev-libs/libdbusmenu gtk3
-
 dev-lang/rust-bin clippy rust-analyzer rustfmt rust-src
 
 gnome-base/nautilus -previewer
+gnome-extra/gnome-software flatpak
 gnome-extra/nm-applet appindicator
-gui-apps/waybar backlight experimental network tray wifi
 gui-apps/xwayland-satellite LLVM_SLOT: -* 21
 gui-wm/sway tray
 
 media-fonts/nerd-fonts cascadiacode cascadiamono codenewroman comicshannsmono dejavusansmono jetbrainsmono ubuntu ubuntumono ubuntusans
-
 # obs 
 media-video/ffmpeg opus 
 media-video/obs-studio v4l
-
 media-video/pipewire extra sound-server
 
 # swtpm
@@ -37,12 +34,9 @@ net-libs/gnutls pkcs11 tools
 
 # pfl
 sys-apps/util-linux caps
-
 sys-auth/pambase gnome-keyring
-
 sys-boot/grub mount
 sys-kernel/installkernel dracut grub 
-
 sys-kernel/gentoo-sources symlink experimental
 
 x11-drivers/nvidia-drivers persistenced powerd

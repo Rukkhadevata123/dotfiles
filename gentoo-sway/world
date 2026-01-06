@@ -42,6 +42,7 @@ gnome-base/dconf-editor
 gnome-base/gnome-keyring
 gnome-base/nautilus
 gnome-extra/evolution-data-server
+gnome-extra/gnome-software
 gnome-extra/nm-applet
 gnome-extra/polkit-gnome
 gui-apps/grim
