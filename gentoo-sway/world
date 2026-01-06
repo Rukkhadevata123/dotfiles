@@ -26,6 +26,7 @@ app-portage/cpuid2cpuflags
 app-portage/eix
 app-portage/gentoolkit
 app-portage/pfl
+app-portage/smart-live-rebuild
 app-shells/bash-completion
 app-shells/starship
 app-text/tree
@@ -74,6 +75,7 @@ net-proxy/clash-party-bin
 net-wireless/blueman
 sys-apps/baobab
 sys-apps/flatpak
+sys-apps/gnome-disk-utility
 sys-apps/inxi
 sys-apps/kmscon
 sys-apps/lm-sensors

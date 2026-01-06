@@ -13,6 +13,9 @@
 # qemu
 app-emulation/qemu io-uring spice usbredir virgl virtfs
 
+# appindicator
+dev-libs/libdbusmenu gtk3
+
 dev-lang/rust-bin clippy rust-analyzer rustfmt rust-src
 
 gnome-base/nautilus -previewer
