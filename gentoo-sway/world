@@ -59,7 +59,6 @@ media-fonts/nerd-fonts
 media-fonts/noto-emoji
 media-fonts/source-han-sans
 media-gfx/flameshot
-media-gfx/loupe
 media-libs/libva-intel-media-driver
 media-libs/nvidia-vaapi-driver
 media-sound/cava
@@ -74,6 +73,7 @@ net-misc/networkmanager
 net-proxy/clash-party-bin
 net-wireless/blueman
 sys-apps/baobab
+sys-apps/dysk
 sys-apps/flatpak
 sys-apps/gnome-disk-utility
 sys-apps/inxi
@@ -88,7 +88,6 @@ sys-apps/xdg-desktop-portal
 sys-apps/xdg-desktop-portal-gtk
 sys-block/io-scheduler-udev-rules
 sys-boot/efibootmgr
-sys-boot/os-prober
 sys-firmware/intel-microcode
 sys-firmware/sof-firmware
 sys-fs/xfsprogs
@@ -97,6 +96,7 @@ sys-kernel/gentoo-sources
 sys-kernel/installkernel
 sys-kernel/linux-firmware
 sys-kernel/modprobed-db
+sys-libs/gpm
 sys-power/switcheroo-control
 sys-process/btop
 sys-process/htop
