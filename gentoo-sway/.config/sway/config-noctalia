@@ -24,7 +24,7 @@ set $file_manager nautilus
 # Output & Input Configuration
 # ==============================================================================
 # Display
-output * scale 1.5
+output * scale 1.6
 output * allow_tearing yes
 output * max_render_time off
 # output * bg /home/yoimiya/.config/sway/wallpapers/Lemon.png fill
@@ -57,7 +57,7 @@ default_floating_border none
 # Autostart
 # ==============================================================================
 exec fcitx5 -d
-exec_always qs -c noctalia-shell
+exec qs -c noctalia-shell
 
 # Idle management (Lock after 15m, Lock before sleep)
 exec swayidle -w \

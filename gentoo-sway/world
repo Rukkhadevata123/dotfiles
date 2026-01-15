@@ -5,7 +5,6 @@ app-arch/7zip
 app-arch/file-roller
 app-arch/zip
 app-benchmarks/vkmark
-app-crypt/seahorse
 app-editors/gnome-text-editor
 app-editors/nano
 app-editors/neovim
@@ -20,14 +19,10 @@ app-misc/brightnessctl
 app-misc/cliphist
 app-misc/fastfetch
 app-misc/nwg-look
-app-misc/resolve-march-native
-app-misc/tmux
 app-portage/command-not-found
-app-portage/cpuid2cpuflags
 app-portage/eix
 app-portage/gentoolkit
 app-portage/pfl
-app-portage/smart-live-rebuild
 app-shells/bash-completion
 app-shells/starship
 app-text/tree
@@ -72,6 +67,7 @@ media-video/mpv
 media-video/obs-studio
 net-misc/chrony
 net-misc/networkmanager
+net-proxy/mihomo
 net-wireless/blueman
 sys-apps/baobab
 sys-apps/dysk
