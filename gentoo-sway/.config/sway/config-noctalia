@@ -57,8 +57,7 @@ default_floating_border none
 # Autostart
 # ==============================================================================
 exec fcitx5 -d
-exec /opt/clash-party/mihomo-party --ozone-platform-hint=auto
-exec qs -c noctalia-shell
+exec_always qs -c noctalia-shell
 
 # Idle management (Lock after 15m, Lock before sleep)
 exec swayidle -w \

@@ -72,7 +72,6 @@ media-video/mpv
 media-video/obs-studio
 net-misc/chrony
 net-misc/networkmanager
-net-proxy/clash-party-bin
 net-wireless/blueman
 sys-apps/baobab
 sys-apps/dysk
@@ -94,7 +93,6 @@ sys-firmware/intel-microcode
 sys-firmware/sof-firmware
 sys-fs/xfsprogs
 sys-kernel/gentoo-kernel-bin
-sys-kernel/gentoo-sources
 sys-kernel/installkernel
 sys-kernel/linux-firmware
 sys-kernel/modprobed-db

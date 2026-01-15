@@ -1,5 +1,0 @@
-[clash-party-bin]
-source = "github"
-github = "mihomo-party-org/clash-party"
-use_latest_release = true
-prefix = "v"
