@@ -15,7 +15,7 @@ set $down j
 set $up k
 set $right l
 
-set $term ptyxis --new-window
+set $term flatpak run app.devsuite.Ptyxis --new-window
 set $menu qs -c noctalia-shell ipc call launcher toggle
 set $browser firefox-bin
 set $file_manager nautilus 
