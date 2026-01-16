@@ -63,7 +63,6 @@ media-video/celluloid
 media-video/ffmpeg
 media-video/libva-utils
 media-video/mpv
-media-video/obs-studio
 net-misc/chrony
 net-misc/networkmanager
 net-proxy/mihomo

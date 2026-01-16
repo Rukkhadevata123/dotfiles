@@ -2,11 +2,9 @@
 */* VIDEO_CARDS: -* nvidia intel
 */* L10N: zh-CN en-US zh en
 
-*/* -qt5
-*/* -webengine
 */* cuda nvenc
 */* dist-kernel
-*/* ffmpeg vaapi pipewire pulseaudio
+*/* ffmpeg vaapi 
 */* lto pgo
 */* default-lld
 
@@ -24,10 +22,7 @@ gui-apps/xwayland-satellite LLVM_SLOT: -* 21
 gui-wm/sway tray
 
 media-fonts/nerd-fonts cascadiacode cascadiamono codenewroman comicshannsmono dejavusansmono jetbrainsmono ubuntu ubuntumono ubuntusans
-# obs 
-media-video/ffmpeg opus 
-media-video/obs-studio v4l
-media-video/pipewire extra sound-server
+media-video/pipewire extra
 
 # swtpm
 net-libs/gnutls pkcs11 tools
