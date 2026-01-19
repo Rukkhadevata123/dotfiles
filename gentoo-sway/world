@@ -10,7 +10,6 @@ app-editors/neovim
 app-editors/vim
 app-editors/vscode
 app-emulation/virt-manager
-app-i18n/fcitx
 app-i18n/fcitx-configtool
 app-i18n/fcitx-gtk
 app-i18n/fcitx-rime
@@ -36,7 +35,6 @@ games-util/game-device-udev-rules
 gnome-base/dconf-editor
 gnome-base/gnome-keyring
 gnome-base/nautilus
-gnome-extra/gnome-logs
 gnome-extra/gnome-software
 gnome-extra/nm-applet
 gnome-extra/polkit-gnome
@@ -61,6 +59,7 @@ media-sound/cava
 media-sound/pavucontrol
 media-video/celluloid
 media-video/ffmpeg
+media-video/gpu-screen-recorder
 media-video/libva-utils
 media-video/mpv
 net-misc/chrony
@@ -99,7 +98,6 @@ www-client/firefox-bin
 x11-apps/mesa-progs
 x11-apps/xwininfo
 x11-drivers/nvidia-drivers
-x11-misc/matugen
 x11-misc/xdg-user-dirs
 x11-themes/bibata-xcursors
 x11-themes/kvantum
