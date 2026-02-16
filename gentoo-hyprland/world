@@ -6,6 +6,7 @@ app-arch/file-roller
 app-arch/unzip
 app-editors/gnome-text-editor
 app-editors/nano
+app-editors/neovim
 app-editors/vim
 app-editors/vscode
 app-i18n/fcitx-configtool
@@ -60,6 +61,8 @@ sys-kernel/gentoo-kernel-bin
 sys-kernel/linux-firmware
 sys-kernel/modprobed-db
 sys-power/switcheroo-control
+sys-process/htop
+sys-process/nvtop
 www-client/brave-bin
 www-client/firefox-bin
 x11-apps/mesa-progs
