@@ -1,0 +1,21 @@
+*/* CPU_FLAGS_X86: aes avx avx2 avx_vnni bmi1 bmi2 f16c fma3 mmx mmxext pclmul popcnt rdrand sha sse sse2 sse3 sse4_1 sse4_2 ssse3 vpclmulqdq
+*/* VIDEO_CARDS: -* nvidia intel
+*/* L10N: zh-CN en-US zh en
+
+*/* cuda nvenc
+*/* dist-kernel
+*/* ffmpeg vaapi
+*/* lto pgo
+*/* default-lld
+*/* -gstreamer
+
+gnome-base/nautilus -previewer
+
+media-fonts/nerd-fonts cascadiacode cascadiamono codenewroman comicshannsmono cousine jetbrainsmono
+media-video/pipewire extra
+
+net-misc/networkmanager iwd
+
+sys-apps/util-linux caps
+sys-apps/systemd boot
+sys-kernel/installkernel dracut systemd-boot
