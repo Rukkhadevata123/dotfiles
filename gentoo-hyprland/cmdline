@@ -1,4 +1,5 @@
 root=UUID=1c808d96-354a-4929-9d78-b9f979091fa8
+rootflags=rw,realtime
 zswap.enabled=1
 zswap.compressor=lz4
 
