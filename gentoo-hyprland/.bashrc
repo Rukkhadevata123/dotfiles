@@ -19,3 +19,4 @@ fi
 
 eval "$(starship init bash)"
 alias sudo="sudo-rs "
+alias vim="nvim"

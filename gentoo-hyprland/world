@@ -67,7 +67,6 @@ www-client/brave-bin
 www-client/firefox-bin
 x11-apps/mesa-progs
 x11-drivers/nvidia-drivers
-x11-libs/libnotify
 x11-terms/kitty
 x11-themes/adw-gtk3
 x11-themes/kvantum
