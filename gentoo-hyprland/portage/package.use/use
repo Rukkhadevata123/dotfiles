@@ -5,9 +5,8 @@
 */* cuda nvenc
 */* dist-kernel
 */* ffmpeg vaapi
-*/* lto pgo
 */* default-lld
-*/* -gstreamer
+*/* -gstreamer -qt5 -webengine
 
 gnome-base/nautilus -previewer
 
