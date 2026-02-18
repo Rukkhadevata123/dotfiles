@@ -24,7 +24,6 @@ app-text/tree
 dev-util/ccache
 dev-vcs/git
 gnome-base/nautilus
-gnome-extra/nm-applet
 gui-apps/hyprshot
 gui-apps/noctalia-shell
 gui-apps/qt6ct
@@ -45,8 +44,9 @@ media-video/gpu-screen-recorder
 media-video/libva-utils
 media-video/mpv
 net-misc/chrony
-net-misc/networkmanager
-net-proxy/mihomo
+net-misc/dhcpcd
+net-proxy/daed
+net-wireless/iwd
 sys-apps/flatpak
 sys-apps/mlocate
 sys-apps/tuned

@@ -13,7 +13,7 @@ gnome-base/nautilus -previewer
 media-fonts/nerd-fonts cascadiacode cascadiamono codenewroman comicshannsmono cousine jetbrainsmono
 media-video/pipewire extra
 
-net-misc/networkmanager iwd
+net-wireless/iwd standalone
 
 sys-apps/util-linux caps
 sys-apps/systemd boot
