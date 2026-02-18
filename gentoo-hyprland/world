@@ -23,13 +23,16 @@ app-shells/starship
 app-text/tree
 dev-util/ccache
 dev-vcs/git
+games-util/game-device-udev-rules
 gnome-base/nautilus
+gnome-extra/gnome-software
 gui-apps/hyprshot
 gui-apps/noctalia-shell
 gui-apps/qt6ct
 gui-apps/wlsunset
 gui-libs/hyprcursor
 gui-libs/xdg-desktop-portal-hyprland
+gui-wm/gamescope
 gui-wm/hyprland
 media-fonts/fontawesome
 media-fonts/misans
@@ -66,6 +69,7 @@ sys-process/nvtop
 www-client/brave-bin
 www-client/firefox-bin
 x11-apps/mesa-progs
+x11-apps/xrdb
 x11-drivers/nvidia-drivers
 x11-terms/kitty
 x11-themes/adw-gtk3

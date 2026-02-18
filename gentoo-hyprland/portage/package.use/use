@@ -9,6 +9,7 @@
 */* -gstreamer -qt5 -webengine
 
 gnome-base/nautilus -previewer
+gnome-extra/gnome-software flatpak
 
 media-fonts/nerd-fonts cascadiacode cascadiamono codenewroman comicshannsmono cousine jetbrainsmono
 media-video/pipewire extra
