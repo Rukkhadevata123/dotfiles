@@ -1,0 +1,7 @@
+1. rootdelay=15 for USB device
+2. sudo eselect fontconfig disable 65-nonlatin.conf 
+3. KBUILD_BUILD_TIMESTAMP='' make LLVM=1 CC="ccache clang"
+4. modprobed-db
+5. cp /var/lib/portage/world . && cp -r /etc/portage/package.use . && cp -r /etc/portage/package.accept_keywords . && cp /etc/portage/make.conf . && cp -r /etc/portage/sets .
+6. openssl req -new -nodes -utf8 -sha256 -x509 -outform PEM -out kernel_key.pem -keyout kernel_key.pem
+7. sudo systemctl disable systemd-networkd-wait-online.service

@@ -6,7 +6,7 @@
 */* dist-kernel
 */* ffmpeg vaapi
 */* default-lld
-*/* -gstreamer -qt5 -webengine
+*/* -qt5 -webengine
 
 gnome-base/nautilus -previewer
 gnome-extra/gnome-software flatpak

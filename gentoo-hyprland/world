@@ -50,6 +50,7 @@ net-misc/chrony
 net-misc/dhcpcd
 net-proxy/daed
 net-wireless/iwd
+net-wireless/iwgtk
 sys-apps/flatpak
 sys-apps/mlocate
 sys-apps/tuned
