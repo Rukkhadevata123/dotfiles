@@ -19,3 +19,5 @@ net-wireless/iwd standalone
 sys-apps/util-linux caps
 sys-apps/systemd boot
 sys-kernel/installkernel dracut systemd-boot
+
+x11-drivers/nvidia-drivers persistenced powerd
