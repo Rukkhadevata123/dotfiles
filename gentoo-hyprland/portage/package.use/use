@@ -14,8 +14,6 @@ gnome-extra/gnome-software flatpak
 media-fonts/nerd-fonts cascadiacode cascadiamono codenewroman comicshannsmono cousine jetbrainsmono
 media-video/pipewire extra
 
-net-wireless/iwd standalone
-
 sys-apps/util-linux caps
 sys-apps/systemd boot
 sys-kernel/installkernel dracut systemd-boot
