@@ -6,6 +6,8 @@
 */* dist-kernel
 */* vaapi
 
+app-text/ghostscript-gpl L10N: -zh-CN
+
 sys-apps/util-linux caps
 sys-apps/systemd boot
 sys-kernel/installkernel dracut systemd-boot
