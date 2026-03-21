@@ -1,0 +1,3 @@
+root=UUID=5f2d7632-9075-464b-b762-839cea273226 rw
+zswap.enabled=1
+zswap.compressor=lz4
