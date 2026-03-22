@@ -2,7 +2,6 @@
 */* VIDEO_CARDS: -* nvidia intel
 */* L10N: zh-CN en-US zh en
 
-*/* -qt5 -webengine
 */* dist-kernel
 */* vaapi
 
