@@ -1,9 +1,12 @@
 app-admin/eclean-kernel
 app-admin/sudo-rs
 app-arch/7zip
+app-containers/distrobox
+app-containers/podman
 app-editors/nano
 app-editors/vim
 app-editors/vscode
+app-emulation/virt-manager
 app-i18n/fcitx-configtool
 app-i18n/fcitx-rime
 app-misc/fastfetch
@@ -25,6 +28,7 @@ kde-plasma/plasma-login-manager
 kde-plasma/plasma-meta
 media-fonts/maple-mono
 media-fonts/misans
+media-fonts/nerdfonts
 media-libs/libva-intel-media-driver
 media-video/libva-utils
 net-misc/chrony

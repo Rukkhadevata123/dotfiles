@@ -6,7 +6,14 @@
 */* dist-kernel
 */* vaapi
 
+app-emulation/qemu usbredir spice virgl
 app-text/ghostscript-gpl L10N: -zh-CN
+
+media-fonts/nerdfonts adwaitamono cascadiacode codenewroman droidsansmono iosevka jetbrainsmono ubuntu ubuntumono ubuntusans
+media-fonts/maple-mono cn ligature nerd normal
+
+net-firewall/iptables nftables
+net-libs/gnutls tools pkcs11
 
 sys-apps/util-linux caps
 sys-apps/systemd boot
