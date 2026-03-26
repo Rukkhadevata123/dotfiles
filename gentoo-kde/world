@@ -29,6 +29,8 @@ kde-plasma/plasma-login-manager
 kde-plasma/plasma-meta
 media-fonts/misans
 media-fonts/nerdfonts
+media-fonts/source-han-sans
+media-fonts/source-han-serif
 media-libs/libva-intel-media-driver
 media-video/libva-utils
 net-misc/chrony
