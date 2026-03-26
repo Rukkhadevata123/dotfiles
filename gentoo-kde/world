@@ -46,7 +46,6 @@ sys-kernel/gentoo-kernel-bin
 sys-kernel/installkernel
 sys-kernel/linux-firmware
 sys-kernel/modprobed-db
-sys-kernel/xanmod-sources
 sys-power/switcheroo-control
 sys-process/btop
 sys-process/htop
