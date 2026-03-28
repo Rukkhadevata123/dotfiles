@@ -3,7 +3,7 @@
 */* L10N: zh-CN en-US zh en
 
 */* dist-kernel
-*/* vaapi
+*/* vaapi vpx
 
 app-emulation/qemu usbredir spice virgl
 app-text/ghostscript-gpl L10N: -zh-CN

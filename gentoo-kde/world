@@ -21,7 +21,6 @@ dev-util/ccache
 dev-vcs/git
 kde-apps/ark
 kde-apps/dolphin
-kde-apps/dragon
 kde-apps/gwenview
 kde-apps/kate
 kde-apps/konsole
@@ -32,7 +31,9 @@ media-fonts/nerdfonts
 media-fonts/source-han-sans
 media-fonts/source-han-serif
 media-libs/libva-intel-media-driver
+media-video/celluloid
 media-video/libva-utils
+media-video/mpv
 net-misc/chrony
 net-misc/networkmanager
 net-proxy/mihomo-party-bin
