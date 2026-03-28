@@ -52,8 +52,8 @@ sys-power/switcheroo-control
 sys-process/btop
 sys-process/htop
 sys-process/nvtop
-www-client/brave-bin
 www-client/firefox-bin
+www-client/microsoft-edge
 x11-apps/mesa-progs
 x11-drivers/nvidia-drivers
 x11-themes/kvantum
