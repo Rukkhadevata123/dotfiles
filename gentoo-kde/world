@@ -26,10 +26,8 @@ kde-apps/kate
 kde-apps/konsole
 kde-plasma/plasma-login-manager
 kde-plasma/plasma-meta
+media-fonts/maple-mono
 media-fonts/misans
-media-fonts/nerdfonts
-media-fonts/source-han-sans
-media-fonts/source-han-serif
 media-libs/libva-intel-media-driver
 media-video/celluloid
 media-video/libva-utils
