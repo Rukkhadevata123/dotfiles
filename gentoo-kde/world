@@ -29,6 +29,7 @@ kde-plasma/plasma-meta
 media-fonts/maple-mono
 media-fonts/misans
 media-libs/libva-intel-media-driver
+media-libs/nvidia-vaapi-driver
 media-video/celluloid
 media-video/libva-utils
 media-video/mpv

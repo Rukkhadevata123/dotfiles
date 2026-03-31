@@ -4,6 +4,7 @@
 
 */* dist-kernel
 */* vaapi vpx
+*/* nvenc
 
 app-emulation/qemu usbredir spice virgl
 app-text/ghostscript-gpl L10N: -zh-CN
