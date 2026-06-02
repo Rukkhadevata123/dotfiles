@@ -1,0 +1,20 @@
+[Icons]
+Theme=Tela-manjaro
+
+[ContextMenu]
+ShowCopyMoveMenu=true
+
+[General]
+RememberOpenedTabs=false
+Version=202
+ViewPropsTimestamp=2026,6,1,23,8,23.864
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[MainWindow]
+MenuBar=Disabled
+
+[PreviewSettings]
+Plugins=gsthumbnail,windowsimagethumbnail,windowsexethumbnail,svgthumbnail,opendocumentthumbnail,kraorathumbnail,jpegthumbnail,imagethumbnail,ebookthumbnail,djvuthumbnail,directorythumbnail,cursorthumbnail,comicbookthumbnail,gdk-pixbuf-thumbnailer,librsvg,jxl

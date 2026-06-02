@@ -1,0 +1,9 @@
+[General]
+LastUsedVersion=210800
+
+[MainWindow]
+MenuBar=Disabled
+
+[Recent Files]
+File1[$e]=$HOME/win-bak/c-bak/Pictures/ubuntu25.10.jpeg
+Name1[$e]=ubuntu25.10.jpeg

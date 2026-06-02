@@ -1,0 +1,12 @@
+[Global plugin config]
+manageProfile=false
+
+[SSH Config][nss]
+hostname=10.130.136.43
+identifier=nss
+importedFromSshConfig=true
+port=
+profileName=
+sshkey=
+useSshConfig=true
+username=lxs

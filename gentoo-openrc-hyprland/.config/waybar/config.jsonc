@@ -1,0 +1,262 @@
+{
+    // -------------------------------------------------------------------------
+    // Global configuration
+    // -------------------------------------------------------------------------
+    "layer": "top",
+    "position": "top",
+    "height": 24,
+    "modules-left": [
+        "custom/menu",
+        "hyprland/workspaces",
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "group/connectivity",
+        "group/hardware",
+        "group/multimedia",
+        "group/utilities",
+        "tray",
+        "custom/power"
+    ],
+
+    // -------------------------------------------------------------------------
+    // Groups
+    // -------------------------------------------------------------------------
+    "group/connectivity": {
+        "orientation": "inherit",
+        "modules": [
+            "network"
+        ]
+    },
+    "group/hardware": {
+        "orientation": "inherit",
+        "modules": [
+            "cpu",
+            "memory",
+            "temperature",
+            "battery",
+            "power-profiles-daemon"
+        ]
+    },
+    "group/multimedia": {
+        "orientation": "inherit",
+        "modules": [
+            "pulseaudio",
+            "backlight"
+        ]
+    },
+    "group/utilities": {
+        "orientation": "inherit",
+        "modules": [
+            "custom/clipboard",
+            "idle_inhibitor"
+        ]
+    },
+
+    // -------------------------------------------------------------------------
+    // Modules
+    // -------------------------------------------------------------------------
+
+    "custom/menu": {
+        "format": "",
+        "on-click": "wofi --show drun",
+        "tooltip": false
+    },
+
+    // Hyprland Workspaces (configured according to official documentation)
+    "hyprland/workspaces": {
+        "all-outputs": true,                // Show workspaces from all outputs
+        "format": "{name}:{icon}",          // Workspace name + icon
+        "format-icons": {
+            "1": "󰲠",
+            "2": "󰲢",
+            "3": "󰲤",
+            "4": "󰲦",
+            "5": "󰲨",
+            "6": "󰲪",
+            "7": "󰲬",
+            "8": "󰲮",
+            "9": "󰲰",
+            "10": "󰿬",
+            "urgent": "󰀨",
+            "focused": "󰮯",
+            "default": "󰧞"
+        },
+        // Scroll to switch workspaces (optional)
+        "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",
+        "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'"
+        // If you want to permanently show certain workspaces (even when empty), uncomment below and also set persistent workspaces in Hyprland config
+        // "persistent-workspaces": {
+        //     "*": 5
+        // }
+    },
+
+    // Hyprland Window Title
+    "hyprland/window": {
+        "format": "{title}",                // Show only title, you can also include {class}
+        "max-length": 50,
+        "icon": true,                       // Show application icon
+        "icon-size": 16,
+        "separate-outputs": true,           // Each monitor shows its own focused window title
+        "rewrite": {
+            "(.*) — Mozilla Firefox": "🌎 $1",
+            "(.*) - fish": "> [$1]"
+        }
+    },
+
+    "clock": {
+        "interval": 1,
+        "format": "󰥔 {:%H:%M:%S}",
+        "format-alt": "󰃭 {:%Y-%m-%d}",
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>",
+        "on-click-right": "konsole -e calcurse",
+        "actions": {
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+
+    "cpu": {
+        "interval": 2,
+        "format": "󰘚 {usage}%",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        },
+        "on-click": "konsole -e htop",
+        "on-scroll-up": "echo",
+        "on-scroll-down": "echo"
+    },
+
+    "memory": {
+        "interval": 2,
+        "format": "󰍛 {percentage}%",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        },
+        "on-click": "konsole -e htop",
+        "tooltip-format": "Memory: {used:0.1f}G/{total:0.1f}G",
+        "on-scroll-up": "echo",
+        "on-scroll-down": "echo"
+    },
+
+    "temperature": {
+        "critical-threshold": 80,
+        "interval": 2,
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": ["󱃃", "󰔐", "🌡️", "󰸁", "🔥"],
+        "tooltip-format": "CPU Temperature: {temperatureC}°C",
+        "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon",
+        "input-filename": "temp1_input",
+        "on-click": "konsole -e bash -c 'watch -n1 sensors'",
+        "on-scroll-up": "echo",
+        "on-scroll-down": "echo"
+    },
+
+    "battery": {
+        "interval": 10,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format-charging": "󰂄 {capacity}%",
+        "format": "{icon} {capacity}%",
+        "format-icons": ["󱃍", "󰁺", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "tooltip-format": "{timeTo}, {power}W",
+        "on-click": "konsole -e bash -c 'watch -n1 upower -i $(upower -e | grep BAT)'",
+        "on-scroll-up": "echo",
+        "on-scroll-down": "echo"
+    },
+
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        },
+        "on-scroll-up": "echo",
+        "on-scroll-down": "echo"
+    },
+
+    "network": {
+        "interval": 5,
+        "format-wifi": "{icon} {signalStrength}%",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰖪",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "tooltip-format-wifi": "{essid}: {ipaddr}",
+        "tooltip-format-ethernet": "Ethernet: {ipaddr}",
+        "on-click": "nm-connection-editor",
+        "on-scroll-up": "echo",
+        "on-scroll-down": "echo"
+    },
+
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "{icon} {volume}%{format_source}",
+        "format-muted": "󰖁{format_source}",
+        "format-source": " 󰍬",
+        "format-source-muted": " 󰍭",
+        "format-icons": {
+            "headphone": "󰋋",
+            "headset": "󰋎",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol",
+        "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-scroll-up": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+    },
+
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "on-scroll-up": "brightnessctl set 5%+",
+        "on-scroll-down": "brightnessctl set 5%-",
+        "tooltip-format": "Brightness: {percent}%"
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        },
+        "tooltip-format-activated": "Idle inhibitor: ON",
+        "tooltip-format-deactivated": "Idle inhibitor: OFF",
+        "on-scroll-up": "echo",
+        "on-scroll-down": "echo"
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 6
+    },
+
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "wlogout",
+        "tooltip": false
+    },
+
+    "custom/clipboard": {
+        "format": "󰨸",
+        "interval": 30,
+        "return-type": "json",
+        "on-click": "cliphist list | wofi --dmenu | cliphist decode | wl-copy",
+        "on-click-right": "cliphist list | wofi --dmenu -p \"Delete\" | cliphist delete",
+        "on-click-middle": "rm -f ~/.cache/cliphist/db && notify-send \"Clipboard cleared\"",
+        "exec": "echo '{\"tooltip\":\"󰨸 '$(cliphist list | wc -l)' items\\nLeft: Select, Right: Delete, Middle: Clear\"}'",
+        "tooltip": true,
+        "on-scroll-up": "echo",
+        "on-scroll-down": "echo"
+    }
+}

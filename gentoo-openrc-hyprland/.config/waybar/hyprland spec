@@ -1,0 +1,42 @@
+Waybar
+
+Waybar is a GTK status bar made specifically for wlroots compositors and supports Hyprland by default. To use it, it’s recommended to use your distro’s package.
+
+To start configuring, copy the configuration files from /etc/xdg/waybar/ into ~/.config/waybar/.
+
+To use the workspaces module, replace all the occurrences of sway/workspaces with hyprland/workspaces. Additionally replace all occurrences of sway/mode with hyprland/submap
+
+For more info regarding configuration, see The Waybar Wiki.
+How to launch
+
+Type waybar into your terminal. In order to have Waybar launch alongside Hyprland, add waybar to your hyprland config’s autostarts.
+
+Waybar also provides a systemd service. If you use Hyprland with uwsm, you can enable it, using the following command.
+
+systemctl --user enable --now waybar.service
+
+Waybar FAQ
+Active workspace doesn’t show up
+
+Replace #workspaces button.focused with #workspaces button.active in ~/.config/waybar/style.css.
+Scrolling through workspaces
+
+Since a lot of configuration options from sway/workspaces are missing, you should deduce some of them by yourself. In the case of scrolling, it should look like this:
+
+"hyprland/workspaces": {
+     "format": "{icon}",
+     "on-scroll-up": "hyprctl dispatch workspace e+1",
+     "on-scroll-down": "hyprctl dispatch workspace e-1"
+}
+
+Window title is missing
+
+The prefix for the window module that provides the title is hyprland not wlr. In your Waybar config, insert this module:
+
+"modules-center": ["hyprland/window"],
+
+If you are using multiple monitors, you may want to insert the following option:
+
+"hyprland/window": {
+    "separate-outputs": true
+},

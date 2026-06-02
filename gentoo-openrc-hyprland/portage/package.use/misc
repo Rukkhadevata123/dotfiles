@@ -1,0 +1,11 @@
+*/* dist-kernel vaapi nvenc
+
+gui-apps/waybar backlight network tray wifi
+
+media-fonts/nerd-fonts jetbrainsmono robotomono 
+
+sys-boot/grub mount
+sys-kernel/installkernel dracut grub
+sys-libs/minizip-ng compat
+
+x11-drivers/nvidia-drivers persistenced powerd
