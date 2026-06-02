@@ -12,8 +12,10 @@ app-misc/cliphist
 app-misc/fastfetch
 app-misc/nwg-look
 app-misc/tmux
+app-portage/command-not-found
 app-portage/eix
 app-portage/gentoolkit
+app-portage/pfl
 app-shells/bash-completion
 app-text/tree
 dev-util/ccache

@@ -4,6 +4,7 @@ gui-apps/waybar backlight network tray wifi
 
 media-fonts/nerd-fonts jetbrainsmono robotomono 
 
+sys-apps/util-linux caps
 sys-boot/grub mount
 sys-kernel/installkernel dracut grub
 sys-libs/minizip-ng compat
