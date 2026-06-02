@@ -194,7 +194,7 @@
         "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
         "tooltip-format-wifi": "{essid}: {ipaddr}",
         "tooltip-format-ethernet": "Ethernet: {ipaddr}",
-        "on-click": "nm-connection-editor",
+        "on-click": "wpa_gui",
         "on-scroll-up": "echo",
         "on-scroll-down": "echo"
     },

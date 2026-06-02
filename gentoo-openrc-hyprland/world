@@ -21,7 +21,7 @@ app-shells/bash-completion
 app-text/tree
 dev-util/ccache
 dev-vcs/git
-gnome-extra/nm-applet
+gnome-base/gnome-keyring
 gui-apps/hypridle
 gui-apps/hyprlock
 gui-apps/hyprpaper
@@ -52,8 +52,9 @@ media-video/libva-utils
 net-im/tencent-qq
 net-im/wechat
 net-misc/chrony
-net-misc/networkmanager
+net-misc/dhcpcd
 net-proxy/mihomo
+net-wireless/wpa_supplicant
 sys-apps/lm-sensors
 sys-apps/pciutils
 sys-apps/plocate
