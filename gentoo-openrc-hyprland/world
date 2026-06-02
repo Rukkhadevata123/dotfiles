@@ -71,8 +71,10 @@ sys-kernel/linux-firmware
 sys-kernel/modprobed-db
 sys-power/power-profiles-daemon
 sys-power/switcheroo-control
+sys-process/btop
 sys-process/cronie
 sys-process/htop
+sys-process/nvtop
 www-client/firefox-bin
 www-client/microsoft-edge
 x11-apps/mesa-progs
