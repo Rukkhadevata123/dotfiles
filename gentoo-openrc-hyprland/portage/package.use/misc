@@ -1,8 +1,14 @@
 */* dist-kernel vaapi nvenc
 
+app-emulation/qemu spice usbredir virgl
+
 gui-apps/waybar backlight network tray wifi
 
 media-fonts/nerd-fonts jetbrainsmono robotomono 
+
+net-firewall/iptables nftables
+net-libs/gnutls pkcs11 tools
+net-misc/spice-gtk usbredir
 
 sys-apps/util-linux caps
 sys-boot/grub mount

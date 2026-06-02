@@ -2,9 +2,12 @@ app-admin/eclean-kernel
 app-admin/sudo-rs
 app-admin/sysklogd
 app-arch/7zip
+app-containers/distrobox
+app-containers/podman
 app-editors/nano
 app-editors/vim
 app-editors/vscode
+app-emulation/virt-manager
 app-i18n/fcitx-chinese-addons
 app-i18n/fcitx-configtool
 app-misc/brightnessctl
