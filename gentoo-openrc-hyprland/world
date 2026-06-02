@@ -49,6 +49,8 @@ media-sound/pavucontrol
 media-video/celluloid
 media-video/gpu-screen-recorder
 media-video/libva-utils
+net-im/tencent-qq
+net-im/wechat
 net-misc/chrony
 net-misc/networkmanager
 net-proxy/mihomo
@@ -71,6 +73,7 @@ sys-power/switcheroo-control
 sys-process/cronie
 sys-process/htop
 www-client/firefox-bin
+www-client/microsoft-edge
 x11-apps/mesa-progs
 x11-drivers/nvidia-drivers
 x11-themes/adw-gtk3
