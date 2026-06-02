@@ -12,6 +12,7 @@ app-misc/cliphist
 app-misc/fastfetch
 app-misc/nwg-look
 app-misc/tmux
+app-office/calcurse
 app-portage/command-not-found
 app-portage/eix
 app-portage/gentoolkit

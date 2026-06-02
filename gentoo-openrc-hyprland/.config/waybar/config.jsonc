@@ -112,7 +112,7 @@
         "format": "󰥔 {:%H:%M:%S}",
         "format-alt": "󰃭 {:%Y-%m-%d}",
         "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>",
-        "on-click-right": "konsole -e calcurse",
+        "on-click-right": "konsole -e 'bash -c calcurse'",
         "actions": {
             "on-scroll-up": "shift_up",
             "on-scroll-down": "shift_down"
