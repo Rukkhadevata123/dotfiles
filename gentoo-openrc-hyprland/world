@@ -79,7 +79,6 @@ sys-process/cronie
 sys-process/htop
 sys-process/nvtop
 www-client/firefox-bin
-www-client/microsoft-edge
 x11-apps/mesa-progs
 x11-drivers/nvidia-drivers
 x11-themes/adw-gtk3
