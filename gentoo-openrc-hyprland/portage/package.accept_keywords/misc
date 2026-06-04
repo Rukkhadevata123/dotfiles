@@ -11,6 +11,7 @@ media-libs/nvidia-vaapi-driver
 
 net-proxy/mihomo
 
+sys-kernel/gentoo-sources
 sys-kernel/gentoo-kernel-bin
 
 x11-drivers/nvidia-drivers

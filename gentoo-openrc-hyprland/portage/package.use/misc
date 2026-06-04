@@ -1,5 +1,3 @@
-*/* dist-kernel vaapi nvenc
-
 app-emulation/qemu spice usbredir virgl
 
 gui-apps/waybar backlight network tray wifi
