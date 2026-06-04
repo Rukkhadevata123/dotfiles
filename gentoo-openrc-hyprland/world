@@ -1,6 +1,7 @@
 app-admin/eclean-kernel
+app-admin/logrotate
 app-admin/sudo-rs
-app-admin/sysklogd
+app-admin/syslog-ng
 app-arch/7zip
 app-containers/distrobox
 app-containers/podman
