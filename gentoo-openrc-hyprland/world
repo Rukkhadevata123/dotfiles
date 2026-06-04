@@ -22,6 +22,7 @@ app-portage/eix
 app-portage/gentoolkit
 app-portage/pfl
 app-shells/bash-completion
+app-shells/starship
 app-text/tree
 dev-util/ccache
 dev-vcs/git
