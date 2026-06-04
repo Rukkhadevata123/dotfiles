@@ -26,13 +26,13 @@ app-text/tree
 dev-util/ccache
 dev-vcs/git
 gnome-base/gnome-keyring
-gui-apps/hypridle
-gui-apps/hyprlock
 gui-apps/hyprpaper
 gui-apps/hyprshot
 gui-apps/mako
 gui-apps/qt6ct
 gui-apps/satty
+gui-apps/swayidle
+gui-apps/swaylock
 gui-apps/waybar
 gui-apps/wlogout
 gui-apps/wofi

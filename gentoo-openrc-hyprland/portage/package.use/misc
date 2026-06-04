@@ -10,6 +10,7 @@ net-firewall/iptables nftables
 net-libs/gnutls pkcs11 tools
 net-misc/spice-gtk usbredir
 
+sys-apps/openrc sysv-utils
 sys-apps/util-linux caps
 sys-boot/grub mount
 sys-kernel/installkernel dracut grub
