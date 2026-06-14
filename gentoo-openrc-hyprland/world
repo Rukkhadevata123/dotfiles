@@ -67,10 +67,13 @@ sys-apps/xdg-desktop-portal-gtk
 sys-auth/hyprpolkitagent
 sys-block/io-scheduler-udev-rules
 sys-boot/efibootmgr
+sys-boot/mokutil
 sys-boot/os-prober
+sys-boot/shim
 sys-firmware/intel-microcode
 sys-fs/xfsprogs
 sys-kernel/gentoo-kernel-bin
+sys-kernel/gentoo-sources
 sys-kernel/installkernel
 sys-kernel/linux-firmware
 sys-kernel/modprobed-db
