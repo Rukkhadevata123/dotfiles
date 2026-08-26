@@ -391,6 +391,11 @@ remove_unsigned_backups() {
             UNSIGNED_REMOVED=$((UNSIGNED_REMOVED + 1))
         fi
     done
+
+    if (( UNSIGNED_REMOVED > 0 )); then
+        update-grub
+        GRUB_UPDATED=true
+    fi
 }
 
 join_or_none() {
