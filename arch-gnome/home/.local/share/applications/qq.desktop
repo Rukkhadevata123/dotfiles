@@ -1,0 +1,16 @@
+[Desktop Entry]
+Categories=Network;
+Comment=QQ
+Exec=linuxqq --ozone-platform=wayland %U
+Icon=qq
+Name=QQ
+NoDisplay=false
+Path=
+PrefersNonDefaultGPU=false
+StartupNotify=true
+StartupWMClass=QQ
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

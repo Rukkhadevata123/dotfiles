@@ -1,0 +1,7 @@
+{
+    "git.autofetch": true,
+    "dotnetAcquisitionExtension.existingDotnetPath": [],
+    "editor.mouseWheelZoom": true,
+    "editor.fontFamily": "'Inconsolata Nerd Font Mono', 'CaskaydiaCove Nerd Font Mono', 'Droid Sans Mono', monospace,'HarmonyOS Sans SC'",
+    "editor.fontSize": 16
+}

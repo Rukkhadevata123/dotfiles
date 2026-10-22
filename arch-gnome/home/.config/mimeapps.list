@@ -1,0 +1,5 @@
+[Default Applications]
+x-scheme-handler/clash=mihomo-party.desktop
+x-scheme-handler/mihomo=mihomo-party.desktop
+
+[Added Associations]

@@ -1,0 +1,208 @@
+{
+  "captured_at": "2026-10-22T20:32:50+08:00",
+  "host": "Linux 7.2.11-arch1-1 x86_64 GNU/Linux",
+  "counts": {
+    "installed_packages": 848,
+    "explicit_packages": 103,
+    "native_explicit": 94,
+    "foreign_explicit": 9,
+    "orphans": 0,
+    "vscode_extensions": 9
+  },
+  "sources": [
+    {
+      "file": "home/.zshrc",
+      "source": "~/.zshrc"
+    },
+    {
+      "file": "home/.config/starship.toml",
+      "source": "~/.config/starship.toml"
+    },
+    {
+      "file": "home/.config/fontconfig/conf.d/99-local-fonts.conf",
+      "source": "~/.config/fontconfig/conf.d/99-local-fonts.conf"
+    },
+    {
+      "file": "home/.config/environment.d/60-qt-theme.conf",
+      "source": "~/.config/environment.d/60-qt-theme.conf"
+    },
+    {
+      "file": "home/.config/environment.d/90-fcitx5.conf",
+      "source": "~/.config/environment.d/90-fcitx5.conf"
+    },
+    {
+      "file": "home/.config/gtk-3.0/settings.ini",
+      "source": "~/.config/gtk-3.0/settings.ini"
+    },
+    {
+      "file": "home/.config/gtk-4.0/settings.ini",
+      "source": "~/.config/gtk-4.0/settings.ini"
+    },
+    {
+      "file": "home/.config/Kvantum/kvantum.kvconfig",
+      "source": "~/.config/Kvantum/kvantum.kvconfig"
+    },
+    {
+      "file": "home/.config/fcitx5/config",
+      "source": "~/.config/fcitx5/config"
+    },
+    {
+      "file": "home/.config/fcitx5/profile",
+      "source": "~/.config/fcitx5/profile"
+    },
+    {
+      "file": "home/.config/fcitx5/conf/chttrans.conf",
+      "source": "~/.config/fcitx5/conf/chttrans.conf"
+    },
+    {
+      "file": "home/.config/fcitx5/conf/classicui.conf",
+      "source": "~/.config/fcitx5/conf/classicui.conf"
+    },
+    {
+      "file": "home/.config/fcitx5/conf/cloudpinyin.conf",
+      "source": "~/.config/fcitx5/conf/cloudpinyin.conf"
+    },
+    {
+      "file": "home/.config/fcitx5/conf/notifications.conf",
+      "source": "~/.config/fcitx5/conf/notifications.conf"
+    },
+    {
+      "file": "home/.config/fcitx5/conf/pinyin.conf",
+      "source": "~/.config/fcitx5/conf/pinyin.conf"
+    },
+    {
+      "file": "home/.config/fcitx5/conf/punctuation.conf",
+      "source": "~/.config/fcitx5/conf/punctuation.conf"
+    },
+    {
+      "file": "home/.config/Code/User/settings.json",
+      "source": "~/.config/Code/User/settings.json"
+    },
+    {
+      "file": "home/.config/autostart/mihomo-party.desktop",
+      "source": "~/.config/autostart/mihomo-party.desktop"
+    },
+    {
+      "file": "home/.config/autostart/org.fcitx.Fcitx5.desktop",
+      "source": "~/.config/autostart/org.fcitx.Fcitx5.desktop"
+    },
+    {
+      "file": "home/.config/mimeapps.list",
+      "source": "~/.config/mimeapps.list"
+    },
+    {
+      "file": "home/.config/user-dirs.dirs",
+      "source": "~/.config/user-dirs.dirs"
+    },
+    {
+      "file": "home/.config/user-dirs.locale",
+      "source": "~/.config/user-dirs.locale"
+    },
+    {
+      "file": "home/.config/MangoHud/MangoHud.conf",
+      "source": "~/.config/MangoHud/MangoHud.conf"
+    },
+    {
+      "file": "home/.config/htop/htoprc",
+      "source": "~/.config/htop/htoprc"
+    },
+    {
+      "file": "home/.local/share/applications/qq.desktop",
+      "source": "~/.local/share/applications/qq.desktop"
+    },
+    {
+      "file": "home/.config/qt6ct/qt6ct.conf",
+      "source": "~/.config/qt6ct/qt6ct.conf",
+      "note": "Removed SettingsWindow geometry only"
+    },
+    {
+      "file": "machine-specific/home/.config/monitors.xml",
+      "source": "~/.config/monitors.xml"
+    },
+    {
+      "file": "machine-specific/home/.config/lact/ui.yaml",
+      "source": "~/.config/lact/ui.yaml"
+    },
+    {
+      "file": "machine-specific/home/.local/bin/genshin-bilibili",
+      "source": "~/.local/bin/genshin-bilibili"
+    },
+    {
+      "file": "machine-specific/home/.local/bin/genshin-bilibili-hutao",
+      "source": "~/.local/bin/genshin-bilibili-hutao"
+    },
+    {
+      "file": "gnome/settings.dconf",
+      "source": "dconf (selected paths and keys)",
+      "note": "User overrides only; excludes histories, app-picker layout and window state"
+    },
+    {
+      "file": "gnome/extensions.json",
+      "source": "GNOME Shell extension metadata",
+      "note": "Extension source code is not vendored"
+    },
+    {
+      "file": "packages/explicit.txt",
+      "source": "pacman -Qqe"
+    },
+    {
+      "file": "packages/explicit-native.txt",
+      "source": "pacman -Qqen"
+    },
+    {
+      "file": "packages/explicit-foreign.txt",
+      "source": "pacman -Qqem"
+    },
+    {
+      "file": "packages/orphans.txt",
+      "source": "pacman -Qdtq"
+    },
+    {
+      "file": "packages/installed-versions.txt",
+      "source": "pacman -Q"
+    },
+    {
+      "file": "packages/explicit-dependencies.tsv",
+      "source": "LC_ALL=C pacman -Qi",
+      "note": "Reverse dependency relationships for explicit packages; no install reasons changed"
+    },
+    {
+      "file": "packages/vscode-extensions.txt",
+      "source": "~/.vscode/extensions/extensions.json",
+      "note": "IDs only"
+    },
+    {
+      "file": "packages/vscode-extension-versions.json",
+      "source": "~/.vscode/extensions/extensions.json",
+      "note": "No extension storage, credentials or machine IDs"
+    },
+    {
+      "file": "system/locale.conf",
+      "source": "/etc/locale.conf",
+      "note": "Reference only; not automatically restored"
+    },
+    {
+      "file": "system/pacman.conf",
+      "source": "/etc/pacman.conf",
+      "note": "Reference only; not automatically restored"
+    },
+    {
+      "file": "system/locale-gen-enabled.txt",
+      "source": "/etc/locale.gen (uncommented entries)"
+    },
+    {
+      "file": "system/enabled-services.tsv",
+      "source": "/etc/systemd/system symlinks",
+      "note": "Configuration inventory, not runtime service status"
+    }
+  ],
+  "excluded": [
+    "accounts, credentials, keyrings and wallet backups",
+    "browser and proxy profiles",
+    "IME user dictionaries, histories and cached layouts",
+    "raw dconf database and histories",
+    "extension source code, font binaries, caches and logs"
+  ],
+  "package_install_reasons_changed": false,
+  "updated_at": "2026-10-22T20:39:02+08:00"
+}

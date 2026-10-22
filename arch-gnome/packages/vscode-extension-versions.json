@@ -1,0 +1,38 @@
+[
+  {
+    "id": "llvm-vs-code-extensions.vscode-clangd",
+    "version": "0.6.0"
+  },
+  {
+    "id": "ms-dotnettools.csdevkit",
+    "version": "3.40.215"
+  },
+  {
+    "id": "ms-dotnettools.csharp",
+    "version": "2.160.4"
+  },
+  {
+    "id": "ms-dotnettools.vscode-dotnet-runtime",
+    "version": "3.2.0"
+  },
+  {
+    "id": "ms-vscode.cmake-tools",
+    "version": "1.24.42"
+  },
+  {
+    "id": "ms-vscode.cpp-devtools",
+    "version": "0.6.18"
+  },
+  {
+    "id": "ms-vscode.makefile-tools",
+    "version": "0.12.17"
+  },
+  {
+    "id": "shader-slang.slang-language-extension",
+    "version": "2.0.10"
+  },
+  {
+    "id": "vadimcn.vscode-lldb",
+    "version": "1.12.3"
+  }
+]

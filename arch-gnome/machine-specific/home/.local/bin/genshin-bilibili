@@ -1,0 +1,119 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+dwproton_dir="${DWPROTON_DIR:-$HOME/.local/opt/dwproton-11.0-14}"
+game_exe="$HOME/Games/genshin-bilibili/games/Genshin Impact Game/YuanShen.exe"
+launcher_exe="$HOME/Games/genshin-bilibili/launcher.exe"
+enable_wayland="${PROTON_ENABLE_WAYLAND:-0}"
+# Enable with GENSHIN_HDR=1, or change the default below to 1.
+# This shell-local setting applies only when launching the game directly.
+enable_hdr="${GENSHIN_HDR:-0}"
+compat_dir="$HOME/Games/compatdata/genshin-bilibili-direct"
+log_dir="${XDG_STATE_HOME:-$HOME/.local/state}/dwproton"
+
+launch_exe="$game_exe"
+launch_mode=game
+case "${1:-}" in
+    --launcher)
+        launch_exe="$launcher_exe"
+        launch_mode=launcher
+        shift
+        ;;
+    --game)
+        shift
+        ;;
+    -h|--help)
+        printf 'Usage: %s [--game|--launcher] [arguments...]\n' "${0##*/}"
+        printf 'Defaults to launching YuanShen.exe. Remaining arguments go to the selected executable.\n'
+        printf 'GENSHIN_HDR=1 enables game HDR and native Wayland in game mode only.\n'
+        printf 'PROTON_ENABLE_WAYLAND=1 enables native Wayland for game or launcher; defaults to 0 (XWayland).\n'
+        exit 0
+        ;;
+    --)
+        shift
+        ;;
+esac
+
+if [[ "$launch_mode" == game && "$enable_hdr" != 0 && "$enable_hdr" != 1 ]]; then
+    printf 'GENSHIN_HDR must be 0 or 1.\n' >&2
+    exit 2
+fi
+
+# Resolve the backend once. Game HDR takes precedence over the display switch.
+if [[ "$enable_wayland" != 0 && "$enable_wayland" != 1 ]]; then
+    printf 'PROTON_ENABLE_WAYLAND must be 0 or 1.\n' >&2
+    exit 2
+fi
+if [[ "$launch_mode" == game && "$enable_hdr" == 1 ]]; then
+    enable_wayland=1
+fi
+case "$enable_wayland" in
+    0)
+        graphics_driver=x11
+        ;;
+    1)
+        graphics_driver=wayland
+        if [[ -z "${WAYLAND_DISPLAY:-}" ]]; then
+            printf 'Native Wayland requires WAYLAND_DISPLAY in the current session.\n' >&2
+            exit 2
+        fi
+        ;;
+esac
+
+if [[ ! -x "$dwproton_dir/proton" ]]; then
+    printf 'DWProton launcher not found: %s\n' "$dwproton_dir/proton" >&2
+    exit 1
+fi
+if [[ ! -f "$launch_exe" ]]; then
+    printf 'Executable not found: %s\n' "$launch_exe" >&2
+    exit 1
+fi
+
+mkdir -p "$compat_dir/steam-client" "$log_dir"
+cd "${launch_exe%/*}"
+
+# Proton creates the actual Wine prefix under "$compat_dir/pfx".
+export STEAM_COMPAT_DATA_PATH="$compat_dir"
+# Proton expects a client path even when no Steam client is installed.
+export STEAM_COMPAT_CLIENT_INSTALL_PATH="$compat_dir/steam-client"
+export STEAM_COMPAT_INSTALL_PATH="${launch_exe%/*}"
+export SteamAppId=0
+export SteamGameId=0
+
+# These select DWProton's bundled Genshin fixes and steam.exe compatibility stub.
+# Setting UMU_ID does not invoke or require umu-launcher.
+export UMU_ID=umu-genshin
+export STORE=none
+export UMU_USE_STEAM=1
+
+# Use Wine's new WoW64 mode to avoid the traditional 32-bit Unix Wine loader.
+export PROTON_USE_WOW64=1
+# Export one consistent backend and clear the alternate Proton switch.
+export PROTON_ENABLE_WAYLAND="$enable_wayland"
+unset PROTON_USE_WAYLAND
+export WINE_GRAPHICS_DRIVER="$graphics_driver"
+# Disable the optional automatic FSR4 DLL download for this game.
+export PROTON_FSR4_UPGRADE=0
+
+# Request NVIDIA PRIME render offload for this game.
+export __NV_PRIME_RENDER_OFFLOAD=1
+export __GLX_VENDOR_LIBRARY_NAME=nvidia
+
+export MANGOHUD="${MANGOHUD:-1}"
+export PROTON_LOG="${PROTON_LOG:-1}"
+export PROTON_LOG_DIR="$log_dir"
+
+if [[ "$launch_mode" == game ]]; then
+    # Match hutao-minhook-ng/src/hdr.rs in this game's prefix. Using `run`
+    # also initializes a fresh prefix before writing the registry value.
+    PROTON_LOG=0 MANGOHUD=0 "$dwproton_dir/proton" run reg.exe add \
+        'HKCU\Software\miHoYo\原神' \
+        /v WINDOWS_HDR_ON_h3132281285 /t REG_DWORD /d "$enable_hdr" /f
+
+    if [[ "$enable_hdr" == 1 ]]; then
+        export DXVK_HDR=1
+    fi
+fi
+
+"$dwproton_dir/proton" waitforexitandrun "$launch_exe" "$@" \
+    2>&1 | tee "$log_dir/genshin-direct-launch.log"

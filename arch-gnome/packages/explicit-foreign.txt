@@ -1,0 +1,9 @@
+cargo-xwin
+downgrade
+furmark
+linuxqq
+mihomo-party-bin
+ntfsprogs-plus
+ttf-harmonyos-sans
+visual-studio-code-bin
+yay

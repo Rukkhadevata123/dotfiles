@@ -1,0 +1,31 @@
+[
+  {
+    "uuid": "kimpanel@kde.org",
+    "name": "Input Method Panel",
+    "version": 94,
+    "shell-version": [
+      "51"
+    ],
+    "url": "https://github.com/wengxt/gnome-shell-extension-kimpanel",
+    "scope": "user",
+    "installation": "extension-manager"
+  },
+  {
+    "uuid": "appindicatorsupport@rgcjonas.gmail.com",
+    "name": "AppIndicator and KStatusNotifierItem Support",
+    "version": null,
+    "shell-version": [
+      "45",
+      "46",
+      "47",
+      "48",
+      "49",
+      "50",
+      "51"
+    ],
+    "url": "https://github.com/ubuntu/gnome-shell-extension-appindicator",
+    "scope": "system",
+    "installation": "pacman: gnome-shell-extension-appindicator",
+    "package_version": "1:66-1"
+  }
+]

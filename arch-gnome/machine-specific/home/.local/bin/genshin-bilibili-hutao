@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+dwproton_dir="${DWPROTON_DIR:-$HOME/.local/opt/dwproton-11.0-14}"
+toolkit_dir="$HOME/Games/genshin-bilibili-hutao"
+toolkit_exe="$toolkit_dir/gi-toolkit-ng.exe"
+game_dir="$HOME/Games/genshin-bilibili/games/Genshin Impact Game"
+enable_wayland="${PROTON_ENABLE_WAYLAND:-0}"
+compat_dir="$HOME/Games/compatdata/genshin-bilibili-direct"
+log_dir="${XDG_STATE_HOME:-$HOME/.local/state}/dwproton/hutao"
+
+case "$enable_wayland" in
+    0)
+        graphics_driver=x11
+        ;;
+    1)
+        graphics_driver=wayland
+        if [[ -z "${WAYLAND_DISPLAY:-}" ]]; then
+            printf 'Native Wayland requires WAYLAND_DISPLAY in the current session.\n' >&2
+            exit 2
+        fi
+        ;;
+    *)
+        printf 'PROTON_ENABLE_WAYLAND must be 0 or 1.\n' >&2
+        exit 2
+        ;;
+esac
+
+if [[ ! -x "$dwproton_dir/proton" ]]; then
+    printf 'DWProton launcher not found: %s\n' "$dwproton_dir/proton" >&2
+    exit 1
+fi
+for required_file in "$toolkit_exe" "$toolkit_dir/hutao_minhook_ng.dll" "$toolkit_dir/config.ini"; do
+    if [[ ! -f "$required_file" ]]; then
+        printf 'Required file not found: %s\n' "$required_file" >&2
+        exit 1
+    fi
+done
+
+mkdir -p "$compat_dir/steam-client" "$log_dir"
+cd "$toolkit_dir"
+
+# Reuse the existing game's Proton prefix.
+export STEAM_COMPAT_DATA_PATH="$compat_dir"
+export STEAM_COMPAT_CLIENT_INSTALL_PATH="$compat_dir/steam-client"
+export STEAM_COMPAT_INSTALL_PATH="$game_dir"
+export SteamAppId=0
+export SteamGameId=0
+
+# Apply DWProton's Genshin fixes to the toolkit and its child game process.
+export UMU_ID=umu-genshin
+export STORE=none
+export UMU_USE_STEAM=1
+export PROTON_USE_WOW64=1
+export PROTON_FSR4_UPGRADE=0
+
+# Export one consistent backend and clear the alternate Proton switch.
+export PROTON_ENABLE_WAYLAND="$enable_wayland"
+unset PROTON_USE_WAYLAND
+export WINE_GRAPHICS_DRIVER="$graphics_driver"
+
+export __NV_PRIME_RENDER_OFFLOAD=1
+export __GLX_VENDOR_LIBRARY_NAME=nvidia
+
+export MANGOHUD="${MANGOHUD:-1}"
+export PROTON_LOG="${PROTON_LOG:-1}"
+export PROTON_LOG_DIR="$log_dir"
+
+"$dwproton_dir/proton" waitforexitandrun "$toolkit_exe" "$@" \
+    2>&1 | tee "$log_dir/genshin-hutao-launch.log"
