@@ -19,6 +19,11 @@
       "source": "~/.config/starship.toml"
     },
     {
+      "file": "home/.config/chrome-flags.conf",
+      "source": "~/.config/chrome-flags.conf",
+      "note": "Added 2026-10-23; user verified NVIDIA VA-API video decoding in discrete-only mode on GNOME Wayland; flags only, without LIBVA_DRIVER_NAME or NVD_BACKEND overrides"
+    },
+    {
       "file": "home/.config/fontconfig/conf.d/99-local-fonts.conf",
       "source": "~/.config/fontconfig/conf.d/99-local-fonts.conf"
     },
@@ -204,5 +209,5 @@
     "extension source code, font binaries, caches and logs"
   ],
   "package_install_reasons_changed": false,
-  "updated_at": "2026-10-22T20:39:02+08:00"
+  "updated_at": "2026-10-23T18:47:55+08:00"
 }

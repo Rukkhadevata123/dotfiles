@@ -1,10 +1,10 @@
 # Arch Linux / GNOME 配置快照
 
-采集日期：2026-10-22。环境为 GNOME 51.1、Fcitx5 + Kimpanel、Qt6ct + Kvantum（KvFlat）。本目录保存当前可复用配置和软件包状态。
+基础采集日期：2026-10-22；2026-10-23 补充 Chrome 的 NVIDIA 视频硬解配置。环境为 GNOME 51.1、Fcitx5 + Kimpanel、Qt6ct + Kvantum（KvFlat）。本目录保存可复用配置和采集时的软件包状态。
 
 | 路径 | 内容 |
 | --- | --- |
-| `home/` | 按家目录结构保存的 Zsh、Starship、字体、Fcitx5、GTK、Qt6ct、Kvantum、VS Code、MangoHud、htop、自启动和 QQ 启动器配置 |
+| `home/` | 按家目录结构保存的 Zsh、Starship、字体、Fcitx5、GTK、Qt6ct、Kvantum、VS Code、MangoHud、htop、Chrome 启动参数、自启动和 QQ 启动器配置 |
 | `gnome/settings.dconf` | 筛选后的 GNOME 用户设置，包括外观、鼠标/触摸板、电源、快捷键、收藏应用和扩展设置 |
 | `gnome/extensions.json` | GNOME 扩展 UUID、来源、版本和兼容的 Shell 版本；不包含扩展源码 |
 | `packages/` | 显式包、仓库/外部包分类、全部已安装包版本、反向依赖和 VS Code 扩展清单 |
@@ -32,6 +32,20 @@ sudo pacman -Syu --needed - < packages/explicit-native.txt
 ```
 
 外部包清单另行检查，用 AUR 助手或原来的构建方式安装。`installed-versions.txt` 用于查证当时版本，不用于逐包降级或将全部依赖改成显式安装。GNOME 会话、Nautilus、Portal 等当前由依赖链安装，因此不一定出现在显式包清单中。
+
+## Chrome / NVIDIA 视频硬解
+
+2026-10-23 已在 RTX 4050 Laptop GPU 独显直连、NVIDIA 615.78.08、GNOME Wayland、Google Chrome 156.0.8078.47 和 `libva-nvidia-driver` 0.0.18 上验证视频硬解可用。`home/.config/chrome-flags.conf` 保存启动参数；本机此模式下不需要显式设置 `LIBVA_DRIVER_NAME` 或 `NVD_BACKEND`。
+
+恢复时先安装 `google-chrome`（AUR），再安装 VA-API 驱动及诊断工具：
+
+```sh
+sudo pacman -S --needed libva-nvidia-driver libva-utils
+```
+
+软件包清单仍记录 2026-10-22 的基础快照，其中浏览器为 Chromium；恢复本节配置时选择 Google Chrome，并补装上述包。当前安装的 Google Chrome 启动脚本读取 `~/.config/chrome-flags.conf`。
+
+按下方命令恢复 `home/` 后，完全退出 Chrome（包括后台进程）再启动。播放视频时用 `chrome://media-internals` 检查实际解码器，并确认 `chrome://gpu` 的 `Video Acceleration Information` 列出了具体解码能力。该配置用于视频解码，编码能力另行确认。
 
 ## 恢复用户配置
 
