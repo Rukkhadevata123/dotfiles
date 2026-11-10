@@ -5,7 +5,10 @@ dbus-org.bluez.service	/usr/lib/systemd/system/bluetooth.service
 dbus-org.freedesktop.nm-dispatcher.service	/usr/lib/systemd/system/NetworkManager-dispatcher.service
 display-manager.service	/usr/lib/systemd/system/gdm.service
 getty.target.wants/getty@tty1.service	/usr/lib/systemd/system/getty@.service
+graphical.target.wants/gnome-remote-desktop.service	/usr/lib/systemd/system/gnome-remote-desktop.service
 graphical.target.wants/power-profiles-daemon.service	/usr/lib/systemd/system/power-profiles-daemon.service
+hibernate.target	/dev/null
+hybrid-sleep.target	/dev/null
 multi-user.target.wants/NetworkManager.service	/usr/lib/systemd/system/NetworkManager.service
 multi-user.target.wants/chronyd.service	/usr/lib/systemd/system/chronyd.service
 multi-user.target.wants/lactd.service	/usr/lib/systemd/system/lactd.service
@@ -13,8 +16,13 @@ multi-user.target.wants/lm_sensors.service	/usr/lib/systemd/system/lm_sensors.se
 multi-user.target.wants/nvidia-persistenced.service	/usr/lib/systemd/system/nvidia-persistenced.service
 multi-user.target.wants/nvidia-powerd.service	/usr/lib/systemd/system/nvidia-powerd.service
 multi-user.target.wants/remote-fs.target	/usr/lib/systemd/system/remote-fs.target
+multi-user.target.wants/sshd.service	/usr/lib/systemd/system/sshd.service
+multi-user.target.wants/tailscaled.service	/usr/lib/systemd/system/tailscaled.service
 network-online.target.wants/NetworkManager-wait-online.service	/usr/lib/systemd/system/NetworkManager-wait-online.service
+sleep.target	/dev/null
 sockets.target.wants/systemd-userdbd.socket	/usr/lib/systemd/system/systemd-userdbd.socket
+suspend-then-hibernate.target	/dev/null
+suspend.target	/dev/null
 systemd-hibernate.service.wants/nvidia-hibernate.service	/usr/lib/systemd/system/nvidia-hibernate.service
 systemd-hibernate.service.wants/nvidia-resume.service	/usr/lib/systemd/system/nvidia-resume.service
 systemd-suspend-then-hibernate.service.wants/nvidia-resume.service	/usr/lib/systemd/system/nvidia-resume.service

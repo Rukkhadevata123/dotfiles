@@ -1,5 +1,24 @@
 [Default Applications]
-x-scheme-handler/clash=mihomo-party.desktop
+x-scheme-handler/clash=flclash-url-handler.desktop
 x-scheme-handler/mihomo=mihomo-party.desktop
+text/html=google-chrome.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
+application/xhtml+xml=google-chrome.desktop
+text/x-shellscript=org.gnome.TextEditor.desktop
+application/zip=org.gnome.FileRoller.desktop
+x-scheme-handler/clashmeta=flclash-url-handler.desktop
+x-scheme-handler/flclash=flclash-url-handler.desktop
+text/x-c++src=org.gnome.TextEditor.desktop
+video/mp4=io.github.celluloid_player.Celluloid.desktop
+x-scheme-handler/jetbrains=jetbrainsd.desktop
+application/x-compressed-tar=org.gnome.FileRoller.desktop
 
 [Added Associations]
+text/x-shellscript=org.gnome.TextEditor.desktop;
+application/zip=org.gnome.FileRoller.desktop;
+text/x-c++src=org.gnome.TextEditor.desktop;
+video/mp4=io.github.celluloid_player.Celluloid.desktop;
+application/x-compressed-tar=org.gnome.FileRoller.desktop;

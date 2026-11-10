@@ -1,13 +1,13 @@
 {
-  "captured_at": "2026-10-22T20:32:50+08:00",
-  "host": "Linux 7.2.11-arch1-1 x86_64 GNU/Linux",
+  "captured_at": "2026-11-10T20:05:12+08:00",
+  "host": "Linux 7.2.15-zen1-1-zen x86_64 GNU/Linux",
   "counts": {
-    "installed_packages": 848,
-    "explicit_packages": 103,
-    "native_explicit": 94,
-    "foreign_explicit": 9,
+    "installed_packages": 857,
+    "explicit_packages": 102,
+    "native_explicit": 91,
+    "foreign_explicit": 11,
     "orphans": 0,
-    "vscode_extensions": 9
+    "vscode_extensions": 4
   },
   "sources": [
     {
@@ -139,7 +139,7 @@
     {
       "file": "gnome/settings.dconf",
       "source": "dconf (selected paths and keys)",
-      "note": "User overrides only; excludes histories, app-picker layout and window state"
+      "note": "User overrides only; includes custom shortcuts and Tiling Assistant preferences; excludes histories, app-picker layout, window state and extension bookkeeping"
     },
     {
       "file": "gnome/extensions.json",
@@ -198,7 +198,7 @@
     {
       "file": "system/enabled-services.tsv",
       "source": "/etc/systemd/system symlinks",
-      "note": "Configuration inventory, not runtime service status"
+      "note": "All symlinks under /etc/systemd/system, including masks to /dev/null; configuration inventory, not runtime service status"
     }
   ],
   "excluded": [
@@ -209,5 +209,10 @@
     "extension source code, font binaries, caches and logs"
   ],
   "package_install_reasons_changed": false,
-  "updated_at": "2026-10-23T18:47:55+08:00"
+  "updated_at": "2026-11-10T20:08:55+08:00",
+  "missing_sources": [],
+  "notes": [
+    "VS Code inventory covers local extensions only, not remote/container installations",
+    "Removed stale blur-my-shell@aunetx from live and snapshot enabled-extensions at user request; other extension settings unchanged"
+  ]
 }

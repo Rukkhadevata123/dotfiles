@@ -1,9 +1,11 @@
-cargo-xwin
 downgrade
-furmark
+elephant-network
+google-chrome
 linuxqq
-mihomo-party-bin
+modprobed-db
 ntfsprogs-plus
+qqmusic-electron
 ttf-harmonyos-sans
 visual-studio-code-bin
+wechat-bin
 yay

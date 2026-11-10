@@ -30,7 +30,7 @@ if [[ ! -x "$dwproton_dir/proton" ]]; then
     printf 'DWProton launcher not found: %s\n' "$dwproton_dir/proton" >&2
     exit 1
 fi
-for required_file in "$toolkit_exe" "$toolkit_dir/hutao_minhook_ng.dll" "$toolkit_dir/config.ini"; do
+for required_file in "$toolkit_exe" "$toolkit_dir/hutao-minhook-ng.dll" "$toolkit_dir/config.ini"; do
     if [[ ! -f "$required_file" ]]; then
         printf 'Required file not found: %s\n' "$required_file" >&2
         exit 1

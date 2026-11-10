@@ -11,6 +11,20 @@
     "installation": "extension-manager"
   },
   {
+    "uuid": "tiling-assistant@leleat-on-github",
+    "name": "Tiling Assistant",
+    "version": 56,
+    "shell-version": [
+      "48",
+      "49",
+      "50",
+      "51"
+    ],
+    "url": "https://github.com/ubuntu/Tiling-Assistant",
+    "scope": "user",
+    "installation": "user directory (installer not rechecked)"
+  },
+  {
     "uuid": "appindicatorsupport@rgcjonas.gmail.com",
     "name": "AppIndicator and KStatusNotifierItem Support",
     "version": null,

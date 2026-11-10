@@ -3,5 +3,7 @@
     "dotnetAcquisitionExtension.existingDotnetPath": [],
     "editor.mouseWheelZoom": true,
     "editor.fontFamily": "'Inconsolata Nerd Font Mono', 'CaskaydiaCove Nerd Font Mono', 'Droid Sans Mono', monospace,'HarmonyOS Sans SC'",
-    "editor.fontSize": 16
+    "editor.fontSize": 16,
+    "dev.containers.dockerPath": "podman",
+    "containers.containerClient": "com.microsoft.visualstudio.containers.podman"
 }

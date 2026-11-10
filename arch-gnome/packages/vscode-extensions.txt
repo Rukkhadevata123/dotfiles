@@ -1,9 +1,4 @@
-llvm-vs-code-extensions.vscode-clangd
-ms-dotnettools.csdevkit
+ms-azuretools.vscode-containers
 ms-dotnettools.csharp
 ms-dotnettools.vscode-dotnet-runtime
-ms-vscode.cmake-tools
-ms-vscode.cpp-devtools
-ms-vscode.makefile-tools
-shader-slang.slang-language-extension
-vadimcn.vscode-lldb
+ms-vscode-remote.remote-containers
