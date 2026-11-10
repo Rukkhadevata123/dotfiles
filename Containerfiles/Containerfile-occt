@@ -1,0 +1,85 @@
+FROM docker.io/library/archlinux:latest AS base
+
+RUN sed -i '1iServer = https://mirrors.cernet.edu.cn/archlinux/$repo/os/$arch' /etc/pacman.d/mirrorlist
+
+RUN pacman -Syu --noconfirm --needed \
+        base-devel cmake ninja pkgconf git curl ca-certificates \
+        clang lld gdb python \
+        zlib libpng fftw nlohmann-json glm eigen \
+        sdl3 wayland wayland-protocols wayland-utils libdecor libxkbcommon libxext libglvnd \
+        vulkan-headers vulkan-icd-loader vulkan-validation-layers vulkan-tools \
+        shader-slang shaderc glslang spirv-tools \
+        fontconfig freetype2 onetbb rapidjson gtk3 ttf-dejavu noto-fonts-cjk \
+    && fc-cache -f \
+    && pacman -Scc --noconfirm
+
+FROM base AS sdk-builder
+
+ARG BUILD_JOBS=4
+
+COPY sources/OCCT-8_0_1/ /opt/src/OCCT-8_0_1/
+
+RUN cmake -S /opt/src/OCCT-8_0_1 -B /tmp/occt-build -G Ninja \
+        -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+        -DBUILD_CPP_STANDARD=C++17 \
+        -DBUILD_LIBRARY_TYPE=Shared \
+        -DCMAKE_INSTALL_PREFIX=/opt/occt/8.0.1 \
+        -DINSTALL_DIR_LAYOUT=Unix \
+        -DINSTALL_DIR_WITH_VERSION=OFF \
+        -DBUILD_USE_VCPKG=OFF \
+        -DBUILD_GTEST=OFF \
+        -DBUILD_DOC_Overview=OFF \
+        -DBUILD_DOC_RefMan=OFF \
+        -DBUILD_USE_PCH=OFF \
+        -DBUILD_RELEASE_DISABLE_EXCEPTIONS=OFF \
+        -DBUILD_MODULE_FoundationClasses=ON \
+        -DBUILD_MODULE_ModelingData=ON \
+        -DBUILD_MODULE_ModelingAlgorithms=ON \
+        -DBUILD_MODULE_ApplicationFramework=ON \
+        -DBUILD_MODULE_DataExchange=ON \
+        -DBUILD_MODULE_Visualization=OFF \
+        -DBUILD_MODULE_Draw=OFF \
+        -DUSE_OPENGL=OFF \
+        -DUSE_GLES2=OFF \
+        -DUSE_XLIB=OFF \
+        -DUSE_TK=OFF \
+        -DUSE_FREETYPE=ON \
+        -DUSE_TBB=ON \
+        -DUSE_RAPIDJSON=ON \
+        -DUSE_FREEIMAGE=OFF \
+        -DUSE_FFMPEG=OFF \
+        -DUSE_OPENVR=OFF \
+        -DUSE_VTK=OFF \
+        -DUSE_DRACO=OFF \
+        -DUSE_MMGR_TYPE=NATIVE \
+    && cmake --build /tmp/occt-build --parallel "${BUILD_JOBS}" \
+    && cmake --install /tmp/occt-build \
+    && rm -rf /tmp/occt-build
+
+COPY sources/imgui-1.93.0-docking/ /opt/src/imgui-1.93.0-docking/
+COPY cmake/imgui/ /tmp/imgui-cmake/
+COPY patches/imgui-renderpass-acquire.patch /tmp/imgui-renderpass-acquire.patch
+
+RUN patch -d /opt/src/imgui-1.93.0-docking -p1 < /tmp/imgui-renderpass-acquire.patch \
+    && cmake -S /tmp/imgui-cmake -B /tmp/imgui-build -G Ninja \
+        -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+        -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
+        -DCMAKE_INSTALL_PREFIX=/opt/imgui/1.93.0-docking \
+        -DIMGUI_SOURCE_DIR=/opt/src/imgui-1.93.0-docking \
+    && cmake --build /tmp/imgui-build --parallel "${BUILD_JOBS}" \
+    && cmake --install /tmp/imgui-build \
+    && rm -rf /tmp/imgui-build
+
+FROM base AS development
+
+COPY --from=sdk-builder /opt/ /opt/
+
+RUN printf '%s\n' '/opt/occt/8.0.1/lib' > /etc/ld.so.conf.d/occt-8.0.1.conf \
+    && ldconfig \
+    && install -d -m 0700 /tmp/xdg-runtime
+
+ENV CMAKE_PREFIX_PATH=/opt/occt/8.0.1:/opt/imgui/1.93.0-docking
+ENV PATH=/opt/imgui/1.93.0-docking/bin:${PATH}
+
+WORKDIR /workspaces
+CMD ["/bin/bash"]

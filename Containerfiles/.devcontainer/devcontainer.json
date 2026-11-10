@@ -1,0 +1,35 @@
+{
+  "name": "LNNI Arch Vulkan development",
+  "image": "localhost/arch-vulkan-sr:local",
+  "workspaceFolder": "/workspaces/LightweightNeuralNetworkInference",
+  "runArgs": [
+    "--gpus=all",
+    "--security-opt=label=disable"
+  ],
+  "containerEnv": {
+    "NVIDIA_DRIVER_CAPABILITIES": "graphics,display,utility",
+    "WAYLAND_DISPLAY": "/tmp/wayland-0",
+    "HTTP_PROXY": "http://host.containers.internal:7890",
+    "HTTPS_PROXY": "http://host.containers.internal:7890",
+    "http_proxy": "http://host.containers.internal:7890",
+    "https_proxy": "http://host.containers.internal:7890",
+    "NO_PROXY": "localhost,127.0.0.1,::1,host.containers.internal",
+    "no_proxy": "localhost,127.0.0.1,::1,host.containers.internal"
+  },
+  "mounts": [
+    "source=${localEnv:HOME},target=/host-home,type=bind",
+    "source=${localEnv:XDG_RUNTIME_DIR}/${localEnv:WAYLAND_DISPLAY},target=/tmp/wayland-0,type=bind"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cmake-tools",
+        "ms-vscode.cpptools",
+        "ms-dotnettools.csharp"
+      ],
+      "settings": {
+        "cmake.useCMakePresets": "always"
+      }
+    }
+  }
+}

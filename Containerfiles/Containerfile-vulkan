@@ -1,0 +1,13 @@
+FROM docker.io/library/archlinux:latest
+
+RUN grep -qF 'Server = https://mirrors.cernet.edu.cn/archlinux/$repo/os/$arch' /etc/pacman.d/mirrorlist || \
+    sed -i '1iServer = https://mirrors.cernet.edu.cn/archlinux/$repo/os/$arch' /etc/pacman.d/mirrorlist
+
+RUN pacman -Syyu --noconfirm --needed \
+        base-devel cmake ninja pkgconf git curl ca-certificates \
+        zlib libpng fftw nlohmann-json \
+        vulkan-headers vulkan-icd-loader vulkan-validation-layers \
+        shader-slang spirv-tools ncnn python-pytorch \
+        libglvnd libxext wayland vulkan-tools vkmark \
+        dotnet-sdk fontconfig \
+    && rm -rf /var/cache/pacman/pkg/*
